@@ -5,16 +5,15 @@
 }
 
 <div class="card">
-    <h3 class="card-header blue-gradient white-text text-uppercase font-weight-normal text-center py-4">
-        Roles
-    </h3>
+    <h5 class="card-header mdb-color darken-3 white-text text-uppercase font-weight-normal text-center py-4">
+       list of roles
+    </h5>
     <div class="card-body">
-        <a class="btn btn-info btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","Roles",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add New Record</a>
+        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","Roles",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Create new role</a>
         <div class="table-responsive">
             <table id="dataTable" class="table table-hover table-responsive-sm">
                 <thead class="">
                     <tr>
-
                         <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Role Name </th>
                         <th scope="col" class="text-primary"><i class="fas fa-tools"></i> Action</th>
                     </tr>

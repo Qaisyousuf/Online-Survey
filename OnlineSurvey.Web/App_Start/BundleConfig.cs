@@ -21,7 +21,8 @@ namespace OnlineSurvey.Web
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                       "~/Scripts/mdb.min.js"));
+                       "~/Scripts/mdb.min.js",
+                       "~/Scripts/notify.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
@@ -29,7 +30,7 @@ namespace OnlineSurvey.Web
                        "~/Content/mdb.min.css"));
             bundles.Add(new StyleBundle("~/Content/backendcss").Include(
                      "~/Content/bootstrap.css",
-                     "~/Content/backendcss/bacckend.css",
+                     "~/Content/backendcss/Backendcss.css",
                       "~/Content/mdb.min.css"));
         }
     }

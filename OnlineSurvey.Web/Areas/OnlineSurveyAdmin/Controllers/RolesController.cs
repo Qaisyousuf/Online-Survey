@@ -20,7 +20,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetRoleData()
+        public JsonResult GetRoleData()
         {
             var rolesFromdb = _roleManager.Roles.ToList();
 
@@ -36,6 +36,11 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             }
 
             return Json(new { data = viewmodel }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
         }
     }
 }
