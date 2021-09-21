@@ -11,7 +11,7 @@ namespace OnlineSurvey.Data
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("OnlineSurvey", throwIfV1Schema: false)
         {
         }
 
