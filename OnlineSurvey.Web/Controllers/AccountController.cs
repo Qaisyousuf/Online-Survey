@@ -8,7 +8,8 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using OnlineSurvey.Web.Models;
+using OnlineSurvey.Model;
+using OnlineSurvey.ViewModel;
 
 namespace OnlineSurvey.Web.Controllers
 {

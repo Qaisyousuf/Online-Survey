@@ -10,7 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using OnlineSurvey.Web.Models;
+using OnlineSurvey.Data;
+using OnlineSurvey.Model;
+
 
 namespace OnlineSurvey.Web
 {

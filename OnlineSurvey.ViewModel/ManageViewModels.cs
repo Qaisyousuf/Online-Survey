@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace OnlineSurvey.Web.Models
+namespace OnlineSurvey.ViewModel
 {
     public class IndexViewModel
     {
