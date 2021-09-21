@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurvey.Data", "OnlineSurvey.Data\OnlineSurvey.Data.csproj", "{D11DE50F-7E21-474A-826E-1143A622D0C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurvey.Model", "OnlineSurvey.Model\OnlineSurvey.Model.csproj", "{D56DB99E-ED27-409D-B40E-B754E1896D2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurvey.Services", "OnlineSurvey.Services\OnlineSurvey.Services.csproj", "{6B29999E-7068-4E32-8767-30517D63A764}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurvey.ViewModel", "OnlineSurvey.ViewModel\OnlineSurvey.ViewModel.csproj", "{516F2D47-5DA2-4078-A154-A8314E566911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurvey.Web", "OnlineSurvey.Web\OnlineSurvey.Web.csproj", "{680C7A9C-4AD1-47EE-9183-867E837F923E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurvey.Web.Tests", "OnlineSurvey.Web.Tests\OnlineSurvey.Web.Tests.csproj", "{F19970CD-19EB-479D-88F9-DD9016E81F80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D11DE50F-7E21-474A-826E-1143A622D0C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D11DE50F-7E21-474A-826E-1143A622D0C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D11DE50F-7E21-474A-826E-1143A622D0C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D11DE50F-7E21-474A-826E-1143A622D0C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D56DB99E-ED27-409D-B40E-B754E1896D2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D56DB99E-ED27-409D-B40E-B754E1896D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D56DB99E-ED27-409D-B40E-B754E1896D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D56DB99E-ED27-409D-B40E-B754E1896D2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B29999E-7068-4E32-8767-30517D63A764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B29999E-7068-4E32-8767-30517D63A764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B29999E-7068-4E32-8767-30517D63A764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B29999E-7068-4E32-8767-30517D63A764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{516F2D47-5DA2-4078-A154-A8314E566911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{516F2D47-5DA2-4078-A154-A8314E566911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{516F2D47-5DA2-4078-A154-A8314E566911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{516F2D47-5DA2-4078-A154-A8314E566911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{680C7A9C-4AD1-47EE-9183-867E837F923E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680C7A9C-4AD1-47EE-9183-867E837F923E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{680C7A9C-4AD1-47EE-9183-867E837F923E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{680C7A9C-4AD1-47EE-9183-867E837F923E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F19970CD-19EB-479D-88F9-DD9016E81F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F19970CD-19EB-479D-88F9-DD9016E81F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F19970CD-19EB-479D-88F9-DD9016E81F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F19970CD-19EB-479D-88F9-DD9016E81F80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5AAE7F9-B43F-4E1D-8892-C68C54C0D994}
+	EndGlobalSection
+EndGlobal
