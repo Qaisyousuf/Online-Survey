@@ -13,7 +13,7 @@
 
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-
+    <script src="~/Scripts/notify.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -153,8 +153,8 @@
         </div>
         <!--/. Sidebar navigation -->
         <!-- Navbar -->
-        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav mdb-color darken-3" >
-            <!-- SideNav slide-out button --> 
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav mdb-color darken-3">
+            <!-- SideNav slide-out button -->
             <div class="float-left">
                 <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
             </div>
@@ -219,8 +219,10 @@
             new WOW().init();
         })
     </script>
+    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

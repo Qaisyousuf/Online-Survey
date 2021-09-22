@@ -42,5 +42,96 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Create(RoleViewModel viewmodel)
+        {
+            if(ModelState.IsValid)
+            {
+                var role = new IdentityRole {Name = viewmodel.Name };
+
+                var roleCreated = _roleManager.Create(role);
+
+                if(roleCreated.Succeeded)
+                {
+                    return Json(new { success = true, message = "Data saved successfully! " }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(new { error = true, message = "Something went wrong! " }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return View(viewmodel);
+        }
+
+        [HttpGet]
+        public ActionResult Edit(string id)
+        {
+            var roleFromdb = _roleManager.Roles.Where(x => x.Id == id).FirstOrDefault();
+
+            RoleViewModel viewmodel = new RoleViewModel
+            {
+                Id=roleFromdb.Id,
+                Name=roleFromdb.Name,
+            };
+            return View(viewmodel);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(RoleViewModel viewmodel)
+        {
+            if(ModelState.IsValid)
+            {
+                var roleFromdb = _roleManager.Roles.Where(x => x.Id == viewmodel.Id).FirstOrDefault();
+
+                roleFromdb.Id = viewmodel.Id;
+                roleFromdb.Name = viewmodel.Name;
+
+                var roleUpdated = _roleManager.Update(roleFromdb);
+
+                if(roleUpdated.Succeeded)
+                {
+                    return Json(new { success = true, message = "Data updated successfuly" }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(new { error = true, message = "Something went wrong!" }, JsonRequestBehavior.AllowGet);
+                }
+               
+            }
+            return View(viewmodel);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(string id)
+        {
+            var roleFromdb = _roleManager.Roles.Where(x => x.Id == id).SingleOrDefault();
+
+            var roleDeleted = _roleManager.Delete(roleFromdb);
+
+            if(roleDeleted.Succeeded)
+            {
+                return Json(new { success = true, message = "Data deleted successfuly" }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                ModelState.AddModelError("", roleDeleted.Errors.FirstOrDefault());
+            }
+            return RedirectToAction(nameof(Delete));
+        }
+
+        [HttpGet]
+        public ActionResult Details(string id)
+        {
+            var roleFromdb = _roleManager.Roles.Where(x => x.Id == id).FirstOrDefault();
+
+            RoleViewModel viewmodel = new RoleViewModel
+            {
+                Id=roleFromdb.Id,
+                Name=roleFromdb.Name,
+            };
+
+            return View(viewmodel);
+        }
+       
     }
 }

@@ -277,6 +277,8 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Roles\Index.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Roles\Create.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Roles\Edit.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Roles\Details.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

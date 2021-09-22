@@ -202,13 +202,22 @@
             return false;
         }
         function Delete(id) {
-            if (confirm('Are You Sure to Delete this  Record ?'))
+            if (confirm('Are You Sure to Delete this Record ?'))
             {
                 $.ajax({
                     type: "POST",
                     url: '@Url.Action("Delete", "Roles")/' + id,
                     success: function (data) {
-                        if (data.success)
+                        if (data.success) {
+                            dataTable.ajax.reload();
+
+                            $.notify(data.message, {
+                                globalPosition: "top center",
+                                className: "success"
+                            })
+
+                        }
+                        else
                         {
                             dataTable.ajax.reload();
 
