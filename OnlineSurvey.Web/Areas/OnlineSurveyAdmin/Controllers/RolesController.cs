@@ -12,6 +12,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 {
     public class RolesController : Controller
     {
+      
         private readonly RoleManager<IdentityRole> _roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
         // GET: OnlineSurveyAdmin/Roles
         public ActionResult Index()
@@ -100,26 +101,58 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             }
             return View(viewmodel);
         }
-
-       [HttpPost]
+        [HttpGet]
         public ActionResult Delete(string id)
         {
-            var roleFromdb = _roleManager.Roles.Where(x => x.Id == id.ToString()).FirstOrDefault();
+            var roleFromdb = _roleManager.Roles.Where(x => x.Id == id).FirstOrDefault();
 
-            var roleDeleted = _roleManager.Delete(roleFromdb);
+            RoleViewModel viewmodel = new RoleViewModel
+            {
+                Id=roleFromdb.Id,
+                Name=roleFromdb.Name,
+            };
+            return View(viewmodel);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirm(string id)
+        {
+            var rolesFromdb = _roleManager.Roles.Where(x => x.Id == id).FirstOrDefault();
+
+            var roleDeleted = _roleManager.Delete(rolesFromdb);
 
             if(roleDeleted.Succeeded)
             {
-                return Json(new { success = true, message = "Data deleted successfuly" }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = true, message = "Data updated successfuly" }, JsonRequestBehavior.AllowGet);
             }
-
             else
             {
                 ModelState.AddModelError("", roleDeleted.Errors.FirstOrDefault());
             }
 
-            return RedirectToAction(nameof(Delete));
+            return View(rolesFromdb);
         }
+
+        //[HttpPost]
+        //public ActionResult Delete(string id)
+        //{
+        //    var roleFromdb = _roleManager.Roles.Where(x => x.Id == id.ToString()).FirstOrDefault();
+
+        //    var roleDeleted = _roleManager.Delete(roleFromdb);
+
+        //    if(roleDeleted.Succeeded)
+        //    {
+        //        return Json(new { success = true, message = "Data deleted successfuly" }, JsonRequestBehavior.AllowGet);
+        //    }
+
+        //    else
+        //    {
+        //        ModelState.AddModelError("", roleDeleted.Errors.FirstOrDefault());
+        //    }
+
+        //    return RedirectToAction(nameof(Delete));
+        //}
 
         [HttpGet]
         public ActionResult Details(string id)

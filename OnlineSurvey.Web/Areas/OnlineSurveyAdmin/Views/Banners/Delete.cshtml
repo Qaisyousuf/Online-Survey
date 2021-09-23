@@ -6,7 +6,7 @@
 <div>
 
     <div class="card-body card-body-cascade d-flex justify-content-center mt-n2">
-        @using (Html.BeginForm("Details", "Banners", FormMethod.Get, new { onsubmit = "return SubmitFormDetails(this)" }))
+        @using (Html.BeginForm("Delete", "Banners", FormMethod.Get, new { onsubmit = "return SubmitFormDelete(this)" }))
         {
             @Html.HiddenFor(model => model.Id)
 
@@ -16,15 +16,15 @@
                 <!--Card image-->
                 <div class="view view-cascade gradient-card-header mdb-color darken-3 narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
 
-                    <h6 class="mt-3 mb-1"><i class="fas fa-info"></i> Details of <span class="chip ml-2 mr-2">@Model.MainTitle</span></h6>
+                    <h6 class="mt-3 mb-1"><i class="fas fa-info"></i> Are you sure you want to delete <span class="chip ml-2 mr-2">@Model.MainTitle</span>record</h6>
                 </div>
                 <!--/Card image-->
 
                 <div class="px-4">
 
-                    <div class="table-wrapper my-3 ">
+                    <div class="table-wrapper my-3">
                         <!--Table-->
-                        <table class="table table-hover mb-3 table-bordered">
+                        <table class="table table-hover mb-0 table-bordered">
 
                             <!--Table head-->
                             <!--Table head-->
@@ -42,34 +42,29 @@
                                         <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
                                     </th>
                                     <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SubTitle)</td>
-
                                     <td class="text-primary"> @Html.DisplayFor(model => model.SubTitle)</td>
                                 </tr>
-                               
                                 <tr>
                                     <th scope="row">
                                         <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
                                     </th>
                                     <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Button)</td>
-                                    <td class="text-primary">  @Html.DisplayFor(model => model.Button)</td>
+                                    <td class="text-primary"> @Html.DisplayFor(model => model.Button)</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
                                         <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
                                     </th>
                                     <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ButtonUrl)</td>
-                                    <td class="text-primary">  @Html.DisplayFor(model => model.ButtonUrl)</td>
+                                    <td class="text-primary"> @Html.DisplayFor(model => model.ButtonUrl)</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
                                         <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
                                     </th>
                                     <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.AnimationUrl)</td>
-                                    <td class="text-primary">  @Html.DisplayFor(model => model.AnimationUrl)</td>
+                                    <td class="text-primary"> @Html.DisplayFor(model => model.AnimationUrl)</td>
                                 </tr>
-                             
-                              
-
                                 <tr class="">
                                     <th scope="row">
                                         <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
@@ -85,7 +80,6 @@
 
 
                                 </tr>
-
                             </tbody>
                             <!--Table body-->
                         </table>
@@ -96,7 +90,15 @@
 
             </div>
             <!-- Table with panel -->
+            <div class="row my-5 justify-content-center">
+                <div class="">
+                    <div class="form-group">
+                        <button type="submit" value="Create" class="btn btn-danger btn-rounded btn-md"><i class="fas fa-trash pr-2"></i> Confirm Delete</button>
 
+
+                    </div>
+                </div>
+            </div>
         }
 
 

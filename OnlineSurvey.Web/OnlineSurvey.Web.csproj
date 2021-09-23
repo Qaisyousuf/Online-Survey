@@ -285,13 +285,14 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\Roles\Create.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Roles\Edit.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Roles\Details.cshtml" />
-    <Content Include="Areas\OnlineSurveyAdmin\Views\Roles\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Users\Index.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Users\Create.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Banners\Index.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Banners\Create.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Banners\Edit.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Banners\Details.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Roles\Delete.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Banners\Delete.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -430,7 +431,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\OnlineSurveyAdmin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

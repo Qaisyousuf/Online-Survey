@@ -89,7 +89,7 @@
                         "data": "Id", "render": function (data)
 
                         {
-                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "Banners")/" + data + "')><i class='far fa-edit'></i></a> | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "Banners")/" + data + "')><i class='fas fa-info-circle'> </i></a> | <a class='btn btn-danger btn-md btn-rounded' style='margin-left:5px' onclick=Delete("+data+")><i class='fa fa-trash'></i></a>";
+                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "Banners")/" + data + "')><i class='far fa-edit'></i></a> |  <a class='btn btn-danger btn-md btn-rounded' onclick=PopupForm('@Url.Action("Delete", "Banners")/" + data + "')><i class='fas fa-trash'></i></a>  | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "Banners")/" + data + "')><i class='fas fa-info-circle'> </i></a>";
                     },
                         "orderable": false,
                         "searchable":false,
@@ -213,30 +213,30 @@
             }
             return false;
         }
-        function Delete(id) {
-            if (confirm('Are You Sure to Delete this  Record ?'))
-            {
+        function SubmitFormDelete(form) {
+            $.validator.unobtrusive.parse(form);
+            if ($(form).valid()) {
                 $.ajax({
                     type: "POST",
-                    url: '@Url.Action("Delete", "Banners")/' + id,
+                    url: form.action,
+                    data: $(form).serialize(),
                     success: function (data) {
-                        if (data.success)
-                        {
+                        if (data.success) {
+                            Popup.dialog('close');
                             dataTable.ajax.reload();
 
                             $.notify(data.message, {
                                 globalPosition: "top center",
                                 className: "success"
-                            })
+                            });
+
 
                         }
                     }
-
                 });
             }
+            return false;
         }
-
-
 
     </script>
 

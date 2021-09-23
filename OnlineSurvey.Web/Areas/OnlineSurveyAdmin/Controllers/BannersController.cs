@@ -115,8 +115,27 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             return Json(new { success = true, message = "Data updated successfuly" }, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult Delete(int id)
+        {
+            var banner = uow.BannerRepository.GetById(id);
+
+            BannerViewModel viewmodel = new BannerViewModel
+            {
+                Id=banner.Id,
+                MainTitle=banner.MainTitle,
+                SubTitle=banner.SubTitle,
+                Content=banner.Content,
+                Button=banner.Button,
+                ButtonUrl=banner.ButtonUrl,
+                AnimationUrl=banner.AnimationUrl,
+            };
+            return View(viewmodel);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirm(int id)
         {
             var banner = uow.BannerRepository.GetById(id);
 
