@@ -1,8 +1,10 @@
 using OnlineSurvey.Data.Concrete_Implementation;
 using OnlineSurvey.Data.Interfaces;
+using OnlineSurvey.Web.Controllers;
 using System;
 
 using Unity;
+using Unity.Injection;
 
 namespace OnlineSurvey.Web
 {
@@ -45,6 +47,9 @@ namespace OnlineSurvey.Web
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IUnitOfWork, UnitOfWork>();
+            container.RegisterType<AccountController>(new InjectionConstructor());
+
+            container.RegisterType<ManageController>(new InjectionConstructor());
         }
     }
 }

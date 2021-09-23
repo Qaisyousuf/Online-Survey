@@ -1,20 +1,23 @@
-﻿@model IEnumerable<OnlineSurvey.ViewModel.RoleViewModel>
+﻿@model IEnumerable<OnlineSurvey.ViewModel.ViewUserViewModel>
 
 @{
-    ViewBag.Title = "Roles";
+    ViewBag.Title = "Users";
 }
 <div class="card">
-    <h3 class="card-header mdb-color darken-3 white-text text-uppercase font-weight-normal text-center py-4">
-        List of banners
-    </h3>
+    <h5 class="card-header mdb-color darken-3 white-text text-uppercase font-weight-normal text-center py-4">
+        list of roles
+    </h5>
     <div class="card-body">
-        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","Roles",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add New Record</a>
+        <p>
+
+            <a class="btn btn-rounded  btn-outline-primary" href="/OnlineSurveyAdmin/Users/Create"><i class="fas fa-plus-circle pr-2 fa-1x" aria-hidden="true"></i> add new record</a>
+        </p>
         <div class="table-responsive">
             <table id="dataTable" class="table table-hover table-responsive-sm">
                 <thead class="">
                     <tr>
-                        <th scope="col" class="text-primary"><i class="fas fa-sort-numeric-down"></i>Id </th>
-                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Role Name </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> UserName </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Email </th>
                         <th scope="col" class="text-primary"><i class="fas fa-tools"></i> Action</th>
                     </tr>
                 </thead>
@@ -27,11 +30,12 @@
 </div>
 
 @section scripts{
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
     <script>
         $(document).ready(function () {
 
             // SideNav Initialization
-            `$(function () {$(".button-collapse").sideNav();})`
+            $(".button-collapse").sideNav();
             new WOW().init();
         })
     </script>
@@ -44,17 +48,12 @@
                 "fixedHeader": true,
                 fixedColumns: true,
 
-
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
 
                 dom: 'Bfrtip',
-                lengthMenu: [
-                    [10, 25, 50, -1],
-                    ['10 rows', '25 rows', '50 rows', 'Show all']
-                ],
                 buttons: [
                     {
                         extend: 'copyHtml5', footer: true,
-
 
                     },
                     { extend: 'excelHtml5', footer: true, download: 'open' },
@@ -63,7 +62,7 @@
 
                 ],
                 "ajax": {
-                    "url": "/OnlineSurveyAdmin/Roles/GetRoleData",
+                    "url": "/OnlineSurveyAdmin/Users/GetUserData",
                     "type": "GET",
                     "datatype": "json",
 
@@ -71,18 +70,17 @@
                 },
 
                 "columns": [
-                    { "data": "Id" },
-                    { "data": "Name" },
-                   
 
+                    { "data": "UserName" },
+                    { "data": "Email" },
 
                     {
                         "data": "actions",
-                        "className": "dt-body-center",
+                        "className": "dt-body-right",
                         "data": "Id", "render": function (data)
 
                         {
-                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "Roles")/" + data + "')><i class='far fa-edit'></i></a> | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "Roles")/" + data + "')><i class='fas fa-info-circle'> </i></a> | <a class='btn btn-danger btn-md btn-rounded' style='margin-left:5px' onclick=Delete("+data+")><i class='fa fa-trash'></i></a>";
+                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "Users")/" + data + "')><i class='far fa-edit'></i> Edit </a> | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "Users")/" + data + "')><i class='fas fa-info-circle'> </i> Details </a> | <a class='btn btn-danger btn-md btn-rounded' style='margin-left:5px' onclick=Delete("+data+")><i class='fa fa-trash'></i> Delete </a>";
                     },
                         "orderable": false,
                         "searchable":false,
@@ -206,12 +204,12 @@
             }
             return false;
         }
-        function Delete(id) {
-            if (confirm('Are You Sure to Delete this Record ?'))
+         function Delete(id) {
+            if (confirm('Are You Sure to Delete this  Record ?'))
             {
                 $.ajax({
                     type: "POST",
-                    url: '@Url.Action("Delete", "Roles")/' + id,
+                    url: '@Url.Action("Delete", "Users")/' + Id,
                     success: function (data) {
                         if (data.success)
                         {

@@ -10,6 +10,8 @@ namespace OnlineSurvey.Data.Interfaces
     {
         ApplicationDbContext Context { get; }
 
+        IBannerRepository BannerRepository { get; }
+
         void Commit();
     }
 }

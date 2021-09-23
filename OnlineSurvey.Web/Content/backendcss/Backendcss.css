@@ -25,9 +25,9 @@ textarea {
 }
 
 .double-nav .breadcrumb-dn {
-    color: #fff;
+    color: #fff !important;
 }
 
 .side-nav.wide.slim .sn-ad-avatar-wrapper a span {
-    display: none;
+    display: none !important;
 }

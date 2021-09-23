@@ -101,10 +101,10 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             return View(viewmodel);
         }
 
-        [HttpPost]
+       [HttpPost]
         public ActionResult Delete(string id)
         {
-            var roleFromdb = _roleManager.Roles.Where(x => x.Id == id).SingleOrDefault();
+            var roleFromdb = _roleManager.Roles.Where(x => x.Id == id.ToString()).FirstOrDefault();
 
             var roleDeleted = _roleManager.Delete(roleFromdb);
 
@@ -112,10 +112,12 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             {
                 return Json(new { success = true, message = "Data deleted successfuly" }, JsonRequestBehavior.AllowGet);
             }
+
             else
             {
                 ModelState.AddModelError("", roleDeleted.Errors.FirstOrDefault());
             }
+
             return RedirectToAction(nameof(Delete));
         }
 

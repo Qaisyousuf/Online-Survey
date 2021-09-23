@@ -58,8 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Concrete Implementation\BannerRepository.cs" />
     <Compile Include="Concrete Implementation\Repository.cs" />
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
+    <Compile Include="Interfaces\IBannerRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Migrations\202109211423586_InitialCreate.cs" />
@@ -69,6 +71,10 @@
     <Compile Include="Migrations\202109211521258_Initial.cs" />
     <Compile Include="Migrations\202109211521258_Initial.designer.cs">
       <DependentUpon>202109211521258_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109222015290_BannerAdded.cs" />
+    <Compile Include="Migrations\202109222015290_BannerAdded.designer.cs">
+      <DependentUpon>202109222015290_BannerAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109211521258_Initial.resx">
       <DependentUpon>202109211521258_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109222015290_BannerAdded.resx">
+      <DependentUpon>202109222015290_BannerAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

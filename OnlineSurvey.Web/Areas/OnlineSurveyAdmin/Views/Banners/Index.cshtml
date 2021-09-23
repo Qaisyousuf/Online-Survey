@@ -1,20 +1,24 @@
-﻿@model IEnumerable<OnlineSurvey.ViewModel.RoleViewModel>
+﻿@model IEnumerable<OnlineSurvey.ViewModel.BannerViewModel>
 
 @{
-    ViewBag.Title = "Roles";
+    ViewBag.Title = "Banner";
 }
+
 <div class="card">
     <h3 class="card-header mdb-color darken-3 white-text text-uppercase font-weight-normal text-center py-4">
         List of banners
     </h3>
     <div class="card-body">
-        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","Roles",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add New Record</a>
+        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","Banners",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add New Record</a>
         <div class="table-responsive">
             <table id="dataTable" class="table table-hover table-responsive-sm">
                 <thead class="">
                     <tr>
                         <th scope="col" class="text-primary"><i class="fas fa-sort-numeric-down"></i>Id </th>
-                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Role Name </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Main Title </th>
+                        <th scope="col" class="text-primary"><i class="far fa-newspaper"></i> Sub Title </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-sign-in-alt"></i> Button </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-glasses"></i> Button Url </th>
                         <th scope="col" class="text-primary"><i class="fas fa-tools"></i> Action</th>
                     </tr>
                 </thead>
@@ -31,7 +35,8 @@
         $(document).ready(function () {
 
             // SideNav Initialization
-            `$(function () {$(".button-collapse").sideNav();})`
+            $(".button-collapse").sideNav();
+            slim: true
             new WOW().init();
         })
     </script>
@@ -44,7 +49,7 @@
                 "fixedHeader": true,
                 fixedColumns: true,
 
-
+              
 
                 dom: 'Bfrtip',
                 lengthMenu: [
@@ -63,7 +68,7 @@
 
                 ],
                 "ajax": {
-                    "url": "/OnlineSurveyAdmin/Roles/GetRoleData",
+                    "url": "/OnlineSurveyAdmin/Banners/GetBannerData",
                     "type": "GET",
                     "datatype": "json",
 
@@ -72,8 +77,10 @@
 
                 "columns": [
                     { "data": "Id" },
-                    { "data": "Name" },
-                   
+                    { "data": "MainTitle" },
+                    { "data": "SubTitle" },
+                    { "data": "Button" },
+                    { "data": "ButtonUrl" },
 
 
                     {
@@ -82,7 +89,7 @@
                         "data": "Id", "render": function (data)
 
                         {
-                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "Roles")/" + data + "')><i class='far fa-edit'></i></a> | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "Roles")/" + data + "')><i class='fas fa-info-circle'> </i></a> | <a class='btn btn-danger btn-md btn-rounded' style='margin-left:5px' onclick=Delete("+data+")><i class='fa fa-trash'></i></a>";
+                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "Banners")/" + data + "')><i class='far fa-edit'></i></a> | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "Banners")/" + data + "')><i class='fas fa-info-circle'> </i></a> | <a class='btn btn-danger btn-md btn-rounded' style='margin-left:5px' onclick=Delete("+data+")><i class='fa fa-trash'></i></a>";
                     },
                         "orderable": false,
                         "searchable":false,
@@ -207,11 +214,11 @@
             return false;
         }
         function Delete(id) {
-            if (confirm('Are You Sure to Delete this Record ?'))
+            if (confirm('Are You Sure to Delete this  Record ?'))
             {
                 $.ajax({
                     type: "POST",
-                    url: '@Url.Action("Delete", "Roles")/' + id,
+                    url: '@Url.Action("Delete", "Banners")/' + id,
                     success: function (data) {
                         if (data.success)
                         {

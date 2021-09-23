@@ -1,0 +1,111 @@
+﻿@model OnlineSurvey.ViewModel.BannerViewModel
+@{
+    Layout = null;
+}
+
+<div>
+
+
+    <div class="card-body card-body-cascade d-flex justify-content-center mt-n2">
+        @using (Html.BeginForm("Details", "Banners", FormMethod.Get, new { onsubmit = "return SubmitFormDetails(this)" }))
+        {
+            @Html.HiddenFor(model => model.Id)
+
+            <!-- Table with panel -->
+            <div class="card card-cascade narrower">
+
+                <!--Card image-->
+                <div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+
+
+
+                    <text><i class="fas fa-info"></i> Details of <span class="tag">@Model.MainTitle</span></text>
+
+
+
+                </div>
+                <!--/Card image-->
+
+                <div class="px-4">
+
+                    <div class="table-wrapper">
+                        <!--Table-->
+                        <table class="table table-hover mb-0">
+
+                            <!--Table head-->
+                            <!--Table head-->
+                            <!--Table body-->
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                    </th>
+                                    <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.MainTitle)</td>
+                                    <td class="text-primary"> @Html.DisplayFor(model => model.MainTitle)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                    </th>
+                                    <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SubTitle)</td>
+
+                                    <td class="text-primary"> @Html.DisplayFor(model => model.SubTitle)</td>
+                                </tr>
+                               
+                                <tr>
+                                    <th scope="row">
+                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                    </th>
+                                    <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Button)</td>
+                                    <td class="text-primary">  @Html.DisplayFor(model => model.Button)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                    </th>
+                                    <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ButtonUrl)</td>
+                                    <td class="text-primary">  @Html.DisplayFor(model => model.ButtonUrl)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                    </th>
+                                    <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.AnimationUrl)</td>
+                                    <td class="text-primary">  @Html.DisplayFor(model => model.AnimationUrl)</td>
+                                </tr>
+                             
+                              
+
+                                <tr class="">
+                                    <th scope="row">
+                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                    </th>
+                                    <td class="font-weight-bold">  @Html.DisplayNameFor(model => model.Content)</td>
+                                    <td class="collapse" id="collapseExample"> @Html.Raw(Model.Content)</td>
+                                    <td>
+                                        <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                                aria-expanded="false" aria-controls="collapseExample">
+                                            view content
+                                        </button>
+                                    </td>
+
+
+                                </tr>
+
+                            </tbody>
+                            <!--Table body-->
+                        </table>
+                        <!--Table-->
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Table with panel -->
+
+        }
+
+
+    </div>
+
+</div>
