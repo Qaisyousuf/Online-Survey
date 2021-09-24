@@ -293,6 +293,9 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\Banners\Details.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Roles\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Banners\Delete.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Users\Delete.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Users\Details.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />

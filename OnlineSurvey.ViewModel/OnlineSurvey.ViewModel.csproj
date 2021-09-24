@@ -90,6 +90,9 @@
     <Compile Include="AccountViewModels.cs" />
     <Compile Include="BannerViewModel.cs" />
     <Compile Include="ChechBoxItemViewModel.cs" />
+    <Compile Include="DeleteUserViewModel.cs" />
+    <Compile Include="DetailsUserViewModel.cs" />
+    <Compile Include="EditUserViewModel.cs" />
     <Compile Include="InsertUserViewModel.cs" />
     <Compile Include="ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

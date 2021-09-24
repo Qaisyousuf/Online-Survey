@@ -1,0 +1,117 @@
+﻿@model OnlineSurvey.ViewModel.DetailsUserViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+
+    <div class="card-body card-body-cascade d-flex justify-content-center mt-n2">
+
+
+        @Html.HiddenFor(model => model.Id)
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-cascade narrower">
+
+                    <!--Card image-->
+                    <div class="view view-cascade gradient-card-header mdb-color darken-3 narrower py-2 mx-4 mb-3 d-flex justify-content-center align-items-center">
+
+                        <h6 class="mt-3 mb-0"><i class="fas fa-info"></i> Details of the  <span class="btn btn-rounded btn-danger btn-md mb-2">@Model.Email</span>user with roles</h6>
+                    </div>
+                    <!--/Card image-->
+
+                    <div class="px-4">
+
+                        <div class="table-wrapper my-3">
+                            <!--Table-->
+                            <table class="table table-hover mb-0 table-bordered">
+
+                                <!--Table head-->
+                                <!--Table head-->
+                                <!--Table body-->
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                        </th>
+                                        <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Email)</td>
+                                        <td class="text-primary"> @Html.DisplayFor(model => model.Email)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                        </th>
+                                        <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.UserName)</td>
+                                        <td class="text-primary"> @Html.DisplayFor(model => model.UserName)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                        </th>
+                                        <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.PhoneNumber)</td>
+                                        <td class="text-primary"> @Html.DisplayFor(model => model.PhoneNumber)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                        </th>
+                                        <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Password)</td>
+                                        <td class="text-primary"> @Html.DisplayFor(model => model.Password)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                        </th>
+                                        <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Roles)</td>
+                                        <td class="text-primary"> @Html.CheckBoxListFor(model => model.Roles, model => model.Roles, model => model.Id, model => model.Text, model => model.Checked, model => new { @class = "checkbox-inline disabled", @style = "opacity: 1; margin:10px; padding:20px;" })</td>
+                                    </tr>
+
+                                </tbody>
+                                <!--Table body-->
+                            </table>
+                            <!--Table-->
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Table with panel -->
+        <!-- Table with panel -->
+
+
+
+    </div>
+    <div class="row justify-content-center">
+        <div class="">
+            <div class="row my-5 justify-content-center">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions ">
+                        <div class="form-group">
+                            
+                            <a class="btn btn-primary btn-rounded btn-md" href="/OnlineSurveyAdmin/Users/Index"><i class="fas fa-arrow-circle-left pr-2"></i> Back to menu</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            // SideNav Initialization
+            $(".button-collapse").sideNav();
+            new WOW().init();
+        })
+    </script>
+
+}
