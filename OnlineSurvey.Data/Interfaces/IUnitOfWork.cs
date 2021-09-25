@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineSurvey.Data.Interfaces
 {
@@ -11,6 +7,7 @@ namespace OnlineSurvey.Data.Interfaces
         ApplicationDbContext Context { get; }
 
         IBannerRepository BannerRepository { get; }
+        IMetaTagRepository MetaTagRepository { get; }
 
         void Commit();
     }

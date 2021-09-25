@@ -1,20 +1,22 @@
-﻿@model IEnumerable<OnlineSurvey.ViewModel.RoleViewModel>
+﻿@model IEnumerable<OnlineSurvey.ViewModel.MetaTagViewModel>
 
 @{
-    ViewBag.Title = "Roles";
+    ViewBag.Title = "Meta Tag";
 }
+
 <div class="card">
     <h3 class="card-header mdb-color darken-3 white-text text-uppercase font-weight-normal text-center py-4">
-        List of Roles
+        List of Meta Tags
     </h3>
     <div class="card-body">
-        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","Roles",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add New Record</a>
+        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","MetaTag",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add New Record</a>
         <div class="table-responsive">
-            <table id="dataTable" class="table table-hover table-responsive-sm table-bordered">
+            <table id="dataTable" class="table table-hover table-responsive-sm">
                 <thead class="">
                     <tr>
                         <th scope="col" class="text-primary"><i class="fas fa-sort-numeric-down"></i>Id </th>
-                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Role Name </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Meta Name </th>
+                        <th scope="col" class="text-primary"><i class="far fa-newspaper"></i> Meta Content </th>
                         <th scope="col" class="text-primary"><i class="fas fa-tools"></i> Action</th>
                     </tr>
                 </thead>
@@ -64,7 +66,7 @@
 
                 ],
                 "ajax": {
-                    "url": "/OnlineSurveyAdmin/Roles/GetRoleData",
+                    "url": "/OnlineSurveyAdmin/MetaTag/GetMetaTag",
                     "type": "GET",
                     "datatype": "json",
 
@@ -74,7 +76,8 @@
                 "columns": [
                     { "data": "Id" },
                     { "data": "Name" },
-                   
+                    { "data": "Content" },
+                  
 
 
                     {
@@ -83,7 +86,7 @@
                         "data": "Id", "render": function (data)
 
                         {
-                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "Roles")/" + data + "')><i class='far fa-edit'></i></a> | <a class='btn btn-danger btn-md btn-rounded' onclick=PopupForm('@Url.Action("Delete", "Roles")/" + data + "')><i class='fas fa-trash'></i></a> | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "Roles")/" + data + "')><i class='fas fa-info-circle'> </i></a>";
+                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "MetaTag")/" + data + "')><i class='far fa-edit'></i></a> |  <a class='btn btn-danger btn-md btn-rounded' onclick=PopupForm('@Url.Action("Delete", "MetaTag")/" + data + "')><i class='fas fa-trash'></i></a>  | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "MetaTag")/" + data + "')><i class='fas fa-info-circle'> </i></a>";
                     },
                         "orderable": false,
                         "searchable":false,
@@ -207,7 +210,7 @@
             }
             return false;
         }
-       function SubmitFormDelete(form) {
+        function SubmitFormDelete(form) {
             $.validator.unobtrusive.parse(form);
             if ($(form).valid()) {
                 $.ajax({
@@ -230,9 +233,7 @@
                 });
             }
             return false;
-       }
-
-
+        }
 
     </script>
 

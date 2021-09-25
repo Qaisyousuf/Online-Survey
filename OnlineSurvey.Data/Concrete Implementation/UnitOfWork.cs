@@ -8,6 +8,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IBannerRepository BannerRepository => new BannerRepository(Context);
 
+        public IMetaTagRepository MetaTagRepository => new MetaTagRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();
