@@ -61,6 +61,7 @@
     <Compile Include="Banner.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="MetaTag.cs" />
+    <Compile Include="OpenGraphMetaTag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

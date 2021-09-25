@@ -8,6 +8,7 @@ namespace OnlineSurvey.Data.Interfaces
 
         IBannerRepository BannerRepository { get; }
         IMetaTagRepository MetaTagRepository { get; }
+        IOGMetaTagRepository OGMetaTagRepository { get; }
 
         void Commit();
     }

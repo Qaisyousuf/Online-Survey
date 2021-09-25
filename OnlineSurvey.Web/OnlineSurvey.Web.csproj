@@ -189,6 +189,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\BannersController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MetaTagController.cs" />
+    <Compile Include="Areas\OnlineSurveyAdmin\Controllers\OGMetaTagController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\RolesController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\UsersController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\OnlineSurveyAdminAreaRegistration.cs" />
@@ -302,6 +303,11 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\MetaTag\Edit.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\MetaTag\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\MetaTag\Details.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\OGMetaTag\Index.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\OGMetaTag\Create.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\OGMetaTag\Edit.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\OGMetaTag\Delete.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\OGMetaTag\Details.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />

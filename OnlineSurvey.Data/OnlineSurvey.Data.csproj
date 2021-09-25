@@ -60,10 +60,12 @@
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Concrete Implementation\BannerRepository.cs" />
     <Compile Include="Concrete Implementation\MetaTagRepository.cs" />
+    <Compile Include="Concrete Implementation\OGMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\Repository.cs" />
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
     <Compile Include="Interfaces\IBannerRepository.cs" />
     <Compile Include="Interfaces\IMetaTagRepository.cs" />
+    <Compile Include="Interfaces\IOGMetaTagRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Migrations\202109211423586_InitialCreate.cs" />
@@ -81,6 +83,10 @@
     <Compile Include="Migrations\202109251003009_MetaTagAdded.cs" />
     <Compile Include="Migrations\202109251003009_MetaTagAdded.designer.cs">
       <DependentUpon>202109251003009_MetaTagAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109251453193_OGMetaTagAdded.cs" />
+    <Compile Include="Migrations\202109251453193_OGMetaTagAdded.designer.cs">
+      <DependentUpon>202109251453193_OGMetaTagAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109251003009_MetaTagAdded.resx">
       <DependentUpon>202109251003009_MetaTagAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109251453193_OGMetaTagAdded.resx">
+      <DependentUpon>202109251453193_OGMetaTagAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

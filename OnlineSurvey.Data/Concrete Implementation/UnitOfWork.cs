@@ -10,6 +10,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IMetaTagRepository MetaTagRepository => new MetaTagRepository(Context);
 
+        public IOGMetaTagRepository OGMetaTagRepository => new OGMetaTagRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();
