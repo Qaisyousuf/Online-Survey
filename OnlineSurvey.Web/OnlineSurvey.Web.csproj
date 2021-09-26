@@ -191,6 +191,7 @@
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MetaTagController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\OGMetaTagController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\RolesController.cs" />
+    <Compile Include="Areas\OnlineSurveyAdmin\Controllers\TwitterMetaTagController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\UsersController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\OnlineSurveyAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -308,6 +309,11 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\OGMetaTag\Edit.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\OGMetaTag\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\OGMetaTag\Details.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\TwitterMetaTag\Index.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\TwitterMetaTag\Create.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\TwitterMetaTag\Edit.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\TwitterMetaTag\Delete.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\TwitterMetaTag\Details.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />

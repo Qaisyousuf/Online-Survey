@@ -12,6 +12,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IOGMetaTagRepository OGMetaTagRepository => new OGMetaTagRepository(Context);
 
+        public ITwitterMetaTagRepository TwitterMetaTagRepository => new TwitterMetaTagRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

@@ -99,6 +99,7 @@
     <Compile Include="OpenGraphMetaTagsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleViewModel.cs" />
+    <Compile Include="TwitterMetaTagViewModel.cs" />
     <Compile Include="ViewUserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

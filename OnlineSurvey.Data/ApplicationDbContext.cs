@@ -19,6 +19,8 @@ namespace OnlineSurvey.Data
         public DbSet<Banner> Banners { get; set; }
         public DbSet<MetaTag> metaTags { get; set; }
         public DbSet<OpenGraphMetaTag> OpenGraphMetaTags { get; set; }
+        public DbSet<TwitterMetaTag> TwitterMetaTags { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
