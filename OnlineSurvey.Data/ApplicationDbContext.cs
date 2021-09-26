@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using OnlineSurvey.Data.FluentAPI;
 using OnlineSurvey.Model;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineSurvey.Data
 {
@@ -20,6 +17,15 @@ namespace OnlineSurvey.Data
         public DbSet<MetaTag> metaTags { get; set; }
         public DbSet<OpenGraphMetaTag> OpenGraphMetaTags { get; set; }
         public DbSet<TwitterMetaTag> TwitterMetaTags { get; set; }
+        public DbSet<SiteSettings> SiteSettings { get; set; }
+        public DbSet<FooterLinks> FooterLinks { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new SiteSettingMapping());
+            modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnName("datetime2"));
+            base.OnModelCreating(modelBuilder);
+        }
 
         public static ApplicationDbContext Create()
         {

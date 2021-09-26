@@ -124,7 +124,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 
             if(roleDeleted.Succeeded)
             {
-                return Json(new { success = true, message = "Data updated successfuly" }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = true, message = "Data deleted successfuly" }, JsonRequestBehavior.AllowGet);
             }
             else
             {

@@ -10,6 +10,7 @@ namespace OnlineSurvey.Data.Interfaces
         IMetaTagRepository MetaTagRepository { get; }
         IOGMetaTagRepository OGMetaTagRepository { get; }
         ITwitterMetaTagRepository TwitterMetaTagRepository { get; }
+        IFooterLinksRepository FooterLinksRepository { get; }
 
         void Commit();
     }

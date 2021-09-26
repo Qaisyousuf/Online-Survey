@@ -123,7 +123,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 
             uow.TwitterMetaTagRepository.Remove(twitterMetaTag);
             uow.Commit();
-            return Json(new { success = true, message = "Data updated successfuly" }, JsonRequestBehavior.AllowGet);
+            return Json(new { success = true, message = "Data deleted successfuly" }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

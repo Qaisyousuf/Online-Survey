@@ -14,6 +14,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public ITwitterMetaTagRepository TwitterMetaTagRepository => new TwitterMetaTagRepository(Context);
 
+        public IFooterLinksRepository FooterLinksRepository => new FooterLinksRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

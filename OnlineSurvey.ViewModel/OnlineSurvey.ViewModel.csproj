@@ -93,18 +93,26 @@
     <Compile Include="DeleteUserViewModel.cs" />
     <Compile Include="DetailsUserViewModel.cs" />
     <Compile Include="EditUserViewModel.cs" />
+    <Compile Include="FooterLinksViewModel.cs" />
     <Compile Include="InsertUserViewModel.cs" />
     <Compile Include="ManageViewModels.cs" />
     <Compile Include="MetaTagViewModel.cs" />
     <Compile Include="OpenGraphMetaTagsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleViewModel.cs" />
+    <Compile Include="SiteSettingViewModel.cs" />
     <Compile Include="TwitterMetaTagViewModel.cs" />
     <Compile Include="ViewUserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineSurvey.Model\OnlineSurvey.Model.csproj">
+      <Project>{d56db99e-ed27-409d-b40e-b754e1896d2a}</Project>
+      <Name>OnlineSurvey.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

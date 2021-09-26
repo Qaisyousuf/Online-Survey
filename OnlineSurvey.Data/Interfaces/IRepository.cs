@@ -10,5 +10,7 @@ namespace OnlineSurvey.Data.Interfaces
         TModel GetById(object id);
         void Remove(TModel entity);
         void RemoveById(object id);
+
+        IQueryable<TModel> GetAll(params string[] navigationProperties);
     }
 }

@@ -27,6 +27,18 @@ namespace OnlineSurvey.Data.Concrete_Implementation
             return data;
         }
 
+        public IQueryable<TModel> GetAll(params string[] navigationProperties)
+        {
+            IQueryable<TModel> data = _context.Set<TModel>().AsQueryable();
+
+            foreach (string navigationproperty in navigationProperties)
+            {
+                data = data.Include(navigationproperty);
+            }
+
+            return data;
+        }
+
         public TModel GetById(object id)
         {
             return _context.Set<TModel>().Find(id);
