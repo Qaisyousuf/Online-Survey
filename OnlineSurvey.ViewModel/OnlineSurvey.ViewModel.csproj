@@ -96,6 +96,7 @@
     <Compile Include="FooterLinksViewModel.cs" />
     <Compile Include="InsertUserViewModel.cs" />
     <Compile Include="ManageViewModels.cs" />
+    <Compile Include="MenusViewModel.cs" />
     <Compile Include="MetaTagViewModel.cs" />
     <Compile Include="OpenGraphMetaTagsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

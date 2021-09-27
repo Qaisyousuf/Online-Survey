@@ -18,6 +18,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public ISiteSettingsRepository SiteSettingsRepository => new SiteSettingsRepository(Context);
 
+        public IMenuRepository MenuRepository => new MenuRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

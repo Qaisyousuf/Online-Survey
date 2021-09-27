@@ -60,6 +60,7 @@
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Concrete Implementation\BannerRepository.cs" />
     <Compile Include="Concrete Implementation\FooterLinksRepository.cs" />
+    <Compile Include="Concrete Implementation\MenuRepository.cs" />
     <Compile Include="Concrete Implementation\MetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\OGMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\Repository.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
     <Compile Include="Interfaces\IBannerRepository.cs" />
     <Compile Include="Interfaces\IFooterLinksRepository.cs" />
+    <Compile Include="Interfaces\IMenuRepository.cs" />
     <Compile Include="Interfaces\IMetaTagRepository.cs" />
     <Compile Include="Interfaces\IOGMetaTagRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
@@ -107,6 +109,14 @@
     <Compile Include="Migrations\202109271122275_SiteSettingsUpdated.designer.cs">
       <DependentUpon>202109271122275_SiteSettingsUpdated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109271350345_MenusAdded.cs" />
+    <Compile Include="Migrations\202109271350345_MenusAdded.designer.cs">
+      <DependentUpon>202109271350345_MenusAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109271553365_MenusModelUpdated.cs" />
+    <Compile Include="Migrations\202109271553365_MenusModelUpdated.designer.cs">
+      <DependentUpon>202109271553365_MenusModelUpdated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -144,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109271122275_SiteSettingsUpdated.resx">
       <DependentUpon>202109271122275_SiteSettingsUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109271350345_MenusAdded.resx">
+      <DependentUpon>202109271350345_MenusAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109271553365_MenusModelUpdated.resx">
+      <DependentUpon>202109271553365_MenusModelUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

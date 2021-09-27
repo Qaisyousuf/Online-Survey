@@ -1,0 +1,242 @@
+﻿@model IEnumerable<OnlineSurvey.ViewModel.MenusViewModel>
+
+@{
+    ViewBag.Title = "Menus";
+}
+<div class="card">
+    <h3 class="card-header mdb-color darken-3 white-text text-uppercase font-weight-normal text-center py-4">
+        List of Menus
+    </h3>
+    <div class="card-body">
+        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","Menus",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add New Record</a>
+        <div class="table-responsive">
+            <table id="dataTable" class="table table-hover table-responsive-sm">
+                <thead class="">
+                    <tr>
+                        <th scope="col" class="text-primary"><i class="fas fa-sort-numeric-down"></i>Id </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Title </th>
+                        <th scope="col" class="text-primary"><i class="far fa-newspaper"></i> Url </th>
+                        <th scope="col" class="text-primary"><i class="far fa-newspaper"></i> Description </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-tools"></i> Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        @*<p class="text-small text-muted mb-0 pt-3">* At vero eos et accusamus et iusto ducimus.</p>*@
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            // SideNav Initialization
+            $(".button-collapse").sideNav();
+            slim: true
+            new WOW().init();
+        })
+    </script>
+    <script>
+        var Popup, dataTable;
+        $(document).ready(function () {
+            dataTable = $("#dataTable").DataTable({
+                "info": false,
+                "responsive": true,
+                "fixedHeader": true,
+                fixedColumns: true,
+
+
+
+                dom: 'Bfrtip',
+                lengthMenu: [
+                    [10, 25, 50, -1],
+                    ['10 rows', '25 rows', '50 rows', 'Show all']
+                ],
+                buttons: [
+                    {
+                        extend: 'copyHtml5', footer: true,
+
+
+                    },
+                    { extend: 'excelHtml5', footer: true, download: 'open' },
+                    { extend: 'csvHtml5', footer: true, download: 'open' },
+                    { extend: 'pdfHtml5', footer: true, download: 'open' },
+
+                ],
+                "ajax": {
+                    "url": "/OnlineSurveyAdmin/Menus/GetMenusData",
+                    "type": "GET",
+                    "datatype": "json",
+
+
+                },
+
+                "columns": [
+                    { "data": "Id" },
+                    { "data": "Title" },
+                    { "data": "Url" },
+                    { "data": "Description" },
+                   
+
+
+
+                    {
+                        "data": "actions",
+                        "className": "dt-body-center",
+                        "data": "Id", "render": function (data)
+
+                        {
+                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "Menus")/" + data + "')><i class='far fa-edit'></i></a> |  <a class='btn btn-danger btn-md btn-rounded' onclick=PopupForm('@Url.Action("Delete", "Menus")/" + data + "')><i class='fas fa-trash'></i></a>  | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "Menus")/" + data + "')><i class='fas fa-info-circle'> </i></a>";
+                    },
+                        "orderable": false,
+                        "searchable":false,
+
+                    }
+
+                ],
+                "language": {
+
+                    "emptyTable" : "No data found, Please click on <b>Add New</b> Button"
+                }
+            });
+        });
+
+
+
+        function PopupForm(url) {
+
+            var formDiv = $('<div/>');
+            $.get(url)
+                .done(function (response) {
+                    formDiv.html(response);
+
+                    Popup = formDiv.dialog({
+                        modal: true,
+
+                        open: function () {
+                            overlayOpacityNormal = $('.ui-widget-overlay').css('opacity');
+                            $('.ui-widget-overlay').css('opacity', .9);
+                        },
+
+                        beforeClose: function () {
+                            $('.ui-widget-overlay').css('opacity', .9);
+                        },
+                        autoOpen: true,
+                        resizable: true,
+                        title: 'Entry Form',
+                        height: 500,
+
+
+                        width: 900,
+
+
+                        close: function () {
+                            Popup.dialog('destroy').remove();
+                        }
+
+                    });
+                });
+        }
+        function SubmitFormCreate(form) {
+            $.validator.unobtrusive.parse(form);
+            if ($(form).valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: form.action,
+                    data: $(form).serialize(),
+                    success: function (data) {
+                        if (data.success) {
+                            Popup.dialog('close');
+                            dataTable.ajax.reload();
+
+                            $.notify(data.message, {
+                                globalPosition: "top center",
+                                className: "success"
+                            });
+
+
+                        }
+                    }
+                });
+            }
+            return false;
+        }
+
+        function SubmitFormEdit(form) {
+            $.validator.unobtrusive.parse(form);
+            if ($(form).valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: form.action,
+                    data: $(form).serialize(),
+                    success: function (data) {
+                        if (data.success) {
+                            Popup.dialog('close');
+                            dataTable.ajax.reload();
+
+                            $.notify(data.message, {
+                                globalPosition: "top center",
+                                className: "success"
+                            });
+
+
+                        }
+                    }
+                });
+            }
+            return false;
+        }
+        function SubmitFormDetails(form) {
+            $.validator.unobtrusive.parse(form);
+            if ($(form).valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: form.action,
+                    data: $(form).serialize(),
+                    success: function (data) {
+                        if (data.success) {
+                            Popup.dialog('close');
+                            dataTable.ajax.reload();
+
+                            $.notify(data.message, {
+                                globalPosition: "top center",
+                                className: "success"
+                            });
+
+
+                        }
+                    }
+                });
+            }
+            return false;
+        }
+        function SubmitFormDelete(form) {
+            $.validator.unobtrusive.parse(form);
+            if ($(form).valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: form.action,
+                    data: $(form).serialize(),
+                    success: function (data) {
+                        if (data.success) {
+                            Popup.dialog('close');
+                            dataTable.ajax.reload();
+
+                            $.notify(data.message, {
+                                globalPosition: "top center",
+                                className: "success"
+                            });
+
+
+                        }
+                    }
+                });
+            }
+            return false;
+        }
+
+    </script>
+
+}
