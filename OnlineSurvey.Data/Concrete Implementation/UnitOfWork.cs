@@ -16,6 +16,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IFooterLinksRepository FooterLinksRepository => new FooterLinksRepository(Context);
 
+        public ISiteSettingsRepository SiteSettingsRepository => new SiteSettingsRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

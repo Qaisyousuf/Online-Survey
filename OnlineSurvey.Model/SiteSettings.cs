@@ -13,13 +13,20 @@ namespace OnlineSurvey.Model
             FooterLinks = new List<FooterLinks>();
         }
         public string SiteTitle { get; set; }
-        public string SiteName { get; set; }
-        public string SiteOwner { get; set; }
-        public DateTime SiteLastUpdatedDate { get; set; }
-        public string SiteContent { get; set; }
-        public string DesignedBy { get; set; }
-        public string Sitecopyright { get; set; }
 
+        public string SiteName { get; set; }
+
+        public string SiteOwner { get; set; }
+
+        public DateTime SiteLastUpdatedDate { get; set; }
+
+        public string SiteContent { get; set; }
+
+        public string DesignedBy { get; set; }
+
+        public string Sitecopyright { get; set; }
+        
+        public bool IsSiteFooterActive { get; set; }
 
         public string AnimationUrl { get; set; }
 

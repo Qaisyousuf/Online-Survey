@@ -42,6 +42,16 @@ namespace OnlineSurvey.ViewModel
         [Display(Name ="Animation url")]
         public string AnimationUrl { get; set; }
 
+        [Display(Name ="Is Active Site Footer")]
+        public bool IsSiteFooterActive { get; set; }
+
+        [Display(Name = "Footer Links")]
+        public int[] FooterLinksId { get; set; }
+
+        public List<string> FooterLinksTag { get; set; }
+
         public List<FooterLinks> FooterLinks { get; set; }
+        
+        
     }
 }

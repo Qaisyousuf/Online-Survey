@@ -63,6 +63,7 @@
     <Compile Include="Concrete Implementation\MetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\OGMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\Repository.cs" />
+    <Compile Include="Concrete Implementation\SiteSettingsRepository.cs" />
     <Compile Include="Concrete Implementation\TwitterMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Interfaces\IMetaTagRepository.cs" />
     <Compile Include="Interfaces\IOGMetaTagRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\ISiteSettingsRepository.cs" />
     <Compile Include="Interfaces\ITwitterMetaTagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Migrations\202109211423586_InitialCreate.cs" />
@@ -100,6 +102,10 @@
     <Compile Include="Migrations\202109261244236_SiteSettingAndFooterLinksAdded.cs" />
     <Compile Include="Migrations\202109261244236_SiteSettingAndFooterLinksAdded.designer.cs">
       <DependentUpon>202109261244236_SiteSettingAndFooterLinksAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109271122275_SiteSettingsUpdated.cs" />
+    <Compile Include="Migrations\202109271122275_SiteSettingsUpdated.designer.cs">
+      <DependentUpon>202109271122275_SiteSettingsUpdated.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109261244236_SiteSettingAndFooterLinksAdded.resx">
       <DependentUpon>202109261244236_SiteSettingAndFooterLinksAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109271122275_SiteSettingsUpdated.resx">
+      <DependentUpon>202109271122275_SiteSettingsUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

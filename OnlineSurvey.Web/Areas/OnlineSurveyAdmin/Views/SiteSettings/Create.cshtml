@@ -1,0 +1,101 @@
+﻿@model OnlineSurvey.ViewModel.SiteSettingViewModel
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("Create", "SiteSettings", FormMethod.Post, new { onsubmit = "return SubmitFormCreate(this)" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row offset-1">
+            <div class="col-lg-6">
+                <div class="form-group ">
+                    @Html.LabelFor(model => model.SiteTitle, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        @Html.EditorFor(model => model.SiteTitle, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SiteTitle, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SiteName, htmlAttributes: new { @class = "control-label" })
+                    <div class="">
+                        @Html.EditorFor(model => model.SiteName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SiteName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SiteOwner, htmlAttributes: new { @class = "control-label" })
+                    <div class="">
+                        @Html.EditorFor(model => model.SiteOwner, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SiteOwner, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DesignedBy, htmlAttributes: new { @class = "control-label" })
+                    <div class="">
+                        @Html.EditorFor(model => model.DesignedBy, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DesignedBy, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Sitecopyright, htmlAttributes: new { @class = "control-label" })
+                    <div class="">
+                        @Html.EditorFor(model => model.Sitecopyright, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Sitecopyright, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AnimationUrl, htmlAttributes: new { @class = "control-label" })
+                    <div class="">
+                        @Html.EditorFor(model => model.AnimationUrl, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AnimationUrl, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IsSiteFooterActive, htmlAttributes: new { @class = "control-label" })
+                    <div class="">
+                        @Html.CheckBoxFor(model => model.IsSiteFooterActive, new { htmlAttributes = new { @class = "form-control"  }, style = "opacity: 1; padding-top:0px; margin:0; " })
+                        @Html.ValidationMessageFor(model => model.IsSiteFooterActive, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FooterLinksId, htmlAttributes: new { @class = "control-label" })
+                    <div class="CheckBox">
+                        @Html.ListBoxFor(model => model.FooterLinksId, new MultiSelectList(ViewBag.FooterData, "Id", "NavigationName"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.FooterLinksId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SiteContent, htmlAttributes: new { @class = "control-label" })
+                    <div class="">
+                        @Html.TextAreaFor(model => model.SiteContent, new { rows = "10", style = "resize:none;width:400px;", placeholder = Html.DisplayNameFor(model => model.SiteContent), @class = "form-control input-lg textarea-editor" })
+
+                        @Html.ValidationMessageFor(model => model.SiteContent, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="offset-4">
+                <div class="form-group">
+                    <button type="submit" value="Create" class="btn btn-primary btn-rounded btn-md"><i class="fas fa-save pr-2"></i> Save</button>  |
+                    <button type="reset" value="Reset" class="btn btn-mdb-color btn-rounded btn-md"><i class="fas fa-redo-alt"></i> Reset</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
