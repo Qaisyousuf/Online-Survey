@@ -20,6 +20,7 @@ namespace OnlineSurvey.Data
         public DbSet<SiteSettings> SiteSettings { get; set; }
         public DbSet<FooterLinks> FooterLinks { get; set; }
         public DbSet<Menus> Menus { get; set; }
+        public DbSet<Page> Pages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

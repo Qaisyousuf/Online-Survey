@@ -13,6 +13,7 @@ namespace OnlineSurvey.Data.Interfaces
         IFooterLinksRepository FooterLinksRepository { get; }
         ISiteSettingsRepository SiteSettingsRepository { get; }
         IMenuRepository MenuRepository { get; }
+        IPageRepository PageRepository { get; }
 
         void Commit();
     }

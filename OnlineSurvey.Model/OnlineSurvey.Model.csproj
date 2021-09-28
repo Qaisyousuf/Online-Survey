@@ -64,6 +64,7 @@
     <Compile Include="Menus.cs" />
     <Compile Include="MetaTag.cs" />
     <Compile Include="OpenGraphMetaTag.cs" />
+    <Compile Include="Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SiteSettings.cs" />
     <Compile Include="TwitterMetaTag.cs" />
