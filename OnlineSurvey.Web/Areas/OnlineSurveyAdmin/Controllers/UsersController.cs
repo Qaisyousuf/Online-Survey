@@ -35,7 +35,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 
             var userRolesId = new List<string>();
             var roleName = new List<string>();
-
+            
             foreach (var item in roleFromdb)
             {
                 userRolesId = item.Roles.Select(x => x.RoleId).ToList();

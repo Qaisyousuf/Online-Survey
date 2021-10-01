@@ -14,6 +14,7 @@ namespace OnlineSurvey.Data.Interfaces
         ISiteSettingsRepository SiteSettingsRepository { get; }
         IMenuRepository MenuRepository { get; }
         IPageRepository PageRepository { get; }
+        ISurveyCatagoryRepository SurveyCatagoryRepository { get; }
 
         void Commit();
     }

@@ -66,6 +66,7 @@
     <Compile Include="Concrete Implementation\PageRepository.cs" />
     <Compile Include="Concrete Implementation\Repository.cs" />
     <Compile Include="Concrete Implementation\SiteSettingsRepository.cs" />
+    <Compile Include="Concrete Implementation\SurveyCatagoryRepository.cs" />
     <Compile Include="Concrete Implementation\TwitterMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\ISiteSettingsRepository.cs" />
     <Compile Include="Interfaces\ISlug.cs" />
+    <Compile Include="Interfaces\ISurveyCatagoryRepository.cs" />
     <Compile Include="Interfaces\ITwitterMetaTagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Migrations\202109211423586_InitialCreate.cs" />
@@ -123,6 +125,14 @@
     <Compile Include="Migrations\202109281155189_PageModelAddedToDataBase.cs" />
     <Compile Include="Migrations\202109281155189_PageModelAddedToDataBase.designer.cs">
       <DependentUpon>202109281155189_PageModelAddedToDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109291301138_SurveyCatagoryModelAddedToDB.cs" />
+    <Compile Include="Migrations\202109291301138_SurveyCatagoryModelAddedToDB.designer.cs">
+      <DependentUpon>202109291301138_SurveyCatagoryModelAddedToDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110011437038_SurveyTableRemoved.cs" />
+    <Compile Include="Migrations\202110011437038_SurveyTableRemoved.designer.cs">
+      <DependentUpon>202110011437038_SurveyTableRemoved.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -170,6 +180,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109281155189_PageModelAddedToDataBase.resx">
       <DependentUpon>202109281155189_PageModelAddedToDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109291301138_SurveyCatagoryModelAddedToDB.resx">
+      <DependentUpon>202109291301138_SurveyCatagoryModelAddedToDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110011437038_SurveyTableRemoved.resx">
+      <DependentUpon>202110011437038_SurveyTableRemoved.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

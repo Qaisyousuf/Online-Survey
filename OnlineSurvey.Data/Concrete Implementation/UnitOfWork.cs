@@ -22,6 +22,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IPageRepository PageRepository => new PageRepository(Context);
 
+        public ISurveyCatagoryRepository SurveyCatagoryRepository => new SurveyCatagoryRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

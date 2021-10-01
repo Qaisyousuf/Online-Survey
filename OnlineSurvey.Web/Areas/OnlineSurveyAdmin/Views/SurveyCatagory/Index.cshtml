@@ -1,25 +1,23 @@
-﻿@model IEnumerable<OnlineSurvey.ViewModel.BannerViewModel>
+﻿@model IEnumerable<OnlineSurvey.ViewModel.SurveyCatagoryViewModel>
 
 @{
-    ViewBag.Title = "Banner";
+    ViewBag.Title = "Survey Catagory";
 }
 
 <div class="card">
     <h3 class="card-header mdb-color darken-3 white-text text-uppercase font-weight-normal text-center py-4">
-        List of banners
+        List of survey catagory
     </h3>
     <div class="card-body">
-        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","SurveyCatagory",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add new catagory</a>
-        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","Banners",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add New Record</a>
+        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","SurveyCatagory",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add New Record</a>
         <div class="table-responsive">
             <table id="dataTable" class="table table-hover table-responsive-sm">
                 <thead class="">
                     <tr>
                         <th scope="col" class="text-primary"><i class="fas fa-sort-numeric-down"></i>Id </th>
                         <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Main Title </th>
-                        <th scope="col" class="text-primary"><i class="far fa-newspaper"></i> Sub Title </th>
-                        <th scope="col" class="text-primary"><i class="fas fa-sign-in-alt"></i> Button </th>
-                        <th scope="col" class="text-primary"><i class="fas fa-glasses"></i> Button Url </th>
+                        <th scope="col" class="text-primary"><i class="far fa-newspaper"></i> Type </th>
+
                         <th scope="col" class="text-primary"><i class="fas fa-tools"></i> Action</th>
                     </tr>
                 </thead>
@@ -50,8 +48,6 @@
                 "fixedHeader": true,
                 fixedColumns: true,
 
-              
-
                 dom: 'Bfrtip',
                 lengthMenu: [
                     [10, 25, 50, -1],
@@ -69,7 +65,7 @@
 
                 ],
                 "ajax": {
-                    "url": "/OnlineSurveyAdmin/Banners/GetBannerData",
+                    "url": "/OnlineSurveyAdmin/SurveyCatagory/GetSurveyCatagoryData",
                     "type": "GET",
                     "datatype": "json",
 
@@ -78,10 +74,9 @@
 
                 "columns": [
                     { "data": "Id" },
-                    { "data": "MainTitle" },
-                    { "data": "SubTitle" },
-                    { "data": "Button" },
-                    { "data": "ButtonUrl" },
+                    { "data": "Title" },
+                    { "data": "Type" },
+                  
 
 
                     {
@@ -90,7 +85,7 @@
                         "data": "Id", "render": function (data)
 
                         {
-                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "Banners")/" + data + "')><i class='far fa-edit'></i></a> |  <a class='btn btn-danger btn-md btn-rounded' onclick=PopupForm('@Url.Action("Delete", "Banners")/" + data + "')><i class='fas fa-trash'></i></a>  | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "Banners")/" + data + "')><i class='fas fa-info-circle'> </i></a>";
+                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "SurveyCatagory")/" + data + "')><i class='far fa-edit'></i></a> |  <a class='btn btn-danger btn-md btn-rounded' onclick=PopupForm('@Url.Action("Delete", "SurveyCatagory")/" + data + "')><i class='fas fa-trash'></i></a>  | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "SurveyCatagory")/" + data + "')><i class='fas fa-info-circle'> </i></a>";
                     },
                         "orderable": false,
                         "searchable":false,
