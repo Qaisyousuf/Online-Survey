@@ -62,6 +62,7 @@
     <Compile Include="Banner.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="FooterLinks.cs" />
+    <Compile Include="Gender.cs" />
     <Compile Include="Menus.cs" />
     <Compile Include="MetaTag.cs" />
     <Compile Include="OpenGraphMetaTag.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Survey.cs" />
     <Compile Include="SurveyCatagory.cs" />
     <Compile Include="TwitterMetaTag.cs" />
+    <Compile Include="UserSurvey.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

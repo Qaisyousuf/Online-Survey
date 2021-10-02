@@ -94,6 +94,7 @@
     <Compile Include="DetailsUserViewModel.cs" />
     <Compile Include="EditUserViewModel.cs" />
     <Compile Include="FooterLinksViewModel.cs" />
+    <Compile Include="GenderViewModel.cs" />
     <Compile Include="InsertUserViewModel.cs" />
     <Compile Include="ManageViewModels.cs" />
     <Compile Include="MenusViewModel.cs" />

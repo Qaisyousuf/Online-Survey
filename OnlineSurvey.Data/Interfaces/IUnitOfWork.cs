@@ -15,6 +15,7 @@ namespace OnlineSurvey.Data.Interfaces
         IMenuRepository MenuRepository { get; }
         IPageRepository PageRepository { get; }
         ISurveyCatagoryRepository SurveyCatagoryRepository { get; }
+        IGenderRepository GenderRepository { get;  }
 
         void Commit();
     }

@@ -60,6 +60,7 @@
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Concrete Implementation\BannerRepository.cs" />
     <Compile Include="Concrete Implementation\FooterLinksRepository.cs" />
+    <Compile Include="Concrete Implementation\GenderRepository.cs" />
     <Compile Include="Concrete Implementation\MenuRepository.cs" />
     <Compile Include="Concrete Implementation\MetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\OGMetaTagRepository.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
     <Compile Include="Interfaces\IBannerRepository.cs" />
     <Compile Include="Interfaces\IFooterLinksRepository.cs" />
+    <Compile Include="Interfaces\IGenderRepository.cs" />
     <Compile Include="Interfaces\IMenuRepository.cs" />
     <Compile Include="Interfaces\IMetaTagRepository.cs" />
     <Compile Include="Interfaces\IOGMetaTagRepository.cs" />
@@ -134,6 +136,10 @@
     <Compile Include="Migrations\202110011437038_SurveyTableRemoved.designer.cs">
       <DependentUpon>202110011437038_SurveyTableRemoved.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110021013346_GenderModelAdded.cs" />
+    <Compile Include="Migrations\202110021013346_GenderModelAdded.designer.cs">
+      <DependentUpon>202110021013346_GenderModelAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110011437038_SurveyTableRemoved.resx">
       <DependentUpon>202110011437038_SurveyTableRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110021013346_GenderModelAdded.resx">
+      <DependentUpon>202110021013346_GenderModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -189,6 +189,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\BannersController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\FooterLinksController.cs" />
+    <Compile Include="Areas\OnlineSurveyAdmin\Controllers\GenderController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MenusController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MetaTagController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\OGMetaTagController.cs" />
@@ -344,6 +345,11 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\SurveyCatagory\Edit.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\SurveyCatagory\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\SurveyCatagory\Details.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Gender\Index.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Gender\Create.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Gender\Edit.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Gender\Delete.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Gender\Details.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />

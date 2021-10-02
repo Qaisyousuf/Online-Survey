@@ -22,10 +22,8 @@ namespace OnlineSurvey.Data
         public DbSet<Menus> Menus { get; set; }
         public DbSet<Page> Pages { get; set; }
         public DbSet<SurveyCatagory> SurveyCatagories { get; set; }
-        //public DbSet<Survey> Surveys { get; set; }
-        //public DbSet<Question> Questions { get; set; }
-        //public DbSet<Answer> Answers { get; set; }
-        //public DbSet<Response> Responses { get; set; }
+        public DbSet<Gender> Genders { get; set; }
+        public DbSet<UserSurvey> UserSurveys { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
