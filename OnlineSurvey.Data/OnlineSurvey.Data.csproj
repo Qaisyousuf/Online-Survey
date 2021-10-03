@@ -70,6 +70,7 @@
     <Compile Include="Concrete Implementation\SurveyCatagoryRepository.cs" />
     <Compile Include="Concrete Implementation\TwitterMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
+    <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
     <Compile Include="Interfaces\IBannerRepository.cs" />
     <Compile Include="Interfaces\IFooterLinksRepository.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Interfaces\ISurveyCatagoryRepository.cs" />
     <Compile Include="Interfaces\ITwitterMetaTagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Interfaces\IUserSurveyRepository.cs" />
     <Compile Include="Migrations\202109211423586_InitialCreate.cs" />
     <Compile Include="Migrations\202109211423586_InitialCreate.designer.cs">
       <DependentUpon>202109211423586_InitialCreate.cs</DependentUpon>
@@ -140,6 +142,10 @@
     <Compile Include="Migrations\202110021013346_GenderModelAdded.designer.cs">
       <DependentUpon>202110021013346_GenderModelAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110021509234_UserSurVeyModelChanged.cs" />
+    <Compile Include="Migrations\202110021509234_UserSurVeyModelChanged.designer.cs">
+      <DependentUpon>202110021509234_UserSurVeyModelChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110021013346_GenderModelAdded.resx">
       <DependentUpon>202110021013346_GenderModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110021509234_UserSurVeyModelChanged.resx">
+      <DependentUpon>202110021509234_UserSurVeyModelChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

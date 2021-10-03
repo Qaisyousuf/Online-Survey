@@ -28,10 +28,10 @@ namespace OnlineSurvey.Web
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                        "~/Content/mdb.min.css"));
-            bundles.Add(new StyleBundle("~/Content/backendcss").Include(
-                     "~/Content/bootstrap.css",
-                     "~/Content/backendcss/Backendcss.css",
-                      "~/Content/mdb.min.css"));
+            //bundles.Add(new StyleBundle("~/Content/backendcss/").Include(
+            //         "~/Content/bootstrap.css",
+            //         "~/Content/Backendcss.css",
+            //          "~/Content/mdb.min.css"));
         }
     }
 }

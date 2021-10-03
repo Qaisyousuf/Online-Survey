@@ -199,6 +199,7 @@
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\SurveyCatagoryController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\TwitterMetaTagController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\OnlineSurveyAdmin\Controllers\UserSurveyController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\OnlineSurveyAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -350,6 +351,9 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\Gender\Edit.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Gender\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Gender\Details.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\UserSurvey\Index.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\UserSurvey\Create.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -441,7 +445,9 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\wow.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

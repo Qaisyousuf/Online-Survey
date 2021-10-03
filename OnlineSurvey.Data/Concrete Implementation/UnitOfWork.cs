@@ -26,6 +26,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IGenderRepository GenderRepository => new GenderRepository(Context);
 
+        public IUserSurveyRepository UserSurveyRepository => new UserSurveyRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

@@ -107,6 +107,7 @@
     <Compile Include="SiteSettingViewModel.cs" />
     <Compile Include="SurveyCatagoryViewModel.cs" />
     <Compile Include="TwitterMetaTagViewModel.cs" />
+    <Compile Include="UserSurveyViewModel.cs" />
     <Compile Include="ViewUserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
