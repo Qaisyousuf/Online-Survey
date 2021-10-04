@@ -3,7 +3,7 @@ using OnlineSurvey.Model;
 
 namespace OnlineSurvey.Data.Concrete_Implementation
 {
-    public class UserSurveyRepository:Repository<UserSurvey>,IUserSurveyRepository
+    public class UserSurveyRepository:Repository<UserSurveyRegistration>,IUserSurveyRepository
     {
         public UserSurveyRepository(ApplicationDbContext context):base(context)
         {

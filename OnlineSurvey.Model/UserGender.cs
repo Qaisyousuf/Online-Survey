@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineSurvey.Model
 {
-    public class Gender:EntityBase
+    public class UserGender:EntityBase
     {
         public string Name { get; set; }
         public bool IsSelected { get; set; }

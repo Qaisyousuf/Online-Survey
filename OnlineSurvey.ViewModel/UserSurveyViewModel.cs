@@ -1,19 +1,13 @@
 ﻿using OnlineSurvey.Model;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnlineSurvey.ViewModel
 {
     public class UserSurveyViewModel
     {
-        public UserSurveyViewModel()
-        {
-            Genders = new List<Gender>();
-        }
+       
         public int Id { get; set; }
 
         [Required]
@@ -26,6 +20,7 @@ namespace OnlineSurvey.ViewModel
 
         
         [EmailAddress]
+        [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
@@ -45,7 +40,10 @@ namespace OnlineSurvey.ViewModel
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyy}", ApplyFormatInEditMode = true)]
         [Display(Name ="Data of birth")]
         public DateTime DOB { get; set; }
-        public string SelectGender { get; set; }
-        public List<Gender> Genders { get; set; }
+        [Display(Name ="Gender type")]
+        public int GenderId { get; set; }
+
+        [ForeignKey("GenderId")]
+        public UserGender Genders { get; set; }
     }
 }

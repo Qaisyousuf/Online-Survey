@@ -142,9 +142,13 @@
     <Compile Include="Migrations\202110021013346_GenderModelAdded.designer.cs">
       <DependentUpon>202110021013346_GenderModelAdded.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202110021509234_UserSurVeyModelChanged.cs" />
-    <Compile Include="Migrations\202110021509234_UserSurVeyModelChanged.designer.cs">
-      <DependentUpon>202110021509234_UserSurVeyModelChanged.cs</DependentUpon>
+    <Compile Include="Migrations\202110041500194_UserSurveyModelChanged.cs" />
+    <Compile Include="Migrations\202110041500194_UserSurveyModelChanged.designer.cs">
+      <DependentUpon>202110041500194_UserSurveyModelChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110041503371_NewUserSurveyModelAdded.cs" />
+    <Compile Include="Migrations\202110041503371_NewUserSurveyModelAdded.designer.cs">
+      <DependentUpon>202110041503371_NewUserSurveyModelAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -202,8 +206,11 @@
     <EmbeddedResource Include="Migrations\202110021013346_GenderModelAdded.resx">
       <DependentUpon>202110021013346_GenderModelAdded.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202110021509234_UserSurVeyModelChanged.resx">
-      <DependentUpon>202110021509234_UserSurVeyModelChanged.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202110041500194_UserSurveyModelChanged.resx">
+      <DependentUpon>202110041500194_UserSurveyModelChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110041503371_NewUserSurveyModelAdded.resx">
+      <DependentUpon>202110041503371_NewUserSurveyModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

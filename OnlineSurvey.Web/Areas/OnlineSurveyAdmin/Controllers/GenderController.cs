@@ -54,7 +54,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         {
             if(ModelState.IsValid)
             {
-                var gender = new Gender
+                var gender = new UserGender
                 {
                     Id=viewmodel.Id,
                     Name=viewmodel.Name,

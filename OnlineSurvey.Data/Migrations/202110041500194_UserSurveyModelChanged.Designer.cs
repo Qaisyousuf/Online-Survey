@@ -7,13 +7,13 @@ namespace OnlineSurvey.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class UserSurVeyModelChanged : IMigrationMetadata
+    public sealed partial class UserSurveyModelChanged : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UserSurVeyModelChanged));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UserSurveyModelChanged));
         
         string IMigrationMetadata.Id
         {
-            get { return "202110021509234_UserSurVeyModelChanged"; }
+            get { return "202110041500194_UserSurveyModelChanged"; }
         }
         
         string IMigrationMetadata.Source

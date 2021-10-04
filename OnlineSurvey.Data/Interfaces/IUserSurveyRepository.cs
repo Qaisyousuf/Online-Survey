@@ -2,7 +2,7 @@
 
 namespace OnlineSurvey.Data.Interfaces
 {
-    public interface IUserSurveyRepository:IRepository<UserSurvey>
+    public interface IUserSurveyRepository:IRepository<UserSurveyRegistration>
     {
 
     }

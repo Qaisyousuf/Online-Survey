@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OnlineSurvey.Data.Concrete_Implementation
 {
-    public class GenderRepository:Repository<Gender>,IGenderRepository
+    public class GenderRepository:Repository<UserGender>,IGenderRepository
     {
         public GenderRepository(ApplicationDbContext context):base(context)
         {
