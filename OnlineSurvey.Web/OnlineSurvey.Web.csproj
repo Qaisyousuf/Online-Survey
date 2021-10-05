@@ -378,6 +378,9 @@
     <Content Include="Scripts\mdb.js" />
     <Content Include="Scripts\mdb.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\node_modules\lottie-player\dist\index.html" />
+    <Content Include="Scripts\node_modules\lottie-player\dist\lottie-player.js" />
+    <Content Include="Scripts\node_modules\lottie-player\dist\tgs-player.js" />
     <Content Include="Scripts\notify.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -498,6 +501,12 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\node_modules\lottie-player\dist\data.json" />
+    <Content Include="Scripts\node_modules\lottie-player\dist\lottie-player.js.map" />
+    <Content Include="Scripts\node_modules\lottie-player\dist\tgs-player.js.map" />
+    <Content Include="Scripts\node_modules\lottie-player\LICENSE" />
+    <Content Include="Scripts\node_modules\lottie-player\package.json" />
+    <Content Include="Scripts\node_modules\lottie-player\README.md" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
