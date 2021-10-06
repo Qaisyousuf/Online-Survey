@@ -198,6 +198,7 @@
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\RolesController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\SiteSettingsController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\SurveyCatagoryController.cs" />
+    <Compile Include="Areas\OnlineSurveyAdmin\Controllers\TageQuestionsController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\TwitterMetaTagController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\UsersController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\UserSurveyController.cs" />
@@ -372,6 +373,11 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\YesNo\Edit.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\YesNo\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\YesNo\Details.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\TageQuestions\Index.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\TageQuestions\Create.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\TageQuestions\Edit.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\TageQuestions\Delete.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\TageQuestions\Details.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />

@@ -32,6 +32,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IYesNoQuestionRepository YesNoQuestionRepository =>new YesNoQuestionRepository(Context);
 
+        public ITagQuestionRepository TagQuestionRepository => new TagQuestionRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

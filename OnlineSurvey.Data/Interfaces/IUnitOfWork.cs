@@ -19,6 +19,7 @@ namespace OnlineSurvey.Data.Interfaces
         IUserSurveyRepository UserSurveyRepository { get; }
         IMultipleChoiceQuestionsRepository MultipleChoiceQuestionsRepository { get; }
         IYesNoQuestionRepository YesNoQuestionRepository { get; }
+        ITagQuestionRepository TagQuestionRepository { get; }
 
         void Commit();
     }

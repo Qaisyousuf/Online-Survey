@@ -69,6 +69,7 @@
     <Compile Include="Concrete Implementation\Repository.cs" />
     <Compile Include="Concrete Implementation\SiteSettingsRepository.cs" />
     <Compile Include="Concrete Implementation\SurveyCatagoryRepository.cs" />
+    <Compile Include="Concrete Implementation\TagQuestionRepository.cs" />
     <Compile Include="Concrete Implementation\TwitterMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
     <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Interfaces\ISiteSettingsRepository.cs" />
     <Compile Include="Interfaces\ISlug.cs" />
     <Compile Include="Interfaces\ISurveyCatagoryRepository.cs" />
+    <Compile Include="Interfaces\ITagQuestionRepository.cs" />
     <Compile Include="Interfaces\ITwitterMetaTagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IUserSurveyRepository.cs" />
@@ -162,6 +164,10 @@
     <Compile Include="Migrations\202110061344433_YesNoQuestionAdded.designer.cs">
       <DependentUpon>202110061344433_YesNoQuestionAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110061608380_TagQuestionModelAdded.cs" />
+    <Compile Include="Migrations\202110061608380_TagQuestionModelAdded.designer.cs">
+      <DependentUpon>202110061608380_TagQuestionModelAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110061344433_YesNoQuestionAdded.resx">
       <DependentUpon>202110061344433_YesNoQuestionAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110061608380_TagQuestionModelAdded.resx">
+      <DependentUpon>202110061608380_TagQuestionModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
