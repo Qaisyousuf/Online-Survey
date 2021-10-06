@@ -28,6 +28,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IUserSurveyRepository UserSurveyRepository => new UserSurveyRepository(Context);
 
+        public IMultipleChoiceQuestionsRepository MultipleChoiceQuestionsRepository => new MultipleChoiceQuestionsRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

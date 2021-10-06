@@ -63,6 +63,7 @@
     <Compile Include="Concrete Implementation\GenderRepository.cs" />
     <Compile Include="Concrete Implementation\MenuRepository.cs" />
     <Compile Include="Concrete Implementation\MetaTagRepository.cs" />
+    <Compile Include="Concrete Implementation\MultipleChoiceQuestionsRepository.cs" />
     <Compile Include="Concrete Implementation\OGMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\PageRepository.cs" />
     <Compile Include="Concrete Implementation\Repository.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Interfaces\IGenderRepository.cs" />
     <Compile Include="Interfaces\IMenuRepository.cs" />
     <Compile Include="Interfaces\IMetaTagRepository.cs" />
+    <Compile Include="Interfaces\IMultipleChoiceQuestionsRepository.cs" />
     <Compile Include="Interfaces\IOGMetaTagRepository.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
@@ -150,6 +152,10 @@
     <Compile Include="Migrations\202110041503371_NewUserSurveyModelAdded.designer.cs">
       <DependentUpon>202110041503371_NewUserSurveyModelAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110051604075_MultipleChoiceQuestionAdded.cs" />
+    <Compile Include="Migrations\202110051604075_MultipleChoiceQuestionAdded.designer.cs">
+      <DependentUpon>202110051604075_MultipleChoiceQuestionAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110041503371_NewUserSurveyModelAdded.resx">
       <DependentUpon>202110041503371_NewUserSurveyModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110051604075_MultipleChoiceQuestionAdded.resx">
+      <DependentUpon>202110051604075_MultipleChoiceQuestionAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

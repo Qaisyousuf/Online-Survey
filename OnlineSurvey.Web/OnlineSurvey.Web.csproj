@@ -192,6 +192,7 @@
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\GenderController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MenusController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MetaTagController.cs" />
+    <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MultipleChoiceQuestionsController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\OGMetaTagController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\PagesController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\RolesController.cs" />
@@ -360,6 +361,11 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\UserSurvey\Edit.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\UserSurvey\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\UserSurvey\Details.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\MultipleChoiceQuestions\Index.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\MultipleChoiceQuestions\Create.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\MultipleChoiceQuestions\Edit.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\MultipleChoiceQuestions\Delete.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\MultipleChoiceQuestions\Details.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
