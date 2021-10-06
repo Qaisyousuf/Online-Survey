@@ -72,6 +72,7 @@
     <Compile Include="Concrete Implementation\TwitterMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
     <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
+    <Compile Include="Concrete Implementation\YesNoQuestionRepository.cs" />
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
     <Compile Include="Interfaces\IBannerRepository.cs" />
     <Compile Include="Interfaces\IFooterLinksRepository.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Interfaces\ITwitterMetaTagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IUserSurveyRepository.cs" />
+    <Compile Include="Interfaces\IYesNoQuestionRepository.cs" />
     <Compile Include="Migrations\202109211423586_InitialCreate.cs" />
     <Compile Include="Migrations\202109211423586_InitialCreate.designer.cs">
       <DependentUpon>202109211423586_InitialCreate.cs</DependentUpon>
@@ -156,6 +158,10 @@
     <Compile Include="Migrations\202110051604075_MultipleChoiceQuestionAdded.designer.cs">
       <DependentUpon>202110051604075_MultipleChoiceQuestionAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110061344433_YesNoQuestionAdded.cs" />
+    <Compile Include="Migrations\202110061344433_YesNoQuestionAdded.designer.cs">
+      <DependentUpon>202110061344433_YesNoQuestionAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110051604075_MultipleChoiceQuestionAdded.resx">
       <DependentUpon>202110051604075_MultipleChoiceQuestionAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110061344433_YesNoQuestionAdded.resx">
+      <DependentUpon>202110061344433_YesNoQuestionAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

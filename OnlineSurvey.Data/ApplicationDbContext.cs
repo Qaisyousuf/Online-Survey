@@ -25,6 +25,7 @@ namespace OnlineSurvey.Data
         public DbSet<UserSurveyRegistration> UserSurveyRegistrations { get; set; }
         public DbSet<UserGender> UserGenders { get; set; }
         public DbSet<MultipleChoiceQuestions> MultipleChoiceQuestions { get; set; }
+        public DbSet<YesNoQuestion> YesNoQuestions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

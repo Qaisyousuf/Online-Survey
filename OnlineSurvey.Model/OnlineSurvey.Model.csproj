@@ -76,6 +76,7 @@
     <Compile Include="SurveyCatagory.cs" />
     <Compile Include="TwitterMetaTag.cs" />
     <Compile Include="UserSurveyRegistration.cs" />
+    <Compile Include="YesNoQuestion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

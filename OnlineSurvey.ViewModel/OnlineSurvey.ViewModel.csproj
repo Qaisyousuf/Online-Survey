@@ -110,6 +110,7 @@
     <Compile Include="TwitterMetaTagViewModel.cs" />
     <Compile Include="UserSurveyViewModel.cs" />
     <Compile Include="ViewUserViewModel.cs" />
+    <Compile Include="YesNoQuestionViweModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
