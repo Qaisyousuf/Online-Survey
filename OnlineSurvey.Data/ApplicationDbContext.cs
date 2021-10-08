@@ -27,6 +27,7 @@ namespace OnlineSurvey.Data
         public DbSet<MultipleChoiceQuestions> MultipleChoiceQuestions { get; set; }
         public DbSet<YesNoQuestion> YesNoQuestions { get; set; }
         public DbSet<TagQuestion> TagQuestions { get; set; }
+        public DbSet<NumberQuestion> NumberQuestions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

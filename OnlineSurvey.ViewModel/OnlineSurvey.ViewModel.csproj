@@ -100,6 +100,7 @@
     <Compile Include="MenusViewModel.cs" />
     <Compile Include="MetaTagViewModel.cs" />
     <Compile Include="MultipleChoiceQuestionsViewModel.cs" />
+    <Compile Include="NumberQuestionViewModel.cs" />
     <Compile Include="OpenGraphMetaTagsViewModel.cs" />
     <Compile Include="PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

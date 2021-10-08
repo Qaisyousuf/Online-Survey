@@ -20,6 +20,7 @@ namespace OnlineSurvey.Data.Interfaces
         IMultipleChoiceQuestionsRepository MultipleChoiceQuestionsRepository { get; }
         IYesNoQuestionRepository YesNoQuestionRepository { get; }
         ITagQuestionRepository TagQuestionRepository { get; }
+        INumberQuestionRepository NumberQuestionRepository { get; }
 
         void Commit();
     }

@@ -64,6 +64,7 @@
     <Compile Include="Concrete Implementation\MenuRepository.cs" />
     <Compile Include="Concrete Implementation\MetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\MultipleChoiceQuestionsRepository.cs" />
+    <Compile Include="Concrete Implementation\NumberQuestionRepository.cs" />
     <Compile Include="Concrete Implementation\OGMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\PageRepository.cs" />
     <Compile Include="Concrete Implementation\Repository.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Interfaces\IMenuRepository.cs" />
     <Compile Include="Interfaces\IMetaTagRepository.cs" />
     <Compile Include="Interfaces\IMultipleChoiceQuestionsRepository.cs" />
+    <Compile Include="Interfaces\INumberQuestionRepository.cs" />
     <Compile Include="Interfaces\IOGMetaTagRepository.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
@@ -168,6 +170,10 @@
     <Compile Include="Migrations\202110061608380_TagQuestionModelAdded.designer.cs">
       <DependentUpon>202110061608380_TagQuestionModelAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110071213260_NumberQuestionAdded.cs" />
+    <Compile Include="Migrations\202110071213260_NumberQuestionAdded.designer.cs">
+      <DependentUpon>202110071213260_NumberQuestionAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110061608380_TagQuestionModelAdded.resx">
       <DependentUpon>202110061608380_TagQuestionModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110071213260_NumberQuestionAdded.resx">
+      <DependentUpon>202110071213260_NumberQuestionAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
