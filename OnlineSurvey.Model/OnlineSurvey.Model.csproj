@@ -62,6 +62,7 @@
     <Compile Include="Banner.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="FooterLinks.cs" />
+    <Compile Include="MultiLineText.cs" />
     <Compile Include="MultipleChoiceQuestions.cs" />
     <Compile Include="NumberQuestion.cs" />
     <Compile Include="TagQuestion.cs" />
