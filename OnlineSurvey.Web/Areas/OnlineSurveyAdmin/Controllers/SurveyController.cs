@@ -50,5 +50,130 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             GetSurveyCatagroyData();
             return Json(new { data = viewmodel }, JsonRequestBehavior.AllowGet);
         }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            GetSurveyCatagroyData();
+            return View(new SurveyViewModel());
+        }
+
+        [HttpPost]
+        public ActionResult Create(SurveyViewModel viewmodel)
+        {
+            if(ModelState.IsValid)
+            {
+                var suvery = new Survey
+                {
+                    Id=viewmodel.Id,
+                    Name=viewmodel.Name,
+                    StartDate=DateTime.Now,
+                    IsActive=viewmodel.IsActive,
+                    SurveyCatagories=viewmodel.SurveyCatagories,
+                    SurveyCatagoryId=viewmodel.SurveyCatagoryId,
+                };
+
+                uow.SurveyRepository.Add(suvery);
+                uow.Commit();
+            }
+
+            return Json(new { success = true, message = "Data saved successfully " }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var survey = uow.SurveyRepository.GetById(id);
+
+            SurveyViewModel viewmdoel = new SurveyViewModel
+            {
+                Id=survey.Id,
+                Name=survey.Name,
+                StartDate=survey.StartDate,
+                IsActive=survey.IsActive,
+                SurveyCatagories=survey.SurveyCatagories,
+                SurveyCatagoryId=survey.SurveyCatagoryId,
+            };
+            GetSurveyCatagroyData();
+            return View(viewmdoel);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(SurveyViewModel viewmodel)
+        {
+            if(ModelState.IsValid)
+            {
+                var survey = uow.SurveyRepository.GetById(viewmodel.Id);
+
+                survey.Id = viewmodel.Id;
+                survey.Name = viewmodel.Name;
+                survey.StartDate = DateTime.Now;
+                survey.SurveyCatagories = viewmodel.SurveyCatagories;
+                survey.IsActive = viewmodel.IsActive;
+                survey.SurveyCatagoryId = viewmodel.SurveyCatagoryId;
+
+                uow.SurveyRepository.Update(survey);
+                uow.Commit();
+
+            }
+            return Json(new { success = true, message = "Data updated successfuly" }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var survey = uow.SurveyRepository.GetById(id);
+
+            SurveyViewModel viewmdoel = new SurveyViewModel
+            {
+                Id = survey.Id,
+                Name = survey.Name,
+                StartDate = survey.StartDate,
+                IsActive = survey.IsActive,
+                SurveyCatagories = survey.SurveyCatagories,
+                SurveyCatagoryId = survey.SurveyCatagoryId,
+            };
+            GetSurveyCatagroyData();
+            return View(viewmdoel);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult ConfiremDelete(int id)
+        {
+            var survey = uow.SurveyRepository.GetById(id);
+
+            SurveyViewModel viewmodel = new SurveyViewModel
+            {
+                Id=survey.Id,
+                Name=survey.Name,
+                IsActive=survey.IsActive,
+                StartDate=survey.StartDate,
+                SurveyCatagories=survey.SurveyCatagories,
+                SurveyCatagoryId=survey.SurveyCatagoryId,
+            };
+
+            uow.SurveyRepository.Remove(survey);
+            uow.Commit();
+            return Json(new { success = true, message = "Data deleted successfuly" }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var survey = uow.SurveyRepository.GetById(id);
+
+            SurveyViewModel viewmdoel = new SurveyViewModel
+            {
+                Id = survey.Id,
+                Name = survey.Name,
+                StartDate = survey.StartDate,
+                IsActive = survey.IsActive,
+                SurveyCatagories = survey.SurveyCatagories,
+                SurveyCatagoryId = survey.SurveyCatagoryId,
+            };
+            GetSurveyCatagroyData();
+            return View(viewmdoel);
+        }
+
     }
 }

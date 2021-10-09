@@ -6,12 +6,12 @@
 
 <div class="card">
     <h3 class="card-header mdb-color darken-3 white-text text-uppercase font-weight-normal text-center py-4">
-        List of user survey
+        List of survey
     </h3>
     <div class="card-body">
 
-        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","Survey",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add New Record</a>
-        <div class="table-responsive">
+        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","Survey",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Create new survey</a>
+        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","SurveyCatagory",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Create survey catatory</a>        <div class="table-responsive">
             <table id="dataTable" class="table table-hover table-responsive-sm">
                 <thead class="">
                     <tr>
@@ -78,9 +78,16 @@
                 "columns": [
                     { "data": "Id" },
                     { "data": "Name" },
-                    { "data": "StartDate" },
+                    {
+                        "data": "StartDate",
+                        
+
+                        "render": function (data, type, row, meta) {
+                            return moment(row.data).local('DA').format('LLLL');
+                        }
+                    },
                     { "data": "IsActive" },
-                    { "data": "SurveyCatagories.Name" },
+                    { "data": "SurveyCatagories.Type" },
                    
 
 
