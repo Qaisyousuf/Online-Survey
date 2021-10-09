@@ -109,6 +109,7 @@
     <Compile Include="RoleViewModel.cs" />
     <Compile Include="SiteSettingViewModel.cs" />
     <Compile Include="SurveyCatagoryViewModel.cs" />
+    <Compile Include="SurveyViewModel.cs" />
     <Compile Include="TagQuestionViewModel.cs" />
     <Compile Include="TwitterMetaTagViewModel.cs" />
     <Compile Include="UserSurveyViewModel.cs" />

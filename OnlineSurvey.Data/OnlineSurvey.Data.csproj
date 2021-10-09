@@ -71,6 +71,7 @@
     <Compile Include="Concrete Implementation\Repository.cs" />
     <Compile Include="Concrete Implementation\SiteSettingsRepository.cs" />
     <Compile Include="Concrete Implementation\SurveyCatagoryRepository.cs" />
+    <Compile Include="Concrete Implementation\SurveyRepository.cs" />
     <Compile Include="Concrete Implementation\TagQuestionRepository.cs" />
     <Compile Include="Concrete Implementation\TwitterMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Interfaces\ISiteSettingsRepository.cs" />
     <Compile Include="Interfaces\ISlug.cs" />
     <Compile Include="Interfaces\ISurveyCatagoryRepository.cs" />
+    <Compile Include="Interfaces\ISurveyRepository.cs" />
     <Compile Include="Interfaces\ITagQuestionRepository.cs" />
     <Compile Include="Interfaces\ITwitterMetaTagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
@@ -180,6 +182,10 @@
     <Compile Include="Migrations\202110091005430_MultiLineTextModelAdded.designer.cs">
       <DependentUpon>202110091005430_MultiLineTextModelAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110091254447_surveyModelAdded.cs" />
+    <Compile Include="Migrations\202110091254447_surveyModelAdded.designer.cs">
+      <DependentUpon>202110091254447_surveyModelAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110091005430_MultiLineTextModelAdded.resx">
       <DependentUpon>202110091005430_MultiLineTextModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110091254447_surveyModelAdded.resx">
+      <DependentUpon>202110091254447_surveyModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

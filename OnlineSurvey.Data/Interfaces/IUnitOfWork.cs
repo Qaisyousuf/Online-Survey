@@ -22,6 +22,7 @@ namespace OnlineSurvey.Data.Interfaces
         ITagQuestionRepository TagQuestionRepository { get; }
         INumberQuestionRepository NumberQuestionRepository { get; }
         IMultiLineTextRepository MultiLineTextRepository { get; }
+        ISurveyRepository SurveyRepository { get; }
 
         void Commit();
     }
