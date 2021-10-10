@@ -25,17 +25,20 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         private void GetSurveyCatagroyData()
         {
             ViewBag.SurveyCatagory = uow.SurveyCatagoryRepository.GetAll();
+            ViewBag.QuestionData = uow.QuesiotnRepository.GetAll();
         }
 
         [HttpGet]
         public ActionResult GetSurveyData()
         {
-            var survey = uow.SurveyRepository.GetAll("SurveyCatagories");
+            var survey = uow.SurveyRepository.GetAll("SurveyCatagories","MultipleChoiceQuestion").ToList();
 
             List<SurveyViewModel> viewmodel = new List<SurveyViewModel>();
 
             foreach (var item in survey)
             {
+                var MultipleId = item.MultipleChoiceQuestion.Select(x => x.Id).ToList();
+                var MultipleQuestionName = uow.Context.Questions.Where(x => MultipleId.Contains(x.Id)).Select(x => x.Type).ToList();
                 viewmodel.Add(new SurveyViewModel
                 {
                     Id=item.Id,
@@ -44,9 +47,13 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     IsActive=item.IsActive,
                     SurveyCatagories=item.SurveyCatagories,
                     SurveyCatagoryId=item.SurveyCatagoryId,
+                    SurveyMutipleChoiceTag=MultipleQuestionName,
+                    
 
                 });
             }
+
+            
             GetSurveyCatagroyData();
             return Json(new { data = viewmodel }, JsonRequestBehavior.AllowGet);
         }
@@ -70,7 +77,14 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     IsActive=viewmodel.IsActive,
                     SurveyCatagories=viewmodel.SurveyCatagories,
                     SurveyCatagoryId=viewmodel.SurveyCatagoryId,
+                    MultipleChoiceQuestion=viewmodel.MultipleChoiceQuestion,
                 };
+
+                foreach (int quesiont in viewmodel.SurveyIdForMultipleChoice)
+                {
+                    var multipleChoiceTag = uow.QuesiotnRepository.GetById(quesiont);
+                    suvery.MultipleChoiceQuestion.Add(multipleChoiceTag);
+                }
 
                 uow.SurveyRepository.Add(suvery);
                 uow.Commit();
@@ -82,7 +96,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var survey = uow.SurveyRepository.GetById(id);
+            var survey = uow.Context.Surveys.Include("MultipleChoiceQuestion").SingleOrDefault(x => x.Id == id);
+            //var survey = uow.SurveyRepository.GetById(id);
 
             SurveyViewModel viewmdoel = new SurveyViewModel
             {
@@ -92,17 +107,23 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 IsActive=survey.IsActive,
                 SurveyCatagories=survey.SurveyCatagories,
                 SurveyCatagoryId=survey.SurveyCatagoryId,
+                MultipleChoiceQuestion=survey.MultipleChoiceQuestion,
             };
+            int[] mulitPleChoice = survey.MultipleChoiceQuestion.Select(x => x.Id).ToArray();
+
+           
+            viewmdoel.SurveyIdForMultipleChoice = mulitPleChoice;
             GetSurveyCatagroyData();
             return View(viewmdoel);
         }
 
         [HttpPost]
-        public ActionResult Edit(SurveyViewModel viewmodel)
+        public ActionResult Edit([Bind(Include = "Id,Name,StartDate,IsActive,SurveyCatagoryId")] SurveyViewModel viewmodel,int [] SurveyIdForMultipleChoice)
         {
             if(ModelState.IsValid)
             {
-                var survey = uow.SurveyRepository.GetById(viewmodel.Id);
+                var survey = uow.Context.Surveys.Include("MultipleChoiceQuestion").SingleOrDefault(x => x.Id == viewmodel.Id);
+                //var survey = uow.SurveyRepository.GetById(viewmodel.Id);
 
                 survey.Id = viewmodel.Id;
                 survey.Name = viewmodel.Name;
@@ -110,7 +131,17 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 survey.SurveyCatagories = viewmodel.SurveyCatagories;
                 survey.IsActive = viewmodel.IsActive;
                 survey.SurveyCatagoryId = viewmodel.SurveyCatagoryId;
+                survey.MultipleChoiceQuestion = viewmodel.MultipleChoiceQuestion;
 
+                var multiPleQuestionAdded = uow.Context.Questions.Where(x => SurveyIdForMultipleChoice.Contains(x.Id)).ToList();
+                //var multiPleQuestionAdded = uow.Context.MultipleChoiceQuestions.Where(x => MultipleQuesiton.Contains(x.Id)).ToList();
+
+                survey.MultipleChoiceQuestion.Clear();
+
+                foreach (var item in multiPleQuestionAdded)
+                {
+                    survey.MultipleChoiceQuestion.Add(item);
+                }
                 uow.SurveyRepository.Update(survey);
                 uow.Commit();
 
@@ -121,7 +152,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            var survey = uow.SurveyRepository.GetById(id);
+            var survey = uow.Context.Surveys.Include("MultipleChoiceQuestion").SingleOrDefault(x => x.Id == id);
+            //var survey = uow.SurveyRepository.GetById(id);
 
             SurveyViewModel viewmdoel = new SurveyViewModel
             {
@@ -131,7 +163,12 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 IsActive = survey.IsActive,
                 SurveyCatagories = survey.SurveyCatagories,
                 SurveyCatagoryId = survey.SurveyCatagoryId,
+                MultipleChoiceQuestion = survey.MultipleChoiceQuestion,
             };
+            int[] mulitPleChoice = survey.MultipleChoiceQuestion.Select(x => x.Id).ToArray();
+
+
+            viewmdoel.SurveyIdForMultipleChoice = mulitPleChoice;
             GetSurveyCatagroyData();
             return View(viewmdoel);
         }
@@ -141,6 +178,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         public ActionResult ConfiremDelete(int id)
         {
             var survey = uow.SurveyRepository.GetById(id);
+            //var survey = uow.SurveyRepository.GetById(id);
 
             SurveyViewModel viewmodel = new SurveyViewModel
             {
@@ -150,8 +188,10 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 StartDate=survey.StartDate,
                 SurveyCatagories=survey.SurveyCatagories,
                 SurveyCatagoryId=survey.SurveyCatagoryId,
+                MultipleChoiceQuestion=survey.MultipleChoiceQuestion,
             };
 
+          
             uow.SurveyRepository.Remove(survey);
             uow.Commit();
             return Json(new { success = true, message = "Data deleted successfuly" }, JsonRequestBehavior.AllowGet);
@@ -160,7 +200,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult Details(int id)
         {
-            var survey = uow.SurveyRepository.GetById(id);
+            var survey = uow.Context.Surveys.Include("MultipleChoiceQuestion").SingleOrDefault(x => x.Id == id);
+            //var survey = uow.SurveyRepository.GetById(id);
 
             SurveyViewModel viewmdoel = new SurveyViewModel
             {
@@ -170,7 +211,12 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 IsActive = survey.IsActive,
                 SurveyCatagories = survey.SurveyCatagories,
                 SurveyCatagoryId = survey.SurveyCatagoryId,
+                MultipleChoiceQuestion = survey.MultipleChoiceQuestion,
             };
+            int[] mulitPleChoice = survey.MultipleChoiceQuestion.Select(x => x.Id).ToArray();
+
+
+            viewmdoel.SurveyIdForMultipleChoice = mulitPleChoice;
             GetSurveyCatagroyData();
             return View(viewmdoel);
         }

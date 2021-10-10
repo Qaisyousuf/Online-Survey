@@ -17,7 +17,7 @@ namespace OnlineSurvey.Data.FluentAPI
                 .WithMany(q => q.Questions)
                 .Map(cs =>
                 {
-                    cs.MapLeftKey("MultipleChoiceQuestionId");
+                    cs.MapLeftKey("MultipleChoiceAnswerId");
                     cs.MapRightKey("QuestionId");
                     cs.ToTable("MutipleChoiceQuesionAndAnswer");
                     

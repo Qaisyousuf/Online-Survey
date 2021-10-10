@@ -24,11 +24,11 @@ namespace OnlineSurvey.ViewModel
 
         public int SurveyCatagoryId { get; set; }
 
-        [Display(Name = "Multiple Choice ")]
+        [Display(Name = "Select multiple choice question ")]
         public int[] SurveyIdForMultipleChoice { get; set; }
 
 
-        public List<string> MultipleChoiceTag { get; set; }
+        public List<string> SurveyMutipleChoiceTag { get; set; }
 
         [ForeignKey("SurveyCatagoryId")]
         public SurveyCatagory SurveyCatagories { get; set; }

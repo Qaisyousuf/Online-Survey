@@ -80,6 +80,7 @@
     <Compile Include="Concrete Implementation\YesNoQuestionRepository.cs" />
     <Compile Include="FluentAPI\MultipleChoiceQuestionMapping.cs" />
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
+    <Compile Include="FluentAPI\SurveyAndMultipleChoiceAnswerMapping.cs" />
     <Compile Include="Interfaces\IBannerRepository.cs" />
     <Compile Include="Interfaces\IFooterLinksRepository.cs" />
     <Compile Include="Interfaces\IGenderRepository.cs" />
@@ -193,6 +194,22 @@
     <Compile Include="Migrations\202110091923524_QuestionAndMultipleChoiceQuestionModelAdded.designer.cs">
       <DependentUpon>202110091923524_QuestionAndMultipleChoiceQuestionModelAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110101310318_SurveyAndMultiplechoiceRelationCreated.cs" />
+    <Compile Include="Migrations\202110101310318_SurveyAndMultiplechoiceRelationCreated.designer.cs">
+      <DependentUpon>202110101310318_SurveyAndMultiplechoiceRelationCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110101326470_RelationshipNamechanged.cs" />
+    <Compile Include="Migrations\202110101326470_RelationshipNamechanged.designer.cs">
+      <DependentUpon>202110101326470_RelationshipNamechanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110101329509_SurveyIdandQusetionIdChanged.cs" />
+    <Compile Include="Migrations\202110101329509_SurveyIdandQusetionIdChanged.designer.cs">
+      <DependentUpon>202110101329509_SurveyIdandQusetionIdChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110101512019_MultipleChoiceQuestionNamechanged.cs" />
+    <Compile Include="Migrations\202110101512019_MultipleChoiceQuestionNamechanged.designer.cs">
+      <DependentUpon>202110101512019_MultipleChoiceQuestionNamechanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -275,6 +292,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110091923524_QuestionAndMultipleChoiceQuestionModelAdded.resx">
       <DependentUpon>202110091923524_QuestionAndMultipleChoiceQuestionModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110101310318_SurveyAndMultiplechoiceRelationCreated.resx">
+      <DependentUpon>202110101310318_SurveyAndMultiplechoiceRelationCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110101326470_RelationshipNamechanged.resx">
+      <DependentUpon>202110101326470_RelationshipNamechanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110101329509_SurveyIdandQusetionIdChanged.resx">
+      <DependentUpon>202110101329509_SurveyIdandQusetionIdChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110101512019_MultipleChoiceQuestionNamechanged.resx">
+      <DependentUpon>202110101512019_MultipleChoiceQuestionNamechanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

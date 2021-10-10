@@ -35,6 +35,8 @@ namespace OnlineSurvey.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new SiteSettingMapping());
+            modelBuilder.Configurations.Add(new SurveyAndMultipleChoiceAnswerMapping());
+            modelBuilder.Configurations.Add(new MultipleChoiceQuestionMapping());
             modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnName("datetime2"));
             base.OnModelCreating(modelBuilder);
         }

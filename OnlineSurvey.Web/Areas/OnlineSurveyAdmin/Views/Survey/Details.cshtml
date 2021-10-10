@@ -45,7 +45,13 @@
 
                                     <td class="text-primary"> @Html.DisplayFor(model => model.StartDate)</td>
                                 </tr>
-
+                                <tr>
+                                    <th scope="row">
+                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                    </th>
+                                    <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SurveyIdForMultipleChoice)</td>
+                                    <td class="text-primary">     @Html.ListBoxFor(model => model.SurveyIdForMultipleChoice, new MultiSelectList(ViewBag.QuestionData, "Id", "Type"), new { @class = "form-control" })</td>
+                                </tr>
 
                                 <tr>
                                     <th scope="row">
