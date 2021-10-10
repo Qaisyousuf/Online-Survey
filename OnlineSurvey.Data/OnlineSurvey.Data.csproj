@@ -68,6 +68,7 @@
     <Compile Include="Concrete Implementation\NumberQuestionRepository.cs" />
     <Compile Include="Concrete Implementation\OGMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\PageRepository.cs" />
+    <Compile Include="Concrete Implementation\QuesiotnRepository.cs" />
     <Compile Include="Concrete Implementation\Repository.cs" />
     <Compile Include="Concrete Implementation\SiteSettingsRepository.cs" />
     <Compile Include="Concrete Implementation\SurveyCatagoryRepository.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
     <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoQuestionRepository.cs" />
+    <Compile Include="FluentAPI\MultipleChoiceQuestionMapping.cs" />
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
     <Compile Include="Interfaces\IBannerRepository.cs" />
     <Compile Include="Interfaces\IFooterLinksRepository.cs" />
@@ -88,6 +90,7 @@
     <Compile Include="Interfaces\INumberQuestionRepository.cs" />
     <Compile Include="Interfaces\IOGMetaTagRepository.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
+    <Compile Include="Interfaces\IQuesiotnRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\ISiteSettingsRepository.cs" />
     <Compile Include="Interfaces\ISlug.cs" />
@@ -186,6 +189,10 @@
     <Compile Include="Migrations\202110091254447_surveyModelAdded.designer.cs">
       <DependentUpon>202110091254447_surveyModelAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110091923524_QuestionAndMultipleChoiceQuestionModelAdded.cs" />
+    <Compile Include="Migrations\202110091923524_QuestionAndMultipleChoiceQuestionModelAdded.designer.cs">
+      <DependentUpon>202110091923524_QuestionAndMultipleChoiceQuestionModelAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -265,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110091254447_surveyModelAdded.resx">
       <DependentUpon>202110091254447_surveyModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110091923524_QuestionAndMultipleChoiceQuestionModelAdded.resx">
+      <DependentUpon>202110091923524_QuestionAndMultipleChoiceQuestionModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -30,6 +30,7 @@ namespace OnlineSurvey.Data
         public DbSet<NumberQuestion> NumberQuestions { get; set; }
         public DbSet<MultiLineText> MultiLineTexts { get; set; }
         public DbSet<Survey> Surveys { get; set; } 
+        public DbSet<Question> Questions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

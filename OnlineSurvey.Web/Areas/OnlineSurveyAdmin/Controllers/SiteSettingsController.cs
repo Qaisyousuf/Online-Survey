@@ -46,6 +46,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     SiteTitle=item.SiteTitle,
                     SiteLastUpdatedDate =item.SiteLastUpdatedDate,
                     FooterLinksTag=FootertagName,
+                    DesignedBy=item.DesignedBy,
                     
                 });
             }

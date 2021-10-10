@@ -8,14 +8,19 @@ namespace OnlineSurvey.Model
 {
     public class Question:EntityBase
     {
-        public int SurveryId { get; set; }
+        public Question()
+        {
+            MultipleChoiceQuesion = new List<MultipleChoiceQuestions>();
+            Surveys = new List<Survey>();
+        }
         public string Title { get; set; }
-        public string Type { get; set; }
         public string Body { get; set; }
-        public string Priority { get; set; }
+        public string Type { get; set; }
         public bool IsActive { get; set; }
-        public DateTime CreateedOn { get; set; }
-        public string ModifiedOn { get; set; }
+
+
+        public List<MultipleChoiceQuestions> MultipleChoiceQuesion { get; set; }
+        public List<Survey> Surveys { get; set; }
 
     }
 }

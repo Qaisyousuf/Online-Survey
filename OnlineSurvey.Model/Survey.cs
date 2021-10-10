@@ -9,6 +9,10 @@ namespace OnlineSurvey.Model
 {
     public class Survey:EntityBase
     {
+        public Survey()
+        {
+            MultipleChoiceQuestion = new List<Question>();
+        }
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
         public bool IsActive { get; set; }
@@ -17,6 +21,8 @@ namespace OnlineSurvey.Model
 
         [ForeignKey("SurveyCatagoryId")]
         public SurveyCatagory SurveyCatagories { get; set; }
+
+        public List<Question> MultipleChoiceQuestion { get; set; }
 
     }
 }

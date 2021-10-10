@@ -1,0 +1,69 @@
+﻿@model OnlineSurvey.ViewModel.QuestionViewModel
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("Create", "Question", FormMethod.Post, new { onsubmit = "return SubmitFormCreate(this)" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row offset-1">
+            <div class="col-lg-6">
+                <div class="form-group ">
+                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label" })
+                    <div class="">
+                        @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.MultipleChoiceId, htmlAttributes: new { @class = "control-label" })
+                    <div class="CheckBox">
+                        @Html.ListBoxFor(model => model.MultipleChoiceId, new MultiSelectList(ViewBag.MultipleChoice, "Id", "Answer"), new { @class = "form-control" })
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label" })
+                    <div class="">
+                        @Html.CheckBoxFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control" }, style = "opacity: 1; padding-top:0px; margin:0; " })
+                        @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Body, htmlAttributes: new { @class = "control-label" })
+                    <div class="">
+                        @Html.TextAreaFor(model => model.Body, new { rows = "10", style = "resize:none;width:400px;", @class = "form-control input-lg textarea-editor" })
+
+                        @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-4">
+                <div class="form-group">
+                    <button type="submit" value="Create" class="btn btn-primary btn-rounded btn-md"><i class="fas fa-save pr-2"></i> Save</button>  |
+                    <button type="reset" value="Reset" class="btn btn-mdb-color btn-rounded btn-md"><i class="fas fa-redo-alt"></i> Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
