@@ -89,6 +89,7 @@
   <ItemGroup>
     <Compile Include="AccountViewModels.cs" />
     <Compile Include="BannerViewModel.cs" />
+    <Compile Include="BaseViewModel.cs" />
     <Compile Include="ChechBoxItemViewModel.cs" />
     <Compile Include="DeleteUserViewModel.cs" />
     <Compile Include="DetailsUserViewModel.cs" />
