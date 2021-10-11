@@ -1,0 +1,68 @@
+﻿@model List<OnlineSurvey.Model.Menus>
+
+<ul class="nav navbar-nav ">
+    @foreach (var menu in Model)
+    {
+        if (menu.PartentId == null)
+        {
+            var subMenu = Model.Where(x => x.PartentId == menu.Id).ToList();
+
+            if (subMenu != null && subMenu.Count > 0)
+            {
+                <li class="dropdown">
+                    <a title="@menu.Description" href="#" class="dropdown-toggle" data-toggle="dropdown">@menu.Title  <b class="caret"></b></a>
+
+                    <ul class="dropdown-menu">
+                        @foreach (var e in subMenu)
+                        {
+                            <li><a title="@e.Description" href="@e.Url">@e.Title</a></li>
+                        }
+                    </ul>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item"><a class="nav-link" title="@menu.Description" href="@menu.Url">@menu.Title</a></li>
+            }
+        }
+    }
+</ul>
+@*<ul class="navbar-nav ml-auto">
+    @foreach (var menu in Model)
+    {
+        if (menu.PartentId == null)
+        {
+            var subMenus = Model.Where(x => x.PartentId == menu.Id).ToList();
+
+            if (subMenus != null && subMenus.Count > 0)
+            {
+                <li class="nav-item dropdown">
+                    <a title="@menu.Description" href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> @menu.Title
+                    </a>
+                    @foreach (var e in subMenus)
+                    {
+                        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                            <a title="@e.Description" class="dropdown-item" href="@e.Url">@e.Title</a>
+
+                        </div>
+                    }
+
+                </li>
+            }
+        }
+        else
+        {
+            <li class="nav-item active">
+                <a title="@menu.Description" class="nav-link" href="@menu.Url">
+                     @menu.Title
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+        }
+
+      
+    }
+
+
+</ul>*@

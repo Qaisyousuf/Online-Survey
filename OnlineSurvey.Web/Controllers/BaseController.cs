@@ -10,7 +10,7 @@ namespace OnlineSurvey.Web.Controllers
     public class BaseController : Controller
     {
         [Dependency]
-        protected IUnitOfWork _uow { get; set; }
+        public IUnitOfWork _uow { get; set; }
         public BaseController()
         {
 
