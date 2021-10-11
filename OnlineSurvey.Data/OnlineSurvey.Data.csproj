@@ -210,6 +210,10 @@
     <Compile Include="Migrations\202110101512019_MultipleChoiceQuestionNamechanged.designer.cs">
       <DependentUpon>202110101512019_MultipleChoiceQuestionNamechanged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110111410152_MenusModelchanged.cs" />
+    <Compile Include="Migrations\202110111410152_MenusModelchanged.designer.cs">
+      <DependentUpon>202110111410152_MenusModelchanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -304,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110101512019_MultipleChoiceQuestionNamechanged.resx">
       <DependentUpon>202110101512019_MultipleChoiceQuestionNamechanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110111410152_MenusModelchanged.resx">
+      <DependentUpon>202110111410152_MenusModelchanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

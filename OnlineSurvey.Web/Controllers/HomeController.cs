@@ -6,25 +6,25 @@ using System.Web.Mvc;
 
 namespace OnlineSurvey.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+        //[ChildActionOnly]
+        //public ActionResult PartialMenu()
+        //{
+        //    var context = _uow.Context;
+        //    var menus = context.Menus;
 
-            return View();
-        }
+        //    foreach (var item in menus)
+        //    {
+               
+        //    }
+        //}
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+     
     }
 }

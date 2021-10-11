@@ -18,16 +18,43 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         {
             this.uow = uow;
         }
+
+        private void GetMenus()
+        {
+            ViewBag.Menus = uow.MenuRepository.GetAll();
+        }
         public ActionResult Index()
         {
+            var menus = uow.MenuRepository.GetAll("Parent", "SubMenus");
 
-            return View();
+            List<MenusViewModel> viewmodel = new List<MenusViewModel>();
+
+            foreach (var item in menus)
+            {
+                viewmodel.Add(new MenusViewModel
+                {
+                    Id = item.Id,
+                    Title = item.Title,
+                    Description = item.Description,
+                    Url = item.Url,
+                    Parent = item.Parent,
+                    PartentId = item.PartentId,
+                    SubMenus = item.SubMenus,
+
+                });
+
+
+            }
+
+            GetMenus();
+
+            return View(viewmodel);
         }
 
         [HttpGet]
         public ActionResult GetMenusData()
         {
-            var menus = uow.MenuRepository.GetAll();
+            var menus = uow.MenuRepository.GetAll("Parent", "SubMenus");
 
             List<MenusViewModel> viewmodel = new List<MenusViewModel>();
 
@@ -39,12 +66,16 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     Title=item.Title,
                     Description=item.Description,
                     Url=item.Url,
+                    Parent=item.Parent,
+                    PartentId=item.PartentId,
+                    SubMenus=item.SubMenus,
                    
                 });
 
 
             }
 
+            GetMenus();
 
             return Json(new { data = viewmodel }, JsonRequestBehavior.AllowGet);
         }
@@ -52,6 +83,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 
         private void GetSubMenusData()
         {
+            GetMenus();
             ViewBag.SubMenus = uow.MenuRepository.GetAll();
         }
         [HttpGet]
@@ -68,17 +100,21 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             {
                 var menus = new Menus
                 {
-                    Id=viewmodel.Id,
-                    Title=viewmodel.Title,
-                    Description=viewmodel.Description,
-                    Url=viewmodel.Url,
+                    Id = viewmodel.Id,
+                    Title = viewmodel.Title,
+                    Description = viewmodel.Description,
+                    Url = viewmodel.Url,
+                    Parent = viewmodel.Parent,
+                    PartentId=viewmodel.PartentId,
                    
                 };
 
                 uow.MenuRepository.Add(menus);
                 uow.Commit();
+
+                return RedirectToAction(nameof(Index));
             }
-            return Json(new { success = true, message = "Data saved successfully " }, JsonRequestBehavior.AllowGet);
+            return View(viewmodel);
         }
 
         [HttpGet]
@@ -92,8 +128,12 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Title=menu.Title,
                 Description=menu.Description,
                 Url=menu.Url,
+                PartentId=menu.PartentId,
+                Parent=menu.Parent,
+                SubMenus=menu.SubMenus,
             };
 
+            GetMenus();
             return View(viewmodel);
         }
 
@@ -108,11 +148,16 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 menu.Title = viewmodel.Title;
                 menu.Description = viewmodel.Description;
                 menu.Url = viewmodel.Url;
+                menu.SubMenus = viewmodel.SubMenus;
+                menu.Parent = viewmodel.Parent;
+                menu.PartentId = viewmodel.PartentId;
 
                 uow.MenuRepository.Update(menu);
                 uow.Commit();
+
+                return RedirectToAction(nameof(Index));
             }
-            return Json(new { success = true, message = "Data updated successfuly" }, JsonRequestBehavior.AllowGet);
+            return View(viewmodel);
         }
 
         [HttpGet]
@@ -127,6 +172,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Title = menu.Title,
                 Description = menu.Description,
                 Url = menu.Url,
+                PartentId = menu.PartentId,
+                Parent=menu.Parent,
+                SubMenus=menu.SubMenus,
             };
 
             return View(viewmodel);
@@ -144,11 +192,14 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Title=menu.Title,
                 Description=menu.Description,
                 Url=menu.Url,
+                Parent=menu.Parent,
+                PartentId=menu.PartentId,
+                SubMenus=menu.SubMenus,
             };
 
             uow.MenuRepository.Remove(menu);
             uow.Commit();
-            return Json(new { success = true, message = "Data deleted successfuly" }, JsonRequestBehavior.AllowGet);
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
@@ -162,6 +213,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Title = menu.Title,
                 Description = menu.Description,
                 Url = menu.Url,
+                PartentId=menu.PartentId,
+                Parent=menu.Parent,
+                SubMenus=menu.SubMenus,
             };
 
             return View(viewmodel);

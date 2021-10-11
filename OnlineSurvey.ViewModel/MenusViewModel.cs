@@ -11,7 +11,7 @@ namespace OnlineSurvey.ViewModel
 {
     public class MenusViewModel
     {
-       
+      
         public int Id { get; set; }
 
         [Required]
@@ -22,6 +22,14 @@ namespace OnlineSurvey.ViewModel
         [Required]
         public string Url { get; set; }
 
-      
+        [InverseProperty("SubMenus")]
+        public int? PartentId { get; set; }
+
+        public Menus Parent { get; set; }
+
+        [ForeignKey("PartentId")]
+        public List<Menus> SubMenus { get; set; }
+
+
     }
 }
