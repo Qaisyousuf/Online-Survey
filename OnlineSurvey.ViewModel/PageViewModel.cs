@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnlineSurvey.ViewModel
 {
-    public class PageViewModel
+    public class PageViewModel:BaseViewModel
     {
         public int Id { get; set; }
         [Required]

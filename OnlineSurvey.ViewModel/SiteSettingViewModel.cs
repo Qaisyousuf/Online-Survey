@@ -24,6 +24,9 @@ namespace OnlineSurvey.ViewModel
         [Required]
         [Display(Name ="Site Owner")]
         public string SiteOwner { get; set; }
+
+        [Display(Name = "Site Updated date")]
+        [DataType(DataType.Date)]
         public DateTime SiteLastUpdatedDate { get; set; }
 
         [Required]

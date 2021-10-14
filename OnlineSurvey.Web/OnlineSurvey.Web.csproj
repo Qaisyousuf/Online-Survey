@@ -231,7 +231,12 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Banner.svg" />
+    <Content Include="Content\Images\BigsizeFooter.svg" />
     <Content Include="Content\Images\Footer.svg" />
+    <Content Include="Content\Images\MideumsizeFooter.svg" />
+    <Content Include="Content\Images\SmallBanner.svg" />
+    <Content Include="Content\Images\SmallsizeFooter.svg" />
     <Content Include="Content\mdb.css" />
     <Content Include="Content\mdb.min.css" />
     <Content Include="Content\themes\base\accordion.css" />
@@ -558,6 +563,7 @@
     <Content Include="Scripts\moment.min.js.map" />
     <Content Include="Scripts\moment-with-locales.min.js.map" />
     <Content Include="Views\Home\PartialMenu.cshtml" />
+    <Content Include="Views\Home\GetBanner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />

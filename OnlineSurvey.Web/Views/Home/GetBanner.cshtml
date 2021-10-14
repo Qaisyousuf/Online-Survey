@@ -1,0 +1,41 @@
+﻿@model OnlineSurvey.ViewModel.BannerViewModel
+
+@if (Model?.Id != null)
+{
+<div class="Mainbackground">
+    <div class="MainBannerBackgrondImage">
+        <div class="view bg-transparent">
+            <!-- Mask & flexbox options-->
+            <div class="mask">
+                <!-- Content -->
+                <div class="container h-100">
+                    <!--Grid row-->
+                    <div class="row align-items-center min-vh-100">
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <h1 class="mb-2 text-white font-weight-bold">@Model.MainTitle</h1>
+                            <h5 class="mb-2 text-white font-weight-bold">@Model.SubTitle</h5>
+                            <p class="mb-2 pb-2 text-white">@Model.Content</p>
+                            <a href="@Model.ButtonUrl" class="btn btn-rounded btn-outline-white btn-md">@Model.Button</a>
+
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="view img-fluid">
+                                <lottie-player src="@Model.AnimationUrl" background="transparent" speed="1" style="width: auto; height: auto;" loop autoplay></lottie-player>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </div>
+                <!-- Content -->
+            </div>
+            <!-- Mask & flexbox options-->
+        </div>
+    </div>
+</div>
+
+
+}

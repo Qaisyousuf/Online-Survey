@@ -11,7 +11,7 @@ namespace OnlineSurvey.ViewModel
         {
             FooterLinks = new List<FooterLinks>();
         }
-        public int Id { get; set; }
+       
 
        
         [Display(Name = "Site title")]

@@ -1,13 +1,23 @@
 ﻿body {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    background-color: #FBFBFB !important;
+    font-family: "Ubuntu", sans-serif;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-top: 0px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+.view {
+    height: 100%;
+}
+/* Set padding to keep content from hitting the edges */
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -22,13 +32,21 @@ select,
 textarea {
     max-width: 280px;
 }
+.navbar.scrolling-navbar
+{
+
+    margin-top:0px !important;
+    margin-bottom:0px !important;
+}
 .top-nav-collapse {
-    background-color: #4285F4;
+    background-color: #5C94B6 !important;
+    /*-webkit-box-shadow: 0px 8px 11px -3px rgba(0,0,0,0.58) !important;
+    box-shadow: 0px 8px 11px -3px rgba(0,0,0,0.58) !important;*/
 }
 
 @media only screen and (max-width: 768px) {
     .navbar {
-        background-color: #4285F4 !important;
+        background-color: #5C94B6 !important;
     }
 }
 
@@ -41,12 +59,14 @@ textarea {
 }
 
 
+
+
+
 .MainFooterBackground {
     background-image: url(Images/Footer.svg);
-    background-position: center center;
-    background-attachment: scroll;
+    background-position: center;
     background-size: cover;
-    height: 800px;
+    height:800px;
     width: 100%;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -66,4 +86,128 @@ textarea {
     -webkit-align-items: flex-end;
     -ms-flex-align: end;
     align-items: flex-end;
+   
 }
+
+@media(min-width: 1600px) and (max-width:1920px) {
+    .MainFooterBackground {
+        background-image: url(Images/BigsizeFooter.svg);
+        background-position: center;
+        
+        background-size: cover;
+        height: 1000px;
+        width: 100%;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+}
+@media(min-width: 768px) and (max-width:1000px) {
+    .MainFooterBackground {
+        background-image: url(Images/MideumsizeFooter.svg);
+        background-position: center;
+        background-size: cover;
+        height: 1050px;
+        width: 100%;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+}
+@media(min-width: 300px) and (max-width:768px) {
+    .MainFooterBackground {
+        background-image: url(Images/SmallsizeFooter.svg);
+        background-position: center;
+        background-size: cover;
+        height: 1400px;
+        width: 100%;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+}
+
+
+
+
+.MainBannerBackgrondImage {
+        background-image: url(Images/Banner.svg);
+        background-position: center;
+        background-size: cover;
+        height:100vh;
+        width:100%;
+        
+  }
+
+@media (min-width: 400px) and (max-width:768px) {
+   .MainBannerBackgrondImage {
+        background-image: url(Images/SmallBanner.svg);
+        background-position: center;
+        background-size: cover;
+       padding-top:100px;
+        height:1000px;
+        width: 100%;
+       
+    } 
+
+}
+@media (min-width: 300px) and (max-width:500px) {
+    .MainBannerBackgrondImage {
+        background-image: url(Images/SmallBanner.svg);
+        background-position: center;
+        background-size: cover;
+        padding-top: 120px;
+        height: 1000px;
+        width: 100%;
+    }
+}
+
+
+
+
+

@@ -1,37 +1,34 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model OnlineSurvey.ViewModel.PageViewModel
+@{
+    ViewBag.Title = ViewBag.PageTitle;
 }
 
-<header class="h-100">
+@if (Model?.Id != null)
+{
+<div class="HomeMainContetn">
+</div>
+<div class="container my-5 py-5 card z-depth-1">
 
-    <!-- Full Page Intro -->
-    <div class="">
-        <!-- Mask & flexbox options-->
-        <div class="mask">
-            <!-- Content -->
-            <div class="container h-100">
-                <!--Grid row-->
-                <div class="row align-items-center h-100">
-                    <!--Grid column-->
-                    <div class="col-md-5">
-                        <h1 class="mb-4 text-info">We'll get back soon.</h1>
-                        <h5 class="mb-4 text-warning">We are working on the backend of the project</h5>
-                        <button type="button" class="btn btn-primary btn-rounded btn-md ml-md-0">Get started</button>
-                        <button type="button" class="btn btn-outline-grey btn-rounded btn-md">Get started</button>
-                    </div>
-                    <!--Grid column-->
-                    <!--Grid column-->
-                    <div class="col-md-7">
-                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_qq5qecip.json" background="transparent" speed="1" style="width: auto; height: auto;" loop autoplay></lottie-player>
-                    </div>
-                    <!--Grid column-->
-                </div>
-                <!--Grid row-->
-            </div>
-            <!-- Content -->
+
+    <!-- Section: Block Content -->
+    <section class="dark-grey-text text-center">
+       
+
+        <p class="text-justify w-responsive mx-auto">@Model.Content</p>
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <!-- Grid column -->
+
         </div>
-        <!-- Mask & flexbox options-->
-    </div>
-    <!-- Full Page Intro -->
+        <!-- Grid row -->
 
-</header>
+    </section>
+    <!-- Section: Block Content -->
+
+
+</div>
+}
+
