@@ -11,7 +11,6 @@ namespace OnlineSurvey.ViewModel
         {
             FooterLinks = new List<FooterLinks>();
         }
-       
 
        
         [Display(Name = "Site title")]
@@ -30,7 +29,7 @@ namespace OnlineSurvey.ViewModel
         [Display(Name = "Site Content")]
         public string SiteContent { get; set; }
 
-        [Required]
+      
         [Display(Name = "Designed by")]
         public string DesignedBy { get; set; }
 

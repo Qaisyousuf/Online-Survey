@@ -214,6 +214,14 @@
     <Compile Include="Migrations\202110111410152_MenusModelchanged.designer.cs">
       <DependentUpon>202110111410152_MenusModelchanged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110151251374_TableRemoved.cs" />
+    <Compile Include="Migrations\202110151251374_TableRemoved.designer.cs">
+      <DependentUpon>202110151251374_TableRemoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110151304502_AnimationPropertyAddedToPage.cs" />
+    <Compile Include="Migrations\202110151304502_AnimationPropertyAddedToPage.designer.cs">
+      <DependentUpon>202110151304502_AnimationPropertyAddedToPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -311,6 +319,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110111410152_MenusModelchanged.resx">
       <DependentUpon>202110111410152_MenusModelchanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110151251374_TableRemoved.resx">
+      <DependentUpon>202110151251374_TableRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110151304502_AnimationPropertyAddedToPage.resx">
+      <DependentUpon>202110151304502_AnimationPropertyAddedToPage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

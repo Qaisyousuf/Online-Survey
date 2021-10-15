@@ -13,6 +13,8 @@ namespace OnlineSurvey.Model
         public string Slug { get; set; }
         public string Content { get; set; }
 
+        public string AnimationUrl { get; set; }
+
         public int BannerId { get; set; }
 
         [ForeignKey("BannerId")]

@@ -14,6 +14,8 @@ namespace OnlineSurvey.ViewModel
         [Required]
         public string Content { get; set; }
 
+        [Display(Name ="Animation url")]
+        public string AnimationUrlForPage { get; set; }
 
         [Display(Name ="Banner")]
         public int BannerId { get; set; }

@@ -44,6 +44,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     Slug=item.Slug,
                     BannerId=item.BannerId,
                     Banners=item.Banners,
+                    AnimationUrlForPage=item.AnimationUrl,
                 });
             }
             GetBannerData();
@@ -88,6 +89,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             page.Content = viewmodel.Content;
             page.BannerId = viewmodel.BannerId;
             page.Banners = viewmodel.Banners;
+            page.AnimationUrl = viewmodel.AnimationUrlForPage;
 
             uow.PageRepository.Add(page);
             uow.Commit();
@@ -106,6 +108,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Slug=page.Slug,
                 BannerId=page.BannerId,
                 Banners=page.Banners,
+                AnimationUrlForPage=page.AnimationUrl,
             };
             GetBannerData();
             return View(viewmodel);
@@ -141,6 +144,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             page.Content = viewmodel.Content;
             page.BannerId = viewmodel.BannerId;
             page.Banners = viewmodel.Banners;
+            page.AnimationUrl = viewmodel.AnimationUrlForPage;
 
             uow.PageRepository.Update(page);
             uow.Commit();
@@ -161,6 +165,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Slug = page.Slug,
                 BannerId = page.BannerId,
                 Banners = page.Banners,
+                AnimationUrlForPage=page.AnimationUrl,
             };
             GetBannerData();
             return View(viewmodel);
@@ -180,6 +185,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Content=page.Content,
                 BannerId=page.BannerId,
                 Banners=page.Banners,
+                AnimationUrlForPage=page.AnimationUrl,
             };
 
             uow.PageRepository.Remove(page);
@@ -199,6 +205,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Slug = page.Slug,
                 BannerId = page.BannerId,
                 Banners = page.Banners,
+                AnimationUrlForPage=page.AnimationUrl,
             };
             GetBannerData();
             return View(viewmodel);
