@@ -2,7 +2,7 @@
 
 namespace OnlineSurvey.ViewModel
 {
-    public class GenderViewModel
+    public class GenderViewModel:BaseViewModel
     {
         public int Id { get; set; }
 

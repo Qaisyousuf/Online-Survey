@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnlineSurvey.ViewModel
 {
-    public class UserSurveyViewModel
+    public class UserSurveyViewModel:BaseViewModel
     {
        
         public int Id { get; set; }

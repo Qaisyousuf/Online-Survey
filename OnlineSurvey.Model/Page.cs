@@ -20,5 +20,11 @@ namespace OnlineSurvey.Model
         [ForeignKey("BannerId")]
         public Banner Banners { get; set; }
 
+        public int SurveyId { get; set; }
+
+        [ForeignKey("SurveyId")]
+        public Survey Surveies { get; set; }
+
+
     }
 }

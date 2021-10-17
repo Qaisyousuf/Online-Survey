@@ -64,6 +64,16 @@
 
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                    </th>
+                                    <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SurveyId)</td>
+                                    <td>
+                                        @Html.DropDownListFor(m => m.SurveyId, new SelectList(ViewBag.Survey, "Id", "Name"), "-----Select survey ------", new { @class = "form-control disabled" })
+
+                                    </td>
+                                </tr>
 
 
 

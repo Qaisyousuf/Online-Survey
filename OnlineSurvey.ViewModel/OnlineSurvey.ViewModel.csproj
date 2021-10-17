@@ -107,6 +107,7 @@
     <Compile Include="PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionViewModel.cs" />
+    <Compile Include="ResponseViewModel.cs" />
     <Compile Include="RoleViewModel.cs" />
     <Compile Include="SiteSettingViewModel.cs" />
     <Compile Include="SurveyCatagoryViewModel.cs" />

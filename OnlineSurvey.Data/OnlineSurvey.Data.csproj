@@ -79,6 +79,7 @@
     <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoQuestionRepository.cs" />
     <Compile Include="FluentAPI\MultipleChoiceQuestionMapping.cs" />
+    <Compile Include="FluentAPI\ResponseMapping.cs" />
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
     <Compile Include="FluentAPI\SurveyAndMultipleChoiceAnswerMapping.cs" />
     <Compile Include="Interfaces\IBannerRepository.cs" />
@@ -222,6 +223,18 @@
     <Compile Include="Migrations\202110151304502_AnimationPropertyAddedToPage.designer.cs">
       <DependentUpon>202110151304502_AnimationPropertyAddedToPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110151349342_SurveyIdAdded.cs" />
+    <Compile Include="Migrations\202110151349342_SurveyIdAdded.designer.cs">
+      <DependentUpon>202110151349342_SurveyIdAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110161334365_ReponseModelAdded.cs" />
+    <Compile Include="Migrations\202110161334365_ReponseModelAdded.designer.cs">
+      <DependentUpon>202110161334365_ReponseModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110161346343_MultipleChoiceRelationAdded.cs" />
+    <Compile Include="Migrations\202110161346343_MultipleChoiceRelationAdded.designer.cs">
+      <DependentUpon>202110161346343_MultipleChoiceRelationAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -325,6 +338,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110151304502_AnimationPropertyAddedToPage.resx">
       <DependentUpon>202110151304502_AnimationPropertyAddedToPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110151349342_SurveyIdAdded.resx">
+      <DependentUpon>202110151349342_SurveyIdAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110161334365_ReponseModelAdded.resx">
+      <DependentUpon>202110161334365_ReponseModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110161346343_MultipleChoiceRelationAdded.resx">
+      <DependentUpon>202110161346343_MultipleChoiceRelationAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,8 +24,10 @@ namespace OnlineSurvey.Web.Controllers
             pageFromdb = _uow.PageRepository.GetPageBySlug(slug);
             ViewBag.PageTitle = pageFromdb.Title;
 
-            TempData["banner"] = pageFromdb.BannerId;
+            var surveyFromdb = _uow.PageRepository.GetById(pageFromdb.Id);
 
+            TempData["banner"] = pageFromdb.BannerId;
+            
             viewmodel = new PageViewModel
             {
                 Id=pageFromdb.Id,
@@ -33,6 +35,9 @@ namespace OnlineSurvey.Web.Controllers
                 Content=pageFromdb.Content,
                 BannerId=pageFromdb.BannerId,
                 Banners=pageFromdb.Banners,
+                SurveyId=pageFromdb.SurveyId,
+                AnimationUrlForPage=pageFromdb.AnimationUrl,
+                
             };
 
 
@@ -76,6 +81,46 @@ namespace OnlineSurvey.Web.Controllers
 
             return PartialView(viewmodel);
 
+        }
+
+        private void UserSurveyData()
+        {
+            ViewBag.UserGender = _uow.GenderRepository.GetAll();
+        }
+        [HttpGet]
+        [Route("UserSurvey")]
+        public ActionResult CreateUserSurvey()
+        {
+            UserSurveyData();
+            return View(new UserSurveyViewModel());
+        }
+
+        [HttpPost]
+        [Route("UserSurvey")]
+        public ActionResult CreateUserSurvey(UserSurveyViewModel viewmodel)
+        {
+            if(ModelState.IsValid)
+            {
+               
+                var userSurvey = new UserSurveyRegistration
+                {
+                   Id=viewmodel.Id,
+                   FirstName=viewmodel.FirstName,
+                   LastName=viewmodel.LastName,
+                   Email=viewmodel.Email,
+                   Mobile=viewmodel.Mobile,
+                   Address=viewmodel.Address,
+                   CPRNumber=viewmodel.CPRNumber,
+                   DOB=viewmodel.DOB,
+                   GenderId=viewmodel.GenderId,
+                   Genders=viewmodel.Genders,
+                };
+
+                _uow.UserSurveyRepository.Add(userSurvey);
+                _uow.Commit();
+                return Json(new { success = true, message = "Data saved successfully " }, JsonRequestBehavior.AllowGet);
+            }
+            return View(viewmodel);
         }
 
 

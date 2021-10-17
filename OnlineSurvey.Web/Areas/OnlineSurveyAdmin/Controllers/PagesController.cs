@@ -26,11 +26,12 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         private void GetBannerData()
         {
             ViewBag.Banners = uow.BannerRepository.GetAll();
+            ViewBag.Survey = uow.SurveyRepository.GetAll();
         }
         [HttpGet]
         public ActionResult GetPageData()
         {
-            var page = uow.PageRepository.GetAll("Banners");
+            var page = uow.PageRepository.GetAll("Banners", "Surveies");
 
             List<PageViewModel> viewmodel = new List<PageViewModel>();
 
@@ -45,6 +46,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     BannerId=item.BannerId,
                     Banners=item.Banners,
                     AnimationUrlForPage=item.AnimationUrl,
+                    Surveies=item.Surveies,
+                    SurveyId=item.SurveyId,
                 });
             }
             GetBannerData();
@@ -90,6 +93,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             page.BannerId = viewmodel.BannerId;
             page.Banners = viewmodel.Banners;
             page.AnimationUrl = viewmodel.AnimationUrlForPage;
+            page.SurveyId = viewmodel.SurveyId;
+            page.Surveies = viewmodel.Surveies;
 
             uow.PageRepository.Add(page);
             uow.Commit();
@@ -109,6 +114,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 BannerId=page.BannerId,
                 Banners=page.Banners,
                 AnimationUrlForPage=page.AnimationUrl,
+                Surveies=page.Surveies,
+                SurveyId=page.SurveyId,
             };
             GetBannerData();
             return View(viewmodel);
@@ -145,6 +152,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             page.BannerId = viewmodel.BannerId;
             page.Banners = viewmodel.Banners;
             page.AnimationUrl = viewmodel.AnimationUrlForPage;
+            page.Surveies = viewmodel.Surveies;
+            page.SurveyId = viewmodel.SurveyId;
 
             uow.PageRepository.Update(page);
             uow.Commit();
@@ -166,6 +175,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 BannerId = page.BannerId,
                 Banners = page.Banners,
                 AnimationUrlForPage=page.AnimationUrl,
+                SurveyId=page.SurveyId,
+                Surveies=page.Surveies,
             };
             GetBannerData();
             return View(viewmodel);
@@ -186,6 +197,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 BannerId=page.BannerId,
                 Banners=page.Banners,
                 AnimationUrlForPage=page.AnimationUrl,
+                Surveies=page.Surveies,
+                SurveyId=page.SurveyId,
             };
 
             uow.PageRepository.Remove(page);
@@ -206,6 +219,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 BannerId = page.BannerId,
                 Banners = page.Banners,
                 AnimationUrlForPage=page.AnimationUrl,
+                SurveyId=page.SurveyId,
+                Surveies=page.Surveies,
             };
             GetBannerData();
             return View(viewmodel);

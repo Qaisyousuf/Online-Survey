@@ -5,30 +5,36 @@
 
 @if (Model?.Id != null)
 {
-<div class="HomeMainContetn">
-</div>
-<div class="container my-5 py-5 card z-depth-1">
+    <div class="container my-5 card">
 
 
-    <!-- Section: Block Content -->
-    <section class="dark-grey-text text-center">
-       
+        <!--Section: Content-->
+        <section class="dark-grey-text">
 
-        <p class="text-justify w-responsive mx-auto">@Model.Content</p>
+            <div class="row pr-lg-5">
+                <div class="col-md-7 mb-4">
 
-        <!-- Grid row -->
-        <div class="row">
+                    <div class="view img-fluid">
+                        <lottie-player src="@Model.AnimationUrlForPage" background="transparent" speed="1" style="width: auto; height: auto;" loop autoplay></lottie-player>
+                    </div>
 
-            <!-- Grid column -->
-            <!-- Grid column -->
+                </div>
+                <div class="col-md-5 d-flex align-items-center">
+                    <div>
 
-        </div>
-        <!-- Grid row -->
+                        <h3 class="font-weight-bold mb-4">@Model.Title</h3>
 
-    </section>
-    <!-- Section: Block Content -->
+                        <p>@Model.Content</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!--Section: Content-->
 
 
-</div>
+    </div>
 }
+
 

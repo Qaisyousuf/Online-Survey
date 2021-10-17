@@ -31,13 +31,16 @@ namespace OnlineSurvey.Data
         public DbSet<MultiLineText> MultiLineTexts { get; set; }
         public DbSet<Survey> Surveys { get; set; } 
         public DbSet<Question> Questions { get; set; }
+        public DbSet<Response> Responses { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new SiteSettingMapping());
             modelBuilder.Configurations.Add(new SurveyAndMultipleChoiceAnswerMapping());
             modelBuilder.Configurations.Add(new MultipleChoiceQuestionMapping());
+            modelBuilder.Configurations.Add(new ResponseMapping());
             modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnName("datetime2"));
+                     
             base.OnModelCreating(modelBuilder);
         }
 

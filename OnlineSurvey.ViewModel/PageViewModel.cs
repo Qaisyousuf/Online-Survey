@@ -22,5 +22,11 @@ namespace OnlineSurvey.ViewModel
 
         [ForeignKey("BannerId")]
         public Banner Banners { get; set; }
+
+        [Display(Name ="Survey")]
+        public int SurveyId { get; set; }
+
+        [ForeignKey("SurveyId")]
+        public Survey Surveies { get; set; }
     }
 }

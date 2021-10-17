@@ -12,6 +12,7 @@ namespace OnlineSurvey.Model
         {
             MultipleChoiceQuesion = new List<MultipleChoiceQuestions>();
             Surveys = new List<Survey>();
+            Responses = new List<Response>();
         }
         public string Title { get; set; }
         public string Body { get; set; }
@@ -21,6 +22,7 @@ namespace OnlineSurvey.Model
 
         public List<MultipleChoiceQuestions> MultipleChoiceQuesion { get; set; }
         public List<Survey> Surveys { get; set; }
+        public List<Response> Responses { get; set; }
 
     }
 }

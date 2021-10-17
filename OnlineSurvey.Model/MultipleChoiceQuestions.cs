@@ -11,6 +11,7 @@ namespace OnlineSurvey.Model
         public MultipleChoiceQuestions()
         {
             Questions = new List<Question>();
+            Responses = new List<Response>();
         }
         public string Title { get; set; }
 
@@ -18,6 +19,7 @@ namespace OnlineSurvey.Model
         public bool IsActive { get; set; }
 
         public List<Question> Questions { get; set; }
+        public List<Response> Responses { get; set; }
 
     }
 }

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OnlineSurvey.Model;
-
 using System.Data.Entity.ModelConfiguration;
 
 namespace OnlineSurvey.Data.FluentAPI
