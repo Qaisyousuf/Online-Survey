@@ -235,6 +235,14 @@
     <Compile Include="Migrations\202110161346343_MultipleChoiceRelationAdded.designer.cs">
       <DependentUpon>202110161346343_MultipleChoiceRelationAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110171003319_UserSurveyIdAdded.cs" />
+    <Compile Include="Migrations\202110171003319_UserSurveyIdAdded.designer.cs">
+      <DependentUpon>202110171003319_UserSurveyIdAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110171105155_UserSurveyIdRemoved.cs" />
+    <Compile Include="Migrations\202110171105155_UserSurveyIdRemoved.designer.cs">
+      <DependentUpon>202110171105155_UserSurveyIdRemoved.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -347,6 +355,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110161346343_MultipleChoiceRelationAdded.resx">
       <DependentUpon>202110161346343_MultipleChoiceRelationAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110171003319_UserSurveyIdAdded.resx">
+      <DependentUpon>202110171003319_UserSurveyIdAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110171105155_UserSurveyIdRemoved.resx">
+      <DependentUpon>202110171105155_UserSurveyIdRemoved.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

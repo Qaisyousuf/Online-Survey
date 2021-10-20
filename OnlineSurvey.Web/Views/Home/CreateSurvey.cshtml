@@ -1,0 +1,134 @@
+﻿@model OnlineSurvey.ViewModel.ListofModels
+
+@{
+
+    ViewBag.Title = "CreateSurvey";
+}
+
+
+
+
+
+<div class="container">
+    <div class="row">
+
+        @if (Model.ListOfsurveyViewModel != null)
+        {
+            foreach (var item in Model.ListOfsurveyViewModel)
+            {
+              <div class="col-md-4">
+                  <div class="card card-cascade">
+
+                      <!-- Card image -->
+                      <div class="view view-cascade gradient-card-header blue-gradient">
+
+                          <!-- Title -->
+                          <h2 class="card-header-title mb-3">@item.Name</h2>
+                          <!-- Subtitle -->
+                          <p class="card-header-subtitle mb-0">@item.SurveyCatagories.Title</p>
+
+                      </div>
+
+                      <!-- Card content -->
+                      <div class="card-body card-body-cascade text-center">
+
+                          <!-- Text -->
+                          <p class="card-text">
+                              @foreach (var SubItem in item.MultipleChoiceQuestion)
+                              {
+                                  <h5>@SubItem.Title</h5>
+                                  @SubItem.Body
+                                  <div class="chip chip-lg  rgba-blue-strong">
+                                      @SubItem.Type,
+
+                                  </div>
+
+                              }
+                          </p>
+
+                          <hr>
+
+
+
+                      </div>
+                      @Html.ActionLink("Index", "Index", "Home", new { id = item.Id}, new { @class = "btn" })
+                  </div>
+            </div>
+                
+            }
+        }
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @if (Model.ListOfsurveyViewModel != null)
+        {
+            foreach (var item in Model.ListOfsurveyViewModel)
+            {
+                <div class="container my-5 py-4 card">
+
+
+                    <!--Section: Content-->
+                    <section class="text-center px-md-5 mx-md-5 dark-grey-text">
+
+                        <h3 class="font-weight-bold mb-4">@item.SurveyCatagories.Title</h3>
+                        <h class="font-weight-normal mb-4">@item.SurveyCatagories.Content</h>
+
+                        <p class="text-muted">
+                            @foreach (var Subitem in item.MultipleChoiceQuestion)
+                            {
+                                
+                                <h3>@Subitem.Body</h3>
+                                <h3>@Subitem.Type</h3>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => Subitem.MultipleChoiceQuesion, htmlAttributes: new { @class = "control-label" })
+
+                                    <div class="">
+                                        @Html.ListBoxFor(model => Subitem.MultipleChoiceQuesion, new MultiSelectList(ViewBag.MultipleChoice, "Id", "Answer"), new { @class = " md-form dropdown-primary md-form" })
+
+                                    </div>
+                                </div>
+
+
+                            }
+                        </p>
+
+                    </section>
+                    <!--Section: Content-->
+
+
+                </div>
+            }
+
+
+        }
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+        $('.mdb-select').materialSelect();
+    });
+</script>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.mdb-select').materialSelect();
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

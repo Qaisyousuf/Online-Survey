@@ -11,21 +11,22 @@ namespace OnlineSurvey.ViewModel
         public int Id { get; set; }
 
         [Required]
-        [Display(Name ="First Name")]
+        [Display(Name ="First Name *")]
         public string FirstName { get; set; }
 
         [Required]
-        [Display(Name ="Last Name")]
+        [Display(Name ="Last Name *")]
         public string LastName { get; set; }
 
         
         [EmailAddress]
         [Required]
+        [Display(Name ="Email *")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required]
-        [Display(Name ="Mobile ")]
+        [Display(Name ="Mobile *")]
         public string Mobile { get; set; }
 
   
@@ -38,9 +39,9 @@ namespace OnlineSurvey.ViewModel
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyy}", ApplyFormatInEditMode = true)]
-        [Display(Name ="Data of birth")]
+        [Display(Name ="Data of birth *")]
         public DateTime DOB { get; set; }
-        [Display(Name ="Gender type")]
+        [Display(Name ="Gender type *")]
         public int GenderId { get; set; }
 
         [ForeignKey("GenderId")]

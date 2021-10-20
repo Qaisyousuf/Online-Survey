@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnlineSurvey.ViewModel
 {
-    public class DeleteUserViewModel
+    public class DeleteUserViewModel:BaseViewModel
     {
         public DeleteUserViewModel()
         {

@@ -4,7 +4,7 @@ using OnlineSurvey.Model;
 
 namespace OnlineSurvey.ViewModel
 {
-    public class MultipleChoiceQuestionsViewModel
+    public class MultipleChoiceQuestionsViewModel:BaseViewModel
     {
         public MultipleChoiceQuestionsViewModel()
         {

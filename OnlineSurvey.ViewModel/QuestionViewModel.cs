@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OnlineSurvey.ViewModel
 {
-   public class QuestionViewModel
+   public class QuestionViewModel:BaseViewModel
     {
         public QuestionViewModel()
         {

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnlineSurvey.ViewModel
 {
-    public class SurveyViewModel
+    public class SurveyViewModel:BaseViewModel
     {
         public SurveyViewModel()
         {
@@ -34,5 +34,7 @@ namespace OnlineSurvey.ViewModel
         public SurveyCatagory SurveyCatagories { get; set; }
 
         public List<Question> MultipleChoiceQuestion { get; set; }
+        
+
     }
 }

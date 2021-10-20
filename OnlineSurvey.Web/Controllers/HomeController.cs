@@ -10,6 +10,7 @@ namespace OnlineSurvey.Web.Controllers
 {
     public class HomeController : BaseController
     {
+        //[Route("slug/Id")]
         public ActionResult Index(string slug)
         {
             if (string.IsNullOrEmpty(slug))
@@ -27,6 +28,8 @@ namespace OnlineSurvey.Web.Controllers
             var surveyFromdb = _uow.PageRepository.GetById(pageFromdb.Id);
 
             TempData["banner"] = pageFromdb.BannerId;
+
+            TempData["SurveyId"] = pageFromdb.SurveyId;
             
             viewmodel = new PageViewModel
             {
@@ -36,13 +39,50 @@ namespace OnlineSurvey.Web.Controllers
                 BannerId=pageFromdb.BannerId,
                 Banners=pageFromdb.Banners,
                 SurveyId=pageFromdb.SurveyId,
-                AnimationUrlForPage=pageFromdb.AnimationUrl,
                 
+                AnimationUrlForPage=pageFromdb.AnimationUrl,
+
             };
 
+            var survey = _uow.SurveyRepository.GetAll("SurveyCatagories", "MultipleChoiceQuestion").ToList();
 
-            return View(viewmodel);
+            List<SurveyViewModel> Surveyviewmodel = new List<SurveyViewModel>();
+
+            foreach (var item in survey)
+            {
+                var MultipleId = item.MultipleChoiceQuestion.Select(x => x.Id).ToList();
+                var MultipleQuestionName = _uow.Context.MultipleChoiceQuestions.Where(x => MultipleId.Contains(x.Id)).Select(x => x.Answer).ToList();
+             
+                    Surveyviewmodel.Add(new SurveyViewModel
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        StartDate = item.StartDate,
+                        IsActive = item.IsActive,
+                        SurveyCatagories = item.SurveyCatagories,
+                        SurveyCatagoryId = item.SurveyCatagoryId,
+                        MultipleChoiceQuestion = item.MultipleChoiceQuestion,
+
+                        SurveyMutipleChoiceTag = MultipleQuestionName,
+
+                    });
+                
+
+              
+            }
+
+            UserSurveyViewModel suerviewmodel = new UserSurveyViewModel();
+
+            ListofModels listofPageviewModel = new ListofModels
+            {
+                PagesViewModel=viewmodel,
+                ListOfsurveyViewModel=Surveyviewmodel,
+                ListUserSurveyViewModel=suerviewmodel,
+            };
+            UserSurveyData();
+            return View(listofPageviewModel);
         }
+      
 
         [ChildActionOnly]
         public ActionResult PartialMenu()
@@ -86,42 +126,85 @@ namespace OnlineSurvey.Web.Controllers
         private void UserSurveyData()
         {
             ViewBag.UserGender = _uow.GenderRepository.GetAll();
-        }
-        [HttpGet]
-        [Route("UserSurvey")]
-        public ActionResult CreateUserSurvey()
-        {
-            UserSurveyData();
-            return View(new UserSurveyViewModel());
+            ViewBag.SurveyCatagoty = _uow.SurveyCatagoryRepository.GetAll();
+            ViewBag.MultipleChoice = _uow.MultipleChoiceQuestionsRepository.GetAll();
+            ViewBag.Question = _uow.QuesiotnRepository.GetAll();
+            
         }
 
-        [HttpPost]
-        [Route("UserSurvey")]
-        public ActionResult CreateUserSurvey(UserSurveyViewModel viewmodel)
-        {
-            if(ModelState.IsValid)
-            {
+        //[HttpGet]
+       
+        //public ActionResult CreateSurvey()
+        //{
+        //    var survey = _uow.SurveyRepository.GetAll("SurveyCatagories", "MultipleChoiceQuestion").ToList();
+
+        //    List<SurveyViewModel> viewmodel = new List<SurveyViewModel>();
+
+        //    List<MultipleChoiceQuestionsViewModel> mutipleAsnwer = new List<MultipleChoiceQuestionsViewModel>();
+
+        //    foreach (var item in survey)
+        //    {
+        //        if(item.Id !=4)
+        //        {
+        //            var MultipleId = item.MultipleChoiceQuestion.Select(x => x.Id).ToList();
+        //            var MultipleQuestionName = _uow.Context.Questions.Where(x => MultipleId.Contains(x.Id)).Select(x => x.Type).ToList();
+
+
+        //            viewmodel.Add(new SurveyViewModel
+        //            {
+        //                Id = item.Id,
+        //                Name = item.Name,
+        //                StartDate = item.StartDate,
+        //                IsActive = item.IsActive,
+        //                SurveyCatagories = item.SurveyCatagories,
+        //                SurveyCatagoryId = item.SurveyCatagoryId,
+        //                MultipleChoiceQuestion = item.MultipleChoiceQuestion,
+ 
+        //                SurveyMutipleChoiceTag = MultipleQuestionName,
+
+        //            });
+        //        }
+                
+              
+        //    }
+
+        //    ListofModels listofModels = new ListofModels
+        //    {
+        //        ListOfsurveyViewModel=viewmodel,
+        //    };
+
+        //    UserSurveyData();
+        //    return View(listofModels);
+        //}
+
+        //[HttpPost]
+        
+        //public ActionResult CreateSurvey(UserSurveyViewModel viewmodel)
+        //{
+
+        //    if(ModelState.IsValid)
+        //    {
                
-                var userSurvey = new UserSurveyRegistration
-                {
-                   Id=viewmodel.Id,
-                   FirstName=viewmodel.FirstName,
-                   LastName=viewmodel.LastName,
-                   Email=viewmodel.Email,
-                   Mobile=viewmodel.Mobile,
-                   Address=viewmodel.Address,
-                   CPRNumber=viewmodel.CPRNumber,
-                   DOB=viewmodel.DOB,
-                   GenderId=viewmodel.GenderId,
-                   Genders=viewmodel.Genders,
-                };
+        //        var userSurvey = new UserSurveyRegistration
+        //        {
+        //           Id=viewmodel.Id,
+        //           FirstName=viewmodel.FirstName,
+        //           LastName=viewmodel.LastName,
+        //           Email=viewmodel.Email,
+        //           Mobile=viewmodel.Mobile,
+        //           Address=viewmodel.Address,
+        //           CPRNumber=viewmodel.CPRNumber,
+        //           DOB=viewmodel.DOB,
+        //           GenderId=viewmodel.GenderId,
+        //           Genders=viewmodel.Genders,
+        //        };
 
-                _uow.UserSurveyRepository.Add(userSurvey);
-                _uow.Commit();
-                return Json(new { success = true, message = "Data saved successfully " }, JsonRequestBehavior.AllowGet);
-            }
-            return View(viewmodel);
-        }
+        //        _uow.UserSurveyRepository.Add(userSurvey);
+        //        _uow.Commit();
+        //        return Json(new { success = true, message = "Data saved successfully " }, JsonRequestBehavior.AllowGet);
+        //    }
+        //    return View(viewmodel);
+        //}
 
 
     }

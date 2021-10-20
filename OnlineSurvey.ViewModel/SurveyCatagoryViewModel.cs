@@ -2,7 +2,7 @@
 
 namespace OnlineSurvey.ViewModel
 {
-    public class SurveyCatagoryViewModel
+    public class SurveyCatagoryViewModel:BaseViewModel
     {
         public int Id { get; set; }
 

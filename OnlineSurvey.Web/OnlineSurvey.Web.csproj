@@ -564,7 +564,7 @@
     <Content Include="Scripts\moment-with-locales.min.js.map" />
     <Content Include="Views\Home\PartialMenu.cshtml" />
     <Content Include="Views\Home\GetBanner.cshtml" />
-    <Content Include="Views\Home\CreateUserSurvey.cshtml" />
+    <Content Include="Views\Home\CreateSurvey.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />

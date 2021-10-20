@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations.Schema;
 namespace OnlineSurvey.Model
 {
     public class Question:EntityBase
@@ -19,7 +19,7 @@ namespace OnlineSurvey.Model
         public string Type { get; set; }
         public bool IsActive { get; set; }
 
-
+      
         public List<MultipleChoiceQuestions> MultipleChoiceQuesion { get; set; }
         public List<Survey> Surveys { get; set; }
         public List<Response> Responses { get; set; }

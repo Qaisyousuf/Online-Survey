@@ -26,6 +26,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         {
             ViewBag.SurveyCatagory = uow.SurveyCatagoryRepository.GetAll();
             ViewBag.QuestionData = uow.QuesiotnRepository.GetAll();
+            ViewBag.UserSurvey = uow.UserSurveyRepository.GetAll();
         }
 
         [HttpGet]
@@ -48,6 +49,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     SurveyCatagories=item.SurveyCatagories,
                     SurveyCatagoryId=item.SurveyCatagoryId,
                     SurveyMutipleChoiceTag=MultipleQuestionName,
+                  
                     
 
                 });
@@ -71,13 +73,14 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             {
                 var suvery = new Survey
                 {
-                    Id=viewmodel.Id,
-                    Name=viewmodel.Name,
-                    StartDate=DateTime.Now,
-                    IsActive=viewmodel.IsActive,
-                    SurveyCatagories=viewmodel.SurveyCatagories,
-                    SurveyCatagoryId=viewmodel.SurveyCatagoryId,
-                    MultipleChoiceQuestion=viewmodel.MultipleChoiceQuestion,
+                    Id = viewmodel.Id,
+                    Name = viewmodel.Name,
+                    StartDate = DateTime.Now,
+                    IsActive = viewmodel.IsActive,
+                    SurveyCatagories = viewmodel.SurveyCatagories,
+                    SurveyCatagoryId = viewmodel.SurveyCatagoryId,
+                    MultipleChoiceQuestion = viewmodel.MultipleChoiceQuestion,
+                  
                 };
 
                 foreach (int quesiont in viewmodel.SurveyIdForMultipleChoice)
@@ -108,6 +111,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 SurveyCatagories=survey.SurveyCatagories,
                 SurveyCatagoryId=survey.SurveyCatagoryId,
                 MultipleChoiceQuestion=survey.MultipleChoiceQuestion,
+               
             };
             int[] mulitPleChoice = survey.MultipleChoiceQuestion.Select(x => x.Id).ToArray();
 
@@ -118,7 +122,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "Id,Name,StartDate,IsActive,SurveyCatagoryId")] SurveyViewModel viewmodel,int [] SurveyIdForMultipleChoice)
+        public ActionResult Edit([Bind(Include = "Id,Name,StartDate,IsActive,SurveyCatagoryId,UserSurveyId")] SurveyViewModel viewmodel,int [] SurveyIdForMultipleChoice)
         {
             if(ModelState.IsValid)
             {
@@ -132,6 +136,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 survey.IsActive = viewmodel.IsActive;
                 survey.SurveyCatagoryId = viewmodel.SurveyCatagoryId;
                 survey.MultipleChoiceQuestion = viewmodel.MultipleChoiceQuestion;
+              
 
                 var multiPleQuestionAdded = uow.Context.Questions.Where(x => SurveyIdForMultipleChoice.Contains(x.Id)).ToList();
                 //var multiPleQuestionAdded = uow.Context.MultipleChoiceQuestions.Where(x => MultipleQuesiton.Contains(x.Id)).ToList();
@@ -164,6 +169,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 SurveyCatagories = survey.SurveyCatagories,
                 SurveyCatagoryId = survey.SurveyCatagoryId,
                 MultipleChoiceQuestion = survey.MultipleChoiceQuestion,
+             
             };
             int[] mulitPleChoice = survey.MultipleChoiceQuestion.Select(x => x.Id).ToArray();
 
@@ -189,6 +195,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 SurveyCatagories=survey.SurveyCatagories,
                 SurveyCatagoryId=survey.SurveyCatagoryId,
                 MultipleChoiceQuestion=survey.MultipleChoiceQuestion,
+              
             };
 
           
@@ -212,6 +219,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 SurveyCatagories = survey.SurveyCatagories,
                 SurveyCatagoryId = survey.SurveyCatagoryId,
                 MultipleChoiceQuestion = survey.MultipleChoiceQuestion,
+              
             };
             int[] mulitPleChoice = survey.MultipleChoiceQuestion.Select(x => x.Id).ToArray();
 

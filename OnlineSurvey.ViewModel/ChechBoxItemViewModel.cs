@@ -1,6 +1,6 @@
 ﻿namespace OnlineSurvey.ViewModel
 {
-    public class ChechBoxItemViewModel
+    public class ChechBoxItemViewModel:BaseViewModel
     {
         public string Id { get; set; }
         public string Text { get; set; }
