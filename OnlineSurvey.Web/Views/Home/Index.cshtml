@@ -3,10 +3,48 @@
     ViewBag.Title = ViewBag.PageTitle;
 }
 
+
+
+@if (Model.Bannerviewmodel != null)
+{
+    <div class="Mainbackground">
+        <div class="MainBannerBackgrondImage">
+            <div class="view bg-transparent">
+                <!-- Mask & flexbox options-->
+                <div class="mask">
+                    <!-- Content -->
+                    <div class="container h-100">
+                        <!--Grid row-->
+                        <div class="row align-items-center min-vh-100">
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <h1 class="mb-2 text-white font-weight-bold">@Model.PagesViewModel.Banners.MainTitle</h1>
+                                <h5 class="mb-2 text-white font-weight-bold">@Model.PagesViewModel.Banners.SubTitle</h5>
+                                <p class="mb-2 pb-2 text-white">@Model.Bannerviewmodel.Content</p>
+                                <a href="@Model.PagesViewModel.Banners.ButtonUrl" class="btn btn-rounded btn-outline-white btn-md">@Model.PagesViewModel.Banners.Button</a>
+
+                            </div>
+                            <!--Grid column-->
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="view img-fluid">
+                                    <lottie-player src="@Model.PagesViewModel.Banners.AnimationUrl" background="transparent" speed="1" style="width: auto; height: auto;" loop autoplay></lottie-player>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </div>
+                    <!-- Content -->
+                </div>
+                <!-- Mask & flexbox options-->
+            </div>
+        </div>
+    </div>
+}
+
 @if (Model.PagesViewModel != null)
 {
-
-
 
     <div class="container my-5 card">
 
@@ -24,10 +62,12 @@
                 </div>
                 <div class="col-md-5 d-flex align-items-center">
                     <div>
-                       
+
                         <h3 class="font-weight-bold mb-2">@Model.PagesViewModel.Surveies.Name</h3>
 
                         <p>@Model.PagesViewModel.Content</p>
+
+
 
                     </div>
                 </div>
@@ -52,10 +92,11 @@
                         <h3 class="card-header-title">@Model.PagesViewModel.Surveies.Name</h3>
                         <!-- Subtitle -->
                         <h6 class="mb-0 pb-3 pt-2">@Model.PagesViewModel.Surveies.SurveyCatagories.Type</h6>
+                        
 
                         @foreach (var item in Model.PagesViewModel.Surveies.MultipleChoiceQuestion)
                         {
-                          <button class="btn btn-rounded btn-sm">@item.Type</button>
+                            <button class="btn btn-rounded btn-sm">@item.Type</button>
                         }
                         <!-- Facebook -->
 
@@ -67,7 +108,7 @@
 
                         <!-- Text -->
                         <p class="card-text text-justify">
-                           @Model.PagesViewModel.Surveies.SurveyCatagories.Content
+                            @Model.PagesViewModel.Surveies.SurveyCatagories.Content
                         </p>
 
                     </div>
@@ -85,7 +126,7 @@
                             {
                                 <button class="btn btn-rounded btn-md text-white"><i class="far fa-calendar-alt fa-lg text-primary"></i> Published date @Model.PagesViewModel.Surveies.StartDate </button>
                                 <button class="btn btn-rounded btn-md text-white">Survey is off <i class="fas fa-times-circle text-danger fa-lg"></i></button>
-                               
+
 
                             }
                         }
@@ -96,79 +137,79 @@
                 </div>
                 @*<div class="card card-cascade">
 
-            <!-- Card image -->
-            <div class="view view-cascade gradient-card-header blue-gradient">
-
-                <!-- Title -->
-                <h2 class="card-header-title mb-3">@Model.PagesViewModel.Surveies.Name</h2>
-                <!-- Subtitle -->
-                <p class="card-header-subtitle mb-0">@Model.PagesViewModel.Surveies.SurveyCatagories.Title</p>
-
-            </div>
-
-            <!-- Card content -->
-            <div class="card-body card-body-cascade text-center">
-
-
-                @Model.PagesViewModel.Surveies.IsActive
-                @Model.PagesViewModel.Surveies.StartDate
-                <hr>
-
-            </div>
-            @if (Model.PagesViewModel.Surveies.Id.ToString() != null && Model.PagesViewModel.Id.ToString() != null)
-            {
-                <a href="Home/CreateSurvey/@Model.PagesViewModel.Surveies.Id" class="btn btn-outline-primary"> Take Survey</a>
-            }
-
-
-
-        </div>*@
-            </div>
-        </div>
-    </div>
-   
-
-}
-@*@if (Model.ListOfsurveyViewModel != null)
-{
-
-    <div class="container">
-        <div class="row">
-
-
-            @foreach (var item in Model.ListOfsurveyViewModel)
-            {
-                <div class="col-md-4">
-                    <div class="card card-cascade">
-
                         <!-- Card image -->
                         <div class="view view-cascade gradient-card-header blue-gradient">
 
                             <!-- Title -->
-                            <h2 class="card-header-title mb-1">@item.Name</h2>
+                            <h2 class="card-header-title mb-3">@Model.PagesViewModel.Surveies.Name</h2>
                             <!-- Subtitle -->
-                            <p class="card-header-subtitle mb-0">@item.SurveyCatagories.Title</p>
+                            <p class="card-header-subtitle mb-0">@Model.PagesViewModel.Surveies.SurveyCatagories.Title</p>
 
                         </div>
 
                         <!-- Card content -->
                         <div class="card-body card-body-cascade text-center">
 
-                            @item.Name
-                            @item.SurveyCatagories.Type
-                            @item.SurveyCatagories.Title
+
+                            @Model.PagesViewModel.Surveies.IsActive
+                            @Model.PagesViewModel.Surveies.StartDate
                             <hr>
 
                         </div>
-                        <a href="Home/CreateSurvey/@item.SurveyIdForMultipleChoice" class="btn btn-outline-primary"> Take Survey</a>
-                    </div>
-                </div>
+                        @if (Model.PagesViewModel.Surveies.Id.ToString() != null && Model.PagesViewModel.Id.ToString() != null)
+                        {
+                            <a href="Home/CreateSurvey/@Model.PagesViewModel.Surveies.Id" class="btn btn-outline-primary"> Take Survey</a>
+                        }
 
-            }
 
+
+                    </div>*@
+            </div>
         </div>
     </div>
-}*@
+
+
+}
+@*@if (Model.ListOfsurveyViewModel != null)
+    {
+
+        <div class="container">
+            <div class="row">
+
+
+                @foreach (var item in Model.ListOfsurveyViewModel)
+                {
+                    <div class="col-md-4">
+                        <div class="card card-cascade">
+
+                            <!-- Card image -->
+                            <div class="view view-cascade gradient-card-header blue-gradient">
+
+                                <!-- Title -->
+                                <h2 class="card-header-title mb-1">@item.Name</h2>
+                                <!-- Subtitle -->
+                                <p class="card-header-subtitle mb-0">@item.SurveyCatagories.Title</p>
+
+                            </div>
+
+                            <!-- Card content -->
+                            <div class="card-body card-body-cascade text-center">
+
+                                @item.Name
+                                @item.SurveyCatagories.Type
+                                @item.SurveyCatagories.Title
+                                <hr>
+
+                            </div>
+                            <a href="Home/CreateSurvey/@item.SurveyIdForMultipleChoice" class="btn btn-outline-primary"> Take Survey</a>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    }*@
 
 
 
@@ -298,8 +339,8 @@
                 </div>
             </div>
         </div>
-    }*@
-}
+    }
+}*@
 
 
 

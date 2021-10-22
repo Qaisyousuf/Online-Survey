@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnlineSurvey.ViewModel
 {
-    public class BannerViewModel
+    public class BannerViewModel:BaseViewModel
     {
         public int Id { get; set; }
 

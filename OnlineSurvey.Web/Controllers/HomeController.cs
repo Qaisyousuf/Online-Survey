@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using OnlineSurvey.ViewModel;
 using OnlineSurvey.Model;
+using System.Data.Entity;
 
 namespace OnlineSurvey.Web.Controllers
 {
@@ -33,6 +34,8 @@ namespace OnlineSurvey.Web.Controllers
 
             var surveId = _uow.SurveyRepository.GetById(pageFromdb.SurveyId);
 
+            var banner = _uow.BannerRepository.GetById(pageFromdb.BannerId);
+
             if (surveId != null)
             {
                 ModelState.AddModelError("", "Page survey exists");
@@ -42,8 +45,19 @@ namespace OnlineSurvey.Web.Controllers
             {
                  ModelState.AddModelError("", "Page not exist");
             }
-           
 
+
+
+            BannerViewModel bannerviewmodel = new BannerViewModel
+            {
+                Id=banner.Id,
+                MainTitle=banner.MainTitle,
+                SubTitle=banner.SubTitle,
+                Content=banner.Content,
+                AnimationUrl=banner.AnimationUrl,
+                Button=banner.Button,
+                ButtonUrl=banner.ButtonUrl,
+            };
 
 
             viewmodel = new PageViewModel
@@ -96,6 +110,7 @@ namespace OnlineSurvey.Web.Controllers
                 {
                     PagesViewModel = viewmodel,
                     ListOfsurveyViewModel = Surveyviewmodel,
+                    Bannerviewmodel=bannerviewmodel,
                    
                 };
 
@@ -126,6 +141,7 @@ namespace OnlineSurvey.Web.Controllers
         public ActionResult GetBanner()
         {
             int id = (int)TempData["banner"];
+
             var homebanner = _uow.BannerRepository.GetById(id);
 
             BannerViewModel viewmodel = new BannerViewModel
@@ -139,7 +155,7 @@ namespace OnlineSurvey.Web.Controllers
                 Content=homebanner.Content,
             };
 
-            return View(viewmodel);
+            return PartialView(viewmodel);
 
         }
 
@@ -154,14 +170,15 @@ namespace OnlineSurvey.Web.Controllers
 
         [HttpGet]
 
-        public ActionResult StartSurvey(int id)
+        public ActionResult StartSurvey(int? id)
         {
-
+            
 
             var survey = _uow.SurveyRepository.GetAll("MultipleChoiceQuestion", "SurveyCatagories").SingleOrDefault(x => x.Id == id);
 
             int[] surveyId = survey.MultipleChoiceQuestion.Select(x => x.Id).ToArray();
 
+            //var xs = survey.MultipleChoiceQuestion.Where(t => surveyId.Contains(t.Id)).Select(x => x.Type);
             var MultipleChoinceQuestionName = survey.MultipleChoiceQuestion.Where(x => surveyId.Contains(x.Id)).Select(x => x.Type).ToList();
 
 
@@ -200,14 +217,11 @@ namespace OnlineSurvey.Web.Controllers
                 });
             }
 
-            foreach (var item in MultipleChoinceQuestionName)
-            {
-                var MultipleChoinnceTag = _uow.MultipleChoiceQuestionsRepository.GetById(item).ToString();
-                
-            }
+            //foreach (var item in MultipleChoinceQuestionName)
+            //{
+            //    var MultipleChoinnceTag = _uow.MultipleChoiceQuestionsRepository.GetById(item.ToString());
 
-
-           
+            //}
 
 
 
@@ -217,42 +231,41 @@ namespace OnlineSurvey.Web.Controllers
 
             //viewmodel.MultipleChoiceId = questionId;
 
-            //ViewBag.MultipleChoice = _uow.MultipleChoiceQuestionsRepository.GetAll();
+            ViewBag.MultipleChoice = _uow.MultipleChoiceQuestionsRepository.GetAll();
+
+            UserSurveyRegistration userSurvey = new UserSurveyRegistration();
+
+            UserSurveyViewModel userSurveyViewModel = new UserSurveyViewModel
+            {
+                Id=userSurvey.Id,
+                FirstName=userSurvey.FirstName,
+                LastName=userSurvey.LastName,
+            };
+                
+
+           
 
 
+
+            ListofModels SurveyViewModel = new ListofModels
+            {
+                ViewModelSurvey=surveyViewModel,
+                ListUserSurveyViewModel=userSurveyViewModel,
+            };
 
 
             //UserSurveyData();
-            return View(surveyViewModel);
+            ViewBag.Gender = _uow.GenderRepository.GetAll();
+            return View(SurveyViewModel);
         }
 
         [HttpPost]
 
-        public ActionResult CreateSurvey(UserSurveyViewModel viewmodel)
+        public ActionResult StartSurvey(SurveyViewModel viewmodel)
         {
 
-            if (ModelState.IsValid)
-            {
 
-                var userSurvey = new UserSurveyRegistration
-                {
-                    Id = viewmodel.Id,
-                    FirstName = viewmodel.FirstName,
-                    LastName = viewmodel.LastName,
-                    Email = viewmodel.Email,
-                    Mobile = viewmodel.Mobile,
-                    Address = viewmodel.Address,
-                    CPRNumber = viewmodel.CPRNumber,
-                    DOB = viewmodel.DOB,
-                    GenderId = viewmodel.GenderId,
-                    Genders = viewmodel.Genders,
-                };
-
-                _uow.UserSurveyRepository.Add(userSurvey);
-                _uow.Commit();
-                return Json(new { success = true, message = "Data saved successfully " }, JsonRequestBehavior.AllowGet);
-            }
-            return View(viewmodel);
+            return RedirectToAction(nameof(Index));
         }
 
 
