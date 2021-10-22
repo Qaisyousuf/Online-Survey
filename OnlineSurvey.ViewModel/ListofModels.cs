@@ -11,5 +11,7 @@ namespace OnlineSurvey.ViewModel
         public UserSurveyViewModel ListUserSurveyViewModel { get; set; }
         public PageViewModel PagesViewModel { get; set; }
         public List<SurveyViewModel> ListOfsurveyViewModel { get; set; }
+
+
     }
 }

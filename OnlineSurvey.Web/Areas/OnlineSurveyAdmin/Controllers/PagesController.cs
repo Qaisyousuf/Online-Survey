@@ -31,7 +31,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult GetPageData()
         {
-            var page = uow.PageRepository.GetAll("Banners", "Surveies");
+            var page = uow.PageRepository.GetAll("Banners", "Surveies").ToList();
 
             List<PageViewModel> viewmodel = new List<PageViewModel>();
 

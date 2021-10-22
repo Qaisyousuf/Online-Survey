@@ -565,6 +565,7 @@
     <Content Include="Views\Home\PartialMenu.cshtml" />
     <Content Include="Views\Home\GetBanner.cshtml" />
     <Content Include="Views\Home\CreateSurvey.cshtml" />
+    <Content Include="Views\Home\StartSurvey.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />

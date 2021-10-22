@@ -74,6 +74,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 var suvery = new Survey
                 {
                     Id = viewmodel.Id,
+                    
                     Name = viewmodel.Name,
                     StartDate = DateTime.Now,
                     IsActive = viewmodel.IsActive,
@@ -221,6 +222,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 MultipleChoiceQuestion = survey.MultipleChoiceQuestion,
               
             };
+
             int[] mulitPleChoice = survey.MultipleChoiceQuestion.Select(x => x.Id).ToArray();
 
 

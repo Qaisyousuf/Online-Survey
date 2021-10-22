@@ -1,7 +1,7 @@
-﻿@model OnlineSurvey.ViewModel.ListofModels
+﻿@model OnlineSurvey.ViewModel.QuestionViewModel
 
 @{
-
+    Layout = null;
     ViewBag.Title = "CreateSurvey";
 }
 
@@ -12,20 +12,19 @@
 <div class="container">
     <div class="row">
 
-        @if (Model.ListOfsurveyViewModel != null)
+        @if(Model?.Id != null)
         {
-            foreach (var item in Model.ListOfsurveyViewModel)
-            {
-              <div class="col-md-4">
+           
+              @*<div class="col-md-4">
                   <div class="card card-cascade">
 
                       <!-- Card image -->
                       <div class="view view-cascade gradient-card-header blue-gradient">
 
                           <!-- Title -->
-                          <h2 class="card-header-title mb-3">@item.Name</h2>
+                          <h2 class="card-header-title mb-3">@Model.Name</h2>
                           <!-- Subtitle -->
-                          <p class="card-header-subtitle mb-0">@item.SurveyCatagories.Title</p>
+                          <p class="card-header-subtitle mb-0">@Model.SurveyCatagories.Title</p>
 
                       </div>
 
@@ -34,7 +33,7 @@
 
                           <!-- Text -->
                           <p class="card-text">
-                              @foreach (var SubItem in item.MultipleChoiceQuestion)
+                              @foreach (var SubItem in Model.MultipleChoiceQuestion)
                               {
                                   <h5>@SubItem.Title</h5>
                                   @SubItem.Body
@@ -51,11 +50,11 @@
 
 
                       </div>
-                      @Html.ActionLink("Index", "Index", "Home", new { id = item.Id}, new { @class = "btn" })
+                      @Html.ActionLink("Index", "Index", "Home", new { id = Model.Id}, new { @class = "btn" })
                   </div>
-            </div>
+            </div>*@
                 
-            }
+            
         }
     </div>
 </div>
@@ -68,44 +67,40 @@
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        @if (Model.ListOfsurveyViewModel != null)
+        @if (Model?.Id != null)
         {
-            foreach (var item in Model.ListOfsurveyViewModel)
-            {
+           
                 <div class="container my-5 py-4 card">
 
 
                     <!--Section: Content-->
                     <section class="text-center px-md-5 mx-md-5 dark-grey-text">
 
-                        <h3 class="font-weight-bold mb-4">@item.SurveyCatagories.Title</h3>
-                        <h class="font-weight-normal mb-4">@item.SurveyCatagories.Content</h>
 
-                        <p class="text-muted">
-                            @foreach (var Subitem in item.MultipleChoiceQuestion)
-                            {
-                                
-                                <h3>@Subitem.Body</h3>
-                                <h3>@Subitem.Type</h3>
-                                <div class="form-group">
-                                    @Html.LabelFor(model => Subitem.MultipleChoiceQuesion, htmlAttributes: new { @class = "control-label" })
+                        <h3 class="font-weight-bold mb-4">@Model.Title</h3>
 
-                                    <div class="">
-                                        @Html.ListBoxFor(model => Subitem.MultipleChoiceQuesion, new MultiSelectList(ViewBag.MultipleChoice, "Id", "Answer"), new { @class = " md-form dropdown-primary md-form" })
 
-                                    </div>
+
+                      
+                            <h3 class="font-weight-bold mb-4">@Model.Body</h3>
+                            <div class="form-group">
+                                @Html.LabelFor(model => Model.MultipleChoiceId, htmlAttributes: new { @class = "control-label" })
+
+                                <div class="">
+                                    @Html.ListBoxFor(model => Model.MultipleChoiceId, new MultiSelectList(Model.MultipleChoiceQuesion, "Id", "Answer"),new { @class= "mdb-select md-form" })
+
                                 </div>
+                            </div>
 
+                                
 
-                            }
-                        </p>
 
                     </section>
                     <!--Section: Content-->
 
 
                 </div>
-            }
+            
 
 
         }
