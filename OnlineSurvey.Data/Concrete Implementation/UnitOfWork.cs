@@ -42,6 +42,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IQuesiotnRepository QuesiotnRepository => new QuesiotnRepository(Context);
 
+        public IResponseRepository ResponseRepository => new ResponseRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

@@ -70,6 +70,7 @@
     <Compile Include="Concrete Implementation\PageRepository.cs" />
     <Compile Include="Concrete Implementation\QuesiotnRepository.cs" />
     <Compile Include="Concrete Implementation\Repository.cs" />
+    <Compile Include="Concrete Implementation\ResponseRepository.cs" />
     <Compile Include="Concrete Implementation\SiteSettingsRepository.cs" />
     <Compile Include="Concrete Implementation\SurveyCatagoryRepository.cs" />
     <Compile Include="Concrete Implementation\SurveyRepository.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Interfaces\IPageRepository.cs" />
     <Compile Include="Interfaces\IQuesiotnRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IResponseRepository.cs" />
     <Compile Include="Interfaces\ISiteSettingsRepository.cs" />
     <Compile Include="Interfaces\ISlug.cs" />
     <Compile Include="Interfaces\ISurveyCatagoryRepository.cs" />
@@ -243,6 +245,10 @@
     <Compile Include="Migrations\202110171105155_UserSurveyIdRemoved.designer.cs">
       <DependentUpon>202110171105155_UserSurveyIdRemoved.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110261619068_DateTimeFiledAdded.cs" />
+    <Compile Include="Migrations\202110261619068_DateTimeFiledAdded.designer.cs">
+      <DependentUpon>202110261619068_DateTimeFiledAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -361,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110171105155_UserSurveyIdRemoved.resx">
       <DependentUpon>202110171105155_UserSurveyIdRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110261619068_DateTimeFiledAdded.resx">
+      <DependentUpon>202110261619068_DateTimeFiledAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

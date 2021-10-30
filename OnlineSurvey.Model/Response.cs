@@ -16,6 +16,9 @@ namespace OnlineSurvey.Model
         public string Title { get; set; }
         public string Body { get; set; }
 
+        public DateTime ResponseDateTime { get; set; }
+
+        public string UserName { get; set; }
 
         public int SurveyId { get; set; }
         [ForeignKey("SurveyId")]

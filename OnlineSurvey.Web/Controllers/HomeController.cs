@@ -169,11 +169,11 @@ namespace OnlineSurvey.Web.Controllers
         }
 
         [HttpGet]
-
-        public ActionResult StartSurvey(int? id)
+        public ActionResult StartSurvey(int? id,ResponseViewModel responseviewmodel, UserSurveyViewModel viewmodel)
         {
-            
 
+            //var response=_uow.Context.Responses.Include(""),
+            var userseruve = _uow.Context.UserSurveyRegistrations.Include("Genders").SingleOrDefault(x => x.Id ==viewmodel.Id);
             var survey = _uow.SurveyRepository.GetAll("MultipleChoiceQuestion", "SurveyCatagories").SingleOrDefault(x => x.Id == id);
 
             int[] surveyId = survey.MultipleChoiceQuestion.Select(x => x.Id).ToArray();
@@ -240,10 +240,18 @@ namespace OnlineSurvey.Web.Controllers
                 Id=userSurvey.Id,
                 FirstName=userSurvey.FirstName,
                 LastName=userSurvey.LastName,
+                Email=userSurvey.Email,
+                Mobile=userSurvey.Mobile,
+                Address=userSurvey.Address,
+                CPRNumber=userSurvey.CPRNumber,
+                DOB=userSurvey.DOB,
+                GenderId=userSurvey.GenderId,
+                Genders=userSurvey.Genders,
             };
-                
 
-           
+            ResponseViewModel responseViewModel = new ResponseViewModel();
+
+
 
 
 
@@ -251,6 +259,7 @@ namespace OnlineSurvey.Web.Controllers
             {
                 ViewModelSurvey=surveyViewModel,
                 ListUserSurveyViewModel=userSurveyViewModel,
+                ListofResponseViewModel=responseViewModel,
             };
 
 
@@ -260,14 +269,45 @@ namespace OnlineSurvey.Web.Controllers
         }
 
         [HttpPost]
-
-        public ActionResult StartSurvey(SurveyViewModel viewmodel)
+        public ActionResult StartSurvey(int id, ListofModels viewmodel)
         {
+            var surveyViewModel = viewmodel.ListUserSurveyViewModel;
+
+            if (ModelState.IsValid)
+            {
+                var userExsite = _uow.Context.UserSurveyRegistrations.Any(x => x.Email == surveyViewModel.Email);
+                if (userExsite)
+                {
+                    return Json(new { error = true, message = "User with this email " + surveyViewModel.Email + " already exists" }, JsonRequestBehavior.AllowGet);
+                }
+                var userSurvey = new UserSurveyRegistration
+                {
+                    Id = surveyViewModel.Id,
+                    FirstName = surveyViewModel.FirstName,
+                    LastName = surveyViewModel.LastName,
+                    Email = surveyViewModel.Email,
+                    Mobile = surveyViewModel.Mobile,
+                    Address = surveyViewModel.Address,
+                    DOB = surveyViewModel.DOB,
+                    CPRNumber = surveyViewModel.CPRNumber,
+                    GenderId = surveyViewModel.GenderId,
+
+                };
+                _uow.UserSurveyRepository.Add(userSurvey);
+                _uow.Commit();
 
 
-            return RedirectToAction(nameof(Index));
+
+                //var responsefromdb = _uow.Context.Surveys.Include("MultipleChoiceQuestion").Include("SurveyCatagories").SingleOrDefault(x => x.Id == id);
+
+                //var quesiont = responsefromdb.MultipleChoiceQuestion.Where(x => x.Id == id).Select(x => x.MultipleChoiceQuesion).ToList();
+
+                //var userSurvey = _uow.Context.UserSurveyRegistrations.Include("Genders").Where(x => x.Id == viewmodel.ListUserSurveyViewModel.Id).Select(x => id);
+
+
+               
+            }
+            return Json(new { success = true, message = "Thank You! " + surveyViewModel.LastName + "for registration" }, JsonRequestBehavior.AllowGet);
         }
-
-
     }
 }

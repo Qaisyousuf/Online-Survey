@@ -198,6 +198,7 @@
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\OGMetaTagController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\PagesController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\QuestionController.cs" />
+    <Compile Include="Areas\OnlineSurveyAdmin\Controllers\ResponseController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\RolesController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\SiteSettingsController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\SurveyCatagoryController.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserSurveyRegistrationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -416,6 +418,7 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\Question\Edit.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Question\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Question\Details.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Response\Index.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
@@ -577,6 +580,8 @@
     <Content Include="Views\Home\CreateSurvey.cshtml" />
     <Content Include="Views\Home\StartSurvey.cshtml" />
     <Content Include="Views\Shared\_Survey.cshtml" />
+    <Content Include="Views\UserSurveyRegistration\Index.cshtml" />
+    <Content Include="Views\UserSurveyRegistration\UserSurveyRegistration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />

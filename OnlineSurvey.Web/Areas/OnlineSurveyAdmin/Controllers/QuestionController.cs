@@ -43,6 +43,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     IsActive=item.IsActive,
                     MultipleChoiceTag=MultipleQuestionName,
                     
+                    
                 });
             }
             ViewBag.MultipleChoice = uow.MultipleChoiceQuestionsRepository.GetAll();
