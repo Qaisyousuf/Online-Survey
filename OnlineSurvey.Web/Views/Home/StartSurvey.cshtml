@@ -206,7 +206,11 @@
                                                         </div>
                                                         @if (Model.ListofResponseViewModel != null)
                                                         {
+                                                            <div class="md-form mb-0">
+                                                                @Html.LabelFor(model => model.ListofResponseViewModel.Title, htmlAttributes: new { @class = "control-label  " })
+                                                                @Html.EditorFor(model => model.ListofResponseViewModel.Title, new { htmlAttributes = new { @class = "form-control" } })
 
+                                                            </div>
                                                             <div class="md-form mb-0">
                                                                 @Html.LabelFor(model => model.ListofResponseViewModel.Body, htmlAttributes: new { @class = "control-label  " })
                                                                 @Html.EditorFor(model => model.ListofResponseViewModel.Body, new { htmlAttributes = new { @class = "form-control" } })

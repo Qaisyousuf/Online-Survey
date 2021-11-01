@@ -70,6 +70,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     Type=viewmodel.Type,
                     IsActive=viewmodel.IsActive,
                     MultipleChoiceQuesion=viewmodel.MultipleChoiceQuesion,
+                    
                 };
 
 
