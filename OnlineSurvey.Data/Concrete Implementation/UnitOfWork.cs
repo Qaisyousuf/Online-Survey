@@ -44,6 +44,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IResponseRepository ResponseRepository => new ResponseRepository(Context);
 
+        public IResponseBodyRepository ResponseBodyRepository => new ResponseBodyRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

@@ -32,6 +32,7 @@ namespace OnlineSurvey.Data
         public DbSet<Survey> Surveys { get; set; } 
         public DbSet<Question> Questions { get; set; }
         public DbSet<Response> Responses { get; set; }
+        public DbSet<ResponseBody> ResponseBodies { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

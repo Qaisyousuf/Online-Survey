@@ -70,6 +70,7 @@
     <Compile Include="Concrete Implementation\PageRepository.cs" />
     <Compile Include="Concrete Implementation\QuesiotnRepository.cs" />
     <Compile Include="Concrete Implementation\Repository.cs" />
+    <Compile Include="Concrete Implementation\ResponseBodyRepository.cs" />
     <Compile Include="Concrete Implementation\ResponseRepository.cs" />
     <Compile Include="Concrete Implementation\SiteSettingsRepository.cs" />
     <Compile Include="Concrete Implementation\SurveyCatagoryRepository.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Interfaces\IPageRepository.cs" />
     <Compile Include="Interfaces\IQuesiotnRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IResponseBodyRepository.cs" />
     <Compile Include="Interfaces\IResponseRepository.cs" />
     <Compile Include="Interfaces\ISiteSettingsRepository.cs" />
     <Compile Include="Interfaces\ISlug.cs" />

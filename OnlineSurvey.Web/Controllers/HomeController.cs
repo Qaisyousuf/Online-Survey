@@ -349,8 +349,6 @@ namespace OnlineSurvey.Web.Controllers
                     UserName = userName,
                     SurveyId = id,
                     UserSurveyId = userSurveyId,
-                    Title=responseViewModel.Title,
-                    Body = responseViewModel.Body,
                     ResponseDateTime = DateTime.Now,
                     MultipleChoiceQuestions=responseViewModel.MultipleChoiceQuestions,
                     Questions=responseViewModel.Questions,

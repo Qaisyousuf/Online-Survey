@@ -25,6 +25,7 @@ namespace OnlineSurvey.Data.Interfaces
         ISurveyRepository SurveyRepository { get; }
         IQuesiotnRepository QuesiotnRepository { get; }
         IResponseRepository ResponseRepository { get; }
+        IResponseBodyRepository ResponseBodyRepository { get; }
 
         void Commit();
     }

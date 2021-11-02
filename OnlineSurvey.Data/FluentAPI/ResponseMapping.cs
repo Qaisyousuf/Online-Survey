@@ -29,6 +29,15 @@ namespace OnlineSurvey.Data.FluentAPI
                     rm.MapRightKey("MultipleChoiceId");
                     rm.ToTable("ReponseMultipleChoice");
                 });
+            HasMany(b => b.ResponseBodies)
+                .WithMany(c => c.Responses)
+                .Map(bc =>
+                {
+                    bc.MapLeftKey("ResponseId");
+                    bc.MapRightKey("ResponseBody");
+                    bc.ToTable("ResponseAndResponseBody");
+                });
+
 
         }
     }

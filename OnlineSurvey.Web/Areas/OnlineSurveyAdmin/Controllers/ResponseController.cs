@@ -41,8 +41,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 viewmodel.Add(new ResponseViewModel
                 {
                     Id=item.Id,
-                    Title=item.Title,
-                    Body=item.Body,
+                   
                     Surveies=item.Surveies,
                     SurveyId=item.SurveyId,
                     UserSurveis=item.UserSurveis,
@@ -51,8 +50,6 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     UserName=userName,
                     MultipleQuestionTag= MultipleQuestionName,
                     MultipleChoiceTag= Multiplechoice,
-
-
 
 
                 });
