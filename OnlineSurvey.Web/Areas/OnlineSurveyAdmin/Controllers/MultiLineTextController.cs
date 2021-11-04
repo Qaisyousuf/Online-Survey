@@ -1,11 +1,8 @@
 ﻿using OnlineSurvey.Data.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 using OnlineSurvey.Model;
 using OnlineSurvey.ViewModel;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 {
@@ -34,8 +31,11 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 viewmodel.Add(new MultiLineTextViewModel
                 {
                    Id=item.Id,
+                   Question=item.Question,
                    MultiText=item.MultiText,
                    Title=item.Title,
+                   IsActive=item.IsActive,
+                   QuestionTitle=item.QuestionTitle,
 
                 });
             }
@@ -60,6 +60,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     Id=viewmodel.Id,
                     MultiText=viewmodel.MultiText,
                     Title=viewmodel.Title,
+                    IsActive=viewmodel.IsActive,
+                    Question=viewmodel.Question,
+                    QuestionTitle=viewmodel.QuestionTitle,
                 };
 
                 uow.MultiLineTextRepository.Add(multiLineText);
@@ -78,6 +81,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Id=multiLineText.Id,
                 Title=multiLineText.Title,
                 MultiText=multiLineText.MultiText,
+               IsActive=multiLineText.IsActive,
+               Question=multiLineText.Question,
+               QuestionTitle=multiLineText.QuestionTitle,
             };
 
             return View(viewmodel);
@@ -93,6 +99,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 multiLinetext.Id = viewmodel.Id;
                 multiLinetext.Title = viewmodel.Title;
                 multiLinetext.MultiText = viewmodel.MultiText;
+                multiLinetext.IsActive = viewmodel.IsActive;
+                multiLinetext.Question = viewmodel.Question;
+                multiLinetext.QuestionTitle = viewmodel.QuestionTitle;
 
                 uow.MultiLineTextRepository.Update(multiLinetext);
                 uow.Commit();
@@ -111,6 +120,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Id = multiLineText.Id,
                 Title = multiLineText.Title,
                 MultiText = multiLineText.MultiText,
+                IsActive=multiLineText.IsActive,
+                Question=multiLineText.Question,
+                QuestionTitle=multiLineText.QuestionTitle,
             };
 
             return View(viewmodel);
@@ -127,6 +139,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Id = multiLineText.Id,
                 Title = multiLineText.Title,
                 MultiText = multiLineText.MultiText,
+                IsActive=multiLineText.IsActive,
+                Question=multiLineText.Question,
+                QuestionTitle=multiLineText.QuestionTitle,
 
             };
 
@@ -145,6 +160,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Id = multiLineText.Id,
                 Title = multiLineText.Title,
                 MultiText = multiLineText.MultiText,
+                IsActive=multiLineText.IsActive,
+                Question=multiLineText.Question,
+                QuestionTitle=multiLineText.QuestionTitle,
             };
 
             return View(viewmodel);

@@ -46,6 +46,13 @@
 
                 </div>
             </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.MultiLineTextQuestionId, htmlAttributes: new { @class = "control-label" })
+                <div class="CheckBox">
+                    @Html.ListBoxFor(model => model.MultiLineTextQuestionId, new MultiSelectList(ViewBag.MulitiLineTextQuestion, "Id", "QuestionTitle"), new { @class = "form-control" })
+
+                </div>
+            </div>
         </div>
     </div>
 

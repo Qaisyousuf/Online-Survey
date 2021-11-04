@@ -12,6 +12,7 @@ namespace OnlineSurvey.Model
         public Survey()
         {
             MultipleChoiceQuestion = new List<Question>();
+            MultiLineTextsQuestion = new List<MultiLineText>();
         }
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
@@ -23,6 +24,8 @@ namespace OnlineSurvey.Model
         public SurveyCatagory SurveyCatagories { get; set; }
 
         public List<Question> MultipleChoiceQuestion { get; set; }
+
+        public List<MultiLineText> MultiLineTextsQuestion { get; set; }
 
        
     }

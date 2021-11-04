@@ -11,6 +11,7 @@ namespace OnlineSurvey.ViewModel
         public SurveyViewModel()
         {
             MultipleChoiceQuestion = new List<Question>();
+            MultiLineTextsQuestion = new List<MultiLineText>();
         }
         public int Id { get; set; }
 
@@ -30,10 +31,20 @@ namespace OnlineSurvey.ViewModel
 
         public List<string> SurveyMutipleChoiceTag { get; set; }
 
+      
+
         [ForeignKey("SurveyCatagoryId")]
         public SurveyCatagory SurveyCatagories { get; set; }
 
         public List<Question> MultipleChoiceQuestion { get; set; }
+
+
+        [Display(Name = "Select Multiline text question")]
+        public int[] MultiLineTextQuestionId { get; set; }
+
+        public List<string> MultiLineTextQuestionTag { get; set; }
+
+        public List<MultiLineText> MultiLineTextsQuestion { get; set; }
         
 
     }

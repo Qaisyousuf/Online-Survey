@@ -255,6 +255,22 @@
     <Compile Include="Migrations\202111021234086_ResponseBodyModelAdded.designer.cs">
       <DependentUpon>202111021234086_ResponseBodyModelAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111040953348_MultiLineTextModelChanged.cs" />
+    <Compile Include="Migrations\202111040953348_MultiLineTextModelChanged.designer.cs">
+      <DependentUpon>202111040953348_MultiLineTextModelChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111041045597_QuestionAddedToMultiLineText.cs" />
+    <Compile Include="Migrations\202111041045597_QuestionAddedToMultiLineText.designer.cs">
+      <DependentUpon>202111041045597_QuestionAddedToMultiLineText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111041144355_QuestionTitleAddedToMultiLinQuestion.cs" />
+    <Compile Include="Migrations\202111041144355_QuestionTitleAddedToMultiLinQuestion.designer.cs">
+      <DependentUpon>202111041144355_QuestionTitleAddedToMultiLinQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111041207369_relationCreatedBetweenSurveyAndMultiLineTextQuestion.cs" />
+    <Compile Include="Migrations\202111041207369_relationCreatedBetweenSurveyAndMultiLineTextQuestion.designer.cs">
+      <DependentUpon>202111041207369_relationCreatedBetweenSurveyAndMultiLineTextQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -379,6 +395,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111021234086_ResponseBodyModelAdded.resx">
       <DependentUpon>202111021234086_ResponseBodyModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111040953348_MultiLineTextModelChanged.resx">
+      <DependentUpon>202111040953348_MultiLineTextModelChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111041045597_QuestionAddedToMultiLineText.resx">
+      <DependentUpon>202111041045597_QuestionAddedToMultiLineText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111041144355_QuestionTitleAddedToMultiLinQuestion.resx">
+      <DependentUpon>202111041144355_QuestionTitleAddedToMultiLinQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111041207369_relationCreatedBetweenSurveyAndMultiLineTextQuestion.resx">
+      <DependentUpon>202111041207369_relationCreatedBetweenSurveyAndMultiLineTextQuestion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
