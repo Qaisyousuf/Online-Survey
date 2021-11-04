@@ -11,6 +11,7 @@ namespace OnlineSurvey.ViewModel
         public SurveyViewModel ViewModelSurvey { get; set; }
         public BannerViewModel Bannerviewmodel { get; set; }
         public ResponseViewModel ListofResponseViewModel { get; set; }
+        public ResponsebodyViewModel ListofResponsebodyViewModel { get; set; }
 
 
     }

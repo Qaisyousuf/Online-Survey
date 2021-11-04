@@ -251,6 +251,10 @@
     <Compile Include="Migrations\202110261619068_DateTimeFiledAdded.designer.cs">
       <DependentUpon>202110261619068_DateTimeFiledAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111021234086_ResponseBodyModelAdded.cs" />
+    <Compile Include="Migrations\202111021234086_ResponseBodyModelAdded.designer.cs">
+      <DependentUpon>202111021234086_ResponseBodyModelAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -372,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110261619068_DateTimeFiledAdded.resx">
       <DependentUpon>202110261619068_DateTimeFiledAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111021234086_ResponseBodyModelAdded.resx">
+      <DependentUpon>202111021234086_ResponseBodyModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

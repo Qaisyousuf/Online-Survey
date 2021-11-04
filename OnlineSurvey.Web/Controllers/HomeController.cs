@@ -169,7 +169,7 @@ namespace OnlineSurvey.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult StartSurvey(int? id,ResponseViewModel responseviewmodel, UserSurveyViewModel viewmodel)
+        public ActionResult StartSurvey(int? id,ResponseViewModel responseviewmodel, UserSurveyViewModel viewmodel, ResponsebodyViewModel responsebodyviewmodel)
         {
 
             //var response=_uow.Context.Responses.Include(""),
@@ -251,17 +251,27 @@ namespace OnlineSurvey.Web.Controllers
 
             ResponseViewModel responseViewModel = new ResponseViewModel();
 
+            var responsebody = _uow.ResponseBodyRepository.GetAll();
 
+            ResponsebodyViewModel responseBodyViewmodel = new ResponsebodyViewModel();
 
-
+            //foreach (var item in responsebody)
+            //{
+            //    responseBodyViewmodel.Add(new ResponsebodyViewModel
+            //    {
+            //        Id=item.Id,
+            //        Body=item.Body,
+            //        Title=item.Title,
+            //    });
+            //}
 
             ListofModels SurveyViewModel = new ListofModels
             {
                 ViewModelSurvey=surveyViewModel,
                 ListUserSurveyViewModel=userSurveyViewModel,
                 ListofResponseViewModel=responseViewModel,
+                ListofResponsebodyViewModel=responseBodyViewmodel,
             };
-
 
             //UserSurveyData();
             ViewBag.Gender = _uow.GenderRepository.GetAll();
@@ -286,9 +296,11 @@ namespace OnlineSurvey.Web.Controllers
                 var MultipleQuestionName = item.MultipleChoiceQuesion.Where(x => questionId.Contains(x.Id)).Select(x =>x.Answer).ToList();
             }
 
-            //var multipleQuestion = surveyViewModel.Select(x => x.MultipleChoiceQuestion).ToList();
+            //var responsebodyfromView = viewmodel.ListofResponsebodyViewModel.ToList();
 
-            //var question = _uow.QuesiotnRepository.GetAll("").SingleOrDefault(x => x.Id = surveyId);
+            //int[] responsebodyId = responsebodyfromView.Select(x => x.Id).ToArray();
+
+
 
 
 
@@ -329,17 +341,7 @@ namespace OnlineSurvey.Web.Controllers
 
 
 
-                //var responsefromdb = _uow.Context.Surveys.Include("MultipleChoiceQuestion").Include("SurveyCatagories").SingleOrDefault(x => x.Id == id);
-
-                //var quesiont = responsefromdb.MultipleChoiceQuestion.Where(x => x.Id == id).Select(x => x.MultipleChoiceQuesion).ToList();
-
-                //var userSurvey = _uow.Context.UserSurveyRegistrations.Include("Genders").Where(x => x.Id == viewmodel.ListUserSurveyViewModel.Id).Select(x => id);
-
-                //foreach (int quesiont in survey.SurveyIdForMultipleChoice)
-                //{
-                //    var multipleChoiceTag = uow.QuesiotnRepository.GetById(quesiont);
-                //    suvery.MultipleChoiceQuestion.Add(multipleChoiceTag);
-                //}
+               
 
                 var userSurveyId = _uow.Context.UserSurveyRegistrations.Select(x => x.Id).Max();
 
@@ -352,10 +354,19 @@ namespace OnlineSurvey.Web.Controllers
                     ResponseDateTime = DateTime.Now,
                     MultipleChoiceQuestions=responseViewModel.MultipleChoiceQuestions,
                     Questions=responseViewModel.Questions,
+                    ResponseBodies=responseViewModel.ResponseBodies,
                     
                 };
 
-                foreach(int multipleChoice in quesitonId)
+                
+
+                //foreach (int responsebody in responsebodyId)
+                //{
+                //    var responsebodyAdded = _uow.ResponseBodyRepository.GetById(responsebody);
+                //    response.ResponseBodies.Add(responsebodyAdded);
+                //}
+
+                foreach (int multipleChoice in quesitonId)
                 {
                     var multipleChoiceTag = _uow.QuesiotnRepository.GetById(multipleChoice);
                     response.Questions.Add(multipleChoiceTag);
