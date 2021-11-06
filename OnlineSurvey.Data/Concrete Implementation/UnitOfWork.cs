@@ -44,7 +44,7 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IResponseRepository ResponseRepository => new ResponseRepository(Context);
 
-        public IResponseBodyRepository ResponseBodyRepository => new ResponseBodyRepository(Context);
+        public IMultiLineTextResponseRepository MultiLineResponseRepository => new MultiLineTextResponseRepository(Context);
 
         public UnitOfWork()
         {

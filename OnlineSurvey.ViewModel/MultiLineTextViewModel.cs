@@ -7,22 +7,18 @@ namespace OnlineSurvey.ViewModel
     {
         public int Id { get; set; }
 
-        [Required]
+       
         [Display(Name ="Question title")]
         public string QuestionTitle { get; set; }
-        [Required]
+        
         [Display(Name ="Question")]
         public string Question { get; set; }
 
-        [Display(Name ="Answer title")]
-        public string Title { get; set; }
-
-        
-        [Display(Name ="Multi line answer")]
-        public string MultiText { get; set; }
 
         public bool IsActive { get; set; }
 
         public List<Survey> Surveys { get; set; }
+
+        public List<Response> Responses { get; set; }
     }
 }

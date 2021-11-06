@@ -152,9 +152,9 @@
                                                     </div>
                                                     <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
                                                         <div class=" md-form mb-0">
-                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.GenderId, htmlAttributes: new { @class = "control-label " })
+                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.GenderId, htmlAttributes: new { @class = " select" })
 
-                                                            @Html.DropDownListFor(m => m.ListUserSurveyViewModel.GenderId, new SelectList(ViewBag.Gender, "Id", "Name"), "Number of employees", new { @class = "select" })
+                                                            @Html.DropDownListFor(m => m.ListUserSurveyViewModel.GenderId, new SelectList(ViewBag.Gender, "Id", "Name"), new { @class = "select form-control" })
                                                             @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.GenderId, "", new { @class = "text-danger" })
 
                                                         </div>
@@ -179,65 +179,92 @@
                                 <!-- Card content -->
                                 <div class="card-body card-body-cascade text-left">
 
-
-
                                     <!-- Text -->
                                     <p class="card-text">
                                         @foreach (var item in Model.ViewModelSurvey.MultipleChoiceQuestion)
                                         {
-                                            
 
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-md-6 offset-md-3">
                                                         <hr />
-                                                        <h5 class="font-weight-bold mb-4">@item.Body</h5>
+                                                        <h5 class="font-weight-bold mb-4"> @item.Body</h5>
                                                         <div class=" form-group">
-                                                            @Html.LabelFor(model => model.ViewModelSurvey.SurveyIdForMultipleChoice, htmlAttributes: new { @class = "lable-control" })
+                                                            <i class="fas fa-info-circle"></i> @Html.LabelFor(model => model.ViewModelSurvey.SurveyIdForMultipleChoice, htmlAttributes: new { @class = "lable-control" })
 
                                                             <div class="checkbox">
                                                                 @Html.ListBoxFor(model => model.ViewModelSurvey.SurveyIdForMultipleChoice, new MultiSelectList(item.MultipleChoiceQuesion, "Id", "Answer"), new { @class = "select" })
 
                                                             </div>
                                                         </div>
-                                                        @if (Model.ListofResponsebodyViewModel != null && item.IsActive==true)
+                                                        @if (Model.ListofResponseViewModel != null)
                                                         {
-                                                            
-
                                                             <div>
-                                                               
-                                                                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
-                                                                        aria-expanded="false" aria-controls="collapseExample">
-                                                                   Optinal comment
-                                                                </button>
+                                                                <a class="btn btn-primary btn-rounded btn-sm" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                                                    <i class="fas fa-comment"></i> optinal comment
+                                                                </a>
+
                                                             </div>
                                                             <!-- / Collapse buttons -->
 
                                                             <!-- Collapsible element -->
                                                             <div class="collapse" id="collapseExample">
-                                                                <div class="mt-3">
-                                                                    <div class="md-form mb-0">
-                                                                        @Html.LabelFor(model => model.ListofResponsebodyViewModel.Title, htmlAttributes: new { @class = "control-label  " })
-                                                                        @Html.EditorFor(model => model.ListofResponsebodyViewModel.Title, new { htmlAttributes = new { @class = "form-control" } })
-                                                                    </div>
-                                                                    <div class="md-form">
-                                                                        @Html.LabelFor(model => model.ListofResponsebodyViewModel.Body, htmlAttributes: new { @class = "control-label  " })
-                                                                        @Html.EditorFor(model => model.ListofResponsebodyViewModel.Body, new { htmlAttributes = new { @class = "form-control" } })
-                                                                    </div>
+                                                                <div class="md-form mb-0">
+                                                                    @Html.LabelFor(model => model.ListofResponseViewModel.Title, htmlAttributes: new { @class = "control-label  " })
+                                                                    @Html.EditorFor(model => model.ListofResponseViewModel.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                                                </div>
+                                                                <div class="md-form mb-0">
+                                                                    @Html.LabelFor(model => model.ListofResponseViewModel.Comment, htmlAttributes: new { @class = "control-label  " })
+                                                                    @Html.TextAreaFor(model => model.ListofResponseViewModel.Comment, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
                                                                 </div>
                                                             </div>
-                                                           
-                                                           
 
                                                         }
                                                     </div>
+
+
                                                 </div>
                                             </div>
 
                                         }
+
+                                        @foreach (var item in Model.ViewModelSurvey.MultiLineTextsQuestion)
+                                        {
+
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-6 offset-md-3">
+                                                        <hr />
+                                                        <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.QuestionTitle</h6>
+                                                        <div class=" form-group font-weight-bold">
+
+                                                            @Html.DisplayFor(model => item.Question)
+                                                        </div>
+
+                                                        @if (Model.ListofMultilineTextResponse != null)
+                                                        {
+                                                        foreach (var response in Model.ListofMultilineTextResponse)
+                                                        {
+                                                        <div class="md-form mb-0">
+                                                            @Html.LabelFor(model => response.Title, htmlAttributes: new { @class = "control-label  " })
+                                                            @Html.EditorFor(model => response.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                                        </div>
+                                                        <div class="md-form mb-0">
+                                                            @Html.LabelFor(model => response.MulitLine, htmlAttributes: new { @class = "control-label  " })
+                                                            @Html.TextAreaFor(model => response.MulitLine, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
+                                                        </div>
+                                                        }
+
+                                                        }
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                        }
                                         <div class="form-md">
-                                            <div class="col-md-offset-2 col-md-10">
-                                                <button type="submit" class="btn btn-rounded"><i class="fas fa-paper-plane mr-2 "></i>Submit</button>
+                                            <div class="col-md-offset-4 col-md-6">
+                                                <button type="submit" class="btn btn-primary btn-rounded"><i class="fas fa-paper-plane mr-2 "></i>Submit</button>
                                             </div>
                                         </div>
                                     </p>

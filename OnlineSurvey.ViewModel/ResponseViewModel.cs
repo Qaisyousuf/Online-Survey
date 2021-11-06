@@ -12,11 +12,12 @@ namespace OnlineSurvey.ViewModel
         {
             Questions = new List<Question>();
             MultipleChoiceQuestions = new List<MultipleChoiceQuestions>();
-            ResponseBodies = new List<ResponseBody>();
+            MultiLineTextResponses = new List<MultiLineTextResponse>();
         }
         public int Id { get; set; }
-      
-      
+
+        public string Title { get; set; }
+        public string Comment { get; set; }
 
         [Display(Name ="Survey")]
         public int SurveyId { get; set; }
@@ -44,6 +45,22 @@ namespace OnlineSurvey.ViewModel
         public List<Question> Questions { get; set; }
 
         public List<MultipleChoiceQuestions> MultipleChoiceQuestions { get; set; }
-        public List<ResponseBody> ResponseBodies { get; set; }
+
+
+        public int[] MultiLineTextQuestionId { get; set; }
+
+        public List<string> MultiLineTextQuestionTag { get; set; }
+
+        public List<MultiLineText> MultiLineTextQuestion { get; set; }
+
+
+        public int[] MultiLineTextReponseId { get; set; }
+
+        public List<string> MultiLinTextResponseTag { get; set; }
+        public List<MultiLineTextResponse> MultiLineTextResponses { get; set; }
+
+
+
+
     }
 }

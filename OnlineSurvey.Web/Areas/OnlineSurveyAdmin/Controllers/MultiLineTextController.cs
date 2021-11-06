@@ -32,8 +32,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 {
                    Id=item.Id,
                    Question=item.Question,
-                   MultiText=item.MultiText,
-                   Title=item.Title,
+                
                    IsActive=item.IsActive,
                    QuestionTitle=item.QuestionTitle,
 
@@ -58,8 +57,6 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 var multiLineText = new MultiLineText
                 {
                     Id=viewmodel.Id,
-                    MultiText=viewmodel.MultiText,
-                    Title=viewmodel.Title,
                     IsActive=viewmodel.IsActive,
                     Question=viewmodel.Question,
                     QuestionTitle=viewmodel.QuestionTitle,
@@ -79,8 +76,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             MultiLineTextViewModel viewmodel = new MultiLineTextViewModel
             {
                 Id=multiLineText.Id,
-                Title=multiLineText.Title,
-                MultiText=multiLineText.MultiText,
+              
                IsActive=multiLineText.IsActive,
                Question=multiLineText.Question,
                QuestionTitle=multiLineText.QuestionTitle,
@@ -97,8 +93,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 var multiLinetext = uow.MultiLineTextRepository.GetById(viewmodel.Id);
 
                 multiLinetext.Id = viewmodel.Id;
-                multiLinetext.Title = viewmodel.Title;
-                multiLinetext.MultiText = viewmodel.MultiText;
+              
                 multiLinetext.IsActive = viewmodel.IsActive;
                 multiLinetext.Question = viewmodel.Question;
                 multiLinetext.QuestionTitle = viewmodel.QuestionTitle;
@@ -118,8 +113,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             MultiLineTextViewModel viewmodel = new MultiLineTextViewModel
             {
                 Id = multiLineText.Id,
-                Title = multiLineText.Title,
-                MultiText = multiLineText.MultiText,
+               
                 IsActive=multiLineText.IsActive,
                 Question=multiLineText.Question,
                 QuestionTitle=multiLineText.QuestionTitle,
@@ -137,8 +131,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             MultiLineTextViewModel viewmodel = new MultiLineTextViewModel
             {
                 Id = multiLineText.Id,
-                Title = multiLineText.Title,
-                MultiText = multiLineText.MultiText,
+               
                 IsActive=multiLineText.IsActive,
                 Question=multiLineText.Question,
                 QuestionTitle=multiLineText.QuestionTitle,
@@ -158,8 +151,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             MultiLineTextViewModel viewmodel = new MultiLineTextViewModel
             {
                 Id = multiLineText.Id,
-                Title = multiLineText.Title,
-                MultiText = multiLineText.MultiText,
+
                 IsActive=multiLineText.IsActive,
                 Question=multiLineText.Question,
                 QuestionTitle=multiLineText.QuestionTitle,

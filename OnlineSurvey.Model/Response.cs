@@ -9,10 +9,12 @@ namespace OnlineSurvey.Model
         {
             Questions = new List<Question>();
             MultipleChoiceQuestions = new List<MultipleChoiceQuestions>();
-            ResponseBodies = new List<ResponseBody>();
+            MultiLineTextResponses = new List<MultiLineTextResponse>();
+             MultiLineTextQuestion = new List<MultiLineText>();
         }
-      
 
+        public string Title { get; set; }
+        public string Comment { get; set; }
         public DateTime ResponseDateTime { get; set; }
 
         public string UserName { get; set; }
@@ -29,7 +31,12 @@ namespace OnlineSurvey.Model
 
         public List<MultipleChoiceQuestions> MultipleChoiceQuestions { get; set; }
 
-        public List<ResponseBody> ResponseBodies { get; set; }
+
+        public List<MultiLineText> MultiLineTextQuestion { get; set; }
+
+        public List<MultiLineTextResponse> MultiLineTextResponses { get; set; }
+
+
 
 
     }

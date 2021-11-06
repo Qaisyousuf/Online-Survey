@@ -44,13 +44,7 @@
                                     <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Question)</td>
                                     <td class="text-primary"> @Html.DisplayFor(model => model.Question)</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">
-                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
-                                    </th>
-                                    <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Title)</td>
-                                    <td class="text-primary"> @Html.DisplayFor(model => model.Title)</td>
-                                </tr>
+                               
                                 <tr>
                                     <th scope="row">
                                         <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
@@ -59,21 +53,6 @@
                                     <td class="text-primary"> @Html.CheckBoxFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control ui-checkboxradio-checked " }, style = "opacity: 1; padding-top:1px; margin:1px; " })</td>
                                 </tr>
 
-                                <tr class="">
-                                    <th scope="row">
-                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
-                                    </th>
-                                    <td class="font-weight-bold">  @Html.DisplayNameFor(model => model.MultiText)</td>
-                                    <td class="collapse" id="collapseExample"> @Html.Raw(Model.MultiText)</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
-                                                aria-expanded="false" aria-controls="collapseExample">
-                                            view content
-                                        </button>
-                                    </td>
-
-
-                                </tr>
                             </tbody>
                             <!--Table body-->
                         </table>

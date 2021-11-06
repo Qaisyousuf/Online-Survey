@@ -63,9 +63,9 @@
     <Compile Include="EntityBase.cs" />
     <Compile Include="FooterLinks.cs" />
     <Compile Include="MultiLineText.cs" />
+    <Compile Include="MultiLineTextResponse.cs" />
     <Compile Include="MultipleChoiceQuestions.cs" />
     <Compile Include="NumberQuestion.cs" />
-    <Compile Include="ResponseBody.cs" />
     <Compile Include="TagQuestion.cs" />
     <Compile Include="UserGender.cs" />
     <Compile Include="Menus.cs" />

@@ -64,13 +64,13 @@
     <Compile Include="Concrete Implementation\MenuRepository.cs" />
     <Compile Include="Concrete Implementation\MetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\MultiLineTextRepository.cs" />
+    <Compile Include="Concrete Implementation\MultiLineTextResponseRepository.cs" />
     <Compile Include="Concrete Implementation\MultipleChoiceQuestionsRepository.cs" />
     <Compile Include="Concrete Implementation\NumberQuestionRepository.cs" />
     <Compile Include="Concrete Implementation\OGMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\PageRepository.cs" />
     <Compile Include="Concrete Implementation\QuesiotnRepository.cs" />
     <Compile Include="Concrete Implementation\Repository.cs" />
-    <Compile Include="Concrete Implementation\ResponseBodyRepository.cs" />
     <Compile Include="Concrete Implementation\ResponseRepository.cs" />
     <Compile Include="Concrete Implementation\SiteSettingsRepository.cs" />
     <Compile Include="Concrete Implementation\SurveyCatagoryRepository.cs" />
@@ -80,6 +80,7 @@
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
     <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoQuestionRepository.cs" />
+    <Compile Include="FluentAPI\MultiLineTextReponseMapping.cs" />
     <Compile Include="FluentAPI\MultipleChoiceQuestionMapping.cs" />
     <Compile Include="FluentAPI\ResponseMapping.cs" />
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
@@ -90,13 +91,13 @@
     <Compile Include="Interfaces\IMenuRepository.cs" />
     <Compile Include="Interfaces\IMetaTagRepository.cs" />
     <Compile Include="Interfaces\IMultiLineTextRepository.cs" />
+    <Compile Include="Interfaces\IMultiLineTextResponseRepository.cs" />
     <Compile Include="Interfaces\IMultipleChoiceQuestionsRepository.cs" />
     <Compile Include="Interfaces\INumberQuestionRepository.cs" />
     <Compile Include="Interfaces\IOGMetaTagRepository.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
     <Compile Include="Interfaces\IQuesiotnRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\IResponseBodyRepository.cs" />
     <Compile Include="Interfaces\IResponseRepository.cs" />
     <Compile Include="Interfaces\ISiteSettingsRepository.cs" />
     <Compile Include="Interfaces\ISlug.cs" />
@@ -271,6 +272,30 @@
     <Compile Include="Migrations\202111041207369_relationCreatedBetweenSurveyAndMultiLineTextQuestion.designer.cs">
       <DependentUpon>202111041207369_relationCreatedBetweenSurveyAndMultiLineTextQuestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111041447252_ResponseAndMultiLineQuestionRelationAdded.cs" />
+    <Compile Include="Migrations\202111041447252_ResponseAndMultiLineQuestionRelationAdded.designer.cs">
+      <DependentUpon>202111041447252_ResponseAndMultiLineQuestionRelationAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111051035304_ResponsebodyRemoved.cs" />
+    <Compile Include="Migrations\202111051035304_ResponsebodyRemoved.designer.cs">
+      <DependentUpon>202111051035304_ResponsebodyRemoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111051053237_CommentPropertyAddedtoResponseModel.cs" />
+    <Compile Include="Migrations\202111051053237_CommentPropertyAddedtoResponseModel.designer.cs">
+      <DependentUpon>202111051053237_CommentPropertyAddedtoResponseModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111051448095_MultilineTextAnswerRemoved.cs" />
+    <Compile Include="Migrations\202111051448095_MultilineTextAnswerRemoved.designer.cs">
+      <DependentUpon>202111051448095_MultilineTextAnswerRemoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111061152520_MultiLinTextResponseModelCreated.cs" />
+    <Compile Include="Migrations\202111061152520_MultiLinTextResponseModelCreated.designer.cs">
+      <DependentUpon>202111061152520_MultiLinTextResponseModelCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111061556310_MultiLineResponseAndMultiLineTextAdded.cs" />
+    <Compile Include="Migrations\202111061556310_MultiLineResponseAndMultiLineTextAdded.designer.cs">
+      <DependentUpon>202111061556310_MultiLineResponseAndMultiLineTextAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -407,6 +432,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111041207369_relationCreatedBetweenSurveyAndMultiLineTextQuestion.resx">
       <DependentUpon>202111041207369_relationCreatedBetweenSurveyAndMultiLineTextQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111041447252_ResponseAndMultiLineQuestionRelationAdded.resx">
+      <DependentUpon>202111041447252_ResponseAndMultiLineQuestionRelationAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111051035304_ResponsebodyRemoved.resx">
+      <DependentUpon>202111051035304_ResponsebodyRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111051053237_CommentPropertyAddedtoResponseModel.resx">
+      <DependentUpon>202111051053237_CommentPropertyAddedtoResponseModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111051448095_MultilineTextAnswerRemoved.resx">
+      <DependentUpon>202111051448095_MultilineTextAnswerRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111061152520_MultiLinTextResponseModelCreated.resx">
+      <DependentUpon>202111061152520_MultiLinTextResponseModelCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111061556310_MultiLineResponseAndMultiLineTextAdded.resx">
+      <DependentUpon>202111061556310_MultiLineResponseAndMultiLineTextAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

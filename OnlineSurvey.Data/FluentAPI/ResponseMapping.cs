@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OnlineSurvey.Model;
 using System.Data.Entity.ModelConfiguration;
-using OnlineSurvey.Model;
 
 namespace OnlineSurvey.Data.FluentAPI
 {
@@ -29,13 +24,22 @@ namespace OnlineSurvey.Data.FluentAPI
                     rm.MapRightKey("MultipleChoiceId");
                     rm.ToTable("ReponseMultipleChoice");
                 });
-            HasMany(b => b.ResponseBodies)
-                .WithMany(c => c.Responses)
-                .Map(bc =>
+          
+            HasMany(j => j.MultiLineTextQuestion)
+                .WithMany(g => g.Responses)
+                .Map(jg =>
                 {
-                    bc.MapLeftKey("ResponseId");
-                    bc.MapRightKey("ResponseBody");
-                    bc.ToTable("ResponseAndResponseBody");
+                    jg.MapLeftKey("responseId");
+                    jg.MapRightKey("MultiLineQuestion");
+                    jg.ToTable("ResponseAndMultiLineQuestion");
+                });
+            HasMany(a => a.MultiLineTextResponses)
+                .WithMany(p => p.Responses)
+                .Map(ap =>
+                {
+                    ap.MapLeftKey("ResponseId");
+                    ap.MapRightKey("MultiLinTextResponse");
+                    ap.ToTable("ReponseMultlinTextResponse");
                 });
 
 
