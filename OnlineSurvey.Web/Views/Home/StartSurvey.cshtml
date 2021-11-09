@@ -152,7 +152,7 @@
                                                     </div>
                                                     <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
                                                         <div class=" md-form mb-0">
-                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.GenderId, htmlAttributes: new { @class = " select" })
+                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.GenderId, htmlAttributes: new { @class = " control-label" })
 
                                                             @Html.DropDownListFor(m => m.ListUserSurveyViewModel.GenderId, new SelectList(ViewBag.Gender, "Id", "Name"), new { @class = "select form-control" })
                                                             @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.GenderId, "", new { @class = "text-danger" })
@@ -240,28 +240,34 @@
 
                                                             @Html.DisplayFor(model => item.Question)
                                                         </div>
+                                                       
+                                                            <div class="md-form mb-0">
+                                                                @Html.LabelFor(model =>model.ListofMultilineTextResponse.Title , htmlAttributes: new { @class = "control-label  " })
+                                                                @Html.EditorFor(model =>model.ListofMultilineTextResponse.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </div>
+                                                            <div class="md-form mb-0">
+                                                                @Html.LabelFor(model => model.ListofMultilineTextResponse.MulitLine, htmlAttributes: new { @class = "control-label  " })
+                                                                @Html.TextAreaFor(model => model.ListofMultilineTextResponse.MulitLine, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
+                                                            </div>
+                                                        
 
-                                                        @if (Model.ListofMultilineTextResponse != null)
-                                                        {
-                                                        foreach (var response in Model.ListofMultilineTextResponse)
-                                                        {
-                                                        <div class="md-form mb-0">
-                                                            @Html.LabelFor(model => response.Title, htmlAttributes: new { @class = "control-label  " })
-                                                            @Html.EditorFor(model => response.Title, new { htmlAttributes = new { @class = "form-control" } })
-                                                        </div>
-                                                        <div class="md-form mb-0">
-                                                            @Html.LabelFor(model => response.MulitLine, htmlAttributes: new { @class = "control-label  " })
-                                                            @Html.TextAreaFor(model => response.MulitLine, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
-                                                        </div>
-                                                        }
 
-                                                        }
+                                                        @*<div class="md-form mb-0">
+            @Html.LabelFor(model =>suit.Title, htmlAttributes: new { @class = "control-label  " })
+            @Html.EditorFor(model => model.ListofMultilineTextResponse.Title, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="md-form mb-0">
+            @Html.LabelFor(model => model.ListofMultilineTextResponse.MulitLine, htmlAttributes: new { @class = "control-label  " })
+            @Html.TextAreaFor(model => model.ListofMultilineTextResponse.MulitLine, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
+        </div>*@
+
 
                                                     </div>
                                                 </div>
                                             </div>
-                                           
+
                                         }
+                                      
                                         <div class="form-md">
                                             <div class="col-md-offset-4 col-md-6">
                                                 <button type="submit" class="btn btn-primary btn-rounded"><i class="fas fa-paper-plane mr-2 "></i>Submit</button>

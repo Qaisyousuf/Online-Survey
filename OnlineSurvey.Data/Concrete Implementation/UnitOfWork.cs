@@ -46,6 +46,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IMultiLineTextResponseRepository MultiLineResponseRepository => new MultiLineTextResponseRepository(Context);
 
+        public IMultiLineTextAnswerRepository MultiLineTextAnswerRepository =>new MultiLineTextAnswerRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

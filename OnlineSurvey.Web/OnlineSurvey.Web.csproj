@@ -192,6 +192,7 @@
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\GenderController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MenusController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MetaTagController.cs" />
+    <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MultilineTextAnswerController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MultiLineTextController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MultipleChoiceQuestionsController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\NumberQuestionController.cs" />
@@ -419,6 +420,8 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\Question\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Question\Details.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Response\Index.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\MultilineTextAnswer\Index.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\MultilineTextAnswer\Create.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />

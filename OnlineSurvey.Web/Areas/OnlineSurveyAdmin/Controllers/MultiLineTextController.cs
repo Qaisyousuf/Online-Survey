@@ -22,7 +22,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult GetMultiLineText()
         {
-            var multiLintext = uow.MultiLineTextRepository.GetAll();
+            var multiLintext = uow.MultiLineTextRepository.GetAll("MultiLineTextAnswers");
             List<MultiLineTextViewModel> viewmodel = new List<MultiLineTextViewModel>();
 
 
@@ -32,13 +32,15 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 {
                    Id=item.Id,
                    Question=item.Question,
-                
                    IsActive=item.IsActive,
                    QuestionTitle=item.QuestionTitle,
+                   MultilineTextAnswerId=item.MultilineTextAnswerId,
+                   MultiLineTextAnswers=item.MultiLineTextAnswers,
 
                 });
             }
 
+            ViewBag.MultilineAnswer = uow.MultiLineTextAnswerRepository.GetAll();
             return Json(new { data = viewmodel }, JsonRequestBehavior.AllowGet);
 
         }
@@ -46,6 +48,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            ViewBag.MultilineAnswer = uow.MultiLineTextAnswerRepository.GetAll();
             return View(new MultiLineTextViewModel());
         }
 
@@ -60,6 +63,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     IsActive=viewmodel.IsActive,
                     Question=viewmodel.Question,
                     QuestionTitle=viewmodel.QuestionTitle,
+                    MultiLineTextAnswers=viewmodel.MultiLineTextAnswers,
+                    MultilineTextAnswerId=viewmodel.MultilineTextAnswerId,
                 };
 
                 uow.MultiLineTextRepository.Add(multiLineText);
@@ -80,8 +85,11 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                IsActive=multiLineText.IsActive,
                Question=multiLineText.Question,
                QuestionTitle=multiLineText.QuestionTitle,
+               MultilineTextAnswerId=multiLineText.MultilineTextAnswerId,
+               MultiLineTextAnswers=multiLineText.MultiLineTextAnswers,
             };
 
+            ViewBag.MultilineAnswer = uow.MultiLineTextAnswerRepository.GetAll();
             return View(viewmodel);
         }
 
@@ -97,6 +105,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 multiLinetext.IsActive = viewmodel.IsActive;
                 multiLinetext.Question = viewmodel.Question;
                 multiLinetext.QuestionTitle = viewmodel.QuestionTitle;
+                multiLinetext.MultiLineTextAnswers = viewmodel.MultiLineTextAnswers;
+                multiLinetext.MultilineTextAnswerId = viewmodel.MultilineTextAnswerId;
 
                 uow.MultiLineTextRepository.Update(multiLinetext);
                 uow.Commit();
@@ -117,8 +127,10 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 IsActive=multiLineText.IsActive,
                 Question=multiLineText.Question,
                 QuestionTitle=multiLineText.QuestionTitle,
+                MultilineTextAnswerId=multiLineText.MultilineTextAnswerId,
+                MultiLineTextAnswers=multiLineText.MultiLineTextAnswers,
             };
-
+            ViewBag.MultilineAnswer = uow.MultiLineTextAnswerRepository.GetAll();
             return View(viewmodel);
         }
 
@@ -135,6 +147,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 IsActive=multiLineText.IsActive,
                 Question=multiLineText.Question,
                 QuestionTitle=multiLineText.QuestionTitle,
+                MultilineTextAnswerId=multiLineText.MultilineTextAnswerId,
+                MultiLineTextAnswers=multiLineText.MultiLineTextAnswers,
 
             };
 
@@ -155,8 +169,10 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 IsActive=multiLineText.IsActive,
                 Question=multiLineText.Question,
                 QuestionTitle=multiLineText.QuestionTitle,
+                MultiLineTextAnswers=multiLineText.MultiLineTextAnswers,
+                MultilineTextAnswerId=multiLineText.MultilineTextAnswerId,
             };
-
+            ViewBag.MultilineAnswer = uow.MultiLineTextAnswerRepository.GetAll();
             return View(viewmodel);
         }
     }

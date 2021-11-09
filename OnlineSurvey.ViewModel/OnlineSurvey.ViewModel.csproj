@@ -102,6 +102,7 @@
     <Compile Include="MenusViewModel.cs" />
     <Compile Include="MetaTagViewModel.cs" />
     <Compile Include="MultiLineResponseViewModel.cs" />
+    <Compile Include="MultiLineTextAnswerViewModel.cs" />
     <Compile Include="MultiLineTextViewModel.cs" />
     <Compile Include="MultipleChoiceQuestionsViewModel.cs" />
     <Compile Include="NumberQuestionViewModel.cs" />

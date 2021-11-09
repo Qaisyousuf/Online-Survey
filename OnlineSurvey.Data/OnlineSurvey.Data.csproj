@@ -63,6 +63,7 @@
     <Compile Include="Concrete Implementation\GenderRepository.cs" />
     <Compile Include="Concrete Implementation\MenuRepository.cs" />
     <Compile Include="Concrete Implementation\MetaTagRepository.cs" />
+    <Compile Include="Concrete Implementation\MultiLineTextAnswerRepository.cs" />
     <Compile Include="Concrete Implementation\MultiLineTextRepository.cs" />
     <Compile Include="Concrete Implementation\MultiLineTextResponseRepository.cs" />
     <Compile Include="Concrete Implementation\MultipleChoiceQuestionsRepository.cs" />
@@ -80,7 +81,6 @@
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
     <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoQuestionRepository.cs" />
-    <Compile Include="FluentAPI\MultiLineTextReponseMapping.cs" />
     <Compile Include="FluentAPI\MultipleChoiceQuestionMapping.cs" />
     <Compile Include="FluentAPI\ResponseMapping.cs" />
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
@@ -90,6 +90,7 @@
     <Compile Include="Interfaces\IGenderRepository.cs" />
     <Compile Include="Interfaces\IMenuRepository.cs" />
     <Compile Include="Interfaces\IMetaTagRepository.cs" />
+    <Compile Include="Interfaces\IMultiLineTextAnswerRepository.cs" />
     <Compile Include="Interfaces\IMultiLineTextRepository.cs" />
     <Compile Include="Interfaces\IMultiLineTextResponseRepository.cs" />
     <Compile Include="Interfaces\IMultipleChoiceQuestionsRepository.cs" />
@@ -296,6 +297,26 @@
     <Compile Include="Migrations\202111061556310_MultiLineResponseAndMultiLineTextAdded.designer.cs">
       <DependentUpon>202111061556310_MultiLineResponseAndMultiLineTextAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111071503095_MultiLineTextresponseRemoved.cs" />
+    <Compile Include="Migrations\202111071503095_MultiLineTextresponseRemoved.designer.cs">
+      <DependentUpon>202111071503095_MultiLineTextresponseRemoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111080949344_MultiLinetextResponseAddedToDatabase.cs" />
+    <Compile Include="Migrations\202111080949344_MultiLinetextResponseAddedToDatabase.designer.cs">
+      <DependentUpon>202111080949344_MultiLinetextResponseAddedToDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111081036518_multilineTextUpdated.cs" />
+    <Compile Include="Migrations\202111081036518_multilineTextUpdated.designer.cs">
+      <DependentUpon>202111081036518_multilineTextUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111091258465_MulitlineTextanswerModelAdded.cs" />
+    <Compile Include="Migrations\202111091258465_MulitlineTextanswerModelAdded.designer.cs">
+      <DependentUpon>202111091258465_MulitlineTextanswerModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111091310520_MultiLineTextModelAdded1.cs" />
+    <Compile Include="Migrations\202111091310520_MultiLineTextModelAdded1.designer.cs">
+      <DependentUpon>202111091310520_MultiLineTextModelAdded1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -450,6 +471,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111061556310_MultiLineResponseAndMultiLineTextAdded.resx">
       <DependentUpon>202111061556310_MultiLineResponseAndMultiLineTextAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071503095_MultiLineTextresponseRemoved.resx">
+      <DependentUpon>202111071503095_MultiLineTextresponseRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111080949344_MultiLinetextResponseAddedToDatabase.resx">
+      <DependentUpon>202111080949344_MultiLinetextResponseAddedToDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111081036518_multilineTextUpdated.resx">
+      <DependentUpon>202111081036518_multilineTextUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111091258465_MulitlineTextanswerModelAdded.resx">
+      <DependentUpon>202111091258465_MulitlineTextanswerModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111091310520_MultiLineTextModelAdded1.resx">
+      <DependentUpon>202111091310520_MultiLineTextModelAdded1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

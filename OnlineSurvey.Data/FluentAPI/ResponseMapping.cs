@@ -33,14 +33,15 @@ namespace OnlineSurvey.Data.FluentAPI
                     jg.MapRightKey("MultiLineQuestion");
                     jg.ToTable("ResponseAndMultiLineQuestion");
                 });
-            HasMany(a => a.MultiLineTextResponses)
-                .WithMany(p => p.Responses)
-                .Map(ap =>
+            HasMany(p => p.MultiLineTextResponses)
+                .WithMany(t => t.Responses)
+                .Map(pt =>
                 {
-                    ap.MapLeftKey("ResponseId");
-                    ap.MapRightKey("MultiLinTextResponse");
-                    ap.ToTable("ReponseMultlinTextResponse");
+                    pt.MapLeftKey("ResponseId");
+                    pt.MapRightKey("MultiLineResponse");
+                    pt.ToTable("ResponseAndMultiLineTextResponse");
                 });
+           
 
 
         }

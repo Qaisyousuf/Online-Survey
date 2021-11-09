@@ -92,11 +92,15 @@
                         <h3 class="card-header-title">@Model.PagesViewModel.Surveies.Name</h3>
                         <!-- Subtitle -->
                         <h6 class="mb-0 pb-3 pt-2">@Model.PagesViewModel.Surveies.SurveyCatagories.Type</h6>
-                        
+
 
                         @foreach (var item in Model.PagesViewModel.Surveies.MultipleChoiceQuestion)
                         {
                             <button class="btn btn-rounded btn-sm">@item.Type</button>
+                        }
+                        @foreach (var subitem in Model.PagesViewModel.Surveies.MultiLineTextsQuestion)
+                        {
+                            <button class="btn btn-rounded btn-sm">@subitem.QuestionTitle</button>
                         }
                         <!-- Facebook -->
 
