@@ -1,11 +1,12 @@
-﻿@model OnlineSurvey.ViewModel.YesNoAnswerViweModel
+﻿@model OnlineSurvey.ViewModel.YesNoQuestionViewModel
 @{
     Layout = null;
 }
+
 <div>
 
     <div class="card-body card-body-cascade d-flex justify-content-center mt-n2">
-        @using (Html.BeginForm("Delete", "YesNo", FormMethod.Get, new { onsubmit = "return SubmitFormDelete(this)" }))
+        @using (Html.BeginForm("Delete", "YesNoQuestion", FormMethod.Get, new { onsubmit = "return SubmitFormDelete(this)" }))
         {
             @Html.HiddenFor(model => model.Id)
 
@@ -15,7 +16,7 @@
                 <!--Card image-->
                 <div class="view view-cascade gradient-card-header mdb-color darken-3 narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
 
-                    <h6 class="mt-3 mb-1"><i class="fas fa-info"></i> Are you sure you want to delete the<span class="chip ml-2 mr-2">@Model.Title</span> record</h6>
+                    <h6 class="mt-3 mb-1"><i class="fas fa-info"></i> Are you sure you want to delete <span class="chip ml-2 mr-2">@Model.Title</span>record</h6>
                 </div>
                 <!--/Card image-->
 
@@ -36,21 +37,37 @@
                                     <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Title)</td>
                                     <td class="text-primary"> @Html.DisplayFor(model => model.Title)</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">
-                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
-                                    </th>
-                                    <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Answer)</td>
-                                    <td class="text-primary"> @Html.DisplayFor(model => model.Answer)</td>
-                                </tr>
+                               
+
                                 <tr>
                                     <th scope="row">
                                         <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
                                     </th>
                                     <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.IsActive)</td>
-                                    <td class="text-primary"> @Html.CheckBoxFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control ui-checkboxradio-checked " }, style = "opacity: 1; padding-top:1px; margin:1px; " })</td>
+                                    <td class="text-primary">  @Html.CheckBoxFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control" }, style = "opacity: 1; padding-top:0px; margin:0; " })</td>
                                 </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                    </th>
+                                    <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.YesNoAnswerId)</td>
+                                    <td class="text-primary">     @Html.ListBoxFor(model => model.YesNoAnswerId, new MultiSelectList(ViewBag.SingleYesNoAnswer, "Id", "Answer"), new { @class = "form-control disabled" })</td>
+                                </tr>
+                                <tr class="">
+                                    <th scope="row">
+                                        <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                    </th>
+                                    <td class="font-weight-bold">  @Html.DisplayNameFor(model => model.Question)</td>
+                                    <td class="collapse" id="collapseExample"> @Html.Raw(Model.Question)</td>
+                                    <td>
+                                        <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                                aria-expanded="false" aria-controls="collapseExample">
+                                            view content
+                                        </button>
+                                    </td>
 
+
+                                </tr>
                             </tbody>
                             <!--Table body-->
                         </table>

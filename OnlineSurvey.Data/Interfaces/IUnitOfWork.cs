@@ -18,7 +18,7 @@ namespace OnlineSurvey.Data.Interfaces
         IGenderRepository GenderRepository { get;  }
         IUserSurveyRepository UserSurveyRepository { get; }
         IMultipleChoiceQuestionsRepository MultipleChoiceQuestionsRepository { get; }
-        IYesNoQuestionRepository YesNoQuestionRepository { get; }
+        IYesNoAnswerRepository YesNoAnswerRepository { get; }
         ITagQuestionRepository TagQuestionRepository { get; }
         INumberQuestionRepository NumberQuestionRepository { get; }
         IMultiLineTextRepository MultiLineTextRepository { get; }
@@ -27,6 +27,8 @@ namespace OnlineSurvey.Data.Interfaces
         IResponseRepository ResponseRepository { get; }
         IMultiLineTextResponseRepository MultiLineResponseRepository { get;} 
         IMultiLineTextAnswerRepository MultiLineTextAnswerRepository { get; }
+        IYesNoQuestionRepository YesNoQuestionRepository { get; }
+
       
 
         void Commit();

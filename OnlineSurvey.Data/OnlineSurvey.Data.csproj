@@ -80,12 +80,14 @@
     <Compile Include="Concrete Implementation\TwitterMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
     <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
+    <Compile Include="Concrete Implementation\YesNoAnswerRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoQuestionRepository.cs" />
     <Compile Include="FluentAPI\MultilLineTextMapping.cs" />
     <Compile Include="FluentAPI\MultipleChoiceQuestionMapping.cs" />
     <Compile Include="FluentAPI\ResponseMapping.cs" />
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
     <Compile Include="FluentAPI\SurveyAndMultipleChoiceAnswerMapping.cs" />
+    <Compile Include="FluentAPI\YesNoQuestionMapping.cs" />
     <Compile Include="Interfaces\IBannerRepository.cs" />
     <Compile Include="Interfaces\IFooterLinksRepository.cs" />
     <Compile Include="Interfaces\IGenderRepository.cs" />
@@ -109,6 +111,7 @@
     <Compile Include="Interfaces\ITwitterMetaTagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IUserSurveyRepository.cs" />
+    <Compile Include="Interfaces\IYesNoAnswerRepository.cs" />
     <Compile Include="Interfaces\IYesNoQuestionRepository.cs" />
     <Compile Include="Migrations\202109211423586_InitialCreate.cs" />
     <Compile Include="Migrations\202109211423586_InitialCreate.designer.cs">
@@ -350,6 +353,14 @@
     <Compile Include="Migrations\202111121352362_MultilineTextResponseModelremoved.designer.cs">
       <DependentUpon>202111121352362_MultilineTextResponseModelremoved.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111131328298_YesNoAnswerAdded.cs" />
+    <Compile Include="Migrations\202111131328298_YesNoAnswerAdded.designer.cs">
+      <DependentUpon>202111131328298_YesNoAnswerAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111131334322_YesNoQuestionAdded1.cs" />
+    <Compile Include="Migrations\202111131334322_YesNoQuestionAdded1.designer.cs">
+      <DependentUpon>202111131334322_YesNoQuestionAdded1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -543,6 +554,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111121352362_MultilineTextResponseModelremoved.resx">
       <DependentUpon>202111121352362_MultilineTextResponseModelremoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111131328298_YesNoAnswerAdded.resx">
+      <DependentUpon>202111131328298_YesNoAnswerAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111131334322_YesNoQuestionAdded1.resx">
+      <DependentUpon>202111131334322_YesNoQuestionAdded1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -25,7 +25,7 @@ namespace OnlineSurvey.Data
         public DbSet<UserSurveyRegistration> UserSurveyRegistrations { get; set; }
         public DbSet<UserGender> UserGenders { get; set; }
         public DbSet<MultipleChoiceQuestions> MultipleChoiceQuestions { get; set; }
-        public DbSet<YesNoQuestion> YesNoQuestions { get; set; }
+        public DbSet<YesNoAnswer> YesNoAnswers { get; set; }
         public DbSet<TagQuestion> TagQuestions { get; set; }
         public DbSet<NumberQuestion> NumberQuestions { get; set; }
         public DbSet<MultiLineText> MultiLineTexts { get; set; }
@@ -34,6 +34,7 @@ namespace OnlineSurvey.Data
         public DbSet<Response> Responses { get; set; }
         public DbSet<MultiLineTextResponse> MultiLineTextResponses { get; set; }
         public DbSet<MultiLineTextAnswer> MultiLineTextAnswers { get; set; }
+        public DbSet<YesNoQuestion> YesNoQuestions { get; set; }
 
 
 
@@ -45,6 +46,7 @@ namespace OnlineSurvey.Data
             modelBuilder.Configurations.Add(new MultipleChoiceQuestionMapping());
             modelBuilder.Configurations.Add(new ResponseMapping());
             modelBuilder.Configurations.Add(new MultilLineTextMapping());
+            modelBuilder.Configurations.Add(new YesNoQuestionMapping());
             modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnName("datetime2"));
                      
             base.OnModelCreating(modelBuilder);

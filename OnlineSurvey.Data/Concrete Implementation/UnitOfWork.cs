@@ -30,7 +30,7 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IMultipleChoiceQuestionsRepository MultipleChoiceQuestionsRepository => new MultipleChoiceQuestionsRepository(Context);
 
-        public IYesNoQuestionRepository YesNoQuestionRepository =>new YesNoQuestionRepository(Context);
+       
 
         public ITagQuestionRepository TagQuestionRepository => new TagQuestionRepository(Context);
 
@@ -47,6 +47,10 @@ namespace OnlineSurvey.Data.Concrete_Implementation
         public IMultiLineTextResponseRepository MultiLineResponseRepository => new MultiLineTextResponseRepository(Context);
 
         public IMultiLineTextAnswerRepository MultiLineTextAnswerRepository =>new MultiLineTextAnswerRepository(Context);
+
+        public IYesNoAnswerRepository YesNoAnswerRepository => new YesNoAnswerRepository(Context);
+
+        public IYesNoQuestionRepository YesNoQuestionRepository => new YesNoQuestionRepository(Context);
 
         public UnitOfWork()
         {

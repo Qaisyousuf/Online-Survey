@@ -25,13 +25,13 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult GetYesNoQuestion()
         {
-            var yesno = uow.YesNoQuestionRepository.GetAll();
+            var yesno = uow.YesNoAnswerRepository.GetAll();
 
-            List<YesNoQuestionViweModel> viewmodel = new List<YesNoQuestionViweModel>();
+            List<YesNoAnswerViweModel> viewmodel = new List<YesNoAnswerViweModel>();
 
             foreach (var item in yesno)
             {
-                viewmodel.Add(new YesNoQuestionViweModel
+                viewmodel.Add(new YesNoAnswerViweModel
                 {
                     Id=item.Id,
                     Title=item.Title,
@@ -46,14 +46,14 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View(new YesNoQuestionViweModel());
+            return View(new YesNoAnswerViweModel());
         }
         [HttpPost]
-        public ActionResult Create(YesNoQuestionViweModel viewmodel)
+        public ActionResult Create(YesNoAnswerViweModel viewmodel)
         {
             if(ModelState.IsValid)
             {
-                var yesno = new YesNoQuestion
+                var yesno = new YesNoAnswer
                 {
                     Id=viewmodel.Id,
                     Title=viewmodel.Title,
@@ -61,7 +61,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     IsActive=viewmodel.IsActive,
                 };
 
-                uow.YesNoQuestionRepository.Add(yesno);
+                uow.YesNoAnswerRepository.Add(yesno);
                 uow.Commit();
             }
             return Json(new { success = true, message = "Data saved successfully " }, JsonRequestBehavior.AllowGet);
@@ -70,9 +70,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var yesno = uow.YesNoQuestionRepository.GetById(id);
+            var yesno = uow.YesNoAnswerRepository.GetById(id);
 
-            YesNoQuestionViweModel viewmodel = new YesNoQuestionViweModel
+            YesNoAnswerViweModel viewmodel = new YesNoAnswerViweModel
             {
                 Id=yesno.Id,
                 Title=yesno.Title,
@@ -84,17 +84,17 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(YesNoQuestionViweModel viewmodel)
+        public ActionResult Edit(YesNoAnswerViweModel viewmodel)
         {
             if(ModelState.IsValid)
             {
-                var yesno = uow.YesNoQuestionRepository.GetById(viewmodel.Id);
+                var yesno = uow.YesNoAnswerRepository.GetById(viewmodel.Id);
                 yesno.Id = viewmodel.Id;
                 yesno.Title = viewmodel.Title;
                 yesno.Answer = viewmodel.Answer;
                 yesno.IsActive = viewmodel.IsActive;
 
-                uow.YesNoQuestionRepository.Update(yesno);
+                uow.YesNoAnswerRepository.Update(yesno);
                 uow.Commit();
             }
             return Json(new { success = true, message = "Data updated successfuly" }, JsonRequestBehavior.AllowGet);
@@ -103,9 +103,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            var yesno = uow.YesNoQuestionRepository.GetById(id);
+            var yesno = uow.YesNoAnswerRepository.GetById(id);
 
-            YesNoQuestionViweModel viewmodel = new YesNoQuestionViweModel
+            YesNoAnswerViweModel viewmodel = new YesNoAnswerViweModel
             {
                 Id = yesno.Id,
                 Title = yesno.Title,
@@ -120,9 +120,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [ActionName("Delete")]
         public ActionResult ConfirmDelete(int id)
         {
-            var yesno = uow.YesNoQuestionRepository.GetById(id);
+            var yesno = uow.YesNoAnswerRepository.GetById(id);
 
-            YesNoQuestionViweModel viewmodel = new YesNoQuestionViweModel
+            YesNoAnswerViweModel viewmodel = new YesNoAnswerViweModel
             {
                 Id=yesno.Id,
                 Title=yesno.Title,
@@ -130,7 +130,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 IsActive=yesno.IsActive,
             };
 
-            uow.YesNoQuestionRepository.Remove(yesno);
+            uow.YesNoAnswerRepository.Remove(yesno);
             uow.Commit();
             return Json(new { success = true, message = "Data deleted successfuly" }, JsonRequestBehavior.AllowGet);
         }
@@ -138,9 +138,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult Details(int id)
         {
-            var yesno = uow.YesNoQuestionRepository.GetById(id);
+            var yesno = uow.YesNoAnswerRepository.GetById(id);
 
-            YesNoQuestionViweModel viewmodel = new YesNoQuestionViweModel
+            YesNoAnswerViweModel viewmodel = new YesNoAnswerViweModel
             {
                 Id = yesno.Id,
                 Title = yesno.Title,

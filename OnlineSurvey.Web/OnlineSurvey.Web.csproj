@@ -209,6 +209,7 @@
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\UsersController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\UserSurveyController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\YesNoController.cs" />
+    <Compile Include="Areas\OnlineSurveyAdmin\Controllers\YesNoQuestionController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\OnlineSurveyAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -422,6 +423,11 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\Response\Index.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\MultilineTextAnswer\Index.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\MultilineTextAnswer\Create.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\YesNoQuestion\Index.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\YesNoQuestion\Create.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\YesNoQuestion\Edit.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\YesNoQuestion\Delete.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\YesNoQuestion\Details.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />

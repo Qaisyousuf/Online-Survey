@@ -1,23 +1,23 @@
-﻿@model IEnumerable<OnlineSurvey.ViewModel.YesNoAnswerViweModel>
+﻿@model IEnumerable<OnlineSurvey.ViewModel.YesNoQuestionViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Yes No Question";
 }
-
 <div class="card">
     <h3 class="card-header mdb-color darken-3 white-text text-uppercase font-weight-normal text-center py-4">
-        List of yes no answers
+        List of yes no question
     </h3>
     <div class="card-body">
-        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","YesNo",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add new role</a>
+        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","YesNoQuestion",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add new role</a>
         <div class="table-responsive">
             <table id="dataTable" class="table table-hover table-responsive-sm table-bordered">
                 <thead class="">
                     <tr>
                         <th scope="col" class="text-primary"><i class="fas fa-sort-numeric-down"></i>Id </th>
                         <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Title </th>
-                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Answer </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Question </th>
                         <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Is Active </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Answers </th>
                         <th scope="col" class="text-primary"><i class="fas fa-tools"></i> Action</th>
                     </tr>
                 </thead>
@@ -67,7 +67,7 @@
 
                 ],
                 "ajax": {
-                    "url": "/OnlineSurveyAdmin/YesNo/GetYesNoQuestion",
+                    "url": "/OnlineSurveyAdmin/YesNoQuestion/GetSingleChoiceQuestion",
                     "type": "GET",
                     "datatype": "json",
 
@@ -77,8 +77,9 @@
                 "columns": [
                     { "data": "Id" },
                     { "data": "Title" },
-                    { "data": "Answer" },
+                    { "data": "Question" },
                     { "data": "IsActive" },
+                    { "data": "YesNoAnswerName" },
 
 
 
@@ -88,7 +89,7 @@
                         "data": "Id", "render": function (data)
 
                         {
-                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "YesNo")/" + data + "')><i class='far fa-edit'></i></a> | <a class='btn btn-danger btn-md btn-rounded' onclick=PopupForm('@Url.Action("Delete", "YesNo")/" + data + "')><i class='fas fa-trash'></i></a> | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "YesNo")/" + data + "')><i class='fas fa-info-circle'> </i></a>";
+                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "YesNoQuestion")/" + data + "')><i class='far fa-edit'></i></a> | <a class='btn btn-danger btn-md btn-rounded' onclick=PopupForm('@Url.Action("Delete", "YesNoQuestion")/" + data + "')><i class='fas fa-trash'></i></a> | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "YesNoQuestion")/" + data + "')><i class='fas fa-info-circle'> </i></a>";
                     },
                         "orderable": false,
                         "searchable":false,
@@ -242,3 +243,4 @@
     </script>
 
 }
+
