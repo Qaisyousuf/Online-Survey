@@ -9,8 +9,8 @@ namespace OnlineSurvey.Model
         {
             Surveys = new List<Survey>();
             Responses = new List<Response>();
-          
-           
+            MultiLineTextResponses = new List<MultiLineTextResponse>();
+
         }
         public string QuestionTitle { get; set; }
         public string Question { get; set; }
@@ -21,10 +21,9 @@ namespace OnlineSurvey.Model
 
         public List<Response> Responses { get; set; }
 
-        public int MultilineTextAnswerId { get; set; }
 
-        [ForeignKey("MultilineTextAnswerId")]
-        public MultiLineTextAnswer MultiLineTextAnswers { get; set; }
+
+        public List<MultiLineTextResponse>  MultiLineTextResponses { get; set; }
 
 
     }

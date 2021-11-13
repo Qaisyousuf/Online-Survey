@@ -57,12 +57,5 @@ namespace OnlineSurvey.ViewModel
         public List<MultiLineTextResponse> MultiLineTextResponse { get; set; }
 
 
-       
-
-      
-
-
-
-
     }
 }

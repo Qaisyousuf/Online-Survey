@@ -236,35 +236,40 @@
                                                     <div class="col-md-6 offset-md-3">
                                                         <hr />
                                                         <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.QuestionTitle</h6>
+                                                        @*<h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.MultiLineTextAnswers.MainTitle</h6>*@
                                                         <div class=" form-group font-weight-bold">
 
                                                             @Html.DisplayFor(model => item.Question)
+
+
                                                         </div>
-                                                       
-                                                            <div class="md-form mb-0">
-                                                                @Html.LabelFor(model =>model.ListofMultilineTextResponse.Title , htmlAttributes: new { @class = "control-label  " })
-                                                                @Html.EditorFor(model =>model.ListofMultilineTextResponse.Title, new { htmlAttributes = new { @class = "form-control" } })
-                                                            </div>
-                                                            <div class="md-form mb-0">
-                                                                @Html.LabelFor(model => model.ListofMultilineTextResponse.MulitLine, htmlAttributes: new { @class = "control-label  " })
-                                                                @Html.TextAreaFor(model => model.ListofMultilineTextResponse.MulitLine, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
-                                                            </div>
-                                                        
 
 
-                                                        @*<div class="md-form mb-0">
-            @Html.LabelFor(model =>suit.Title, htmlAttributes: new { @class = "control-label  " })
-            @Html.EditorFor(model => model.ListofMultilineTextResponse.Title, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-        <div class="md-form mb-0">
-            @Html.LabelFor(model => model.ListofMultilineTextResponse.MulitLine, htmlAttributes: new { @class = "control-label  " })
-            @Html.TextAreaFor(model => model.ListofMultilineTextResponse.MulitLine, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
-        </div>*@
+                                                        @{
+
+                                                            var title = item.MultiLineTextResponses.Where(x => x.Id == item.Id).Select(x => x.Title);
+                                                            var comment = item.MultiLineTextResponses.Where(x => x.Id == item.Id).Select(x => x.MulitLine).ToList();
+                                                        }
+                                                        @if (Model.ListofMultilineTextResponse != null)
+                                                        {
+                                                            <div class="md-form mb-0">
+                                                                @Html.LabelFor(model => Model.ListofMultilineTextResponse.Title, htmlAttributes: new { @class = "control-label  " })
+                                                                @Html.EditorFor(model => Model.ListofMultilineTextResponse.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </div>
+
+                                                            <div class="md-form mb-0">
+                                                                @Html.LabelFor(model => Model.ListofMultilineTextResponse.MulitLine, htmlAttributes: new { @class = "control-label  " })
+                                                                @Html.TextAreaFor(model =>Model.ListofMultilineTextResponse.MulitLine, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
+                                                            </div>
+                                                        }
+
+
 
 
                                                     </div>
                                                 </div>
                                             </div>
+
 
                                         }
                                       

@@ -21,13 +21,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.MultilineTextAnswerId, htmlAttributes: new { @class = "control-label" })
-                    <div class="">
-                        @Html.DropDownListFor(m => m.MultilineTextAnswerId, new SelectList(ViewBag.MultilineAnswer, "Id", "MainTitle"), "-----Select the answer ------", new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.MultilineTextAnswerId, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+               
                 <div class="form-group">
                     @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label checkbox-lable" })
                     <div class="ui-checkboxradio-checked">

@@ -12,7 +12,7 @@ namespace OnlineSurvey.ViewModel
         {
             Surveys = new List<Survey>();
             Responses = new List<Response>();
-         
+            MultiLineTextResponses = new List<MultiLineTextResponse>();
         }
         public int Id { get; set; }
 
@@ -30,11 +30,12 @@ namespace OnlineSurvey.ViewModel
 
         public List<Response> Responses { get; set; }
 
-        [Display(Name ="Multi line answer")]
-        public int MultilineTextAnswerId { get; set; }
+        public int[] MultilineTextResponseId { get; set; }
 
-        [ForeignKey("MultilineTextAnswerId")]
-        public MultiLineTextAnswer MultiLineTextAnswers { get; set; }
+        public List<string> MultilineTextResponseTag { get; set; }
+
+        public List<MultiLineTextResponse> MultiLineTextResponses { get; set; }
+
 
 
     }

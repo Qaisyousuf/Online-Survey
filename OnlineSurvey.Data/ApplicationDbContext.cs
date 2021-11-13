@@ -32,9 +32,11 @@ namespace OnlineSurvey.Data
         public DbSet<Survey> Surveys { get; set; } 
         public DbSet<Question> Questions { get; set; }
         public DbSet<Response> Responses { get; set; }
+        public DbSet<MultiLineTextResponse> MultiLineTextResponses { get; set; }
         public DbSet<MultiLineTextAnswer> MultiLineTextAnswers { get; set; }
-      
-      
+
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -42,6 +44,7 @@ namespace OnlineSurvey.Data
             modelBuilder.Configurations.Add(new SurveyAndMultipleChoiceAnswerMapping());
             modelBuilder.Configurations.Add(new MultipleChoiceQuestionMapping());
             modelBuilder.Configurations.Add(new ResponseMapping());
+            modelBuilder.Configurations.Add(new MultilLineTextMapping());
             modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnName("datetime2"));
                      
             base.OnModelCreating(modelBuilder);

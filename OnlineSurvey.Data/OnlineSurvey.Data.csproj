@@ -81,6 +81,7 @@
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
     <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoQuestionRepository.cs" />
+    <Compile Include="FluentAPI\MultilLineTextMapping.cs" />
     <Compile Include="FluentAPI\MultipleChoiceQuestionMapping.cs" />
     <Compile Include="FluentAPI\ResponseMapping.cs" />
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
@@ -317,6 +318,38 @@
     <Compile Include="Migrations\202111091310520_MultiLineTextModelAdded1.designer.cs">
       <DependentUpon>202111091310520_MultiLineTextModelAdded1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111092052138_NavigationPropertyAdded.cs" />
+    <Compile Include="Migrations\202111092052138_NavigationPropertyAdded.designer.cs">
+      <DependentUpon>202111092052138_NavigationPropertyAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111111633182_MultiLineAnswerRemoved.cs" />
+    <Compile Include="Migrations\202111111633182_MultiLineAnswerRemoved.designer.cs">
+      <DependentUpon>202111111633182_MultiLineAnswerRemoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111111637426_MultilineTextModelUpdated.cs" />
+    <Compile Include="Migrations\202111111637426_MultilineTextModelUpdated.designer.cs">
+      <DependentUpon>202111111637426_MultilineTextModelUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111121012091_RelationCreatedBetweenMultilineAndMultilineResponse.cs" />
+    <Compile Include="Migrations\202111121012091_RelationCreatedBetweenMultilineAndMultilineResponse.designer.cs">
+      <DependentUpon>202111121012091_RelationCreatedBetweenMultilineAndMultilineResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111121042492_MultilineTextAnswerAdded.cs" />
+    <Compile Include="Migrations\202111121042492_MultilineTextAnswerAdded.designer.cs">
+      <DependentUpon>202111121042492_MultilineTextAnswerAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111121049268_MultilineModelWithMultiLineAnswerAdded.cs" />
+    <Compile Include="Migrations\202111121049268_MultilineModelWithMultiLineAnswerAdded.designer.cs">
+      <DependentUpon>202111121049268_MultilineModelWithMultiLineAnswerAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111121054041_LeftKeyChangetoRightKey.cs" />
+    <Compile Include="Migrations\202111121054041_LeftKeyChangetoRightKey.designer.cs">
+      <DependentUpon>202111121054041_LeftKeyChangetoRightKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111121352362_MultilineTextResponseModelremoved.cs" />
+    <Compile Include="Migrations\202111121352362_MultilineTextResponseModelremoved.designer.cs">
+      <DependentUpon>202111121352362_MultilineTextResponseModelremoved.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -486,6 +519,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111091310520_MultiLineTextModelAdded1.resx">
       <DependentUpon>202111091310520_MultiLineTextModelAdded1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111092052138_NavigationPropertyAdded.resx">
+      <DependentUpon>202111092052138_NavigationPropertyAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111111633182_MultiLineAnswerRemoved.resx">
+      <DependentUpon>202111111633182_MultiLineAnswerRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111111637426_MultilineTextModelUpdated.resx">
+      <DependentUpon>202111111637426_MultilineTextModelUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111121012091_RelationCreatedBetweenMultilineAndMultilineResponse.resx">
+      <DependentUpon>202111121012091_RelationCreatedBetweenMultilineAndMultilineResponse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111121042492_MultilineTextAnswerAdded.resx">
+      <DependentUpon>202111121042492_MultilineTextAnswerAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111121049268_MultilineModelWithMultiLineAnswerAdded.resx">
+      <DependentUpon>202111121049268_MultilineModelWithMultiLineAnswerAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111121054041_LeftKeyChangetoRightKey.resx">
+      <DependentUpon>202111121054041_LeftKeyChangetoRightKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111121352362_MultilineTextResponseModelremoved.resx">
+      <DependentUpon>202111121352362_MultilineTextResponseModelremoved.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
