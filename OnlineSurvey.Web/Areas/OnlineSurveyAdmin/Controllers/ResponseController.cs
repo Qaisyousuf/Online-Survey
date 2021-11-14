@@ -24,7 +24,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 
         public ActionResult GetResponseData()
         {
-            var responsedata = uow.ResponseRepository.GetAll("Questions", "MultipleChoiceQuestions", "UserSurveis", "MultiLineTextQuestion").ToList();
+            var responsedata = uow.ResponseRepository.GetAll("Questions", "MultipleChoiceQuestions", "UserSurveis", "MultiLineTextQuestion", "YesNoQuestions", "YesNoAnswers").ToList();
 
             List<ResponseViewModel> viewmodel = new List<ResponseViewModel>();
 
@@ -37,6 +37,17 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 var MultipleId = item.MultipleChoiceQuestions.Select(x => x.Id).ToList();
                 var Multiplechoice = uow.Context.MultipleChoiceQuestions.Where(x => MultipleId.Contains(x.Id)).Select(x => x.Answer).ToList();
                 var userName = uow.Context.Responses.Where(x => x.UserName.Contains(x.UserSurveyId.ToString())).Select(x => x.UserName).SingleOrDefault();
+
+
+
+                var singleChoiceId = item.YesNoQuestions.Select(x => x.Id).ToList();
+                var singleChoiceAnswerId = item.YesNoAnswers.Select(x => x.Id).ToList();
+
+                var singeChoiceQuestion = uow.Context.YesNoQuestions.Where(x => singleChoiceId.Contains(x.Id)).Select(x => x.Question).ToList();
+
+                var singleChoiceAnswer = uow.Context.YesNoAnswers.Where(x => singleChoiceAnswerId.Contains(x.Id)).Select(x => x.Answer).ToList();
+
+
 
                 var multiLineTextQuestionid = item.MultiLineTextQuestion.Select(x => x.Id).ToList();
 
@@ -57,6 +68,11 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     MultipleQuestionTag= MultipleQuestionName,
                     MultipleChoiceTag= Multiplechoice,
                     MultiLineTextQuestionTag= MultilineQuestionTagname,
+                    //YesNoQuestions=item.YesNoQuestions,
+                    //YesNoAnswers=item.YesNoAnswers,
+                    SingleChoiceQuestionName = singeChoiceQuestion,
+                    SingleChoiceAnswerName = singleChoiceAnswer,
+
 
 
                 });

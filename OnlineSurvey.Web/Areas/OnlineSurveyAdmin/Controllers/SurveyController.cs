@@ -28,23 +28,29 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             ViewBag.QuestionData = uow.QuesiotnRepository.GetAll();
             ViewBag.UserSurvey = uow.UserSurveyRepository.GetAll();
             ViewBag.MulitiLineTextQuestion = uow.MultiLineTextRepository.GetAll();
+            ViewBag.SingleChoiceQuestion = uow.YesNoQuestionRepository.GetAll();
         }
 
         [HttpGet]
         public ActionResult GetSurveyData()
         {
-            var survey = uow.SurveyRepository.GetAll("SurveyCatagories","MultipleChoiceQuestion", "MultiLineTextsQuestion").ToList();
+            var survey = uow.SurveyRepository.GetAll("SurveyCatagories","MultipleChoiceQuestion", "MultiLineTextsQuestion", "YesNoQuestions").ToList();
 
             List<SurveyViewModel> viewmodel = new List<SurveyViewModel>();
 
             foreach (var item in survey)
             {
                 var MultipleId = item.MultipleChoiceQuestion.Select(x => x.Id).ToList();
-                var MultipleQuestionName = uow.Context.Questions.Where(x => MultipleId.Contains(x.Id)).Select(x => x.Type).ToList();
+                var MultipleQuestionName = uow.Context.Questions.Where(x => MultipleId.Contains(x.Id)).Select(x => x.Body).ToList();
 
                 var MultiLineTextQuestionId = item.MultiLineTextsQuestion.Select(x => x.Id).ToList();
 
-                var MultiLineTextQuestionTagName = uow.Context.MultiLineTexts.Where(x => MultiLineTextQuestionId.Contains(x.Id)).Select(x => x.QuestionTitle).ToList();
+                var MultiLineTextQuestionTagName = uow.Context.MultiLineTexts.Where(x => MultiLineTextQuestionId.Contains(x.Id)).Select(x => x.Question).ToList();
+
+
+                var singleId = item.YesNoQuestions.Select(x => x.Id).ToList();
+
+                var YesnoQuestoinName = uow.Context.YesNoQuestions.Where(x => singleId.Contains(x.Id)).Select(x => x.Question).ToList();
 
                 viewmodel.Add(new SurveyViewModel
                 {
@@ -56,6 +62,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     SurveyCatagoryId=item.SurveyCatagoryId,
                     SurveyMutipleChoiceTag=MultipleQuestionName,
                     MultiLineTextQuestionTag=MultiLineTextQuestionTagName,
+                    YesNoQuestionName=YesnoQuestoinName,
 
                 });
             }
@@ -87,8 +94,15 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     SurveyCatagoryId = viewmodel.SurveyCatagoryId,
                     MultipleChoiceQuestion = viewmodel.MultipleChoiceQuestion,
                     MultiLineTextsQuestion=viewmodel.MultiLineTextsQuestion,
+                    YesNoQuestions=viewmodel.YesNoQuestions,
                   
                 };
+
+                foreach (int singleChoice in viewmodel.YesNoQuestionId)
+                {
+                    var singleChoiceTag = uow.YesNoQuestionRepository.GetById(singleChoice);
+                    suvery.YesNoQuestions.Add(singleChoiceTag);
+                }
 
                 //adding Multi line text to survey model
                 foreach (int multiLineTextQuestion in viewmodel.MultiLineTextQuestionId)
@@ -114,7 +128,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var survey = uow.Context.Surveys.Include("MultipleChoiceQuestion").Include("MultiLineTextsQuestion").SingleOrDefault(x => x.Id == id);
+            var survey = uow.Context.Surveys.Include("MultipleChoiceQuestion").Include("MultiLineTextsQuestion").Include("YesNoQuestions").SingleOrDefault(x => x.Id == id);
             //var survey = uow.SurveyRepository.GetById(id);
 
             SurveyViewModel viewmdoel = new SurveyViewModel
@@ -127,8 +141,13 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 SurveyCatagoryId=survey.SurveyCatagoryId,
                 MultipleChoiceQuestion=survey.MultipleChoiceQuestion,
                 MultiLineTextsQuestion=survey.MultiLineTextsQuestion,
+                YesNoQuestions=survey.YesNoQuestions,
+                
                
             };
+
+            // single choice line text question Id
+            int[] singleChoiceQuestion = survey.YesNoQuestions.Select(x => x.Id).ToArray();
 
             // Multiple line text question Id
             int[] multiLineTextQuestion = survey.MultiLineTextsQuestion.Select(x => x.Id).ToArray();
@@ -139,16 +158,17 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
            
             viewmdoel.SurveyIdForMultipleChoice = mulitPleChoice;
             viewmdoel.MultiLineTextQuestionId = multiLineTextQuestion;
+            viewmdoel.YesNoQuestionId = singleChoiceQuestion;
             GetSurveyCatagroyData();
             return View(viewmdoel);
         }
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "Id,Name,StartDate,IsActive,SurveyCatagoryId,UserSurveyId")] SurveyViewModel viewmodel,int [] SurveyIdForMultipleChoice, int[] MultiLineTextQuestionId)
+        public ActionResult Edit([Bind(Include = "Id,Name,StartDate,IsActive,SurveyCatagoryId,UserSurveyId")] SurveyViewModel viewmodel,int [] SurveyIdForMultipleChoice, int[] MultiLineTextQuestionId, int[] YesNoQuestionId)
         {
             if(ModelState.IsValid)
             {
-                var survey = uow.Context.Surveys.Include("MultipleChoiceQuestion").Include("MultiLineTextsQuestion").SingleOrDefault(x => x.Id == viewmodel.Id);
+                var survey = uow.Context.Surveys.Include("MultipleChoiceQuestion").Include("MultiLineTextsQuestion").Include("YesNoQuestions").SingleOrDefault(x => x.Id == viewmodel.Id);
                 //var survey = uow.SurveyRepository.GetById(viewmodel.Id);
 
                 survey.Id = viewmodel.Id;
@@ -159,7 +179,10 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 survey.SurveyCatagoryId = viewmodel.SurveyCatagoryId;
                 survey.MultipleChoiceQuestion = viewmodel.MultipleChoiceQuestion;
                 survey.MultiLineTextsQuestion = viewmodel.MultiLineTextsQuestion;
+                survey.YesNoQuestions = viewmodel.YesNoQuestions;
 
+
+                var singleChoiceQuestionAdded = uow.Context.YesNoQuestions.Where(x => YesNoQuestionId.Contains(x.Id)).ToList();
 
                 //Multiple line text question added
                 var multipleLineTextQuestionAdded = uow.Context.MultiLineTexts.Where(x => MultiLineTextQuestionId.Contains(x.Id)).ToList();
@@ -170,6 +193,11 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 
                 survey.MultipleChoiceQuestion.Clear();
 
+
+                foreach (var item in singleChoiceQuestionAdded)
+                {
+                    survey.YesNoQuestions.Add(item);
+                }
                 // adding the multiple line quesitn to the survey table
                 foreach (var item in multipleLineTextQuestionAdded)
                 {
@@ -191,7 +219,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            var survey = uow.Context.Surveys.Include("MultipleChoiceQuestion").Include("MultiLineTextsQuestion").SingleOrDefault(x => x.Id == id);
+            var survey = uow.Context.Surveys.Include("MultipleChoiceQuestion").Include("MultiLineTextsQuestion").Include("YesNoQuestions").SingleOrDefault(x => x.Id == id);
             //var survey = uow.SurveyRepository.GetById(id);
 
             SurveyViewModel viewmdoel = new SurveyViewModel
@@ -204,9 +232,11 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 SurveyCatagoryId = survey.SurveyCatagoryId,
                 MultipleChoiceQuestion = survey.MultipleChoiceQuestion,
                 MultiLineTextsQuestion=survey.MultiLineTextsQuestion,
+                YesNoQuestions=survey.YesNoQuestions,
              
             };
 
+            int[] SingleChoiceQuestionId = survey.YesNoQuestions.Select(x => x.Id).ToArray();
             // list of multiple choice question
             int[] multiLineTextQuestionId = survey.MultiLineTextsQuestion.Select(x => x.Id).ToArray();
             // list of multiple choice question
@@ -215,6 +245,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 
             viewmdoel.SurveyIdForMultipleChoice = mulitPleChoice;
             viewmdoel.MultiLineTextQuestionId = multiLineTextQuestionId;
+            viewmdoel.YesNoQuestionId = SingleChoiceQuestionId;
             GetSurveyCatagroyData();
             return View(viewmdoel);
         }
@@ -236,6 +267,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 SurveyCatagoryId=survey.SurveyCatagoryId,
                 MultipleChoiceQuestion=survey.MultipleChoiceQuestion,
                 MultiLineTextsQuestion=survey.MultiLineTextsQuestion,
+                YesNoQuestions=survey.YesNoQuestions,
               
             };
 
@@ -248,7 +280,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult Details(int id)
         {
-            var survey = uow.Context.Surveys.Include("MultipleChoiceQuestion").Include("MultiLineTextsQuestion").SingleOrDefault(x => x.Id == id);
+            var survey = uow.Context.Surveys.Include("MultipleChoiceQuestion").Include("MultiLineTextsQuestion").Include("YesNoQuestions").SingleOrDefault(x => x.Id == id);
             //var survey = uow.SurveyRepository.GetById(id);
 
             SurveyViewModel viewmdoel = new SurveyViewModel
@@ -261,18 +293,24 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 SurveyCatagoryId = survey.SurveyCatagoryId,
                 MultipleChoiceQuestion = survey.MultipleChoiceQuestion,
                 MultiLineTextsQuestion=survey.MultiLineTextsQuestion,
+                YesNoQuestions=survey.YesNoQuestions,
               
             };
 
-            // list of multline choice question
-            int[] multiLineTextQuestion = survey.MultiLineTextsQuestion.Select(x => x.Id).ToArray()
+            // list of single  choice question id
+            int[] SingleChoiceQuestionId = survey.YesNoQuestions.Select(x => x.Id).ToArray();
+
+
+            // list of multline choice question id
+            int[] multiLineTextQuestion = survey.MultiLineTextsQuestion.Select(x => x.Id).ToArray();
 ;
-            // list of multiple choice question
+            // list of multiple choice question id
             int[] mulitPleChoice = survey.MultipleChoiceQuestion.Select(x => x.Id).ToArray();
 
 
             viewmdoel.SurveyIdForMultipleChoice = mulitPleChoice;
             viewmdoel.MultiLineTextQuestionId = multiLineTextQuestion;
+            viewmdoel.YesNoQuestionId = SingleChoiceQuestionId;
             GetSurveyCatagroyData();
             return View(viewmdoel);
         }

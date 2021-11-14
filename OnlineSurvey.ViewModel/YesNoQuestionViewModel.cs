@@ -10,6 +10,7 @@ namespace OnlineSurvey.ViewModel
         public YesNoQuestionViewModel()
         {
             YesNoAnswers = new List<YesNoAnswer>();
+            Surveys = new List<Survey>();
         }
         public int Id { get; set; }
 
@@ -19,12 +20,14 @@ namespace OnlineSurvey.ViewModel
         public string Question { get; set; }
         public bool IsActive { get; set; }
 
-        [Display(Name = "Select single choice question")]
+        [Display(Name = "Select single choice answer")]
         public int[] YesNoAnswerId { get; set; }
 
         public List<string> YesNoAnswerName { get; set; }
 
         public List<YesNoAnswer> YesNoAnswers {get;set; }
+
+        public List<Survey> Surveys { get; set; }
 
     }
 }

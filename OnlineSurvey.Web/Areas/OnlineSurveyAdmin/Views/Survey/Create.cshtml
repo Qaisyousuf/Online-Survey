@@ -29,7 +29,13 @@
                     @Html.ValidationMessageFor(model => model.SurveyCatagoryId, "", new { @class = "text-danger" })
                 </div>
             </div>
-            
+            <div class="form-group">
+                @Html.LabelFor(model => model.YesNoQuestionId, htmlAttributes: new { @class = "control-label" })
+                <div class="CheckBox">
+                    @Html.ListBoxFor(model => model.YesNoQuestionId, new MultiSelectList(ViewBag.SingleChoiceQuestion, "Id", "Title"), new { @class = "form-control" })
+
+                </div>
+            </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
@@ -53,6 +59,7 @@
 
                 </div>
             </div>
+           
         </div>
     </div>
 

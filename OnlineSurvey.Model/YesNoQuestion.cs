@@ -12,6 +12,8 @@ namespace OnlineSurvey.Model
         public YesNoQuestion()
         {
             YesNoAnswers = new List<YesNoAnswer>();
+            Surveys = new List<Survey>();
+            Responses = new List<Response>();
         }
         public string Title { get; set; }
         public string Question { get; set; }
@@ -19,6 +21,7 @@ namespace OnlineSurvey.Model
 
         public List<YesNoAnswer> YesNoAnswers { get; set; }
 
-
+        public List<Survey> Surveys { get; set; }
+        public List<Response> Responses { get; set; }
     }
 }

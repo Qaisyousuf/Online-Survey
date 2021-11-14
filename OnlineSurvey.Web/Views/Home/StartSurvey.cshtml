@@ -152,8 +152,8 @@
                                                     </div>
                                                     <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
                                                         <div class=" md-form mb-0">
-                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.GenderId, htmlAttributes: new { @class = " control-label" })
-
+                                                            
+                                                          
                                                             @Html.DropDownListFor(m => m.ListUserSurveyViewModel.GenderId, new SelectList(ViewBag.Gender, "Id", "Name"), new { @class = "select form-control" })
                                                             @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.GenderId, "", new { @class = "text-danger" })
 
@@ -259,7 +259,7 @@
 
                                                             <div class="md-form mb-0">
                                                                 @Html.LabelFor(model => Model.ListofMultilineTextResponse.MulitLine, htmlAttributes: new { @class = "control-label  " })
-                                                                @Html.TextAreaFor(model =>Model.ListofMultilineTextResponse.MulitLine, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
+                                                                @Html.TextAreaFor(model => Model.ListofMultilineTextResponse.MulitLine, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
                                                             </div>
                                                         }
 
@@ -272,7 +272,48 @@
 
 
                                         }
-                                      
+
+                                        @foreach (var item in Model.ViewModelSurvey.YesNoQuestions)
+                                        {
+
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-6 offset-md-3">
+                                                        <hr />
+                                                        <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.Title</h6>
+                                                        @*<h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.MultiLineTextAnswers.MainTitle</h6>*@
+                                                        <div class=" form-group font-weight-bold">
+
+                                                            @Html.DisplayFor(model => item.Question)
+
+
+                                                        </div>
+
+                                                        @{
+                                                            var singleId = item.YesNoAnswers.Select(x => x.Id).ToList();
+                                                            var singleName = item.YesNoAnswers.Where(x => singleId.Contains(x.Id)).Select(x => x.Answer).ToList();
+                                                            var title = item.YesNoAnswers.Where(x => singleId.Contains(x.Id)).Select(x => x.Title).ToList();
+                                                            }   
+
+                                                        <div class=" md-form mb-0">
+
+
+                                                            @Html.DropDownListFor(model => model.ViewModelSurvey.YesNoQuestionId, new SelectList(item.YesNoAnswers, "Id", "Answer"), new { @class = "select" })
+                                                           
+
+                                                        </div>
+                                                        
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        }
+
                                         <div class="form-md">
                                             <div class="col-md-offset-4 col-md-6">
                                                 <button type="submit" class="btn btn-primary btn-rounded"><i class="fas fa-paper-plane mr-2 "></i>Submit</button>

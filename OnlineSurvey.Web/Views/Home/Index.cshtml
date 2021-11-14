@@ -102,6 +102,10 @@
                         {
                             <button class="btn btn-rounded btn-sm">@subitem.QuestionTitle</button>
                         }
+                        @foreach (var subitems in Model.PagesViewModel.Surveies.YesNoQuestions)
+                        {
+                            <button class="btn btn-rounded btn-sm">@subitems.Title</button>
+                        }
                         <!-- Facebook -->
 
 

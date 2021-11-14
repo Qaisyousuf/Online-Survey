@@ -361,6 +361,14 @@
     <Compile Include="Migrations\202111131334322_YesNoQuestionAdded1.designer.cs">
       <DependentUpon>202111131334322_YesNoQuestionAdded1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111131555239_SurveyAndSingleChoiceQuestionAdded.cs" />
+    <Compile Include="Migrations\202111131555239_SurveyAndSingleChoiceQuestionAdded.designer.cs">
+      <DependentUpon>202111131555239_SurveyAndSingleChoiceQuestionAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111131757556_SingleChoiceAndResponseModelCreated.cs" />
+    <Compile Include="Migrations\202111131757556_SingleChoiceAndResponseModelCreated.designer.cs">
+      <DependentUpon>202111131757556_SingleChoiceAndResponseModelCreated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -560,6 +568,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111131334322_YesNoQuestionAdded1.resx">
       <DependentUpon>202111131334322_YesNoQuestionAdded1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111131555239_SurveyAndSingleChoiceQuestionAdded.resx">
+      <DependentUpon>202111131555239_SurveyAndSingleChoiceQuestionAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111131757556_SingleChoiceAndResponseModelCreated.resx">
+      <DependentUpon>202111131757556_SingleChoiceAndResponseModelCreated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

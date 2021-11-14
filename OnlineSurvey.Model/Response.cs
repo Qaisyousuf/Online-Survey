@@ -11,6 +11,8 @@ namespace OnlineSurvey.Model
             MultipleChoiceQuestions = new List<MultipleChoiceQuestions>();
             MultiLineTextQuestion = new List<MultiLineText>();
             MultiLineTextResponses = new List<MultiLineTextResponse>();
+            YesNoQuestions = new List<YesNoQuestion>();
+            YesNoAnswers = new List<YesNoAnswer>();
         }
 
         public string Title { get; set; }
@@ -34,6 +36,10 @@ namespace OnlineSurvey.Model
         public List<MultiLineText> MultiLineTextQuestion { get; set; }
 
         public List<MultiLineTextResponse> MultiLineTextResponses { get; set; }
+
+        public List<YesNoQuestion> YesNoQuestions { get; set; }
+
+        public List<YesNoAnswer> YesNoAnswers { get; set; }
 
      
 

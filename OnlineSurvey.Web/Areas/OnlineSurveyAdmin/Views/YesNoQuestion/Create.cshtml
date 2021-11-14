@@ -34,7 +34,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.YesNoAnswerId, htmlAttributes: new { @class = "control-label" })
                     <div class="CheckBox">
-                        @Html.ListBoxFor(model => model.YesNoAnswerId, new MultiSelectList(ViewBag.SingleYesNoAnswer, "Id", "Answer"), new { @class = "select" })
+                        @Html.ListBoxFor(model => model.YesNoAnswerId, new MultiSelectList(ViewBag.SingleYesNoAnswer, "Id", "Answer"), new { @class = "form-control" })
 
                     </div>
                 </div>
@@ -61,27 +61,7 @@
     </div>
 }
 
-<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
-<link href="~/Content/jquery.multiselect.css" rel="stylesheet" />
-<link href="~/Content/jquery.multiselect.filter.css" rel="stylesheet" />
+
 @section scripts{
-    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
-    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
-    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
-
-    <script src="~/Scripts/jquery.multiselect.js"></script>
-    <script src="~/Scripts/jquery.multiselect.filter.js"></script>
-
-   
-    <script>
-        $(document).ready(function () {
-
-
-            $(function () {
-                $("select").multiselect();
-
-            });
-
-        });
-    </script>
+    
 }

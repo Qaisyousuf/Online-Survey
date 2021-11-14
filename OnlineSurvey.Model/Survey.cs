@@ -13,6 +13,7 @@ namespace OnlineSurvey.Model
         {
             MultipleChoiceQuestion = new List<Question>();
             MultiLineTextsQuestion = new List<MultiLineText>();
+            YesNoQuestions = new List<YesNoQuestion>();
         }
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
@@ -26,6 +27,8 @@ namespace OnlineSurvey.Model
         public List<Question> MultipleChoiceQuestion { get; set; }
 
         public List<MultiLineText> MultiLineTextsQuestion { get; set; }
+
+        public List<YesNoQuestion> YesNoQuestions { get; set; }
 
        
     }

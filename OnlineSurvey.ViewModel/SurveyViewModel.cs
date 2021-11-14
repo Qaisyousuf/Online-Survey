@@ -12,6 +12,7 @@ namespace OnlineSurvey.ViewModel
         {
             MultipleChoiceQuestion = new List<Question>();
             MultiLineTextsQuestion = new List<MultiLineText>();
+            YesNoQuestions = new List<YesNoQuestion>();
         }
         public int Id { get; set; }
 
@@ -45,6 +46,14 @@ namespace OnlineSurvey.ViewModel
         public List<string> MultiLineTextQuestionTag { get; set; }
 
         public List<MultiLineText> MultiLineTextsQuestion { get; set; }
+
+        [Display(Name = "Single Choice Questions")]
+        public int[] YesNoQuestionId { get; set; }
+
+        public List<string> YesNoQuestionName { get; set; }
+
+
+        public List<YesNoQuestion> YesNoQuestions { get; set; }
         
 
     }

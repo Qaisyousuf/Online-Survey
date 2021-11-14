@@ -28,6 +28,14 @@ namespace OnlineSurvey.Data.FluentAPI
                     tm.MapRightKey("MultiLineTextQuestionId");
                     tm.ToTable("SurveyMultiLineTextQuestion");
                 });
+            HasMany(s => s.YesNoQuestions)
+                .WithMany(r => r.Surveys)
+                .Map(sr =>
+                {
+                    sr.MapLeftKey("SurveyId");
+                    sr.MapRightKey("SingleChoiceId");
+                    sr.ToTable("SurveyAndSingleChoice");
+                });
                 
         }
     }
