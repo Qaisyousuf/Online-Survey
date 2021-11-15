@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Concrete Implementation\BannerRepository.cs" />
+    <Compile Include="Concrete Implementation\CheckBoxAnswerRepository.cs" />
     <Compile Include="Concrete Implementation\FooterLinksRepository.cs" />
     <Compile Include="Concrete Implementation\GenderRepository.cs" />
     <Compile Include="Concrete Implementation\MenuRepository.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="FluentAPI\SurveyAndMultipleChoiceAnswerMapping.cs" />
     <Compile Include="FluentAPI\YesNoQuestionMapping.cs" />
     <Compile Include="Interfaces\IBannerRepository.cs" />
+    <Compile Include="Interfaces\ICheckBoxAnswerRepository.cs" />
     <Compile Include="Interfaces\IFooterLinksRepository.cs" />
     <Compile Include="Interfaces\IGenderRepository.cs" />
     <Compile Include="Interfaces\IMenuRepository.cs" />
@@ -369,6 +371,10 @@
     <Compile Include="Migrations\202111131757556_SingleChoiceAndResponseModelCreated.designer.cs">
       <DependentUpon>202111131757556_SingleChoiceAndResponseModelCreated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111151018250_CheckBoxQuestionAdded.cs" />
+    <Compile Include="Migrations\202111151018250_CheckBoxQuestionAdded.designer.cs">
+      <DependentUpon>202111151018250_CheckBoxQuestionAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -574,6 +580,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111131757556_SingleChoiceAndResponseModelCreated.resx">
       <DependentUpon>202111131757556_SingleChoiceAndResponseModelCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111151018250_CheckBoxQuestionAdded.resx">
+      <DependentUpon>202111151018250_CheckBoxQuestionAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

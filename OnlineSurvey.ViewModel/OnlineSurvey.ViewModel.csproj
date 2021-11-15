@@ -91,6 +91,7 @@
     <Compile Include="BannerViewModel.cs" />
     <Compile Include="BaseViewModel.cs" />
     <Compile Include="ChechBoxItemViewModel.cs" />
+    <Compile Include="CheckboxAnswerViewModel.cs" />
     <Compile Include="DeleteUserViewModel.cs" />
     <Compile Include="DetailsUserViewModel.cs" />
     <Compile Include="EditUserViewModel.cs" />

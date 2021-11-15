@@ -52,6 +52,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IYesNoQuestionRepository YesNoQuestionRepository => new YesNoQuestionRepository(Context);
 
+        public ICheckBoxAnswerRepository CheckBoxAnswerRepository => new CheckBoxAnswerRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

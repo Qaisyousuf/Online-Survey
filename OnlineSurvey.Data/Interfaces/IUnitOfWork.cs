@@ -28,6 +28,7 @@ namespace OnlineSurvey.Data.Interfaces
         IMultiLineTextResponseRepository MultiLineResponseRepository { get;} 
         IMultiLineTextAnswerRepository MultiLineTextAnswerRepository { get; }
         IYesNoQuestionRepository YesNoQuestionRepository { get; }
+        ICheckBoxAnswerRepository CheckBoxAnswerRepository { get; }
 
       
 

@@ -35,6 +35,7 @@ namespace OnlineSurvey.Data
         public DbSet<MultiLineTextResponse> MultiLineTextResponses { get; set; }
         public DbSet<MultiLineTextAnswer> MultiLineTextAnswers { get; set; }
         public DbSet<YesNoQuestion> YesNoQuestions { get; set; }
+        public DbSet<CheckBoxAnswers> CheckBoxAnswers { get; set; }
 
 
 

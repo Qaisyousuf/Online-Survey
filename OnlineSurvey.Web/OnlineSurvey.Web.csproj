@@ -188,6 +188,8 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\BannersController.cs" />
+    <Compile Include="Areas\OnlineSurveyAdmin\Controllers\CheckBoxAnswerController.cs" />
+    <Compile Include="Areas\OnlineSurveyAdmin\Controllers\CheckBoxQuestionController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\FooterLinksController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\GenderController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\MenusController.cs" />
@@ -428,6 +430,11 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\YesNoQuestion\Edit.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\YesNoQuestion\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\YesNoQuestion\Details.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxAnswer\Index.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxAnswer\Create.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxAnswer\Edit.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxAnswer\Delete.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxAnswer\Details.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
@@ -593,6 +600,7 @@
     <Content Include="Views\UserSurveyRegistration\UserSurveyRegistration.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\OnlineSurveyAdmin\Views\CheckBoxQuestion\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
