@@ -36,6 +36,7 @@ namespace OnlineSurvey.Data
         public DbSet<MultiLineTextAnswer> MultiLineTextAnswers { get; set; }
         public DbSet<YesNoQuestion> YesNoQuestions { get; set; }
         public DbSet<CheckBoxAnswers> CheckBoxAnswers { get; set; }
+        public DbSet<CheckBoxQuestions> CheckBoxQuestions { get; set; }
 
 
 
@@ -48,6 +49,7 @@ namespace OnlineSurvey.Data
             modelBuilder.Configurations.Add(new ResponseMapping());
             modelBuilder.Configurations.Add(new MultilLineTextMapping());
             modelBuilder.Configurations.Add(new YesNoQuestionMapping());
+            modelBuilder.Configurations.Add(new CheckBoxQuestionMapping());
             modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnName("datetime2"));
                      
             base.OnModelCreating(modelBuilder);

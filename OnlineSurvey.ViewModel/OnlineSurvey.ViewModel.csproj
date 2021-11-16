@@ -92,8 +92,12 @@
     <Compile Include="BaseViewModel.cs" />
     <Compile Include="ChechBoxItemViewModel.cs" />
     <Compile Include="CheckboxAnswerViewModel.cs" />
+    <Compile Include="CheckBoxItemForQuestionViewModel.cs" />
+    <Compile Include="CheckboxQuestionViewModel.cs" />
+    <Compile Include="CheckBoxShowViewModel.cs" />
     <Compile Include="DeleteUserViewModel.cs" />
     <Compile Include="DetailsUserViewModel.cs" />
+    <Compile Include="EditCheckboxQuestionViewModel.cs" />
     <Compile Include="EditUserViewModel.cs" />
     <Compile Include="FooterLinksViewModel.cs" />
     <Compile Include="GenderViewModel.cs" />

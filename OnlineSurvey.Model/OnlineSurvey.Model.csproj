@@ -61,6 +61,8 @@
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="Banner.cs" />
     <Compile Include="CheckBoxAnswers.cs" />
+    <Compile Include="CheckBoxItem.cs" />
+    <Compile Include="CheckBoxQuestions.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="FooterLinks.cs" />
     <Compile Include="MultiLineText.cs" />

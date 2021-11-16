@@ -1,0 +1,105 @@
+﻿@model IEnumerable<OnlineSurvey.ViewModel.CheckBoxShowViewModel>
+
+@{
+    ViewBag.Title = "CheckBox question";
+}
+
+<div class="card">
+    <h5 class="card-header mdb-color darken-3 white-text text-uppercase font-weight-normal text-center py-4">
+        list of checkbox questions
+    </h5>
+    <div class="card-body">
+        <p>
+
+            <a class="btn btn-rounded  btn-primary btn-md" href="/OnlineSurveyAdmin/CheckBoxQuestion/Create"><i class="fas fa-plus-circle pr-2 fa-1x" aria-hidden="true"></i> Create new question</a>
+        </p>
+        <div class="table-responsive">
+            <table id="dataTable" class="table table-hover table-responsive-sm">
+                <thead class="">
+                    <tr>
+                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Ttile </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Questions </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Is Active </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Answers </th>
+                        <th scope="col" class="text-primary"><i class="fas fa-tools"></i> Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        @*<p class="text-small text-muted mb-0 pt-3">* At vero eos et accusamus et iusto ducimus.</p>*@
+    </div>
+</div>
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+
+            // SideNav Initialization
+            $(".button-collapse").sideNav();
+            new WOW().init();
+        })
+    </script>
+    <script>
+        var Popup, dataTable;
+        $(document).ready(function () {
+            dataTable = $("#dataTable").DataTable({
+                "info": false,
+                "responsive": true,
+                "fixedHeader": true,
+                fixedColumns: true,
+
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'copyHtml5', footer: true,
+
+                    },
+                    { extend: 'excelHtml5', footer: true, download: 'open' },
+                    { extend: 'csvHtml5', footer: true, download: 'open' },
+                    { extend: 'pdfHtml5', footer: true, download: 'open' },
+
+                ],
+                "ajax": {
+                    "url": "/OnlineSurveyAdmin/CheckBoxQuestion/GetCheckBoxQuestionData",
+                    "type": "GET",
+                    "datatype": "json",
+
+
+                },
+
+                "columns": [
+
+                    { "data": "Title" },
+                    { "data": "Question" },
+                    { "data": "IsActive" },
+                    { "data": "CheckoxString"},
+
+                    {
+                        "data": "actions",
+                        "className": "dt-body-right",
+                        "render": function (data, type, row, meta) {
+                            data = '<a class="btn-floating  btn-default" href="/OnlineSurveyAdmin/CheckBoxQuestion/Edit/' + row.Id + '"><i class="fas fa-edit"></i></a> | <a class="btn-floating btn-danger" href="/OnlineSurveyAdmin/CheckBoxQuestion/Delete/' + row.Id + '"><i class="fas fa-trash-alt"></i></a> | <a class="btn-floating btn-info" href="/OnlineSurveyAdmin/CheckBoxQuestion/Details/' + row.Id + '"><i class="fas fa-info"></i></a> ';
+
+                            return data;
+                        }
+
+                    }
+
+                ],
+                "language": {
+
+                    "emptyTable" : "No data found, Please click on <b>Add New</b> Button"
+                }
+            });
+        });
+
+
+
+    </script>
+
+}

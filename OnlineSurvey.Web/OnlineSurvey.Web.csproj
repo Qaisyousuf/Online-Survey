@@ -435,6 +435,11 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxAnswer\Edit.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxAnswer\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxAnswer\Details.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxQuestion\Index.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxQuestion\Create.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxQuestion\Edit.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxQuestion\Delete.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxQuestion\Details.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
@@ -600,7 +605,6 @@
     <Content Include="Views\UserSurveyRegistration\UserSurveyRegistration.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\OnlineSurveyAdmin\Views\CheckBoxQuestion\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

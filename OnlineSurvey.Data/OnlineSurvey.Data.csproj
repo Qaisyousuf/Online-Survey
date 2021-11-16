@@ -60,6 +60,7 @@
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Concrete Implementation\BannerRepository.cs" />
     <Compile Include="Concrete Implementation\CheckBoxAnswerRepository.cs" />
+    <Compile Include="Concrete Implementation\CheckBoxQuestionRepository.cs" />
     <Compile Include="Concrete Implementation\FooterLinksRepository.cs" />
     <Compile Include="Concrete Implementation\GenderRepository.cs" />
     <Compile Include="Concrete Implementation\MenuRepository.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoAnswerRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoQuestionRepository.cs" />
+    <Compile Include="FluentAPI\CheckBoxQuestionMapping.cs" />
     <Compile Include="FluentAPI\MultilLineTextMapping.cs" />
     <Compile Include="FluentAPI\MultipleChoiceQuestionMapping.cs" />
     <Compile Include="FluentAPI\ResponseMapping.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="FluentAPI\YesNoQuestionMapping.cs" />
     <Compile Include="Interfaces\IBannerRepository.cs" />
     <Compile Include="Interfaces\ICheckBoxAnswerRepository.cs" />
+    <Compile Include="Interfaces\ICheckBoxQuestionRepository.cs" />
     <Compile Include="Interfaces\IFooterLinksRepository.cs" />
     <Compile Include="Interfaces\IGenderRepository.cs" />
     <Compile Include="Interfaces\IMenuRepository.cs" />
@@ -375,6 +378,26 @@
     <Compile Include="Migrations\202111151018250_CheckBoxQuestionAdded.designer.cs">
       <DependentUpon>202111151018250_CheckBoxQuestionAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111151146443_CheckBoxQuestionAndAnswerAedded.cs" />
+    <Compile Include="Migrations\202111151146443_CheckBoxQuestionAndAnswerAedded.designer.cs">
+      <DependentUpon>202111151146443_CheckBoxQuestionAndAnswerAedded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111151205126_ModelIdChanged.cs" />
+    <Compile Include="Migrations\202111151205126_ModelIdChanged.designer.cs">
+      <DependentUpon>202111151205126_ModelIdChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111151620454_ModelIDChangeToInt.cs" />
+    <Compile Include="Migrations\202111151620454_ModelIDChangeToInt.designer.cs">
+      <DependentUpon>202111151620454_ModelIDChangeToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111151648165_ITemCheckboxAdded.cs" />
+    <Compile Include="Migrations\202111151648165_ITemCheckboxAdded.designer.cs">
+      <DependentUpon>202111151648165_ITemCheckboxAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111151708479_CheckBoxItemNameChanged.cs" />
+    <Compile Include="Migrations\202111151708479_CheckBoxItemNameChanged.designer.cs">
+      <DependentUpon>202111151708479_CheckBoxItemNameChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -583,6 +606,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111151018250_CheckBoxQuestionAdded.resx">
       <DependentUpon>202111151018250_CheckBoxQuestionAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111151146443_CheckBoxQuestionAndAnswerAedded.resx">
+      <DependentUpon>202111151146443_CheckBoxQuestionAndAnswerAedded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111151205126_ModelIdChanged.resx">
+      <DependentUpon>202111151205126_ModelIdChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111151620454_ModelIDChangeToInt.resx">
+      <DependentUpon>202111151620454_ModelIDChangeToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111151648165_ITemCheckboxAdded.resx">
+      <DependentUpon>202111151648165_ITemCheckboxAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111151708479_CheckBoxItemNameChanged.resx">
+      <DependentUpon>202111151708479_CheckBoxItemNameChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

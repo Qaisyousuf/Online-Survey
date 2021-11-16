@@ -1,14 +1,15 @@
-﻿using System;
+﻿using OnlineSurvey.Model;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineSurvey.ViewModel
 {
     public class CheckboxAnswerViewModel
     {
+        public CheckboxAnswerViewModel()
+        {
+            CheckBoxQuestions = new List<CheckBoxQuestions>();
+        }
         public int Id { get; set; }
         [Required]
         public string Title { get; set; }
@@ -17,5 +18,7 @@ namespace OnlineSurvey.ViewModel
 
         [Display(Name ="Is Checked")]
         public bool IsChecked { get; set; }
+
+        public List<CheckBoxQuestions> CheckBoxQuestions { get; set; }
     }
 }
