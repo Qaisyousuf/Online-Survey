@@ -11,13 +11,15 @@ namespace OnlineSurvey.Model
         public CheckBoxQuestions()
         {
             CheckBoxAnswers = new List<CheckBoxAnswers>();
-           
+            Surveys = new List<Survey>();
         }
         public string Title { get; set; }
         public string Question { get; set; }
         public bool IsActive { get; set; }
 
         public List<CheckBoxAnswers> CheckBoxAnswers { get; set; }
+
+        public List<Survey> Surveys { get; set; }
 
       
     }

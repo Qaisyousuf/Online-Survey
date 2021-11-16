@@ -398,6 +398,18 @@
     <Compile Include="Migrations\202111151708479_CheckBoxItemNameChanged.designer.cs">
       <DependentUpon>202111151708479_CheckBoxItemNameChanged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111161631207_checkBoxQuestionsAndSurveyModelCreated.cs" />
+    <Compile Include="Migrations\202111161631207_checkBoxQuestionsAndSurveyModelCreated.designer.cs">
+      <DependentUpon>202111161631207_checkBoxQuestionsAndSurveyModelCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111161638023_CheckBoxQuestionRelationCreated.cs" />
+    <Compile Include="Migrations\202111161638023_CheckBoxQuestionRelationCreated.designer.cs">
+      <DependentUpon>202111161638023_CheckBoxQuestionRelationCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111161641318_CheckBoxQuestionWithSurvey.cs" />
+    <Compile Include="Migrations\202111161641318_CheckBoxQuestionWithSurvey.designer.cs">
+      <DependentUpon>202111161641318_CheckBoxQuestionWithSurvey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -621,6 +633,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111151708479_CheckBoxItemNameChanged.resx">
       <DependentUpon>202111151708479_CheckBoxItemNameChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111161631207_checkBoxQuestionsAndSurveyModelCreated.resx">
+      <DependentUpon>202111161631207_checkBoxQuestionsAndSurveyModelCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111161638023_CheckBoxQuestionRelationCreated.resx">
+      <DependentUpon>202111161638023_CheckBoxQuestionRelationCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111161641318_CheckBoxQuestionWithSurvey.resx">
+      <DependentUpon>202111161641318_CheckBoxQuestionWithSurvey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

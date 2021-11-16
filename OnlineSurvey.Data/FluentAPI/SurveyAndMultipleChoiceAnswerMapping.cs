@@ -36,7 +36,15 @@ namespace OnlineSurvey.Data.FluentAPI
                     sr.MapRightKey("SingleChoiceId");
                     sr.ToTable("SurveyAndSingleChoice");
                 });
-                
+            HasMany(s => s.CheckBoxQuestions)
+              .WithMany(r => r.Surveys)
+              .Map(sr =>
+              {
+                  sr.MapLeftKey("SurveyId");
+                  sr.MapRightKey("CheckBoxQuestionId");
+                  sr.ToTable("SurveyAndCheckBoxQuestion");
+              });
+
         }
     }
 }

@@ -14,6 +14,7 @@ namespace OnlineSurvey.Model
             MultipleChoiceQuestion = new List<Question>();
             MultiLineTextsQuestion = new List<MultiLineText>();
             YesNoQuestions = new List<YesNoQuestion>();
+            CheckBoxQuestions = new List<CheckBoxQuestions>();
         }
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
@@ -29,6 +30,8 @@ namespace OnlineSurvey.Model
         public List<MultiLineText> MultiLineTextsQuestion { get; set; }
 
         public List<YesNoQuestion> YesNoQuestions { get; set; }
+
+        public List<CheckBoxQuestions> CheckBoxQuestions { get; set; }
 
        
     }

@@ -14,6 +14,7 @@ namespace OnlineSurvey.ViewModel
         {
             CheckBoxAnswers = new List<CheckBoxAnswers>();
             CheckBoxItems = new List<CheckBoxItemForQuestionViewModel>();
+            Surveys = new List<Survey>();
         }
         public int Id { get; set; }
         [Required]
@@ -31,5 +32,7 @@ namespace OnlineSurvey.ViewModel
         public List<CheckBoxAnswers> CheckBoxAnswers { get; set; }
         [Display(Name ="Answers")]
         public List<CheckBoxItemForQuestionViewModel> CheckBoxItems { get; set; } 
+
+        public List<Survey> Surveys { get; set; }
     }
 }
