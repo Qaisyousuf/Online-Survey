@@ -57,6 +57,22 @@ namespace OnlineSurvey.Data.FluentAPI
                    xt.MapRightKey("SingleChoiceAnswerId");
                    xt.ToTable("ResponseAndSingleChoiceAnswer");
                });
+            HasMany(x => x.CheckBoxQuestions)
+             .WithMany(p => p.Responses)
+             .Map(xt =>
+             {
+                 xt.MapLeftKey("ResponseId");
+                 xt.MapRightKey("CheckBoxQuestionId");
+                 xt.ToTable("ResponseAndCheckboxQuestion");
+             });
+            HasMany(x => x.CheckBoxAnswers)
+            .WithMany(p => p.Responses)
+            .Map(xt =>
+            {
+                xt.MapLeftKey("ResponseId");
+                xt.MapRightKey("CheckBoxAnswerId");
+                xt.ToTable("ResponseAndCheckboxAnswer");
+            });
 
 
 

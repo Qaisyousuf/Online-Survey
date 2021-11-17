@@ -13,6 +13,8 @@ namespace OnlineSurvey.Model
             MultiLineTextResponses = new List<MultiLineTextResponse>();
             YesNoQuestions = new List<YesNoQuestion>();
             YesNoAnswers = new List<YesNoAnswer>();
+            CheckBoxQuestions = new List<CheckBoxQuestions>();
+            CheckBoxAnswers = new List<CheckBoxAnswers>();
         }
 
         public string Title { get; set; }
@@ -40,6 +42,10 @@ namespace OnlineSurvey.Model
         public List<YesNoQuestion> YesNoQuestions { get; set; }
 
         public List<YesNoAnswer> YesNoAnswers { get; set; }
+
+        public List<CheckBoxQuestions> CheckBoxQuestions { get; set; }
+
+        public List<CheckBoxAnswers> CheckBoxAnswers { get; set; }
 
      
 

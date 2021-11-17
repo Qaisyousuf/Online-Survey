@@ -229,6 +229,7 @@
     <Content Include="App_Data\OnlineSurvey_log.ldf">
       <DependentUpon>OnlineSurvey.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\all.css" />
     <Content Include="Content\animations-extended.min.css" />
     <Content Include="Content\backendcss\Backendcss.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -249,6 +250,37 @@
     <Content Include="Content\jquery.multiselect.filter.css" />
     <Content Include="Content\mdb.css" />
     <Content Include="Content\mdb.min.css" />
+    <Content Include="Content\square\aero%402x.png" />
+    <Content Include="Content\square\aero.css" />
+    <Content Include="Content\square\aero.png" />
+    <Content Include="Content\square\blue%402x.png" />
+    <Content Include="Content\square\blue.css" />
+    <Content Include="Content\square\blue.png" />
+    <Content Include="Content\square\green%402x.png" />
+    <Content Include="Content\square\green.css" />
+    <Content Include="Content\square\green.png" />
+    <Content Include="Content\square\grey%402x.png" />
+    <Content Include="Content\square\grey.css" />
+    <Content Include="Content\square\grey.png" />
+    <Content Include="Content\square\orange%402x.png" />
+    <Content Include="Content\square\orange.css" />
+    <Content Include="Content\square\orange.png" />
+    <Content Include="Content\square\pink%402x.png" />
+    <Content Include="Content\square\pink.css" />
+    <Content Include="Content\square\pink.png" />
+    <Content Include="Content\square\purple%402x.png" />
+    <Content Include="Content\square\purple.css" />
+    <Content Include="Content\square\purple.png" />
+    <Content Include="Content\square\red%402x.png" />
+    <Content Include="Content\square\red.css" />
+    <Content Include="Content\square\red.png" />
+    <Content Include="Content\square\square%402x.png" />
+    <Content Include="Content\square\square.css" />
+    <Content Include="Content\square\square.png" />
+    <Content Include="Content\square\yellow%402x.png" />
+    <Content Include="Content\square\yellow.css" />
+    <Content Include="Content\square\yellow.png" />
+    <Content Include="Content\square\_all.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -304,6 +336,7 @@
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
     <Content Include="Scripts\filter-multi-select-bundle.min.js" />
+    <Content Include="Scripts\icheck.min.js" />
     <Content Include="Scripts\index.js.flow" />
     <Content Include="Scripts\esm\popper.min.js.map" />
     <Content Include="Scripts\esm\popper.js.map" />
@@ -542,6 +575,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\wow.min.js" />
+    <Content Include="Scripts\zepto.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

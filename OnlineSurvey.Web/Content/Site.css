@@ -32,9 +32,12 @@ select,
 textarea {
     max-width: 280px;
 }
-    .input[type="checkbox"] {
-        display: none !important;
-    }
+.input[type="checkbox"] {
+    display: inline-block !important;
+    -webkit-appearance: none !important;
+    background-color: #eee;
+    opacity:1;
+}
 .navbar.scrolling-navbar
 {
 

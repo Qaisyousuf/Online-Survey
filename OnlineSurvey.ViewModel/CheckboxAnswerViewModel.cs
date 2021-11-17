@@ -20,5 +20,8 @@ namespace OnlineSurvey.ViewModel
         public bool IsChecked { get; set; }
 
         public List<CheckBoxQuestions> CheckBoxQuestions { get; set; }
+
+        public List<CheckBoxAnswers> CheckBoxAnswers { get; set; }
+
     }
 }

@@ -24,7 +24,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 
         public ActionResult GetResponseData()
         {
-            var responsedata = uow.ResponseRepository.GetAll("Questions", "MultipleChoiceQuestions", "UserSurveis", "MultiLineTextQuestion", "YesNoQuestions", "YesNoAnswers").ToList();
+            var responsedata = uow.ResponseRepository.GetAll("Questions", "MultipleChoiceQuestions", "UserSurveis", "MultiLineTextQuestion", "YesNoQuestions", "YesNoAnswers", "CheckBoxQuestions", "CheckBoxAnswers").ToList();
 
             List<ResponseViewModel> viewmodel = new List<ResponseViewModel>();
 
@@ -53,6 +53,13 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 
                 var MultilineQuestionTagname = uow.Context.MultiLineTexts.Where(x => multiLineTextQuestionid.Contains(x.Id)).Select(x => x.Question).ToList();
 
+                var checkBoxQuestionId = item.CheckBoxQuestions.Select(x => x.Id).ToList();
+
+                var checkBoxQuestionTagName = uow.Context.CheckBoxQuestions.Where(x => checkBoxQuestionId.Contains(x.Id)).Select(x => x.Question).ToList();
+
+                var checkboxAnswerId = item.CheckBoxAnswers.Select(x => x.Id).ToList();
+
+                var checkBoxAnswerTagName = uow.Context.CheckBoxAnswers.Where(x => checkboxAnswerId.Contains(x.Id)).Select(x => x.Answer).ToList();
 
                 viewmodel.Add(new ResponseViewModel
                 {
@@ -72,6 +79,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     //YesNoAnswers=item.YesNoAnswers,
                     SingleChoiceQuestionName = singeChoiceQuestion,
                     SingleChoiceAnswerName = singleChoiceAnswer,
+                    CheckBoxAnswerName=checkBoxAnswerTagName,
+                    CheckBoxQuestionTagName=checkBoxQuestionTagName,
 
 
 

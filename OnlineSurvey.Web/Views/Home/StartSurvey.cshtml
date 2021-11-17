@@ -152,8 +152,8 @@
                                                     </div>
                                                     <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
                                                         <div class=" md-form mb-0">
-                                                            
-                                                          
+
+
                                                             @Html.DropDownListFor(m => m.ListUserSurveyViewModel.GenderId, new SelectList(ViewBag.Gender, "Id", "Name"), new { @class = "select form-control" })
                                                             @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.GenderId, "", new { @class = "text-danger" })
 
@@ -164,7 +164,7 @@
                                                 <!--Grid row-->
                                                 <!--Grid row-->
 
-                                               
+
 
                                             </div>
 
@@ -293,16 +293,16 @@
                                                             var singleId = item.YesNoAnswers.Select(x => x.Id).ToList();
                                                             var singleName = item.YesNoAnswers.Where(x => singleId.Contains(x.Id)).Select(x => x.Answer).ToList();
                                                             var title = item.YesNoAnswers.Where(x => singleId.Contains(x.Id)).Select(x => x.Title).ToList();
-                                                            }   
+                                                        }
 
-                                                        <div class=" md-form mb-0">
+                                                        <div class=" form-check mb-0">
 
 
-                                                            @Html.DropDownListFor(model => model.ViewModelSurvey.YesNoQuestionId, new SelectList(item.YesNoAnswers, "Id", "Answer"), new { @class = "select" })
-                                                           
+                                                            @Html.DropDownListFor(model => model.ViewModelSurvey.YesNoQuestionId, new SelectList(item.YesNoAnswers, "Id", "Answer"), new { style = "select form-check-input materialUnchecked" })
+
 
                                                         </div>
-                                                        
+
 
 
 
@@ -313,6 +313,91 @@
 
 
                                         }
+
+
+                                        @foreach (var item in Model.ViewModelSurvey.CheckBoxQuestions)
+                                        {
+
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-6 offset-md-3">
+                                                        <hr />
+                                                        <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.Title</h6>
+                                                        @*<h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.MultiLineTextAnswers.MainTitle</h6>*@
+                                                        <div class=" form-group font-weight-bold">
+
+                                                            <div class=" form-group font-weight-bold">
+
+                                                                @Html.DisplayFor(model => item.Question)
+
+
+                                                            </div>
+
+                                                                                                                @{
+                                                                    var checkBoxId = item.CheckBoxAnswers.Select(x => x.Id).ToList();
+                                                                }
+                                                                @foreach (var checkbox in item.CheckBoxAnswers)
+                                                                {
+                                                                    var checkBoxid = checkbox.CheckBoxQuestions.Select(x => x.Id);
+                                                                    <div class="form-check">
+                                                                        @Html.CheckBoxListFor(model=>model.ViewModelSurvey.CheckBoxQuestionId,
+                                                                         model=>checkbox.CheckBoxQuestions,
+                                                                         model=>checkbox.Id,
+                                                                         model=>checkbox.Answer,
+                                                                         model=>checkbox.IsChecked,
+                                                                         model => new { @class = "opacity:1; padding-top:15px; margin-left:0px; form-check-input materialUnchecked" }
+                                                                         )
+                                                                    </div>
+
+
+                                                                }
+
+
+
+                                                        </div>
+                                                        @*@{
+                                                            foreach (var subitem in item.CheckBoxAnswers)
+                                                            {
+                                                                var id = subitem.CheckBoxQuestions.Select(x => x.Id).ToList();
+
+                                                                var textname = subitem.CheckBoxQuestions.Select(x => x.Id).ToList();
+
+                                                                <div class="form-check">
+                                                                    @Html.CheckBoxListFor(model=>model.ViewModelSurvey.CheckBoxQuestionId,
+                                                                     model=>model.ViewModelSurvey.CheckBoxQuestionId,
+                                                                     model=> id,
+                                                                     model=> textname,
+                                                                     model => item.IsActive,
+                                                                     model => new { @class = "opacity:1; padding-top:15px; margin-left:0px; form-check-input materialUnchecked" }
+                                                                     )
+                                                                </div>
+                                                            }
+
+
+                                                            //bool checke = item.CheckBoxAnswers.Select(x => x.IsChecked==true).ToList();
+
+                                                        }*@
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        }
+
+
+
 
                                         <div class="form-md">
                                             <div class="col-md-offset-4 col-md-6">
@@ -343,12 +428,17 @@
 
 
 
+
 <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 <link href="~/Content/jquery.multiselect.css" rel="stylesheet" />
 <link href="~/Content/jquery.multiselect.filter.css" rel="stylesheet" />
+
 @section scripts {
 
     <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+
+
+  
     <script src="~/Scripts/ckeditor/ckeditor.js"></script>
     <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
 
@@ -356,8 +446,8 @@
     <script src="~/Scripts/jquery.multiselect.filter.js"></script>
 
     <script src="~/Scripts/notify.min.js"></script>
+   
 
- 
     <script>
         function SubmitFormCreate(form) {
             $.validator.unobtrusive.parse(form);
@@ -385,8 +475,13 @@
             }
             return false;
         }
+        //$('input').iCheck({
+        //    checkboxClass: 'icheckbox_minimal',
+
+        //});
         $(document).ready(function () {
 
+            $('input[type=checkbox]').removeAttr('checked');
 
             $(function () {
                 $("select").multiselect();

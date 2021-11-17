@@ -14,6 +14,7 @@ namespace OnlineSurvey.ViewModel
         public List<MultiLineTextViewModel> ListOfMultiLineTextQuestion { get; set; }
         public MultiLineResponseViewModel ListofMultilineTextResponse { get; set; }
         public List<YesNoQuestionViewModel> ListofSingleChoice { get; set; }
+        public List<EditCheckboxQuestionViewModel> ListofCheckboxQuestion { get; set; }
        
 
 

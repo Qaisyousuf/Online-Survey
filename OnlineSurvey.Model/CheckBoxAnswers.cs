@@ -11,6 +11,7 @@ namespace OnlineSurvey.Model
         public CheckBoxAnswers()
         {
             CheckBoxQuestions = new List<CheckBoxQuestions>();
+            Responses = new List<Response>();
         }
        
         public string Title { get; set; }
@@ -18,5 +19,8 @@ namespace OnlineSurvey.Model
         public bool IsChecked { get; set; }
 
         public List<CheckBoxQuestions> CheckBoxQuestions { get; set; }
+
+        public List<Response> Responses { get; set; }
+       
     }
 }

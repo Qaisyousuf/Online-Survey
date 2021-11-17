@@ -12,6 +12,7 @@ namespace OnlineSurvey.Model
         {
             CheckBoxAnswers = new List<CheckBoxAnswers>();
             Surveys = new List<Survey>();
+            Responses = new List<Response>();
         }
         public string Title { get; set; }
         public string Question { get; set; }
@@ -20,6 +21,8 @@ namespace OnlineSurvey.Model
         public List<CheckBoxAnswers> CheckBoxAnswers { get; set; }
 
         public List<Survey> Surveys { get; set; }
+
+        public List<Response> Responses { get; set; }
 
       
     }

@@ -74,7 +74,7 @@ namespace OnlineSurvey.Web.Controllers
 
             };
 
-            var survey = _uow.SurveyRepository.GetAll("SurveyCatagories", "MultipleChoiceQuestion", "MultiLineTextsQuestion", "YesNoQuestions").ToList();
+            var survey = _uow.SurveyRepository.GetAll("SurveyCatagories", "MultipleChoiceQuestion", "MultiLineTextsQuestion", "YesNoQuestions", "CheckBoxQuestions").ToList();
 
  
             List<SurveyViewModel> Surveyviewmodel = new List<SurveyViewModel>();
@@ -95,6 +95,10 @@ namespace OnlineSurvey.Web.Controllers
 
                 var SingleChoiceQuestionName = item.YesNoQuestions.Where(x => singleChoiceId.Contains(x.Id)).Select(x => x.Question).ToList();
 
+
+                int[] checkBoxId = item.CheckBoxQuestions.Select(x => x.Id).ToArray();
+
+                var checkBoxTagName = item.CheckBoxQuestions.Where(x => checkBoxId.Contains(x.Id)).Select(x => x.Question).ToList();
                 Surveyviewmodel.Add(new SurveyViewModel
                 {
                     Id = item.Id,
@@ -112,6 +116,9 @@ namespace OnlineSurvey.Web.Controllers
                     YesNoQuestions=item.YesNoQuestions,
                     YesNoQuestionName=SingleChoiceQuestionName,
                     YesNoQuestionId=singleChoiceId,
+                    CheckBoxQuestions=item.CheckBoxQuestions,
+                    CheckBoxQuestionId=checkBoxId,
+                    CheckBoxQuestionName=checkBoxTagName,
                     
 
 
@@ -185,6 +192,8 @@ namespace OnlineSurvey.Web.Controllers
             ViewBag.MultiLineAnswer = _uow.MultiLineTextAnswerRepository.GetAll();
             ViewBag.SingleChoiceQuestion = _uow.YesNoQuestionRepository.GetAll();
             ViewBag.SingleChoiceAnswer = _uow.YesNoAnswerRepository.GetAll();
+            ViewBag.checboxQuestion = _uow.CheckBoxQuestionRepository.GetAll();
+            ViewBag.checkboxAnswer = _uow.CheckBoxAnswerRepository.GetAll();
             
         }
 
@@ -194,7 +203,7 @@ namespace OnlineSurvey.Web.Controllers
 
             //var response=_uow.Context.Responses.Include(""),
             var userseruve = _uow.Context.UserSurveyRegistrations.Include("Genders").SingleOrDefault(x => x.Id ==viewmodel.Id);
-            var survey = _uow.SurveyRepository.GetAll("MultipleChoiceQuestion","SurveyCatagories", "MultiLineTextsQuestion", "YesNoQuestions").SingleOrDefault(x => x.Id == id);
+            var survey = _uow.SurveyRepository.GetAll("MultipleChoiceQuestion","SurveyCatagories", "MultiLineTextsQuestion", "YesNoQuestions", "CheckBoxQuestions").SingleOrDefault(x => x.Id == id);
 
 
 
@@ -216,7 +225,11 @@ namespace OnlineSurvey.Web.Controllers
             //var xs = survey.MultipleChoiceQuestion.Where(t => surveyId.Contains(t.Id)).Select(x => x.Type);
             var MultipleChoinceQuestionName = survey.MultipleChoiceQuestion.Where(x => surveyId.Contains(x.Id)).Select(x => x.Type).ToList();
 
-          
+
+            int[] checkboxId = survey.CheckBoxQuestions.Select(x => x.Id).ToArray();
+
+            var checkboxQuestionTagName = survey.CheckBoxQuestions.Where(x => checkboxId.Contains(x.Id)).Select(x => x.Title).ToList();
+            
 
             SurveyViewModel surveyViewModel = new SurveyViewModel
             {
@@ -234,9 +247,38 @@ namespace OnlineSurvey.Web.Controllers
                 YesNoQuestions=survey.YesNoQuestions,
                 YesNoQuestionName=singleChoiceQuestionName,
                 YesNoQuestionId=SingleQuestionId,
+                CheckBoxQuestionId=checkboxId,
+                CheckBoxQuestionName=checkboxQuestionTagName,
+                CheckBoxQuestions=survey.CheckBoxQuestions,
 
 
             };
+
+
+
+            var checkBoxquestion = _uow.CheckBoxQuestionRepository.GetAll("CheckBoxAnswers").ToList();
+
+            List<EditCheckboxQuestionViewModel> checkBoxviewmodel = new List<EditCheckboxQuestionViewModel>();
+
+            var checkboxAnswerId = new List<int>();
+            var checkBoxName = new List<string>();
+
+            foreach (var item in checkBoxquestion)
+            {
+                checkboxAnswerId = item.CheckBoxAnswers.Select(x => x.Id).ToList();
+
+                checkBoxName = item.CheckBoxAnswers.Where(x => checkboxAnswerId.Contains(x.Id)).Select(x => x.Answer).ToList();
+
+                checkBoxviewmodel.Add(new EditCheckboxQuestionViewModel
+                {
+                    Id = item.Id,
+                    Title = item.Title,
+                    IsActive = item.IsActive,
+                    Question = item.Question,
+                    
+                });
+            }
+
 
 
 
@@ -384,6 +426,7 @@ namespace OnlineSurvey.Web.Controllers
                 ListofMultilineTextResponse = ResponseViewModel,
                 ListOfMultiLineTextQuestion = MultilineTextViewModel,
                 ListofSingleChoice= yesNoQuestion,
+                ListofCheckboxQuestion= checkBoxviewmodel,
 
             };
 
@@ -398,7 +441,7 @@ namespace OnlineSurvey.Web.Controllers
         {
 
 
-            var survey = _uow.SurveyRepository.GetAll("MultipleChoiceQuestion", "SurveyCatagories", "MultiLineTextsQuestion", "YesNoQuestions").SingleOrDefault(x => x.Id == id);
+            var survey = _uow.SurveyRepository.GetAll("MultipleChoiceQuestion", "SurveyCatagories", "MultiLineTextsQuestion", "YesNoQuestions", "CheckBoxQuestions").SingleOrDefault(x => x.Id == id);
 
 
             //int[] multiLineTextResponseId = viewmodel.ListofMultilineTextResponse.Select(x => x.Id).ToArray();
@@ -423,8 +466,36 @@ namespace OnlineSurvey.Web.Controllers
             int[] singleId = survey.YesNoQuestions.Select(x => x.Id).ToArray();
 
             var SingleChoiceName = survey.YesNoQuestions.Where(x => singleId.Contains(x.Id)).Select(x => x.Id).ToList();
-            
-            
+
+            int[] checkboxId = survey.CheckBoxQuestions.Select(x => x.Id).ToArray();
+
+            var checkboxQuestionTagName = survey.CheckBoxQuestions.Where(x => checkboxId.Contains(x.Id)).Select(x => x.Title).ToList();
+
+           
+
+
+            var checkBoxquestion = _uow.Context.CheckBoxQuestions.Include("CheckBoxAnswers").ToList();
+
+            List<EditCheckboxQuestionViewModel> checkBoxviewmodel = new List<EditCheckboxQuestionViewModel>();
+
+            var checkboxAnswerId = new List<int>();
+            var checkBoxName = new List<string>();
+
+            foreach (var item in checkBoxquestion)
+            {
+                checkboxAnswerId = item.CheckBoxAnswers.Select(x => x.Id).ToList();
+
+                checkBoxName = item.CheckBoxAnswers.Where(x => checkboxAnswerId.Contains(x.Id)).Select(x => x.Answer).ToList();
+
+                checkBoxviewmodel.Add(new EditCheckboxQuestionViewModel
+                {
+                    Id = item.Id,
+                    Title = item.Title,
+                    IsActive = item.IsActive,
+                    Question = item.Question,
+
+                });
+            }
 
             var question = _uow.Context.Questions.Include("MultipleChoiceQuesion").ToList();
 
@@ -554,6 +625,8 @@ namespace OnlineSurvey.Web.Controllers
                     MultiLineTextResponses=responseViewModel.MultiLineTextResponse,
                     YesNoAnswers= responseViewModel.YesNoAnswers,
                     YesNoQuestions= responseViewModel.YesNoQuestions,
+                    CheckBoxQuestions=responseViewModel.CheckBoxQuestions,
+                    CheckBoxAnswers=responseViewModel.CheckBoxAnswers,
 
 
 
@@ -610,6 +683,21 @@ namespace OnlineSurvey.Web.Controllers
                     var SingleChoiceAnswerName = _uow.YesNoAnswerRepository.GetById(singleChoceId);
                     response.YesNoAnswers.Add(SingleChoiceAnswerName);
                 }
+
+                foreach (int checkboxQuestion in checkboxId)
+                {
+                    var CheckboxTag = _uow.CheckBoxQuestionRepository.GetById(checkboxQuestion);
+                    response.CheckBoxQuestions.Add(CheckboxTag);
+                }
+
+               
+                foreach(int checkBoxAnserId in viewmodel.ViewModelSurvey.CheckBoxQuestionId)
+                {
+                    var checkBoxAnswerTag = _uow.CheckBoxAnswerRepository.GetById(checkBoxAnserId);
+                    response.CheckBoxAnswers.Add(checkBoxAnswerTag);
+                }
+
+
                 foreach (int multipleChoiceQuestion in viewmodel.ViewModelSurvey.SurveyIdForMultipleChoice)
                 {
                     var multipleChoiceTag = _uow.MultipleChoiceQuestionsRepository.GetById(multipleChoiceQuestion);

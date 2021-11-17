@@ -1,10 +1,6 @@
 ﻿using OnlineSurvey.Model;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineSurvey.ViewModel
 {
@@ -15,6 +11,7 @@ namespace OnlineSurvey.ViewModel
             CheckBoxAnswers = new List<CheckBoxAnswers>();
             CheckBoxItems = new List<CheckBoxItemForQuestionViewModel>();
             Surveys = new List<Survey>();
+            Responses = new List<Response>();
         }
         public int Id { get; set; }
         [Required]
@@ -34,5 +31,7 @@ namespace OnlineSurvey.ViewModel
         public List<CheckBoxItemForQuestionViewModel> CheckBoxItems { get; set; } 
 
         public List<Survey> Surveys { get; set; }
+
+        public List<Response> Responses { get; set; }
     }
 }

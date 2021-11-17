@@ -410,6 +410,14 @@
     <Compile Include="Migrations\202111161641318_CheckBoxQuestionWithSurvey.designer.cs">
       <DependentUpon>202111161641318_CheckBoxQuestionWithSurvey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111171233494_ResponseAndCheckBoxQuestionAdded.cs" />
+    <Compile Include="Migrations\202111171233494_ResponseAndCheckBoxQuestionAdded.designer.cs">
+      <DependentUpon>202111171233494_ResponseAndCheckBoxQuestionAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111171253100_ResponseAndCheckboxAnswerId.cs" />
+    <Compile Include="Migrations\202111171253100_ResponseAndCheckboxAnswerId.designer.cs">
+      <DependentUpon>202111171253100_ResponseAndCheckboxAnswerId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -642,6 +650,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111161641318_CheckBoxQuestionWithSurvey.resx">
       <DependentUpon>202111161641318_CheckBoxQuestionWithSurvey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111171233494_ResponseAndCheckBoxQuestionAdded.resx">
+      <DependentUpon>202111171233494_ResponseAndCheckBoxQuestionAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111171253100_ResponseAndCheckboxAnswerId.resx">
+      <DependentUpon>202111171253100_ResponseAndCheckboxAnswerId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

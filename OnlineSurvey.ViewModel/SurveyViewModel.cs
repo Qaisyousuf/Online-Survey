@@ -14,6 +14,7 @@ namespace OnlineSurvey.ViewModel
             MultiLineTextsQuestion = new List<MultiLineText>();
             YesNoQuestions = new List<YesNoQuestion>();
             CheckBoxQuestions = new List<CheckBoxQuestions>();
+            CheckBoxItemForQuestionViewModels = new List<CheckBoxItemForQuestionViewModel>();
         }
         public int Id { get; set; }
 
@@ -62,6 +63,8 @@ namespace OnlineSurvey.ViewModel
 
         public List<string> CheckBoxQuestionName { get; set; }
         public List<CheckBoxQuestions> CheckBoxQuestions { get; set; }
+
+        public List<CheckBoxItemForQuestionViewModel> CheckBoxItemForQuestionViewModels { get; set; }
         
 
     }
