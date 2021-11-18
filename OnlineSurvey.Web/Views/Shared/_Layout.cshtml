@@ -10,8 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
    
-    <link href="~/Content/jquery.multiselect.css" rel="stylesheet" />
- 
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -153,9 +152,23 @@
 
     <!-- Footer -->
     <!-- Footer -->
-   
+
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+
+            $('input[type=checkbox]', 'input[type=radio]', 'input[type=dropdown]').removeAttr('checked');
+
+            $(function () {
+                $('select').selectpicker();
+                //$("select").multiselect();
+                //$('.mdb-select').materialSelect();
+            });
+
+        });
+    </script>
 </body>
 </html>

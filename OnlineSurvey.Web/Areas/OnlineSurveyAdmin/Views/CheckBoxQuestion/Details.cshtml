@@ -46,6 +46,13 @@
                                         <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.IsActive)</td>
                                         <td class="text-primary">  @Html.CheckBoxFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control" }, style = "opacity: 1; padding-top:0px; margin:0; " })</td>
                                     </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm btn-info"><i class="fas fa-tag"></i></a>
+                                        </th>
+                                        <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.IsTypeRadioButton)</td>
+                                        <td class="text-primary">  @Html.CheckBoxFor(model => model.IsTypeRadioButton, new { htmlAttributes = new { @class = "form-control" }, style = "opacity: 1; padding-top:0px; margin:0; " })</td>
+                                    </tr>
 
                                     <tr>
                                         <th scope="row">

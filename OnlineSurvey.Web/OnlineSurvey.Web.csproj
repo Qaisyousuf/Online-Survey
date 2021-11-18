@@ -229,6 +229,12 @@
     <Content Include="App_Data\OnlineSurvey_log.ldf">
       <DependentUpon>OnlineSurvey.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\addons-pro\cards-extended.min.css" />
+    <Content Include="Content\addons-pro\chat.min.css" />
+    <Content Include="Content\addons-pro\multi-range.min.css" />
+    <Content Include="Content\addons-pro\simple-charts.min.css" />
+    <Content Include="Content\addons-pro\steppers.min.css" />
+    <Content Include="Content\addons-pro\timeline.min.css" />
     <Content Include="Content\all.css" />
     <Content Include="Content\animations-extended.min.css" />
     <Content Include="Content\backendcss\Backendcss.css" />
@@ -325,6 +331,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\addons-pro\cards-extended.min.js" />
+    <Content Include="Scripts\addons-pro\chat.min.js" />
+    <Content Include="Scripts\addons-pro\multi-range.min.js" />
+    <Content Include="Scripts\addons-pro\simple-charts.min.js" />
+    <Content Include="Scripts\addons-pro\steppers.min.js" />
+    <Content Include="Scripts\addons-pro\timeline.min.js" />
     <Content Include="Scripts\bootstrap-multiselect.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -473,7 +485,19 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxQuestion\Edit.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxQuestion\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\CheckBoxQuestion\Details.cshtml" />
+    <Content Include="Content\addons-pro\cards-extended.min.css.map" />
+    <Content Include="Content\addons-pro\chat.min.css.map" />
+    <Content Include="Content\addons-pro\multi-range.min.css.map" />
+    <Content Include="Content\addons-pro\simple-charts.min.css.map" />
+    <Content Include="Content\addons-pro\steppers.min.css.map" />
+    <Content Include="Content\addons-pro\timeline.min.css.map" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Scripts\addons-pro\cards-extended.min.js.map" />
+    <Content Include="Scripts\addons-pro\chat.min.js.map" />
+    <Content Include="Scripts\addons-pro\multi-range.min.js.map" />
+    <Content Include="Scripts\addons-pro\simple-charts.min.js.map" />
+    <Content Include="Scripts\addons-pro\steppers.min.js.map" />
+    <Content Include="Scripts\addons-pro\timeline.min.js.map" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />

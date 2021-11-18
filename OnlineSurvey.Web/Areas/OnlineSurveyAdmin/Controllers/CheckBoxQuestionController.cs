@@ -46,6 +46,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     IsActive=item.IsActive,
                     Question=item.Question,
                     CheckoxString=checkBoxName,
+                    IsTypeCheckbox=item.IsTypeCheckbox,
+                    IsTypeRadioButton=item.IsTypeRadioButton,
                 });
             }
             return Json(new
@@ -82,7 +84,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             return View(viewmodel);
         }
         [HttpPost]
-        public ActionResult Create([Bind(Include = "Id,Title,Question,IsActive,CheckBoxAnswers")] CheckboxQuestionViewModel viewmodel, int[] CheckBoxItems)
+        public ActionResult Create([Bind(Include = "Id,Title,Question,IsActive,CheckBoxAnswers,IsTypeCheckbox,IsTypeRadioButton")] CheckboxQuestionViewModel viewmodel, int[] CheckBoxItems)
         {
             if(ModelState.IsValid)
             {
@@ -93,6 +95,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     Question=viewmodel.Question,
                     IsActive=viewmodel.IsActive,
                     CheckBoxAnswers=viewmodel.CheckBoxAnswers,
+                    IsTypeCheckbox=viewmodel.IsTypeCheckbox,
+                    IsTypeRadioButton=viewmodel.IsTypeRadioButton,
                    
                 };
 
@@ -124,7 +128,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "Id,Title,Question,IsActive,CheckBoxAnswers")] EditCheckboxQuestionViewModel viewmodel,int[] CheckBoxItems)
+        public ActionResult Edit([Bind(Include = "Id,Title,Question,IsActive,CheckBoxAnswers,IsTypeCheckbox,IsTypeRadioButton")] EditCheckboxQuestionViewModel viewmodel,int[] CheckBoxItems)
         {
             if(ModelState.IsValid)
             {
@@ -149,6 +153,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     checkboxQuestion.Title = viewmodel.Title;
                     checkboxQuestion.IsActive = viewmodel.IsActive;
                     checkboxQuestion.CheckBoxAnswers = viewmodel.CheckBoxAnswers;
+                    checkboxQuestion.IsTypeRadioButton = viewmodel.IsTypeRadioButton;
+                    checkboxQuestion.IsTypeCheckbox = viewmodel.IsTypeCheckbox;
                     if(CheckBoxItems != null)
                     {
                         var requiredAnswer = uow.Context.CheckBoxAnswers.Where(x => CheckBoxItems.Contains(x.Id)).ToList();
@@ -202,6 +208,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             editCheckbox.Title = checkboxQuestion.Title;
             editCheckbox.Question = checkboxQuestion.Question;
             editCheckbox.IsActive = checkboxQuestion.IsActive;
+            editCheckbox.IsTypeCheckbox = checkboxQuestion.IsTypeCheckbox;
+            editCheckbox.IsTypeCheckbox = checkboxQuestion.IsTypeCheckbox;
            
 
             foreach(var item in allAnswers)

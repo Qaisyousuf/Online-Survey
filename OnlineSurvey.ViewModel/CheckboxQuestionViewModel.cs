@@ -22,10 +22,14 @@ namespace OnlineSurvey.ViewModel
         [Display(Name ="Is Active")]
         public bool IsActive { get; set; }
 
+        [Display(Name ="Queston type checkbox")]
+        public bool IsTypeCheckbox { get; set; }
+
+        [Display(Name = "Queston type radio button")]
+        public bool IsTypeRadioButton { get; set; }
+
         [Display(Name = "Multiple Choice ")]
-       
-
-
+ 
         public List<CheckBoxAnswers> CheckBoxAnswers { get; set; }
         [Display(Name ="Answers")]
         public List<CheckBoxItemForQuestionViewModel> CheckBoxItems { get; set; } 

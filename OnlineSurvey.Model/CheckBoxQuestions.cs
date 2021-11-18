@@ -17,6 +17,8 @@ namespace OnlineSurvey.Model
         public string Title { get; set; }
         public string Question { get; set; }
         public bool IsActive { get; set; }
+        public bool IsTypeCheckbox { get; set; }
+        public bool IsTypeRadioButton { get; set; }
 
         public List<CheckBoxAnswers> CheckBoxAnswers { get; set; }
 

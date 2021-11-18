@@ -8,6 +8,9 @@
 
 @using (Html.BeginForm("StartSurvey", "Home", FormMethod.Post, new { onsubmit = "return SubmitFormCreate(this)" }))
 {
+
+
+
     <div class="Mainbackground">
         <div class="MainBannerBackgrondImage">
             <div class="view bg-transparent">
@@ -43,287 +46,594 @@
         </div>
     </div>
 
-
+    
 
     using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-group">
+    <div class="form-group">
 
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-            @if (Model.ViewModelSurvey != null)
-            {
+        @if (Model.ViewModelSurvey != null)
+        {
+            
 
-                <div class="container my-5">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card card-cascade narrower">
+            <div class="container my-5">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-cascade narrower">
 
-                                <!-- Card image -->
-                                <div class="view view-cascade gradient-card-header" id="gradientColor">
+                            <!-- Card image -->
+                            <div class="view view-cascade gradient-card-header" id="gradientColor">
 
-                                    <!-- Title -->
-                                    <h2 class="card-header-title">@Model.ViewModelSurvey.Name</h2>
-                                    <!-- Subtitle -->
-                                    <h5 class="mb-0 pb-3 pt-2">@Model.ViewModelSurvey.SurveyCatagories.Title</h5>
-
-
-                                </div>
-                                <div class="container">
-
-                                    @Html.AntiForgeryToken()
-
-                                    <!--Section: Contact v.2-->
-                                    <section class="mb-4 my-5 textColorForSecondHeading">
-
-                                        <!--Section heading-->
-                                        <h2 class="h1-responsive font-weight-bold text-center my-4">Start the survey</h2>
-                                        <!--Section description-->
+                                <!-- Title -->
+                                <h2 class="card-header-title">@Model.ViewModelSurvey.Name</h2>
+                                <!-- Subtitle -->
+                                <h5 class="mb-0 pb-3 pt-2">@Model.ViewModelSurvey.SurveyCatagories.Title</h5>
 
 
-                                        <div class="row">
-                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                            <!--Grid column-->
-                                            <div class="col-md-9 col-lg-9 offset-lg-2 col-sm-12 offset-sm-0 offset-md-2 mb-md-0 mb-5">
+                            </div>
+                            <div class="container">
+
+                                <ul class="stepper parallel" id="custom-validation">
+                                    <li class="step active">
+                                        <div class="step-title waves-effect waves-dark">Step 1</div>
+                                        <div class="step-new-content">
+                                            <div class="row">
+                                                <div class="md-form col-12 ml-auto">
+                                                    @Html.AntiForgeryToken()
+
+                                                    <!--Section: Contact v.2-->
+                                                    <section class="mb-4 my-5 textColorForSecondHeading">
+
+                                                        <!--Section heading-->
+                                                        <h2 class="h1-responsive font-weight-bold text-center my-4">Start the survey</h2>
+                                                        <!--Section description-->
 
 
-                                                <!--Grid row-->
-                                                <div class="row">
-                                                    <!--Grid column-->
-                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
-                                                        <div class="md-form mb-0">
-                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.FirstName, htmlAttributes: new { @class = "control-label  " })
-                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.FirstName, "", new { @class = "text-danger" })
+                                                        <div class="row">
+                                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                            <!--Grid column-->
+                                                            <div class="col-md-9 col-lg-9 offset-lg-2 col-sm-12 offset-sm-0 offset-md-2 mb-md-0 mb-5">
+
+
+                                                                <!--Grid row-->
+                                                                <div class="row">
+                                                                    <!--Grid column-->
+                                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
+                                                                        <div class="md-form mb-0">
+                                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.FirstName, htmlAttributes: new { @class = "control-label  " })
+                                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.FirstName, "", new { @class = "text-danger" })
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--Grid column-->
+                                                                    <!--Grid column-->
+                                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
+                                                                        <div class="md-form mb-0">
+                                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.LastName, htmlAttributes: new { @class = "control-label  " })
+                                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.LastName, "", new { @class = "text-danger" })
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
+                                                                        <div class="md-form mb-0">
+                                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.Email, htmlAttributes: new { @class = "control-label" })
+                                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.Email, "", new { @class = "text-danger" })
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
+                                                                        <div class="md-form mb-0">
+                                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.Mobile, htmlAttributes: new { @class = "control-label " })
+                                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+                                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.Mobile, "", new { @class = "text-danger" })
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
+                                                                        <div class="md-form mb-0">
+                                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.Address, htmlAttributes: new { @class = "control-label " })
+                                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.Address, "", new { @class = "text-danger" })
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
+                                                                        <div class="md-form mb-0">
+                                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.DOB, htmlAttributes: new { @class = "control-label " })
+                                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.DOB, new { htmlAttributes = new { @class = "form-control" } })
+                                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.DOB, "", new { @class = "text-danger" })
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
+                                                                        <div class="md-form mb-0">
+                                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.CPRNumber, htmlAttributes: new { @class = "control-label " })
+                                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.CPRNumber, new { htmlAttributes = new { @class = "form-control" } })
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
+                                                                        <div class=" md-form mb-0">
+
+
+                                                                            @Html.DropDownListFor(m => m.ListUserSurveyViewModel.GenderId, new SelectList(ViewBag.Gender, "Id", "Name"), new { @class = "multiselect" })
+                                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.GenderId, "", new { @class = "text-danger" })
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <!--Grid row-->
+                                                                <!--Grid row-->
+
+
+
+                                                            </div>
+
 
                                                         </div>
-                                                    </div>
-                                                    <!--Grid column-->
-                                                    <!--Grid column-->
-                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
-                                                        <div class="md-form mb-0">
-                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.LastName, htmlAttributes: new { @class = "control-label  " })
-                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.LastName, "", new { @class = "text-danger" })
 
+                                                    </section>
+                                                </div>
+                                            </div>
+                                            <div class="step-actions">
+                                                <button class="waves-effect waves-dark btn btn-sm btn-primary next-step" data-feedback="validationFunction">CONTINUE</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="step">
+                                        <div class="step-title waves-effect waves-dark">Step 2</div>
+                                        <div class="step-new-content">
+                                            <div class="row">
+                                                <div class="md-form col-12 ml-auto">
+                                                    @foreach (var item in Model.ViewModelSurvey.MultipleChoiceQuestion)
+                                                    {
+
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="col-md-6 offset-md-3">
+                                                                    <hr />
+                                                                    <h5 class="font-weight-bold mb-4"> @item.Body</h5>
+                                                                    <div class=" form-group">
+                                                                        <i class="fas fa-info-circle"></i> @Html.LabelFor(model => model.ViewModelSurvey.SurveyIdForMultipleChoice, htmlAttributes: new { @class = "lable-control" })
+
+                                                                        <div class="checkbox">
+                                                                            @Html.ListBoxFor(model => model.ViewModelSurvey.SurveyIdForMultipleChoice, new MultiSelectList(item.MultipleChoiceQuesion, "Id", "Answer"), new { @class = "multiselect" })
+
+                                                                        </div>
+                                                                    </div>
+                                                                    @if (Model.ListofResponseViewModel != null)
+                                                                    {
+                                                                        <div>
+                                                                            <a class="btn btn-primary btn-rounded btn-sm" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                                                                <i class="fas fa-comment"></i> optinal comment
+                                                                            </a>
+
+                                                                        </div>
+                                                                        <!-- / Collapse buttons -->
+
+                                                                        <!-- Collapsible element -->
+                                                                        <div class="collapse" id="collapseExample">
+                                                                            <div class="md-form mb-0">
+                                                                                @Html.LabelFor(model => model.ListofResponseViewModel.Title, htmlAttributes: new { @class = "control-label  " })
+                                                                                @Html.EditorFor(model => model.ListofResponseViewModel.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                                                            </div>
+                                                                            <div class="md-form mb-0">
+                                                                                @Html.LabelFor(model => model.ListofResponseViewModel.Comment, htmlAttributes: new { @class = "control-label  " })
+                                                                                @Html.TextAreaFor(model => model.ListofResponseViewModel.Comment, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
+                                                                            </div>
+                                                                        </div>
+
+                                                                    }
+                                                                </div>
+
+
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
-                                                        <div class="md-form mb-0">
-                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.Email, htmlAttributes: new { @class = "control-label" })
-                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.Email, "", new { @class = "text-danger" })
 
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="step-actions">
+                                                <button class="waves-effect waves-dark btn btn-sm btn-primary next-step" data-feedback="validationFunction">CONTINUE</button>
+                                                <button class="waves-effect waves-dark btn btn-sm btn-secondary previous-step">BACK</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="step">
+                                        <div class="step-title waves-effect waves-dark">Step 3</div>
+                                        <div class="step-new-content">
+                                            <div class="row">
+                                                <div class="md-form col-12 ml-auto">
+
+                                                    @foreach (var item in Model.ViewModelSurvey.MultiLineTextsQuestion)
+                                                    {
+
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="col-md-6 offset-md-3">
+                                                                    <hr />
+                                                                    <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.QuestionTitle</h6>
+                                                                    @*<h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.MultiLineTextAnswers.MainTitle</h6>*@
+                                                                    <div class=" form-group font-weight-bold">
+
+                                                                        @Html.DisplayFor(model => item.Question)
+
+
+                                                                    </div>
+
+
+                                                                    @{
+
+                                                                        var title = item.MultiLineTextResponses.Where(x => x.Id == item.Id).Select(x => x.Title);
+                                                                        var comment = item.MultiLineTextResponses.Where(x => x.Id == item.Id).Select(x => x.MulitLine).ToList();
+                                                                    }
+                                                                    @if (Model.ListofMultilineTextResponse != null)
+                                                                    {
+                                                                        <div class="md-form mb-0">
+                                                                            @Html.LabelFor(model => Model.ListofMultilineTextResponse.Title, htmlAttributes: new { @class = "control-label  " })
+                                                                            @Html.EditorFor(model => Model.ListofMultilineTextResponse.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                                                        </div>
+
+                                                                        <div class="md-form mb-0">
+                                                                            @Html.LabelFor(model => Model.ListofMultilineTextResponse.MulitLine, htmlAttributes: new { @class = "control-label  " })
+                                                                            @Html.TextAreaFor(model => Model.ListofMultilineTextResponse.MulitLine, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
+                                                                        </div>
+                                                                    }
+
+
+
+
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
-                                                        <div class="md-form mb-0">
-                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.Mobile, htmlAttributes: new { @class = "control-label " })
-                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.Mobile, new { htmlAttributes = new { @class = "form-control" } })
-                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.Mobile, "", new { @class = "text-danger" })
 
+
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="step-actions">
+                                                <button class="waves-effect waves-dark btn btn-sm btn-primary next-step" data-feedback="validationFunction">CONTINUE</button>
+                                                <button class="waves-effect waves-dark btn btn-sm btn-secondary previous-step">BACK</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="step">
+                                        <div class="step-title waves-effect waves-dark">Step 4</div>
+                                        <div class="step-new-content">
+                                            <div class="row">
+                                                <div class="md-form col-12 ml-auto">
+                                                    @foreach (var item in Model.ViewModelSurvey.YesNoQuestions)
+                                                    {
+
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="col-md-6 offset-md-3">
+                                                                    <hr />
+
+
+                                                                    <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.Title</h6>
+                                                                    @*<h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.MultiLineTextAnswers.MainTitle</h6>*@
+                                                                    <div class=" form-group font-weight-bold">
+
+                                                                        @Html.DisplayFor(model => item.Question)
+
+
+                                                                    </div>
+
+                                                                    @{
+                                                                        var singleId = item.YesNoAnswers.Select(x => x.Id).ToList();
+                                                                        var singleName = item.YesNoAnswers.Where(x => singleId.Contains(x.Id)).Select(x => x.Answer).ToList();
+                                                                        var title = item.YesNoAnswers.Where(x => singleId.Contains(x.Id)).Select(x => x.Title).ToList();
+                                                                    }
+
+                                                                    <div class="md-form">
+
+
+                                                                        @Html.DropDownListFor(model => model.ViewModelSurvey.YesNoQuestionId, new SelectList(item.YesNoAnswers, "Id", "Answer"), new { @class = " multiselect ", })
+
+
+                                                                    </div>
+
+
+
+                                                                </div>
+
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
-                                                        <div class="md-form mb-0">
-                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.Address, htmlAttributes: new { @class = "control-label " })
-                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.Address, new { htmlAttributes = new { @class = "form-control" } })
-                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.Address, "", new { @class = "text-danger" })
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
-                                                        <div class="md-form mb-0">
-                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.DOB, htmlAttributes: new { @class = "control-label " })
-                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.DOB, new { htmlAttributes = new { @class = "form-control" } })
-                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.DOB, "", new { @class = "text-danger" })
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
-                                                        <div class="md-form mb-0">
-                                                            @Html.LabelFor(model => model.ListUserSurveyViewModel.CPRNumber, htmlAttributes: new { @class = "control-label " })
-                                                            @Html.EditorFor(model => model.ListUserSurveyViewModel.CPRNumber, new { htmlAttributes = new { @class = "form-control" } })
 
 
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-5 mx-md-4 mx-lg-4 px-4">
-                                                        <div class=" md-form mb-0">
-
-
-                                                            @Html.DropDownListFor(m => m.ListUserSurveyViewModel.GenderId, new SelectList(ViewBag.Gender, "Id", "Name"), new { @class = "select form-control" })
-                                                            @Html.ValidationMessageFor(model => model.ListUserSurveyViewModel.GenderId, "", new { @class = "text-danger" })
-
-                                                        </div>
-                                                    </div>
+                                                    }
 
                                                 </div>
-                                                <!--Grid row-->
-                                                <!--Grid row-->
+                                            </div>
+                                            <div class="step-actions">
+                                                <button class="waves-effect waves-dark btn btn-sm btn-primary next-step" data-feedback="validationFunction">CONTINUE</button>
+                                                <button class="waves-effect waves-dark btn btn-sm btn-secondary previous-step">BACK</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="step">
+                                        <div class="step-title waves-effect waves-dark">Step 5</div>
+                                        <div class="step-new-content">
+                                            <div class="row">
+                                                <div class="md-form col-12 ml-auto">
+                                                    @foreach (var item in Model.ViewModelSurvey.CheckBoxQuestions)
+                                                    {
 
+                                                        <div class="container">
+                                                            <div class="row">
+
+                                                                <div class="col-md-6 offset-md-3">
+                                                                    <hr />
+                                                                    @if (item.IsTypeCheckbox == true)
+                                                                    {
+
+                                                                        <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.Title</h6>
+
+                                                                        <div class=" form-group font-weight-bold">
+
+                                                                            <div class=" form-group font-weight-bold">
+
+                                                                                @Html.DisplayFor(model => item.Question)
+
+
+                                                                            </div>
+
+                                                                            @{
+                                                                                var checkBoxId = item.CheckBoxAnswers.Select(x => x.Id).ToList();
+                                                                            }
+                                                                            @foreach (var checkbox in item.CheckBoxAnswers)
+                                                                            {
+                                                                                //var checkBoxid = checkbox.CheckBoxQuestions.Select(x => x.Id);
+                                                                                <div class="form-check">
+                                                                                    @Html.CheckBoxListFor(model=>model.ViewModelSurvey.CheckBoxQuestionId,
+                                                                                     model=>checkbox.CheckBoxQuestions,
+                                                                                     model=>checkbox.Id,
+                                                                                     model=>checkbox.Answer,
+                                                                                     model=>checkbox.IsChecked,
+                                                                                     model => new { @class = " padding-top:15px; margin-left:0px; form-check-input materialUnchecked" }
+                                                                                     )
+                                                                                </div>
+
+
+                                                                            }
+
+
+
+
+                                                                        </div>
+                                                                    }
+
+
+                                                                    else if (item.IsTypeRadioButton == true)
+                                                                    {
+
+                                                                        <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.Title</h6>
+
+                                                                        <div class=" form-group font-weight-bold">
+
+                                                                            <div class=" form-group font-weight-bold">
+
+                                                                                @Html.DisplayFor(model => item.Question)
+
+
+                                                                            </div>
+                                                                            @foreach (var radio in item.CheckBoxAnswers)
+                                                                            {
+
+
+                                                                                <div class="form-check">
+
+                                                                                    <label>@Html.RadioButtonFor(model => model.ViewModelSurvey.CheckBoxQuestionId, radio.Id, new { @class = "opacity:1;  custom-control-input" })  @radio.Answer</label>
+
+                                                                                </div>
+
+
+                                                                            }
+
+
+
+
+                                                                        </div>
+                                                                    }
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    }
+
+                                                </div>
+                                            </div>
+                                            <div class="step-actions">
+                                                <button class="waves-effect waves-dark btn btn-sm btn-primary next-step" data-feedback="validationFunction">CONTINUE</button>
+                                                <button class="waves-effect waves-dark btn btn-sm btn-secondary previous-step">BACK</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                   
+                                    <li class="step">
+                                        <div class="step-title waves-effect waves-dark">Step 6</div>
+                                        <div class="step-new-content">
+                                            Finish!
+                                            <div class="step-actions">
+                                                <div class="form-md">
+                                                    
+                                                        <button type="submit" class="btn btn-primary btn-rounded"><i class="fas fa-paper-plane mr-2 "></i>Submit</button>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                              
+
+
+
+                            </div>
+                            <!-- Card content -->
+                            <div class="card-body card-body-cascade text-left">
+
+                                <!-- Text -->
+                                <p class="card-text">
+                                    @foreach (var item in Model.ViewModelSurvey.MultipleChoiceQuestion)
+                                    {
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-6 offset-md-3">
+                                                    <hr />
+                                                    <h5 class="font-weight-bold mb-4"> @item.Body</h5>
+                                                    <div class=" form-group">
+                                                        <i class="fas fa-info-circle"></i> @Html.LabelFor(model => model.ViewModelSurvey.SurveyIdForMultipleChoice, htmlAttributes: new { @class = "lable-control" })
+
+                                                        <div class="checkbox">
+                                                            @Html.ListBoxFor(model => model.ViewModelSurvey.SurveyIdForMultipleChoice, new MultiSelectList(item.MultipleChoiceQuesion, "Id", "Answer"), new { @class = "multiselect" })
+
+                                                        </div>
+                                                    </div>
+                                                    @if (Model.ListofResponseViewModel != null)
+                                                    {
+                                                        <div>
+                                                            <a class="btn btn-primary btn-rounded btn-sm" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                                                <i class="fas fa-comment"></i> optinal comment
+                                                            </a>
+
+                                                        </div>
+                                                        <!-- / Collapse buttons -->
+
+                                                        <!-- Collapsible element -->
+                                                        <div class="collapse" id="collapseExample">
+                                                            <div class="md-form mb-0">
+                                                                @Html.LabelFor(model => model.ListofResponseViewModel.Title, htmlAttributes: new { @class = "control-label  " })
+                                                                @Html.EditorFor(model => model.ListofResponseViewModel.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </div>
+                                                            <div class="md-form mb-0">
+                                                                @Html.LabelFor(model => model.ListofResponseViewModel.Comment, htmlAttributes: new { @class = "control-label  " })
+                                                                @Html.TextAreaFor(model => model.ListofResponseViewModel.Comment, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
+                                                            </div>
+                                                        </div>
+
+                                                    }
+                                                </div>
 
 
                                             </div>
-
-
                                         </div>
 
-                                    </section>
+                                    }
+
+                                    @foreach (var item in Model.ViewModelSurvey.MultiLineTextsQuestion)
+                                    {
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-6 offset-md-3">
+                                                    <hr />
+                                                    <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.QuestionTitle</h6>
+                                                   
+                                                    <div class=" form-group font-weight-bold">
+
+                                                        @Html.DisplayFor(model => item.Question)
 
 
-
-                                </div>
-                                <!-- Card content -->
-                                <div class="card-body card-body-cascade text-left">
-
-                                    <!-- Text -->
-                                    <p class="card-text">
-                                        @foreach (var item in Model.ViewModelSurvey.MultipleChoiceQuestion)
-                                        {
-
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-md-6 offset-md-3">
-                                                        <hr />
-                                                        <h5 class="font-weight-bold mb-4"> @item.Body</h5>
-                                                        <div class=" form-group">
-                                                            <i class="fas fa-info-circle"></i> @Html.LabelFor(model => model.ViewModelSurvey.SurveyIdForMultipleChoice, htmlAttributes: new { @class = "lable-control" })
-
-                                                            <div class="checkbox">
-                                                                @Html.ListBoxFor(model => model.ViewModelSurvey.SurveyIdForMultipleChoice, new MultiSelectList(item.MultipleChoiceQuesion, "Id", "Answer"), new { @class = "select" })
-
-                                                            </div>
-                                                        </div>
-                                                        @if (Model.ListofResponseViewModel != null)
-                                                        {
-                                                            <div>
-                                                                <a class="btn btn-primary btn-rounded btn-sm" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                                                    <i class="fas fa-comment"></i> optinal comment
-                                                                </a>
-
-                                                            </div>
-                                                            <!-- / Collapse buttons -->
-
-                                                            <!-- Collapsible element -->
-                                                            <div class="collapse" id="collapseExample">
-                                                                <div class="md-form mb-0">
-                                                                    @Html.LabelFor(model => model.ListofResponseViewModel.Title, htmlAttributes: new { @class = "control-label  " })
-                                                                    @Html.EditorFor(model => model.ListofResponseViewModel.Title, new { htmlAttributes = new { @class = "form-control" } })
-                                                                </div>
-                                                                <div class="md-form mb-0">
-                                                                    @Html.LabelFor(model => model.ListofResponseViewModel.Comment, htmlAttributes: new { @class = "control-label  " })
-                                                                    @Html.TextAreaFor(model => model.ListofResponseViewModel.Comment, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
-                                                                </div>
-                                                            </div>
-
-                                                        }
                                                     </div>
+
+
+                                                    @{
+
+                                                        var title = item.MultiLineTextResponses.Where(x => x.Id == item.Id).Select(x => x.Title);
+                                                        var comment = item.MultiLineTextResponses.Where(x => x.Id == item.Id).Select(x => x.MulitLine).ToList();
+                                                    }
+                                                    @if (Model.ListofMultilineTextResponse != null)
+                                                    {
+                                                        <div class="md-form mb-0">
+                                                            @Html.LabelFor(model => Model.ListofMultilineTextResponse.Title, htmlAttributes: new { @class = "control-label  " })
+                                                            @Html.EditorFor(model => Model.ListofMultilineTextResponse.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                                        </div>
+
+                                                        <div class="md-form mb-0">
+                                                            @Html.LabelFor(model => Model.ListofMultilineTextResponse.MulitLine, htmlAttributes: new { @class = "control-label  " })
+                                                            @Html.TextAreaFor(model => Model.ListofMultilineTextResponse.MulitLine, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
+                                                        </div>
+                                                    }
+
+
 
 
                                                 </div>
                                             </div>
-
-                                        }
-
-                                        @foreach (var item in Model.ViewModelSurvey.MultiLineTextsQuestion)
-                                        {
-
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-md-6 offset-md-3">
-                                                        <hr />
-                                                        <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.QuestionTitle</h6>
-                                                        @*<h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.MultiLineTextAnswers.MainTitle</h6>*@
-                                                        <div class=" form-group font-weight-bold">
-
-                                                            @Html.DisplayFor(model => item.Question)
+                                        </div>
 
 
-                                                        </div>
+                                    }
+
+                                    @foreach (var item in Model.ViewModelSurvey.YesNoQuestions)
+                                    {
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-6 offset-md-3">
+                                                    <hr />
 
 
-                                                        @{
+                                                    <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.Title</h6>
+                                                   
+                                                    <div class=" form-group font-weight-bold">
 
-                                                            var title = item.MultiLineTextResponses.Where(x => x.Id == item.Id).Select(x => x.Title);
-                                                            var comment = item.MultiLineTextResponses.Where(x => x.Id == item.Id).Select(x => x.MulitLine).ToList();
-                                                        }
-                                                        @if (Model.ListofMultilineTextResponse != null)
-                                                        {
-                                                            <div class="md-form mb-0">
-                                                                @Html.LabelFor(model => Model.ListofMultilineTextResponse.Title, htmlAttributes: new { @class = "control-label  " })
-                                                                @Html.EditorFor(model => Model.ListofMultilineTextResponse.Title, new { htmlAttributes = new { @class = "form-control" } })
-                                                            </div>
-
-                                                            <div class="md-form mb-0">
-                                                                @Html.LabelFor(model => Model.ListofMultilineTextResponse.MulitLine, htmlAttributes: new { @class = "control-label  " })
-                                                                @Html.TextAreaFor(model => Model.ListofMultilineTextResponse.MulitLine, new { rows = "5", style = "resize:none;width:700px;", @class = "form-control input-lg textarea-editor" })
-                                                            </div>
-                                                        }
-
-
+                                                        @Html.DisplayFor(model => item.Question)
 
 
                                                     </div>
+
+                                                    @{
+                                                        var singleId = item.YesNoAnswers.Select(x => x.Id).ToList();
+                                                        var singleName = item.YesNoAnswers.Where(x => singleId.Contains(x.Id)).Select(x => x.Answer).ToList();
+                                                        var title = item.YesNoAnswers.Where(x => singleId.Contains(x.Id)).Select(x => x.Title).ToList();
+                                                    }
+
+                                                    <div class="md-form">
+
+
+                                                        @Html.DropDownListFor(model => model.ViewModelSurvey.YesNoQuestionId, new SelectList(item.YesNoAnswers, "Id", "Answer"), new { @class = " multiselect ", })
+
+
+                                                    </div>
+
+
+
                                                 </div>
+
                                             </div>
+                                        </div>
 
 
-                                        }
+                                    }
 
-                                        @foreach (var item in Model.ViewModelSurvey.YesNoQuestions)
-                                        {
 
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-md-6 offset-md-3">
-                                                        <hr />
+                                    @foreach (var item in Model.ViewModelSurvey.CheckBoxQuestions)
+                                    {
+
+                                        <div class="container">
+                                            <div class="row">
+
+                                                <div class="col-md-6 offset-md-3">
+                                                    <hr />
+                                                    @if (item.IsTypeCheckbox == true)
+                                                    {
+
                                                         <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.Title</h6>
-                                                        @*<h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.MultiLineTextAnswers.MainTitle</h6>*@
-                                                        <div class=" form-group font-weight-bold">
 
-                                                            @Html.DisplayFor(model => item.Question)
-
-
-                                                        </div>
-
-                                                        @{
-                                                            var singleId = item.YesNoAnswers.Select(x => x.Id).ToList();
-                                                            var singleName = item.YesNoAnswers.Where(x => singleId.Contains(x.Id)).Select(x => x.Answer).ToList();
-                                                            var title = item.YesNoAnswers.Where(x => singleId.Contains(x.Id)).Select(x => x.Title).ToList();
-                                                        }
-
-                                                        <div class=" form-check mb-0">
-
-
-                                                            @Html.DropDownListFor(model => model.ViewModelSurvey.YesNoQuestionId, new SelectList(item.YesNoAnswers, "Id", "Answer"), new { style = "select form-check-input materialUnchecked" })
-
-
-                                                        </div>
-
-
-
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        }
-
-
-                                        @foreach (var item in Model.ViewModelSurvey.CheckBoxQuestions)
-                                        {
-
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-md-6 offset-md-3">
-                                                        <hr />
-                                                        <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.Title</h6>
-                                                        @*<h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.MultiLineTextAnswers.MainTitle</h6>*@
                                                         <div class=" form-group font-weight-bold">
 
                                                             <div class=" form-group font-weight-bold">
@@ -333,96 +643,99 @@
 
                                                             </div>
 
-                                                                                                                @{
-                                                                    var checkBoxId = item.CheckBoxAnswers.Select(x => x.Id).ToList();
-                                                                }
-                                                                @foreach (var checkbox in item.CheckBoxAnswers)
-                                                                {
-                                                                    var checkBoxid = checkbox.CheckBoxQuestions.Select(x => x.Id);
-                                                                    <div class="form-check">
-                                                                        @Html.CheckBoxListFor(model=>model.ViewModelSurvey.CheckBoxQuestionId,
-                                                                         model=>checkbox.CheckBoxQuestions,
-                                                                         model=>checkbox.Id,
-                                                                         model=>checkbox.Answer,
-                                                                         model=>checkbox.IsChecked,
-                                                                         model => new { @class = "opacity:1; padding-top:15px; margin-left:0px; form-check-input materialUnchecked" }
-                                                                         )
-                                                                    </div>
+                                                            @{
+                                                                var checkBoxId = item.CheckBoxAnswers.Select(x => x.Id).ToList();
+                                                            }
+                                                            @foreach (var checkbox in item.CheckBoxAnswers)
+                                                            {
+                                                                //var checkBoxid = checkbox.CheckBoxQuestions.Select(x => x.Id);
+                                                                <div class="form-check">
+                                                                    @Html.CheckBoxListFor(model=>model.ViewModelSurvey.CheckBoxQuestionId,
+                                                                     model=>checkbox.CheckBoxQuestions,
+                                                                     model=>checkbox.Id,
+                                                                     model=>checkbox.Answer,
+                                                                     model=>checkbox.IsChecked,
+                                                                     model => new { @class = " padding-top:15px; margin-left:0px; form-check-input materialUnchecked" }
+                                                                     )
+                                                                </div>
 
 
-                                                                }
+                                                            }
+
 
 
 
                                                         </div>
-                                                        @*@{
-                                                            foreach (var subitem in item.CheckBoxAnswers)
-                                                            {
-                                                                var id = subitem.CheckBoxQuestions.Select(x => x.Id).ToList();
+                                                    }
 
-                                                                var textname = subitem.CheckBoxQuestions.Select(x => x.Id).ToList();
+
+                                                    else if (item.IsTypeRadioButton == true)
+                                                    {
+
+                                                        <h6 class=" mb-2"><i class="fas fa-info-circle"></i> @item.Title</h6>
+
+                                                        <div class=" form-group font-weight-bold">
+
+                                                            <div class=" form-group font-weight-bold">
+
+                                                                @Html.DisplayFor(model => item.Question)
+
+
+                                                            </div>
+                                                            @foreach (var radio in item.CheckBoxAnswers)
+                                                            {
+
 
                                                                 <div class="form-check">
-                                                                    @Html.CheckBoxListFor(model=>model.ViewModelSurvey.CheckBoxQuestionId,
-                                                                     model=>model.ViewModelSurvey.CheckBoxQuestionId,
-                                                                     model=> id,
-                                                                     model=> textname,
-                                                                     model => item.IsActive,
-                                                                     model => new { @class = "opacity:1; padding-top:15px; margin-left:0px; form-check-input materialUnchecked" }
-                                                                     )
+
+                                                                    <label>@Html.RadioButtonFor(model => model.ViewModelSurvey.CheckBoxQuestionId, radio.Id, new {style= "opacity: 1; padding-top:15px; margin:10px; checkbox-inline" })  @radio.Answer</label>
+
                                                                 </div>
+
+
                                                             }
 
 
-                                                            //bool checke = item.CheckBoxAnswers.Select(x => x.IsChecked==true).ToList();
-
-                                                        }*@
 
 
+                                                        </div>
+                                                    }
 
-
-
-
-
-
-
-
-
-
-                                                    </div>
                                                 </div>
                                             </div>
-
-
-                                        }
-
-
-
-
-                                        <div class="form-md">
-                                            <div class="col-md-offset-4 col-md-6">
-                                                <button type="submit" class="btn btn-primary btn-rounded"><i class="fas fa-paper-plane mr-2 "></i>Submit</button>
-                                            </div>
                                         </div>
-                                    </p>
 
-                                </div>
+
+                                    }
+
+
+
+
+                                    <div class="form-md">
+                                        <div class="col-md-offset-4 col-md-6">
+                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fas fa-paper-plane mr-2 "></i>Submit</button>
+                                        </div>
+                                    </div>
+                                </p>
 
                             </div>
 
                         </div>
+
                     </div>
                 </div>
+            </div>
 
-            }
-            @*<div class="form-group text-center">
-                    <div class="">
-                        <button type="submit" class="btn btn-primary btn-rounded" value="Create"> Done</button>
 
-                    </div>
-                </div>*@
+        }
+        @*<div class="form-group text-center">
+            <div class="">
+                <button type="submit" class="btn btn-primary btn-rounded" value="Create"> Done</button>
 
-        </div>
+            </div>
+        </div>*@
+
+    </div>
     }
 }
 
@@ -432,21 +745,35 @@
 <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 <link href="~/Content/jquery.multiselect.css" rel="stylesheet" />
 <link href="~/Content/jquery.multiselect.filter.css" rel="stylesheet" />
-
+<link href="~/Content/addons-pro/steppers.min.css" rel="stylesheet" />
 @section scripts {
 
     <script src="~/Scripts/jquery-3.6.0.min.js"></script>
 
 
-  
+
     <script src="~/Scripts/ckeditor/ckeditor.js"></script>
     <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
 
     <script src="~/Scripts/jquery.multiselect.js"></script>
     <script src="~/Scripts/jquery.multiselect.filter.js"></script>
-
+    <script src="~/Scripts/addons-pro/steppers.min.js"></script>
+    <script>
+        function validationFunction() {
+            setTimeout(function () {
+                $('#custom-validation').nextStep();
+            }, 1600);
+        }
+        function someTrueFunction() {
+            return true;
+        }
+        $('input[type=checkbox]').removeAttr('checked');
+        $(document).ready(function () {
+            $('.stepper').mdbStepper();
+        })
+    </script>
     <script src="~/Scripts/notify.min.js"></script>
-   
+
 
     <script>
         function SubmitFormCreate(form) {
@@ -479,16 +806,20 @@
         //    checkboxClass: 'icheckbox_minimal',
 
         //});
+      
+
+      
         $(document).ready(function () {
 
-            $('input[type=checkbox]').removeAttr('checked');
+           
+           
+                //$('select').selectpicker();
 
-            $(function () {
                 $("select").multiselect();
-
-            });
-
+                //$('.mdb-select').materialSelect();
         });
+
+        
 
     </script>
     @Scripts.Render("~/bundles/jqueryval")

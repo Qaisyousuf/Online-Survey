@@ -13,6 +13,8 @@ namespace OnlineSurvey.ViewModel
         public string Question { get; set; }
         public bool IsActive { get; set; }
 
+        public bool IsTypeCheckbox { get; set; }
+        public bool IsTypeRadioButton { get; set; }
         public List<string> CheckoxString { get; set; }
     }
 }
