@@ -38,25 +38,18 @@ textarea {
     background-color: #eee !important;
     opacity:1 !important;
 }
-input[type="radio"] {
-    background-color: #ddd;
-    background-image: -webkit-linear-gradient(0deg, transparent 20%, hsla(0,0%,100%,.7), transparent 80%), -webkit-linear-gradient(90deg, transparent 20%, hsla(0,0%,100%,.7), transparent 80%);
-    border-radius: 10px;
-    box-shadow: inset 0 1px 1px hsla(0,0%,100%,.8), 0 0 0 1px hsla(0,0%,0%,.6), 0 2px 3px hsla(0,0%,0%,.6), 0 4px 3px hsla(0,0%,0%,.4), 0 6px 6px hsla(0,0%,0%,.2), 0 10px 6px hsla(0,0%,0%,.2);
-    cursor: pointer;
-    display: inline-block !important;
-    height: 15px;
-    margin-right: 15px;
-    position: relative;
-    width: 15px;
-    -webkit-appearance: none;
+[type="radio"]:not(:checked), [type="radio"]:checked {
+    position: absolute;
+    pointer-events: none;
     opacity: 1 !important;
 }
-.navbar.scrolling-navbar
-{
-
-    margin-top:0px !important;
-    margin-bottom:0px !important;
+.custom-control-input {
+    box-sizing: border-box;
+    padding: 0;
+}
+.navbar.scrolling-navbar {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 .top-nav-collapse {
     background-color: #5C94B6 !important;
