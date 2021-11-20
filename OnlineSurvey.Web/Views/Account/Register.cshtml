@@ -1,40 +1,117 @@
 ﻿@model OnlineSurvey.ViewModel.RegisterViewModel
 @{
     ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_auth.cshtml";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="LoginMainBackground">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-5  pt-5">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                   
+                  
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+
+                    <div class="view card bg-transparent z-depth-1 mt-5">
+
+                        <h5 class="card-header info-color white-text text-center py-4">
+                            <strong>Register</strong>
+                        </h5>
+
+                        <!--Card content-->
+                        <div class="card-body px-lg-5 pt-0  h-100">
+
+                            <!-- Form -->
+                            <form class="text-center" style="color: #757575;" action="#!">
+
+
+                                <div class="form-group" id="FormText">
+                                    <div class="md-form"  Id="textboxcolor">
+                                        @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+                                <!-- Email -->
+                                <div class="form-group"  id="FormText">
+                                    <div class="md-form"  Id="textboxcolor">
+                                        @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group" id="FormText">
+                                    <div class="md-form"  Id="textboxcolor">
+                                        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+                                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+
+
+                                <div class="d-flex justify-content-around">
+
+
+                                </div>
+
+                                <!-- Sign in button -->
+
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <p>
+                                           
+                                            <button type="submit" class="btn btn-rounded btn-outline-white btn-blo-sm  btn-md"><i class="fas fa-sign-in-alt mr-2"></i> Register </button>
+
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="">
+                                                <a href="/Account/login" class="btn btn-rounded btn-outline-cyan btn-blo-sm text-white btn-md"><i class="fas fa-key mr-2"></i> Log in </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </form>
+                            <!-- Form -->
+
+                        </div>
+
+                    </div>
+
+
+
+
+                }
+            </div>
+            <div class="col-md-5 offset-md-1 offset-lg-1 pt-5 mt-5">
+                <div class="img-fluid">
+                    <img src="~/Content/Images/Hidden-rafiki.svg" id="ImageFit" />
+                </div>
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+</div>
+
+
+
+
+
+
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -246,9 +246,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\filter_multi_select.css" />
+    <Content Include="Content\Images\AuthBackk.svg" />
     <Content Include="Content\Images\Banner.svg" />
     <Content Include="Content\Images\BigsizeFooter.svg" />
     <Content Include="Content\Images\Footer.svg" />
+    <Content Include="Content\Images\Hidden-rafiki.svg" />
+    <Content Include="Content\Images\Login-pana.svg" />
     <Content Include="Content\Images\MideumsizeFooter.svg" />
     <Content Include="Content\Images\SmallBanner.svg" />
     <Content Include="Content\Images\SmallsizeFooter.svg" />
@@ -661,6 +664,7 @@
     <Content Include="Views\Shared\_Survey.cshtml" />
     <Content Include="Views\UserSurveyRegistration\Index.cshtml" />
     <Content Include="Views\UserSurveyRegistration\UserSurveyRegistration.cshtml" />
+    <Content Include="Views\Shared\_auth.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />
