@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Reset password confirmation";
+﻿
+@{
+    ViewBag.Title = "Info";
     Layout = "~/Views/Shared/_auth.cshtml";
 }
 
@@ -12,18 +13,17 @@
                 <div class="card bg-transparent z-depth-1 mt-5">
 
                     <h5 class="card-header light-blue darken-1 white-text text-center  py-4">
-                        <strong> @ViewBag.Title</strong>
+                        <strong> @ViewBag.Success</strong>
                     </h5>
 
                     <!--Card content-->
                     <div class="card-body px-lg-4 mt-2  h-100">
-                        <p class="text-success"><i class="fas fa-check-circle"></i> @ViewBag.TitleMessage</p>
+                        <p class="text-success"><i class="fas fa-check-circle"></i> @ViewBag.confimation</p>
 
                         <!-- Form -->
 
-                        <p class="text-white"><i class="fas fa-external-link-alt"></i> You can log in using the following log in button</p>
+                        <p class="text-white"><i class="fas fa-inbox"></i> @ViewBag.Message</p>
 
-                        <a href="/Account/login" class="btn btn-rounded btn-outline-white btn-blo-sm text-white btn-md"><i class="fas fa-key mr-2"></i> Log in </a>
                         <!-- Email -->
                         <!-- Password -->
                         <!-- Sign in button -->
@@ -38,9 +38,10 @@
             </div>
             <div class="col-md-5 offset-md-1 offset-lg-1  mt-5">
                 <div class="img-fluid">
-                    <img src="~/Content/Images/My-password-reset.svg" id="ImageFit" />
+                    <img src="~/Content/Images/emailsent.svg" id="ImageFit" />
                 </div>
             </div>
         </div>
     </div>
 </div>
+

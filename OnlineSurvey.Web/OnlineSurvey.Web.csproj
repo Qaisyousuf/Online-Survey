@@ -249,10 +249,18 @@
     <Content Include="Content\Images\AuthBackk.svg" />
     <Content Include="Content\Images\Banner.svg" />
     <Content Include="Content\Images\BigsizeFooter.svg" />
+    <Content Include="Content\Images\Confirmed-cuate.svg" />
+    <Content Include="Content\Images\Confirmed-pana.svg" />
+    <Content Include="Content\Images\emailsent.svg" />
     <Content Include="Content\Images\Footer.svg" />
+    <Content Include="Content\Images\Forgot-password-amico.svg" />
     <Content Include="Content\Images\Hidden-rafiki.svg" />
     <Content Include="Content\Images\Login-pana.svg" />
     <Content Include="Content\Images\MideumsizeFooter.svg" />
+    <Content Include="Content\Images\Mobile-inbox.svg" />
+    <Content Include="Content\Images\My-password-reset.svg" />
+    <Content Include="Content\Images\New-message.svg" />
+    <Content Include="Content\Images\Secure-Server.svg" />
     <Content Include="Content\Images\SmallBanner.svg" />
     <Content Include="Content\Images\SmallsizeFooter.svg" />
     <Content Include="Content\jquery.multiselect.css" />
@@ -665,6 +673,8 @@
     <Content Include="Views\UserSurveyRegistration\Index.cshtml" />
     <Content Include="Views\UserSurveyRegistration\UserSurveyRegistration.cshtml" />
     <Content Include="Views\Shared\_auth.cshtml" />
+    <Content Include="Views\Account\Info.cshtml" />
+    <Content Include="Views\Account\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />

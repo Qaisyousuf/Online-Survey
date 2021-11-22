@@ -3,9 +3,44 @@
     Layout = "~/Views/Shared/_auth.cshtml";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div>
-    <p>
-        Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
-    </p>
+<div class="LoginMainBackground">
+    <div class="container pt-md-5 pt-lg-5 pt-sm-5">
+        <div class="row pt-4">
+            <div class="col-md-6 pt-5 mt-5 ">
+
+
+                <div class="card bg-transparent z-depth-1 mt-5">
+
+                    <h5 class="card-header light-blue darken-1 white-text text-center  py-4">
+                        <strong> @ViewBag.MessageTitel</strong>
+                    </h5>
+
+                    <!--Card content-->
+                    <div class="card-body px-lg-4 mt-2  h-100">
+                        <p class="text-success"><i class="fas fa-check-circle"></i> @ViewBag.Message</p>
+
+                        <!-- Form -->
+
+                        <p class="text-white"><i class="fas fa-external-link-alt"></i> You can log in using the following log in button</p>
+
+                        <a href="/Account/login" class="btn btn-rounded btn-outline-white btn-blo-sm text-white btn-md"><i class="fas fa-key mr-2"></i> Log in </a>
+                        <!-- Email -->
+                        <!-- Password -->
+                        <!-- Sign in button -->
+                        <!-- Register -->
+                        <!-- Social login -->
+                        <!-- Form -->
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-5 offset-md-1 offset-lg-1  mt-5">
+                <div class="img-fluid">
+                    <img src="~/Content/Images/Confirmed-cuate.svg" id="ImageFit" />
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

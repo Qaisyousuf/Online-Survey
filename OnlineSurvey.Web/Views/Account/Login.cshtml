@@ -11,6 +11,9 @@
     <div class="container pt-5">
         <div class="row">
             <div class="col-md-5  pt-5">
+
+
+
                 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
                     @Html.AntiForgeryToken()
@@ -72,7 +75,7 @@
                                 <div>
                                     <!-- Forgot password -->
                                     <p>
-                                        <a href="#" class=" text-white"><i class="fas fa-key mr-0"></i> Forget password </a>
+                                        <a href="/Account/ForgotPassword" class=" text-white"><i class="fas fa-key mr-0"></i> Forget password </a>
 
                                     </p>
                                 </div>
