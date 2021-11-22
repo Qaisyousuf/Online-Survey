@@ -142,7 +142,22 @@ namespace OnlineSurvey.Web.Controllers
             {
                 await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
             }
-            return RedirectToAction("Index", "Manage");
+            return RedirectToAction("TwoFEnable", "Manage");
+        }
+
+        public ActionResult TwoFEnable()
+        {
+            ViewBag.TitleMessage = "Two-factor authentication confirmation";
+            ViewBag.MessageBody = "Two-factor authentication has been enabled successfully  ";
+            ViewBag.SubBodyMessage = "For the next login, you'll have the 2F authentication option";
+            return View();
+        }
+        public ActionResult TwoFDisable()
+        {
+            ViewBag.TitleMessage = "Two-factor authentication confirmation";
+            ViewBag.MessageBody = "Two-factor authentication has been disabled successfully ";
+            ViewBag.SubBodyMessage = "For the next login, you won't have the 2F authentication option";
+            return View();
         }
 
         //
@@ -157,7 +172,7 @@ namespace OnlineSurvey.Web.Controllers
             {
                 await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
             }
-            return RedirectToAction("Index", "Manage");
+            return RedirectToAction("TwoFDisable","Manage");
         }
 
         //
@@ -238,7 +253,9 @@ namespace OnlineSurvey.Web.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
-                return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
+
+                ViewBag.PasswordChanged = "Your password has been changed";
+                return RedirectToAction("ChangePasswordConfimation");
             }
             AddErrors(result);
             return View(model);
@@ -274,6 +291,17 @@ namespace OnlineSurvey.Web.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult ChangePasswordConfimation()
+        {
+            
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Login", "Account");
+
+
+            
         }
 
         //

@@ -260,9 +260,12 @@
     <Content Include="Content\Images\Mobile-inbox.svg" />
     <Content Include="Content\Images\My-password-reset.svg" />
     <Content Include="Content\Images\New-message.svg" />
+    <Content Include="Content\Images\Personal-settings.svg" />
     <Content Include="Content\Images\Secure-Server.svg" />
     <Content Include="Content\Images\SmallBanner.svg" />
     <Content Include="Content\Images\SmallsizeFooter.svg" />
+    <Content Include="Content\Images\Two factor authentication-amico.svg" />
+    <Content Include="Content\Images\Two-factor-authentication.svg" />
     <Content Include="Content\jquery.multiselect.css" />
     <Content Include="Content\jquery.multiselect.filter.css" />
     <Content Include="Content\mdb.css" />
@@ -675,6 +678,9 @@
     <Content Include="Views\Shared\_auth.cshtml" />
     <Content Include="Views\Account\Info.cshtml" />
     <Content Include="Views\Account\Error.cshtml" />
+    <Content Include="Views\Manage\ChangePasswordConfimation.cshtml" />
+    <Content Include="Views\Manage\TwoFEnable.cshtml" />
+    <Content Include="Views\Manage\TwoFDisable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />

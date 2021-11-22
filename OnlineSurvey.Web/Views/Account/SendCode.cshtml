@@ -4,22 +4,101 @@
     Layout = "~/Views/Shared/_auth.cshtml";
 }
 
-<h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
-    @Html.AntiForgeryToken()
-    @Html.Hidden("rememberMe", @Model.RememberMe)
-    <h4>Send verification code</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-8">
-            Select Two-Factor Authentication Provider:
-            @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
-            <input type="submit" value="Submit" class="btn btn-default" />
+<div class="LoginMainBackground">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-5  pt-5">
+
+
+
+                @using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("rememberMe", @Model.RememberMe)
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <!-- Material form login -->
+                    <div class="view card bg-transparent z-depth-1 text-white mt-5">
+
+                        <h5 class="card-header   light-blue darken-1 white-text text-center py-4">
+                            <strong>Send verification code</strong>
+                        </h5>
+
+                        <!--Card content-->
+                        <div class="card-body px-lg-5 ml-4 pt-0 h-100 pt-5">
+
+                            <!-- Form -->
+                            <form class="" style="color: #757575;" action="#!">
+
+                                <!-- Email -->
+                                <div class="form-group " id="FormText">
+                                    <div class="md-form" Id="textboxcolor">
+                                        Select Two-Factor Authentication Provider:
+                                        @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers,new { @class= "mdb-select" })
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Password -->
+                               
+
+                                
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="">
+                                                <button type="submit" class="btn btn-rounded btn-outline-white btn-md"><i class="fas fa-sign-in-alt mr-2"></i> Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+
+                                <!-- Sign in button -->
+                                <!-- Register -->
+                                <!-- Social login -->
+
+
+
+                            </form>
+                            <!-- Form -->
+
+                        </div>
+
+                    </div>
+                    <!-- Material form login -->
+
+                }
+            </div>
+            <div class="col-md-5 offset-md-1 offset-lg-1 pt-5 mt-5">
+                <div class="img-fluid">
+                    <img src="~/Content/Images/Login-pana.svg" id="ImageFit" />
+                </div>
+            </div>
         </div>
     </div>
-}
 
-@section Scripts {
+</div>
+
+
+
+
+
+
+@section scripts {
+
+    <script>
+         $(document).ready(function () {
+
+
+                $('.mdb-select').materialSelect();
+        });
+
+    </script>
+
     @Scripts.Render("~/bundles/jqueryval")
 }

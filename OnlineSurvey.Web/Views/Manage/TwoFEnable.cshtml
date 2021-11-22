@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "TwoFEnable";
+    Layout = "~/Views/Shared/_auth.cshtml";
+}
+
+
+<div class="LoginMainBackground">
+    <div class="container pt-md-5 pt-lg-5 pt-sm-5">
+        <div class="row pt-4">
+            <div class="col-md-6 pt-5  ">
+
+
+                <div class="card bg-transparent z-depth-1 mt-5">
+
+                    <h5 class="card-header light-blue darken-1 white-text text-center  py-4">
+                        <strong> @ViewBag.TitleMessage</strong>
+                    </h5>
+
+                    <!--Card content-->
+                    <div class="card-body px-lg-4 mt-2  h-100">
+                        <p class="text-success"><i class="fas fa-check-circle"></i> @ViewBag.MessageBody</p>
+                        <p class="text-white"><i class="fas fa-key"></i> @ViewBag.SubBodyMessage</p>
+                        <!-- Form -->
+
+                      
+
+                       
+                        <!-- Email -->
+                        <!-- Password -->
+                        <!-- Sign in button -->
+                        <!-- Register -->
+                        <!-- Social login -->
+                        <!-- Form -->
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-5 offset-md-1 offset-lg-1  mt-5">
+                <div class="img-fluid">
+                    <img src="~/Content/Images/Two-factor-authentication.svg" id="ImageFit" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
