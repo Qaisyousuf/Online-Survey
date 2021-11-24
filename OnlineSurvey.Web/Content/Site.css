@@ -17,6 +17,9 @@
 .navbar {
     z-index: 1040;
 }
+#cardColor {
+    background-color: #3f79a7 !important;
+}
 
 .view {
     height: 100%;
@@ -29,7 +32,15 @@
 .dl-horizontal dt {
     white-space: normal;
 }
-
+.light-blue-skin .navbar {
+    background-color: #2e648d !important;
+}
+.light-blue-skin .side-nav .sidenav-bg:after {
+    background-color: transparent !important;
+}
+.light-blue-skin .side-nav {
+    background-color: #2e648d !important;
+}
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

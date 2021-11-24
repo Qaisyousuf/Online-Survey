@@ -31,6 +31,7 @@ namespace OnlineSurvey.Data.Interfaces
         ICheckBoxAnswerRepository CheckBoxAnswerRepository { get; }
         ICheckBoxQuestionRepository CheckBoxQuestionRepository { get; }
         IUserDashboardRepository UserDashboardRepository { get; }
+        IUserCommentRepository UserCommentRepository { get; }
 
       
 

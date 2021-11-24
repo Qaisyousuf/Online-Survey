@@ -81,6 +81,7 @@
     <Compile Include="Concrete Implementation\TagQuestionRepository.cs" />
     <Compile Include="Concrete Implementation\TwitterMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
+    <Compile Include="Concrete Implementation\UserCommentRepository.cs" />
     <Compile Include="Concrete Implementation\UserDashboardRepository.cs" />
     <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoAnswerRepository.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Interfaces\ITagQuestionRepository.cs" />
     <Compile Include="Interfaces\ITwitterMetaTagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Interfaces\IUserCommentRepository.cs" />
     <Compile Include="Interfaces\IUserSurveyRepository.cs" />
     <Compile Include="Interfaces\IYesNoAnswerRepository.cs" />
     <Compile Include="Interfaces\IYesNoQuestionRepository.cs" />
@@ -428,6 +430,34 @@
     <Compile Include="Migrations\202111231330046_UserDashboardModelAdded.designer.cs">
       <DependentUpon>202111231330046_UserDashboardModelAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111241619335_UsercommentModelAdded.cs" />
+    <Compile Include="Migrations\202111241619335_UsercommentModelAdded.designer.cs">
+      <DependentUpon>202111241619335_UsercommentModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111241624401_Propertyadded.cs" />
+    <Compile Include="Migrations\202111241624401_Propertyadded.designer.cs">
+      <DependentUpon>202111241624401_Propertyadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111241628208_DatetimeModelAdded.cs" />
+    <Compile Include="Migrations\202111241628208_DatetimeModelAdded.designer.cs">
+      <DependentUpon>202111241628208_DatetimeModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111241637009_PropertyRemoved.cs" />
+    <Compile Include="Migrations\202111241637009_PropertyRemoved.designer.cs">
+      <DependentUpon>202111241637009_PropertyRemoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111241641309_DatetimeChanged.cs" />
+    <Compile Include="Migrations\202111241641309_DatetimeChanged.designer.cs">
+      <DependentUpon>202111241641309_DatetimeChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111241643526_Modelchanged.cs" />
+    <Compile Include="Migrations\202111241643526_Modelchanged.designer.cs">
+      <DependentUpon>202111241643526_Modelchanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111241646015_ModelWithNewDatatypeadded.cs" />
+    <Compile Include="Migrations\202111241646015_ModelWithNewDatatypeadded.designer.cs">
+      <DependentUpon>202111241646015_ModelWithNewDatatypeadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -672,6 +702,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111231330046_UserDashboardModelAdded.resx">
       <DependentUpon>202111231330046_UserDashboardModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111241619335_UsercommentModelAdded.resx">
+      <DependentUpon>202111241619335_UsercommentModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111241624401_Propertyadded.resx">
+      <DependentUpon>202111241624401_Propertyadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111241628208_DatetimeModelAdded.resx">
+      <DependentUpon>202111241628208_DatetimeModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111241637009_PropertyRemoved.resx">
+      <DependentUpon>202111241637009_PropertyRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111241641309_DatetimeChanged.resx">
+      <DependentUpon>202111241641309_DatetimeChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111241643526_Modelchanged.resx">
+      <DependentUpon>202111241643526_Modelchanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111241646015_ModelWithNewDatatypeadded.resx">
+      <DependentUpon>202111241646015_ModelWithNewDatatypeadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

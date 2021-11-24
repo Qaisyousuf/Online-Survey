@@ -58,6 +58,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IUserDashboardRepository UserDashboardRepository => new UserDashboardRepository(Context);
 
+        public IUserCommentRepository UserCommentRepository => new UserCommentRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

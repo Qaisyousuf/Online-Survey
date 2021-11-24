@@ -123,6 +123,7 @@
     <Compile Include="SurveyViewModel.cs" />
     <Compile Include="TagQuestionViewModel.cs" />
     <Compile Include="TwitterMetaTagViewModel.cs" />
+    <Compile Include="UserCommentViewModel.cs" />
     <Compile Include="UserDashboardViewModel.cs" />
     <Compile Include="UserSurveyViewModel.cs" />
     <Compile Include="ViewUserViewModel.cs" />
