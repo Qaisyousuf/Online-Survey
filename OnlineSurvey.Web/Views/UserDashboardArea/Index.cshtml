@@ -1,0 +1,72 @@
+﻿@model IEnumerable<OnlineSurvey.ViewModel.UserDashboardViewModel>
+
+@{
+    ViewBag.Title = "User dashboard";
+    Layout = "~/Views/Shared/_UserDashboard.cshtml";
+}
+<div class="LoginMainBackground">
+    <div class="view h-100 p-5">
+      
+            @if (User.Identity.IsAuthenticated)
+            {
+                foreach (var item in Model.Take(1))
+                {
+                    
+                    <div class="container pt-5">
+
+
+                        <!--Section: Content-->
+                        <section class="text-white ">
+
+                            <div class="row  offset-md-0 offset-lg-2 offset-xl-2 offset-sm-0 pt-5">
+                                <div class="col-md-6 d-flex align-items-center text-center text-lg-left text-md-left">
+                                    <div>
+                                        <h6 class="font-weight-bold text-white-50">@item.Title</h6>
+                                        <h5 class="mb-2  font-weight-normal text-white-50">@item.MainTitle</h5>
+
+
+                                        <p class="text-wrap text-white-50">@item.Content</p>
+
+                                        <a class="btn btn-rounded btn-outline-white text-white btn-sm" href="#">Check reports </a>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="img-fluid">
+                                        <lottie-player src="@item.AnimationUrl" background="transparent" speed="1" style="width: auto; height: auto;" loop autoplay></lottie-player>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+                        <!--Section: Content-->
+
+
+                    </div>
+                }
+            }
+      
+
+        @section scripts{
+            <script>
+                $(document).ready(function () {
+                    $(".button-collapse").sideNav({
+                        breakpoint: 1200
+                    });
+                    // SideNav Scrollbar Initialization
+                    var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+                    var ps = new PerfectScrollbar(sideNavScrollbar);
+                });
+            </script>
+        }
+    </div>
+</div>
+
+
+
+
+
+

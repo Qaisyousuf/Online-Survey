@@ -1,7 +1,7 @@
 ﻿@model OnlineSurvey.ViewModel.IndexViewModel
 @{
     ViewBag.Title = "Manage";
-    Layout = "~/Views/Shared/_auth.cshtml";
+    Layout = "~/Views/Shared/_UserDashboard.cshtml";
 }
 
 
@@ -11,7 +11,7 @@
 <div class="LoginMainBackground">
     <div class="container pt-5">
         <div class="row">
-            <div class="col-md-5 offset-md-1  pt-5">
+            <div class="col-md-5 offset-lg-2 offset-md-2  pt-5">
 
 
                     <!-- Material form login -->
@@ -29,11 +29,11 @@
 
 
                                 <div>
-                                    <h4>Password settings:</h4>
+                                   
                                     
                                     <dl class="dl-horizontal">
                                        
-                                        <dd>
+                                        @*<dd>
                                             
                                             @if (Model.HasPassword)
                                             {
@@ -44,7 +44,7 @@
                                                 @Html.ActionLink("Create", "SetPassword")
                                             }
                                             
-                                        </dd>
+                                        </dd>*@
                                                                     @*<dt>External Logins:</dt>
                                             <dd>
                                                 @Model.Logins.Count [
@@ -122,7 +122,7 @@
 
                 
             </div>
-            <div class="col-md-5 offset-md-1 offset-lg-1 pt-5 mt-5">
+            <div class="col-md-4 offset-md-1 offset-lg-1 pt-5 mt-5">
                 <div class="img-fluid">
                     <img src="~/Content/Images/Personal-settings.svg" id="ImageFit" />
                 </div>

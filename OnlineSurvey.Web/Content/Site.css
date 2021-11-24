@@ -8,11 +8,15 @@
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
-
+.side-nav {
+    margin-top: 45px !important;
+}
 .dl-horizontal dt {
     white-space: normal;
 }
-
+.navbar {
+    z-index: 1040;
+}
 
 .view {
     height: 100%;
@@ -78,13 +82,27 @@ textarea {
 
 
 
+.double-nav .breadcrumb-dn p {
+    color: #fff;
+}
+
+@media (min-width: 1200px){
+.fixed-sn main {
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+  }
+}
 
 
+.side-nav .logo-wrapper {
+    border-bottom: 0px !important;
+    height:auto !important;
+}
 .MainFooterBackground {
     background-image: url(Images/Footer.svg);
     background-position: center;
     background-size: cover;
-    height:800px;
+    height: 800px;
     width: 100%;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -104,7 +122,6 @@ textarea {
     -webkit-align-items: flex-end;
     -ms-flex-align: end;
     align-items: flex-end;
-   
 }
 
 @media(min-width: 1600px) and (max-width:1920px) {

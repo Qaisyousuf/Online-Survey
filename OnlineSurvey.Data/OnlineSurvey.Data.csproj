@@ -81,6 +81,7 @@
     <Compile Include="Concrete Implementation\TagQuestionRepository.cs" />
     <Compile Include="Concrete Implementation\TwitterMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
+    <Compile Include="Concrete Implementation\UserDashboardRepository.cs" />
     <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoAnswerRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoQuestionRepository.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Interfaces\IUserSurveyRepository.cs" />
     <Compile Include="Interfaces\IYesNoAnswerRepository.cs" />
     <Compile Include="Interfaces\IYesNoQuestionRepository.cs" />
+    <Compile Include="Interfaces\IUserDashboardRepository.cs" />
     <Compile Include="Migrations\202109211423586_InitialCreate.cs" />
     <Compile Include="Migrations\202109211423586_InitialCreate.designer.cs">
       <DependentUpon>202109211423586_InitialCreate.cs</DependentUpon>
@@ -422,6 +424,10 @@
     <Compile Include="Migrations\202111181300338_CheckQuestionModelChanged.designer.cs">
       <DependentUpon>202111181300338_CheckQuestionModelChanged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111231330046_UserDashboardModelAdded.cs" />
+    <Compile Include="Migrations\202111231330046_UserDashboardModelAdded.designer.cs">
+      <DependentUpon>202111231330046_UserDashboardModelAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -663,6 +669,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111181300338_CheckQuestionModelChanged.resx">
       <DependentUpon>202111181300338_CheckQuestionModelChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111231330046_UserDashboardModelAdded.resx">
+      <DependentUpon>202111231330046_UserDashboardModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -37,6 +37,7 @@ namespace OnlineSurvey.Data
         public DbSet<YesNoQuestion> YesNoQuestions { get; set; }
         public DbSet<CheckBoxAnswers> CheckBoxAnswers { get; set; }
         public DbSet<CheckBoxQuestions> CheckBoxQuestions { get; set; }
+        public DbSet<UserDashboard> UserDashboards { get; set; }
 
 
 
