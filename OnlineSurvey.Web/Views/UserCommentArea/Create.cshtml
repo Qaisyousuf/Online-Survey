@@ -1,0 +1,120 @@
+﻿@model OnlineSurvey.ViewModel.UserCommentViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_UserDashboard.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class=" col-md-10 offset-md-2 mt-5">
+
+            <div class="card card-cascade mt-5">
+
+                <!-- Card image -->
+                <div class="view view-cascade gradient-card-header blue-gradient">
+
+                    <!-- Title -->
+                    <!-- Subtitle -->
+                    <p class="card-header-subtitle mb-0">write your comment</p>
+
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade ">
+
+                    @using (Html.BeginForm("Create", "UserCommentArea", FormMethod.Post, new { onsubmit = "return SubmitFormCreate(this)" }))
+                    {
+
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label " })
+
+                                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Comment, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.Comment)
+                                @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="">
+                                    <input type="submit" value="Create" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    <hr>
+
+                    <!-- Twitter -->
+
+
+                </div>
+                <div class="card-footer text-dark">You'll get the response by the admin</div>
+
+            </div>
+
+            @{Html.RenderAction("ShowComment");}
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+@section scripts {
+    <script src="~/Scripts/notify.min.js"></script>
+    <script>
+        function SubmitFormCreate(form) {
+            $.validator.unobtrusive.parse(form);
+            if ($(form).valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: form.action,
+                    data: $(form).serialize(),
+                    success: function (data) {
+                        if (data.success) {
+
+                            $.notify(data.message, {
+                                Position: "right",
+                                className: "success"
+                            });
+
+                        }
+
+                        else
+                            $.notify(data.message, {
+                                Position: "right",
+                                className: "error"
+                            })
+                    }
+                });
+            }
+            return false;
+        }
+
+
+    </script>
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace("Comment");
+    </script>
+
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

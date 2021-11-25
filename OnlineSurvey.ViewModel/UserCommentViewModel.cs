@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace OnlineSurvey.ViewModel
 {
@@ -16,11 +17,12 @@ namespace OnlineSurvey.ViewModel
         [Required]
         public string Title { get; set; }
         [Required]
+        [AllowHtml]
         public string Comment { get; set; }
         public string Replay { get; set; }
 
         public DateTime PostedDate { get; set; }
-        public DateTime ReplayedDate { get; set; }
+       
         public string UserName { get; set; }
       
 

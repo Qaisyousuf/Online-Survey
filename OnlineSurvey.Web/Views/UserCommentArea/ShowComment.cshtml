@@ -1,0 +1,70 @@
+﻿@model IEnumerable<OnlineSurvey.ViewModel.UserCommentViewModel>
+
+@{
+    ViewBag.Title = "ShowComment";
+    Layout = "~/Views/Shared/_UserDashboard.cshtml";
+}
+
+<div class="container pt-5">
+    <div class="row pt-5">
+        <div class="col-md-11 ">
+
+            <div class="container py-5 px-md-5 z-depth-1">
+
+
+                <!--Section: Content-->
+                <section class="text-center text-lg-left dark-grey-text">
+                    <div class="text-center font-weight-bold"><span></span>@Model.Count()+comments</div>
+
+                    @foreach (var item in Model)
+                    {
+
+                      
+                            <div class="media d-block d-md-flex mt-4">
+                                <div class=" rounded z-depth-1 d-flex mx-auto mb-3">
+                                    @item.UserName
+                                </div>
+                                <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                                    <p class="font-weight-bold my-0">
+                                        @item.Title
+                                        <a href="" class="pull-right ml-1">
+                                            <i class="fas fa-reply"></i>
+                                        </a>
+                                    </p>
+                                    @Html.Raw(item.Comment)
+                                    <div class="media d-block d-md-flex mt-4">
+                                        <div class=" rounded z-depth-1 d-flex mx-auto mb-3">
+                                            @item.ReplayedUser
+                                        </div>
+                                        <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                                            <p class="font-weight-bold my-0">
+                                                @item.ReplayedUser
+                                                <a href="" class="pull-right ml-1">
+                                                    <i class="fas fa-reply"></i>
+                                                </a>
+                                            </p>
+                                            @Html.Raw(item.Replay)
+                                        </div>
+                                    </div>
+
+                                    <!-- Quick Reply -->
+
+
+                                </div>
+                            </div>
+                        
+
+                    }
+
+
+
+                </section>
+                <!--Section: Content-->
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

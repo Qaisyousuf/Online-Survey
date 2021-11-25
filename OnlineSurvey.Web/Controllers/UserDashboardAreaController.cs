@@ -5,10 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using OnlineSurvey.ViewModel;
 using OnlineSurvey.Model;
+using Microsoft.AspNet.Identity;
 
 namespace OnlineSurvey.Web.Controllers
 {
-    [Authorize(Roles="")]
+   
+    [Authorize(Roles ="")]
     public class UserDashboardAreaController : BaseController
     {
        
@@ -35,5 +37,69 @@ namespace OnlineSurvey.Web.Controllers
 
             return View(viewmodel);
         }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View(new UserCommentViewModel());
+        }
+
+        [HttpPost]
+        public ActionResult Create(UserCommentViewModel viewmodel)
+        {
+            if(ModelState.IsValid && User.Identity.IsAuthenticated)
+            {
+
+                var userName = HttpContext.User.Identity.GetUserName();
+                var userId = HttpContext.User.Identity.GetUserId();
+                var usercomment = new UserComment
+                {
+                    Id = viewmodel.Id,
+                    Title = viewmodel.Title,
+                    Comment = viewmodel.Comment,
+                    Posteddate = DateTime.Now,
+                    
+                    UserName=userName,
+                    
+                };
+
+                _uow.UserCommentRepository.Add(usercomment);
+                _uow.Commit();
+
+
+            }
+            return Json(new { success = true, message = "Data saved successfully " }, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+       
+
+        [HttpGet]
+        public ActionResult ShowData()
+        {
+            var usercomment = _uow.UserCommentRepository.GetAll();
+
+            List<UserCommentViewModel> viewmodel = new List<UserCommentViewModel>();
+
+            foreach (var item in usercomment)
+            {
+                viewmodel.Add(new UserCommentViewModel
+                {
+                    Id=item.Id,
+                    Title=item.Title,
+                    Comment=item.Comment,
+                    Replay=item.Replay,
+                    PostedDate=item.Posteddate,
+                    UserName=item.UserName,
+                    ReplayedUser=item.ReplayedUser,
+                    Users=item.Users,
+                });
+            }
+
+            return Json(new { data = viewmodel }, JsonRequestBehavior.AllowGet);
+        }
+
+        
     }
 }
