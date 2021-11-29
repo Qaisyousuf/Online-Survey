@@ -28,6 +28,8 @@ namespace OnlineSurvey.ViewModel
 
         public string ReplayedUser { get; set; }
 
+        public string Name { get; set; }
+
 
         public virtual ApplicationUser Users { get; set; }
     }

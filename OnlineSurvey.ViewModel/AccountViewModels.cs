@@ -79,6 +79,11 @@ namespace OnlineSurvey.ViewModel
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name="FullName")]
+        public string Name { get; set; }
+
     }
 
     public class ResetPasswordViewModel

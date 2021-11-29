@@ -458,6 +458,14 @@
     <Compile Include="Migrations\202111241646015_ModelWithNewDatatypeadded.designer.cs">
       <DependentUpon>202111241646015_ModelWithNewDatatypeadded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111251926279_UserNameAdded.cs" />
+    <Compile Include="Migrations\202111251926279_UserNameAdded.designer.cs">
+      <DependentUpon>202111251926279_UserNameAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111261317492_Nameadded.cs" />
+    <Compile Include="Migrations\202111261317492_Nameadded.designer.cs">
+      <DependentUpon>202111261317492_Nameadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -723,6 +731,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111241646015_ModelWithNewDatatypeadded.resx">
       <DependentUpon>202111241646015_ModelWithNewDatatypeadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111251926279_UserNameAdded.resx">
+      <DependentUpon>202111251926279_UserNameAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111261317492_Nameadded.resx">
+      <DependentUpon>202111261317492_Nameadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

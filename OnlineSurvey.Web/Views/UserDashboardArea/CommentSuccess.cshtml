@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "CommentSuccess";
+    Layout = "~/Views/Shared/_UserDashboard.cshtml";
+}
+
+
+<div class="container pt-5">
+    <div class="row pt-5">
+        <div class="col-md-10 offset-md-2">
+
+            <!-- Card Regular -->
+            <div class="card card-cascade">
+
+                <!-- Card image -->
+                <div class="view view-cascade d-flex z-depth-0 justify-content-center">
+                    <div class="img-fluid">
+                        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_y2hxPc.json" background="transparent" speed=".5" style="width: auto; height: auto;" loop autoplay></lottie-player>
+                    </div>
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+                    <p class="card-text">
+                        @ViewBag.UserName
+                    </p>
+                    <!-- Title -->
+                    <h4 class="card-title text-success font-weight-bold">@ViewBag.Message</h4>
+                    <!-- Subtitle -->
+                    <!-- Text -->
+                    <!-- Facebook -->
+
+                    <a href="/UserDashboardArea/create" class="btn btn-rounded btn-outline-success">See your post</a>
+                </div>
+                
+                <!-- Card footer -->
+                <div class="card-footer text-muted text-center">
+                  You'll get the response form the admin
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

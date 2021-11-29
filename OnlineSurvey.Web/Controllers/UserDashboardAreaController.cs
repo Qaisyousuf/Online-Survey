@@ -50,7 +50,10 @@ namespace OnlineSurvey.Web.Controllers
             if(ModelState.IsValid && User.Identity.IsAuthenticated)
             {
 
+              
+
                 var userName = HttpContext.User.Identity.GetUserName();
+                var name = _uow.Context.Users.Where(x => x.UserName == userName).Select(x => x.Name).FirstOrDefault();
                 var userId = HttpContext.User.Identity.GetUserId();
                 var usercomment = new UserComment
                 {
@@ -58,7 +61,7 @@ namespace OnlineSurvey.Web.Controllers
                     Title = viewmodel.Title,
                     Comment = viewmodel.Comment,
                     Posteddate = DateTime.Now,
-                    
+                    Name=name,
                     UserName=userName,
                     
                 };
@@ -66,12 +69,20 @@ namespace OnlineSurvey.Web.Controllers
                 _uow.UserCommentRepository.Add(usercomment);
                 _uow.Commit();
 
-
+                return RedirectToAction(nameof(CommentSuccess));
             }
-            return Json(new { success = true, message = "Data saved successfully " }, JsonRequestBehavior.AllowGet);
+            return View(viewmodel);
         }
 
 
+        [HttpGet]
+        public ActionResult CommentSuccess()
+        {
+            ViewBag.UserName = User.Identity.Name;
+
+            ViewBag.Message = "Your comment posted successfully";
+            return View();
+        }
 
        
 

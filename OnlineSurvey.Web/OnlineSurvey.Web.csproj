@@ -1049,6 +1049,7 @@
     <Content Include="Views\UserCommentArea\Create.cshtml" />
     <Content Include="Views\UserCommentArea\ShowComment.cshtml" />
     <Content Include="Views\UserCommentArea\GetCommentData.cshtml" />
+    <Content Include="Views\UserDashboardArea\CommentSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />
