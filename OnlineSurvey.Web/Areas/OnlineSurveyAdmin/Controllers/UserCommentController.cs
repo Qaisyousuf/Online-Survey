@@ -83,9 +83,9 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 usercomment.Comment = viewmodel.Comment;
                 usercomment.Replay = viewmodel.Replay;
                 usercomment.ReplayedUser = replayedUser;
-                usercomment.UserName = viewmodel.UserName;
+              
                 //usercomment.Posteddate = viewmodel.PostedDate;
-                usercomment.UserName = viewmodel.UserName;
+               
 
                 uow.UserCommentRepository.Update(usercomment);
                 uow.Commit();

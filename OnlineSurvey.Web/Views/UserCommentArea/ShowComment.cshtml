@@ -19,7 +19,8 @@
                     @foreach (var item in Model)
                     {
 
-                      
+                        if (item.UserName == User.Identity.Name)
+                        {
                             <div class="media d-block d-md-flex mt-4">
                                 <div class=" rounded z-depth-1 d-flex mx-auto mb-3">
                                     @item.UserName
@@ -52,7 +53,11 @@
 
                                 </div>
                             </div>
-                        
+                        }
+
+
+
+
 
                     }
 

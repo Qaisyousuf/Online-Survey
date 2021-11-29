@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace OnlineSurvey.ViewModel
 {
-    public class UserCommentViewModel
+    public class UserCommentViewModel:BaseViewModel
     {
         public int Id { get; set; }
 
@@ -21,11 +21,12 @@ namespace OnlineSurvey.ViewModel
         public string Comment { get; set; }
         public string Replay { get; set; }
 
+        [Display(Name ="Posted date")]
         public DateTime PostedDate { get; set; }
        
         public string UserName { get; set; }
       
-
+        [Display(Name="Replayed user")]
         public string ReplayedUser { get; set; }
 
         public string Name { get; set; }

@@ -62,7 +62,7 @@ namespace OnlineSurvey.Web.Controllers
                     Comment = viewmodel.Comment,
                     Posteddate = DateTime.Now,
                     Name=name,
-                    UserName=userName,
+                   UserName=userName,
                     
                 };
 
@@ -84,7 +84,41 @@ namespace OnlineSurvey.Web.Controllers
             return View();
         }
 
-       
+
+        [HttpGet]
+        public ActionResult GetCommentData()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult DisplayUserCommentData()
+        {
+            var usercomment = _uow.UserCommentRepository.GetAll();
+
+            List<UserCommentViewModel> viewmodel = new List<UserCommentViewModel>();
+
+            var userName = HttpContext.User.Identity.GetUserName();
+            var name = _uow.Context.Users.Where(x => x.UserName == userName).Select(x => x.Name).FirstOrDefault();
+            foreach (var item in usercomment)
+            {
+                viewmodel.Add(new UserCommentViewModel
+                {
+                    Id = item.Id,
+                    Title = item.Title,
+                    Comment = item.Comment,
+                    UserName = item.UserName,
+                    Users = item.Users,
+                    PostedDate = item.Posteddate,
+                    Replay = item.Replay,
+                    ReplayedUser = item.ReplayedUser,
+                    Name = name,
+                });
+            }
+
+            return View(viewmodel);
+        }
+
+
 
         [HttpGet]
         public ActionResult ShowData()
@@ -93,22 +127,25 @@ namespace OnlineSurvey.Web.Controllers
 
             List<UserCommentViewModel> viewmodel = new List<UserCommentViewModel>();
 
+            var userName = HttpContext.User.Identity.GetUserName();
+            var name = _uow.Context.Users.Where(x => x.UserName == userName).Select(x => x.Name).FirstOrDefault();
             foreach (var item in usercomment)
             {
                 viewmodel.Add(new UserCommentViewModel
                 {
-                    Id=item.Id,
-                    Title=item.Title,
-                    Comment=item.Comment,
-                    Replay=item.Replay,
-                    PostedDate=item.Posteddate,
-                    UserName=item.UserName,
-                    ReplayedUser=item.ReplayedUser,
-                    Users=item.Users,
+                    Id = item.Id,
+                    Title = item.Title,
+                    Comment = item.Comment,
+                    UserName = item.UserName,
+                    Users = item.Users,
+                    PostedDate = item.Posteddate,
+                    Replay = item.Replay,
+                    ReplayedUser = item.ReplayedUser,
+                    Name=name,
                 });
             }
 
-            return Json(new { data = viewmodel }, JsonRequestBehavior.AllowGet);
+            return View(viewmodel);
         }
 
         

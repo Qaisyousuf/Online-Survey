@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OnlineSurvey.ViewModel
 {
-    public class UserDashboardViewModel
+    public class UserDashboardViewModel:BaseViewModel
     {
         
         public int Id { get; set; }

@@ -9,7 +9,7 @@
 <div class="container my-5">
     <div class="row pt-3">
         <div class="col-md-10 offset-md-2">
-            @using(Html.BeginForm("Create", "UserDashboardArea", FormMethod.Post, new { onsubmit = "return SubmitFormCreate(this)" }))
+            @using (Html.BeginForm("Create", "UserDashboardArea", FormMethod.Post, new { onsubmit = "return SubmitFormCreate(this)" }))
             {
 
                 {
@@ -62,10 +62,11 @@
 
                 }
             }
+
         </div>
     </div>
 </div>
-
+@{Html.RenderAction("ShowData");}
 
 
 
@@ -80,39 +81,8 @@
             new WOW().init();
         })
     </script>
-    <script src="~/Scripts/notify.min.js"></script>
-    @*<script>
-
-        function SubmitFormCreate(form) {
-            $.validator.unobtrusive.parse(form);
-            if ($(form).valid()) {
-                $.ajax({
-                    type: "POST",
-                    url: form.action,
-                    data: $(form).serialize(),
-                    success: function (data) {
-                        if (data.success) {
-
-                            $.notify(data.message, {
-                                globalPosition: "top center",
-                                className: "success"
-                            });
-
-                        }
-                        else {
-                            $.notify(data.message, {
-                                globalPosition: "top center",
-                                className: "error"
-                            })
-                        }
-                    }
-                });
-            }
-            return false;
-        }*@
-
-
-    </script>
+ 
+  
     <script src="~/Scripts/ckeditor/ckeditor.js"></script>
     <script>
         CKEDITOR.replace("Comment");
