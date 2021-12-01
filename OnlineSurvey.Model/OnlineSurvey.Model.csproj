@@ -90,6 +90,7 @@
     <Compile Include="MultiLineTextAnswer.cs" />
     <Compile Include="MultiLineTextResponse.cs" />
     <Compile Include="MultipleChoiceQuestions.cs" />
+    <Compile Include="MyProocedure.cs" />
     <Compile Include="NumberQuestion.cs" />
     <Compile Include="TagQuestion.cs" />
     <Compile Include="UserComment.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Survey.cs" />
     <Compile Include="SurveyCatagory.cs" />
     <Compile Include="TwitterMetaTag.cs" />
+    <Compile Include="UserProcedure.cs" />
     <Compile Include="UserSurveyRegistration.cs" />
     <Compile Include="YesNoQuestion.cs" />
     <Compile Include="YesNoAnswer.cs" />

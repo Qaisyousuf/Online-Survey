@@ -28,9 +28,17 @@
                             <!-- Form -->
                             <form class="text-center" style="color: #757575;" action="#!">
 
+                                <div class="form-group" id="FormText">
+                                    <div class="md-form" Id="textboxcolor">
+                                        @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
 
                                 <div class="form-group" id="FormText">
-                                    <div class="md-form"  Id="textboxcolor">
+                                    <div class="md-form" Id="textboxcolor">
                                         @Html.LabelFor(m => m.Email, new { @class = "control-label" })
                                         @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
@@ -38,8 +46,8 @@
 
                                 </div>
                                 <!-- Email -->
-                                <div class="form-group"  id="FormText">
-                                    <div class="md-form"  Id="textboxcolor">
+                                <div class="form-group" id="FormText">
+                                    <div class="md-form" Id="textboxcolor">
                                         @Html.LabelFor(m => m.Password, new { @class = "control-label" })
                                         @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
@@ -48,7 +56,7 @@
                                 </div>
 
                                 <div class="form-group" id="FormText">
-                                    <div class="md-form"  Id="textboxcolor">
+                                    <div class="md-form" Id="textboxcolor">
                                         @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
                                         @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                                         @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
@@ -68,7 +76,7 @@
 
                                     <div class="col-md-6">
                                         <p>
-                                           
+
                                             <button type="submit" class="btn btn-rounded btn-outline-white btn-blo-sm  btn-md"><i class="fas fa-sign-in-alt mr-2"></i> Register </button>
 
                                         </p>

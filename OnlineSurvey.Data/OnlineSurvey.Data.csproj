@@ -69,6 +69,7 @@
     <Compile Include="Concrete Implementation\MultiLineTextRepository.cs" />
     <Compile Include="Concrete Implementation\MultiLineTextResponseRepository.cs" />
     <Compile Include="Concrete Implementation\MultipleChoiceQuestionsRepository.cs" />
+    <Compile Include="Concrete Implementation\MyProcedureRepository.cs" />
     <Compile Include="Concrete Implementation\NumberQuestionRepository.cs" />
     <Compile Include="Concrete Implementation\OGMetaTagRepository.cs" />
     <Compile Include="Concrete Implementation\PageRepository.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Concrete Implementation\UnitOfWork.cs" />
     <Compile Include="Concrete Implementation\UserCommentRepository.cs" />
     <Compile Include="Concrete Implementation\UserDashboardRepository.cs" />
+    <Compile Include="Concrete Implementation\UserProcedureRepository.cs" />
     <Compile Include="Concrete Implementation\UserSurveyRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoAnswerRepository.cs" />
     <Compile Include="Concrete Implementation\YesNoQuestionRepository.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="Interfaces\IMultiLineTextRepository.cs" />
     <Compile Include="Interfaces\IMultiLineTextResponseRepository.cs" />
     <Compile Include="Interfaces\IMultipleChoiceQuestionsRepository.cs" />
+    <Compile Include="Interfaces\IMyProcedureRepository.cs" />
     <Compile Include="Interfaces\INumberQuestionRepository.cs" />
     <Compile Include="Interfaces\IOGMetaTagRepository.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
@@ -118,6 +121,7 @@
     <Compile Include="Interfaces\ITwitterMetaTagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IUserCommentRepository.cs" />
+    <Compile Include="Interfaces\IUserProcedureRepository.cs" />
     <Compile Include="Interfaces\IUserSurveyRepository.cs" />
     <Compile Include="Interfaces\IYesNoAnswerRepository.cs" />
     <Compile Include="Interfaces\IYesNoQuestionRepository.cs" />
@@ -466,6 +470,18 @@
     <Compile Include="Migrations\202111261317492_Nameadded.designer.cs">
       <DependentUpon>202111261317492_Nameadded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111301640049_MyProcedureModelAdded.cs" />
+    <Compile Include="Migrations\202111301640049_MyProcedureModelAdded.designer.cs">
+      <DependentUpon>202111301640049_MyProcedureModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112011053151_UserProcedureModelAdded.cs" />
+    <Compile Include="Migrations\202112011053151_UserProcedureModelAdded.designer.cs">
+      <DependentUpon>202112011053151_UserProcedureModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112011709420_ModelPropetyRemoved.cs" />
+    <Compile Include="Migrations\202112011709420_ModelPropetyRemoved.designer.cs">
+      <DependentUpon>202112011709420_ModelPropetyRemoved.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -737,6 +753,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111261317492_Nameadded.resx">
       <DependentUpon>202111261317492_Nameadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111301640049_MyProcedureModelAdded.resx">
+      <DependentUpon>202111301640049_MyProcedureModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112011053151_UserProcedureModelAdded.resx">
+      <DependentUpon>202112011053151_UserProcedureModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112011709420_ModelPropetyRemoved.resx">
+      <DependentUpon>202112011709420_ModelPropetyRemoved.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -110,6 +110,7 @@
     <Compile Include="MultiLineTextAnswerViewModel.cs" />
     <Compile Include="MultiLineTextViewModel.cs" />
     <Compile Include="MultipleChoiceQuestionsViewModel.cs" />
+    <Compile Include="MyProcedureViewModel.cs" />
     <Compile Include="NumberQuestionViewModel.cs" />
     <Compile Include="OpenGraphMetaTagsViewModel.cs" />
     <Compile Include="PageViewModel.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="TwitterMetaTagViewModel.cs" />
     <Compile Include="UserCommentViewModel.cs" />
     <Compile Include="UserDashboardViewModel.cs" />
+    <Compile Include="UserProcedureViewModel.cs" />
     <Compile Include="UserSurveyViewModel.cs" />
     <Compile Include="ViewUserViewModel.cs" />
     <Compile Include="YesNoQuestionViewModel.cs" />

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<OnlineSurvey.ViewModel.MyProcedureViewModel>
+
+@{
+    ViewBag.Title = "My Procedure";
+    Layout = "~/Views/Shared/_UserDashboard.cshtml";
+}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-10 offset-2">
+            <div class="container pt-5 my-5 card card-cascade">
+                <section class="p-md-3 mx-md-5 text-lg-left">
+                    <div class="row d-flex justify-content-center ">
+                        <h2 class="font-weight-bold pb-2 ">My Procedure</h2>
+                    </div>
+
+                    <div class="row d-flex justify-content-start mt-4">
+                        @foreach (var item in Model)
+                        {
+                        <div class="col-lg-3 col-md-6 mb-5">
+
+                            @if (item.ProcedureName == "New")
+                            {
+
+                                <h4 class="font-weight-bold mb-2 chip  text-white  success-color"> <i class="fas fa-tag"></i> @item.ProcedureName</h4>
+                                <p class="text-muted px-2 mb-lg-0">
+                                    @item.Content
+                                </p>
+                            }
+                            else if (item.ProcedureName == "Assigned")
+                            {
+                                <h4 class="font-weight-bold text-white mb-2 chip light-blue lighten-1">  <i class="fas fa-tag"></i> @item.ProcedureName</h4>
+                                <p class="text-muted px-2 mb-lg-0">
+                                    @item.Content
+                                </p>
+                            }
+                            else if (item.ProcedureName == "In progress")
+                            {
+                                <h4 class="font-weight-bold text-white mb-2 chip indigo">  <i class="fas fa-tag"></i> @item.ProcedureName</h4>
+                                <p class="text-muted px-2 mb-lg-0">
+                                    @item.Content
+                                </p>
+                            }
+                            else if (item.ProcedureName == "Request")
+                            {
+                                <h4 class="font-weight-bold text-white mb-2 chip teal darken-1">  <i class="fas fa-tag"></i> @item.ProcedureName</h4>
+                                <p class="text-muted px-2 mb-lg-0">
+                                    @item.Content
+                                </p>
+                            }
+                            else if (item.ProcedureName == "Approved")
+                            {
+                                <h4 class="font-weight-bold text-white mb-2 chip  blue darken-4">  <i class="fas fa-tag"></i> @item.ProcedureName</h4>
+                                <p class="text-muted px-2 mb-lg-0">
+                                    @item.Content
+                                </p>
+                            }
+                            else if (item.ProcedureName == "Declined")
+                            {
+                                <h4 class="font-weight-bold text-white mb-2 chip   red darken-4">  <i class="fas fa-tag"></i> @item.ProcedureName</h4>
+                                <p class="text-muted px-2 mb-lg-0">
+                                    @item.Content
+                                </p>
+                            }
+                            else if (item.ProcedureName == "Complete")
+                            {
+                                <h4 class="font-weight-bold text-white mb-2 chip  default-color">  <i class="fas fa-tag"></i> @item.ProcedureName</h4>
+                                <p class="text-muted px-2 mb-lg-0">
+                                    @item.Content
+                                </p>
+                            }
+                            else
+                            {
+                                <h4 class="font-weight-bold text-white mb-2 chip warning-color-dark">  <i class="fas fa-tag"></i> @item.ProcedureName</h4>
+                                <p class="text-muted px-2 mb-lg-0">
+                                    @item.Content
+                                </p>
+                            }
+
+                        </div>
+                        }
+
+                    </div>
+
+
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

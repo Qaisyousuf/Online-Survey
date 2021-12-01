@@ -39,6 +39,8 @@ namespace OnlineSurvey.Data
         public DbSet<CheckBoxQuestions> CheckBoxQuestions { get; set; }
         public DbSet<UserDashboard> UserDashboards { get; set; }
         public DbSet<UserComment> UserComments { get; set; }
+        public DbSet<MyProocedure> MyProocedures { get; set; }
+        public DbSet<UserProcedure> UserProcedures { get; set; }
 
 
 

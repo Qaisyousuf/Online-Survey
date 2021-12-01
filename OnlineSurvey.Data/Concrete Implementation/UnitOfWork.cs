@@ -60,6 +60,10 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IUserCommentRepository UserCommentRepository => new UserCommentRepository(Context);
 
+        public IMyProcedureRepository MyProcedureRepository => new MyProcedureRepository(Context);
+
+        public IUserProcedureRepository UserProcedureRepository => new UserProcedureRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();
