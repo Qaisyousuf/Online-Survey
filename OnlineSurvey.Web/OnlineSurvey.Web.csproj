@@ -873,6 +873,7 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\MyProcedure\Delete.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\MyProcedure\Details.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\UserProcedure\Index.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\UserProcedure\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Scripts\addons-pro\cards-extended.min.js.map" />
     <Content Include="Scripts\addons-pro\chat.min.js.map" />
@@ -1067,6 +1068,7 @@
     <Content Include="Views\MyProcedureArea\Index.cshtml" />
     <Content Include="Views\MyProcedureArea\ActiveMyProcedure.cshtml" />
     <Content Include="Views\MyProcedureArea\UserProcedureActiviation.cshtml" />
+    <Content Include="Views\MyProcedureArea\ShowMyProcedure.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />

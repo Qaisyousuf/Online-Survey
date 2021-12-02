@@ -6,6 +6,7 @@ using OnlineSurvey.Model;
 
 namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class TwitterMetaTagController : Controller
     {
         private readonly IUnitOfWork uow;

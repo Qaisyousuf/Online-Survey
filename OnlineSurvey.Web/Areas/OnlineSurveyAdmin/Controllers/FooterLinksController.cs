@@ -9,6 +9,7 @@ using OnlineSurvey.ViewModel;
 
 namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class FooterLinksController : Controller
     {
         private readonly IUnitOfWork uow;

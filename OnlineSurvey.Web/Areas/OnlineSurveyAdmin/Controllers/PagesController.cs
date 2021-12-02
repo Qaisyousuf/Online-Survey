@@ -10,6 +10,7 @@ using Services;
 
 namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class PagesController : Controller
     {
         private readonly IUnitOfWork uow;

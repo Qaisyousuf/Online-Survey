@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class MultiLineTextController : Controller
     {
         private readonly IUnitOfWork uow;

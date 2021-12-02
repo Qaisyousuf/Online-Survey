@@ -2,6 +2,7 @@
 
 namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin
 {
+    
     public class OnlineSurveyAdminAreaRegistration : AreaRegistration 
     {
         public override string AreaName 

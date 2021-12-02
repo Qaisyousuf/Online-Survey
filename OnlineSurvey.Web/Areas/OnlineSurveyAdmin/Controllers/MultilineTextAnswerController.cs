@@ -9,6 +9,7 @@ using OnlineSurvey.ViewModel;
 
 namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class MultilineTextAnswerController : Controller
     {
         private readonly IUnitOfWork uow;

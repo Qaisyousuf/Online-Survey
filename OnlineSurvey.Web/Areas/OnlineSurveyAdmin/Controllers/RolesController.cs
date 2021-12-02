@@ -10,6 +10,7 @@ using OnlineSurvey.ViewModel;
 
 namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class RolesController : Controller
     {
       

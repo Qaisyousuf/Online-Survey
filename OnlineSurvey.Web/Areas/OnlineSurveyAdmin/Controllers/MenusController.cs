@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 
 namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class MenusController : Controller
     {
         private readonly IUnitOfWork uow;

@@ -9,6 +9,7 @@ using OnlineSurvey.Model;
 
 namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class QuestionController : Controller
     {
         private readonly IUnitOfWork uow;

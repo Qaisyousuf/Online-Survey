@@ -6,19 +6,19 @@
 
 <div class="card">
     <h3 class="card-header mdb-color darken-3 white-text text-uppercase font-weight-normal text-center py-4">
-        
+        List of user procedures
     </h3>
     <div class="card-body">
 
-        <a class="btn btn-mdb-color btn-rounded btn-md" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("Create","UserProcedure",new { Area="OnlineSurveyAdmin"})')"><i class="fa fa-plus"></i> Add New Record</a>
+       
         <div class="table-responsive">
             <table id="dataTable" class="table table-hover table-responsive-sm">
                 <thead class="">
                     <tr>
                         <th scope="col" class="text-primary"><i class="fas fa-sort-numeric-down"></i>Id </th>
-                        <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Title </th>
                         <th scope="col" class="text-primary"><i class="fas fa-newspaper"></i> Name </th>
                         <th scope="col" class="text-primary"><i class="far fa-newspaper"></i> UserName </th>
+                        <th scope="col" class="text-primary"><i class="far fa-newspaper"></i> Procedure statues </th>
                         <th scope="col" class="text-primary"><i class="fas fa-tools"></i> Action</th>
                     </tr>
                 </thead>
@@ -77,10 +77,9 @@
 
                 "columns": [
                     { "data": "Id" },
-                    { "data": "Title" },
                     { "data": "Name" },
                     { "data": "UserName" },
-
+                    { "data": "MyProocedure.ProcedureName" },
 
 
                     {
@@ -89,7 +88,7 @@
                         "data": "Id", "render": function (data)
 
                         {
-                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "UserDashboard")/" + data + "')><i class='far fa-edit'></i></a> |  <a class='btn btn-danger btn-md btn-rounded' onclick=PopupForm('@Url.Action("Delete", "UserDashboard")/" + data + "')><i class='fas fa-trash'></i></a>  | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "UserDashboard")/" + data + "')><i class='fas fa-info-circle'> </i></a>";
+                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "UserProcedure")/" + data + "')><i class='far fa-edit'></i></a> |  <a class='btn btn-danger btn-md btn-rounded' onclick=PopupForm('@Url.Action("Delete", "UserProcedure")/" + data + "')><i class='fas fa-trash'></i></a>  | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "UserProcedure")/" + data + "')><i class='fas fa-info-circle'> </i></a>";
                     },
                         "orderable": false,
                         "searchable":false,

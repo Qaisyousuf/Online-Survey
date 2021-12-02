@@ -9,7 +9,7 @@
         <div class="col-md-10 offset-md-2 ">
 
             <div class="container py-3 px-md-5 ">
-                <div class="text-center font-weight-bold"><span></span>Comments+@Model.Where(x => x.UserName == User.Identity.Name).Count()</div>
+                <div class="text-center font-weight-bold"><span></span>Comments @Model.Where(x => x.UserName == User.Identity.Name).Count()</div>
 
                 <!--Section: Content-->
 
