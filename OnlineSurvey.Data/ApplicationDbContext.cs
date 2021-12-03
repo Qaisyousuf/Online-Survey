@@ -41,6 +41,7 @@ namespace OnlineSurvey.Data
         public DbSet<UserComment> UserComments { get; set; }
         public DbSet<MyProocedure> MyProocedures { get; set; }
         public DbSet<UserProcedure> UserProcedures { get; set; }
+        public DbSet<AdminDashboard> AdminDashboards { get; set; }
 
 
 

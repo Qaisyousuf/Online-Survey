@@ -78,6 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminDashboard.cs" />
     <Compile Include="Answer.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="Banner.cs" />

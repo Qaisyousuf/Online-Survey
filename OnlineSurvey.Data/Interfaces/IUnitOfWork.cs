@@ -34,6 +34,7 @@ namespace OnlineSurvey.Data.Interfaces
         IUserCommentRepository UserCommentRepository { get; }
         IMyProcedureRepository MyProcedureRepository { get; }
         IUserProcedureRepository UserProcedureRepository { get; }
+        IAdminDashboardRepository AdminDashboardRepository { get;}
 
       
 

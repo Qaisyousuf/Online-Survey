@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace OnlineSurvey.Model
 {
@@ -14,6 +15,7 @@ namespace OnlineSurvey.Model
         public string UserName { get; set; }
         public virtual ApplicationUser Users { get; set; }
 
+        [Display(Name="My procedure")]
         public int? MyProcedureId { get; set; }
 
         [ForeignKey("MyProcedureId")]

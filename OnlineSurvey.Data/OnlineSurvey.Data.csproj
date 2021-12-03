@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Concrete Implementation\AdminDashboardRepository.cs" />
     <Compile Include="Concrete Implementation\BannerRepository.cs" />
     <Compile Include="Concrete Implementation\CheckBoxAnswerRepository.cs" />
     <Compile Include="Concrete Implementation\CheckBoxQuestionRepository.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="FluentAPI\SiteSettingMapping.cs" />
     <Compile Include="FluentAPI\SurveyAndMultipleChoiceAnswerMapping.cs" />
     <Compile Include="FluentAPI\YesNoQuestionMapping.cs" />
+    <Compile Include="Interfaces\IAdminDashboardRepository.cs" />
     <Compile Include="Interfaces\IBannerRepository.cs" />
     <Compile Include="Interfaces\ICheckBoxAnswerRepository.cs" />
     <Compile Include="Interfaces\ICheckBoxQuestionRepository.cs" />
@@ -482,6 +484,10 @@
     <Compile Include="Migrations\202112011709420_ModelPropetyRemoved.designer.cs">
       <DependentUpon>202112011709420_ModelPropetyRemoved.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112031504274_AdminDashbaoardAdded.cs" />
+    <Compile Include="Migrations\202112031504274_AdminDashbaoardAdded.designer.cs">
+      <DependentUpon>202112031504274_AdminDashbaoardAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -762,6 +768,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112011709420_ModelPropetyRemoved.resx">
       <DependentUpon>202112011709420_ModelPropetyRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112031504274_AdminDashbaoardAdded.resx">
+      <DependentUpon>202112031504274_AdminDashbaoardAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -64,6 +64,8 @@ namespace OnlineSurvey.Data.Concrete_Implementation
 
         public IUserProcedureRepository UserProcedureRepository => new UserProcedureRepository(Context);
 
+        public IAdminDashboardRepository AdminDashboardRepository => new AdminDashboardRepository(Context);
+
         public UnitOfWork()
         {
             Context = new ApplicationDbContext();

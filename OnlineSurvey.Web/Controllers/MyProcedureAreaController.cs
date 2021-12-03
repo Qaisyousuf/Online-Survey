@@ -66,6 +66,8 @@ namespace OnlineSurvey.Web.Controllers
                         Name = name,
                         UserName = userName,
                         Users = viewmodel.Users,
+                        MyProcedureId=1,
+                        MyProocedure=viewmodel.MyProocedure,
 
                     };
 

@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountViewModels.cs" />
+    <Compile Include="AdminDashboardViewModel.cs" />
     <Compile Include="BannerViewModel.cs" />
     <Compile Include="BaseViewModel.cs" />
     <Compile Include="ChechBoxItemViewModel.cs" />

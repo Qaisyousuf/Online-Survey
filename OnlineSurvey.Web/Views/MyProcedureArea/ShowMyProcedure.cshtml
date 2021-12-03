@@ -8,83 +8,138 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-md-10 offset-md-2">
-           
-            <div class="row d-flex justify-content-start mt-4">
-                @foreach (var item in Model)
-                {
-                    if (item.UserName == User.Identity.Name)
-                    {
-                <div class="col-lg-3 col-md-6 mb-5">
 
-                    @if (item.MyProocedure.ProcedureName == "New")
-                    {
-                        <h4>@item.Name</h4>
-                        <h4 class="font-weight-bold mb-2 chip  text-white  success-color"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                        <p class="text-muted px-2 mb-lg-0">
-                            @item.MyProocedure.Content
-                        </p>
-                    }
-                    else if (item.MyProocedure.ProcedureName == "Assigned")
-                    {
-                        <h4>@item.Name</h4>
-                        <h4 class="font-weight-bold text-white mb-2 chip light-blue lighten-1">  <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                        <p class="text-muted px-2 mb-lg-0">
-                            @item.MyProocedure.ProcedureName
-                        </p>
-                    }
-                    else if (item.MyProocedure.ProcedureName == "In progress")
-                    {
-                        <h4>@item.Name</h4>
-                        <h4 class="font-weight-bold text-white mb-2 chip indigo">  <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                        <p class="text-muted px-2 mb-lg-0">
-                            @item.MyProocedure.Content
-                        </p>
-                    }
-                    else if (item.MyProocedure.ProcedureName == "Request")
-                    {
-                        <h4>@item.Name</h4>
-                        <h4 class="font-weight-bold text-white mb-2 chip teal darken-1">  <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                        <p class="text-muted px-2 mb-lg-0">
-                            @item.
-                        </p>
-                    }
-                    else if (item.MyProocedure.ProcedureName == "Approved")
-                    {
-                        <h4>@item.Name</h4>
-                        <h4 class="font-weight-bold text-white mb-2 chip  blue darken-4">  <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                        <p class="text-muted px-2 mb-lg-0">
-                            @item.MyProocedure.Content
-                        </p>
-                    }
-                    else if (item.MyProocedure.ProcedureName == "Declined")
-                    {
-                        <h4>@item.Name</h4>
-                        <h4 class="font-weight-bold text-white mb-2 chip   red darken-4">  <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                        <p class="text-muted px-2 mb-lg-0">
-                            @item.MyProocedure.Content
-                        </p>
-                    }
-                    else if (item.MyProocedure.ProcedureName == "Complete")
-                    {
-                        <h4>@item.Name</h4>
-                        <h4 class="font-weight-bold text-white mb-2 chip  default-color">  <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                        <p class="text-muted px-2 mb-lg-0">
-                            @item.MyProocedure.Content
-                        </p>
-                    }
-                    else
-                    {
-                        <h4>@item.Name</h4>
-                        <h4 class="font-weight-bold text-white mb-2 chip warning-color-dark">  <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                        <p class="text-muted px-2 mb-lg-0">
-                            @item.MyProocedure.Content
-                        </p>
-                    }
+
+            <div class="card card-cascade">
+
+                <!-- Card image -->
+                <div class="view view-cascade gradient-card-header blue-gradient">
+
+                    <!-- Title -->
+                    
+                    <!-- Subtitle -->
+                    <p class="card-header-subtitle mb-0">My current procedure statues</p>
 
                 </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade mx-4 mt-2 ">
+
+                    <!-- Text -->
+                    <div class="">
+                        @foreach (var item in Model)
+                        {
+                        <div class=" mb-5 justify-content-center">
+                            @if (item.UserName != null && item.UserName == User.Identity.Name)
+                            {
+                                if (item.MyProocedure.ProcedureName == "New")
+                                {
+
+                                    <h4 class="font-weight-normal badge badge-primary badge-md mb-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
+                                    <br />
+
+                                    <h4 class="font-weight-bold mb-2 chip  text-white  success-color"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
+                                    <p class="text-muted px-2">
+                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
+                                    </p>
+                                }
+                                else if (item.MyProocedure.ProcedureName == "Assigned")
+                                {
+                                    <h4 class="font-weight-normal badge badge-primary badge-md mb-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
+                                    <br />
+
+                                    <h4 class="font-weight-bold mb-2 chip  text-white  light-blue lighten-1"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
+                                    <p class="text-muted px-2">
+                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
+                                    </p>
+
+                                }
+                                else if (item.MyProocedure.ProcedureName == "In progress")
+                                {
+
+                                    <h4 class="font-weight-normal badge badge-primary badge-md mb-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
+                                    <br />
+
+                                    <h4 class="font-weight-bold mb-2 chip  text-white  chip indigo"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
+                                    <p class="text-muted px-2">
+                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
+                                    </p>
+
+
+                                }
+                                else if (item.MyProocedure.ProcedureName == "Request")
+                                {
+
+                                    <h4 class="font-weight-normal badge badge-primary badge-md mb-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
+                                    <br />
+
+                                    <h4 class="font-weight-bold mb-2 chip  text-white  teal darken-1"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
+                                    <p class="text-muted px-2">
+                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
+                                    </p>
+
+                                }
+                                else if (item.MyProocedure.ProcedureName == "Approved")
+                                {
+
+                                    <h4 class="font-weight-normal badge badge-primary badge-md mb-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
+                                    <br />
+
+                                    <h4 class="font-weight-bold mb-2 chip  text-white  blue darken-4"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
+                                    <p class="text-muted px-2">
+                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
+                                    </p>
+
+
+                                }
+                                else if (item.MyProocedure.ProcedureName == "Declined")
+                                {
+
+                                    <h4 class="font-weight-normal badge badge-primary badge-md ml-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
+                                    <br />
+
+                                    <h4 class="font-weight-bold mb-2 chip  text-white  red darken-4"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
+                                    <p class="text-muted px-2">
+                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
+                                    </p>
+
+
+                                }
+                                else if (item.MyProocedure.ProcedureName == "Complete")
+                                {
+                                    <h4 class="font-weight-normal badge badge-primary badge-md ml-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
+                                    <br />
+
+                                    <h4 class="font-weight-bold mb-2 chip  text-white  default-color"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
+                                    <p class="text-muted px-2">
+                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
+                                    </p>
+
+
+                                }
+                                else
+                                {
+                                    <h4 class="font-weight-normal badge badge-primary badge-md ml-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
+                                    <br />
+
+                                    <h4 class="font-weight-bold mb-2 chip  text-white  warning-color-dark"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
+                                    <p class="text-muted px-2">
+                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
+                                    </p>
+
+                                   
+                                }
                             }
 
-                }
+
+                        </div>
+
+
+                        }
+
+                    </div>
+
+                </div>
 
             </div>
 
