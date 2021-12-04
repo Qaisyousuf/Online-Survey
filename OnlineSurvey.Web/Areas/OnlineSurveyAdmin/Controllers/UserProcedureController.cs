@@ -26,7 +26,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
         [HttpGet]
         public ActionResult GetUserProcedureData()
         {
-            var userProcedure = uow.UserProcedureRepository.GetAll("MyProocedure");
+            var userProcedure = uow.UserProcedureRepository.GetAll("MyProocedure", "Survey");
 
             List<UserProcedureViewModel> viewmodel = new List<UserProcedureViewModel>();
 
@@ -39,6 +39,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                     Name=item.Name,
                     MyProcedureId=item.MyProcedureId,
                     MyProocedure=item.MyProocedure,
+                    Survey=item.Survey,
+                    SurveyId=item.SurveyId,
                     Users=item.Users,
                 });
             }
@@ -58,10 +60,13 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 UserName=userprocedure.UserName,
                 MyProcedureId=userprocedure.MyProcedureId,
                 MyProocedure=userprocedure.MyProocedure,
+                Survey=userprocedure.Survey,
+                SurveyId=userprocedure.SurveyId,
                 Users=userprocedure.Users,
             };
 
             ViewBag.Myprocedure = uow.MyProcedureRepository.GetAll();
+            ViewBag.Survey = uow.SurveyRepository.GetAll();
             return View(viewmodel);
         }
 
@@ -77,6 +82,8 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 userProcedure.UserName = viewmodel.UserName;
                 userProcedure.MyProcedureId = viewmodel.MyProcedureId;
                 userProcedure.MyProocedure = viewmodel.MyProocedure;
+                userProcedure.Survey = viewmodel.Survey;
+                userProcedure.SurveyId = viewmodel.SurveyId;
                 userProcedure.Users = viewmodel.Users;
 
                 uow.UserProcedureRepository.Update(userProcedure);

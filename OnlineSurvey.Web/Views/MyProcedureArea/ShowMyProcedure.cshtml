@@ -18,6 +18,7 @@
                     <!-- Title -->
                     
                     <!-- Subtitle -->
+                    <h5>In this section you can find the list of requested services with all the relevant details.</h5>
                     <p class="card-header-subtitle mb-0">My current procedure statues</p>
 
                 </div>
@@ -35,97 +36,181 @@
                                 if (item.MyProocedure.ProcedureName == "New")
                                 {
 
-                                    <h4 class="font-weight-normal badge badge-primary badge-md mb-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
-                                    <br />
+                                    <div class="col-12 mb-4">
+                                        <div class="card z-depth-0 bordered border-light">
+                                            <div class="card-body p-0">
+                                                <div class="row mx-0">
+                                                    <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+                                                        <h5 class="font-weight-bold chip unique-color text-white"><i class="fas fa-user"></i> @item.Name</h5>
+                                                        <p class="font-weight-light text-muted mb-2"><i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content</p>
+                                                        <a href="/Home/StartSurvey/@item.Survey.Id" class="btn btn-rounded btn-outline-secondary btn-sm ml-0 mb-4">Take a new survey</a>
+                                                    </div>
+                                                    <div class="col-md-4 text-center pt-5">
+                                                        <p class=" font-weight-normal">@item.MyProocedure.Title</p>
+                                                        <p class="h5 font-weight-normal mb-4 chip text-white  success-color"><i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                    <h4 class="font-weight-bold mb-2 chip  text-white  success-color"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                                    <p class="text-muted px-2">
-                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
-                                    </p>
+
                                 }
                                 else if (item.MyProocedure.ProcedureName == "Assigned")
                                 {
-                                    <h4 class="font-weight-normal badge badge-primary badge-md mb-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
-                                    <br />
 
-                                    <h4 class="font-weight-bold mb-2 chip  text-white  light-blue lighten-1"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                                    <p class="text-muted px-2">
-                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
-                                    </p>
+                                    <div class="col-12 mb-4">
+                                        <div class="card z-depth-0 bordered border-light">
+                                            <div class="card-body p-0">
+                                                <div class="row mx-0">
+                                                    <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+                                                        <h5 class="font-weight-bold chip unique-color text-white"><i class="fas fa-user"></i> @item.Name</h5>
+                                                        <p class="font-weight-light text-muted mb-2"><i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content</p>
+                                                        <a href="/Home/StartSurvey/@item.Survey.Id" class="btn btn-rounded btn-outline-secondary btn-sm ml-0 mb-4">Take a new survey</a>
+                                                    </div>
+                                                    <div class="col-md-4 text-center pt-5">
+                                                        <p class=" font-weight-normal">@item.MyProocedure.Title</p>
+                                                        <p class="h5 font-weight-normal mb-4 chip text-white  light-blue lighten-1"><i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
 
                                 }
                                 else if (item.MyProocedure.ProcedureName == "In progress")
                                 {
 
-                                    <h4 class="font-weight-normal badge badge-primary badge-md mb-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
-                                    <br />
-
-                                    <h4 class="font-weight-bold mb-2 chip  text-white  chip indigo"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                                    <p class="text-muted px-2">
-                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
-                                    </p>
-
+                                    <div class="col-12 mb-4">
+                                        <div class="card z-depth-0 bordered border-light">
+                                            <div class="card-body p-0">
+                                                <div class="row mx-0">
+                                                    <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+                                                        <h5 class="font-weight-bold chip unique-color text-white"><i class="fas fa-user"></i> @item.Name</h5>
+                                                        <p class="font-weight-light text-muted mb-2"><i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content</p>
+                                                        <a href="/Home/StartSurvey/@item.Survey.Id" class="btn btn-rounded btn-outline-secondary btn-sm ml-0 mb-4">Take a new survey</a>
+                                                    </div>
+                                                    <div class="col-md-4 text-center pt-5">
+                                                        <p class=" font-weight-normal">@item.MyProocedure.Title</p>
+                                                        <p class="h5 font-weight-normal mb-4 chip text-white   chip indigo"><i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 }
                                 else if (item.MyProocedure.ProcedureName == "Request")
                                 {
+                                    <div class="col-12 mb-4">
+                                        <div class="card z-depth-0 bordered border-light">
+                                            <div class="card-body p-0">
+                                                <div class="row mx-0">
+                                                    <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+                                                        <h5 class="font-weight-bold chip unique-color text-white"><i class="fas fa-user"></i> @item.Name</h5>
+                                                        <p class="font-weight-light text-muted mb-2"><i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content</p>
+                                                        <a href="/Home/StartSurvey/@item.Survey.Id" class="btn btn-rounded btn-outline-secondary btn-sm ml-0 mb-4">Take a new survey</a>
+                                                    </div>
+                                                    <div class="col-md-4 text-center pt-5">
+                                                        <p class=" font-weight-normal">@item.MyProocedure.Title</p>
+                                                        <p class="h5 font-weight-normal mb-4 chip text-white   teal darken-1"><i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                    <h4 class="font-weight-normal badge badge-primary badge-md mb-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
-                                    <br />
-
-                                    <h4 class="font-weight-bold mb-2 chip  text-white  teal darken-1"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                                    <p class="text-muted px-2">
-                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
-                                    </p>
 
                                 }
                                 else if (item.MyProocedure.ProcedureName == "Approved")
                                 {
 
-                                    <h4 class="font-weight-normal badge badge-primary badge-md mb-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
-                                    <br />
-
-                                    <h4 class="font-weight-bold mb-2 chip  text-white  blue darken-4"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                                    <p class="text-muted px-2">
-                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
-                                    </p>
+                                    <div class="col-12 mb-4">
+                                        <div class="card z-depth-0 bordered border-light">
+                                            <div class="card-body p-0">
+                                                <div class="row mx-0">
+                                                    <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+                                                        <h5 class="font-weight-bold chip unique-color text-white"><i class="fas fa-user"></i> @item.Name</h5>
+                                                        <p class="font-weight-light text-muted mb-2"><i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content</p>
+                                                        <a href="/Home/StartSurvey/@item.Survey.Id" class="btn btn-rounded btn-outline-secondary btn-sm ml-0 mb-4">Take a new survey</a>
+                                                    </div>
+                                                    <div class="col-md-4 text-center pt-5">
+                                                        <p class=" font-weight-normal">@item.MyProocedure.Title</p>
+                                                        <p class="h5 font-weight-normal mb-4 chip text-white   blue darken-4"><i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
                                 }
                                 else if (item.MyProocedure.ProcedureName == "Declined")
                                 {
-
-                                    <h4 class="font-weight-normal badge badge-primary badge-md ml-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
-                                    <br />
-
-                                    <h4 class="font-weight-bold mb-2 chip  text-white  red darken-4"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                                    <p class="text-muted px-2">
-                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
-                                    </p>
+                                    <div class="col-12 mb-4">
+                                        <div class="card z-depth-0 bordered border-light">
+                                            <div class="card-body p-0">
+                                                <div class="row mx-0">
+                                                    <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+                                                        <h5 class="font-weight-bold chip unique-color text-white"><i class="fas fa-user"></i> @item.Name</h5>
+                                                        <p class="font-weight-light text-muted mb-2"><i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content</p>
+                                                        <a href="/Home/StartSurvey/@item.Survey.Id" class="btn btn-rounded btn-outline-secondary btn-sm ml-0 mb-4">Take a new survey</a>
+                                                    </div>
+                                                    <div class="col-md-4 text-center pt-5">
+                                                        <p class=" font-weight-normal">@item.MyProocedure.Title</p>
+                                                        <p class="h5 font-weight-normal mb-4 chip red darken-4 text-white"><i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
                                 }
                                 else if (item.MyProocedure.ProcedureName == "Complete")
                                 {
-                                    <h4 class="font-weight-normal badge badge-primary badge-md ml-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
-                                    <br />
 
-                                    <h4 class="font-weight-bold mb-2 chip  text-white  default-color"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                                    <p class="text-muted px-2">
-                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
-                                    </p>
+                                    <div class="col-12 mb-4">
+                                        <div class="card z-depth-0 bordered border-light">
+                                            <div class="card-body p-0">
+                                                <div class="row mx-0">
+                                                    <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+                                                        <h5 class="font-weight-bold chip unique-color text-white"><i class="fas fa-user"></i> @item.Name</h5>
+                                                        <p class="font-weight-light text-muted mb-2"><i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content</p>
+                                                        <a href="/Home/StartSurvey/@item.Survey.Id" class="btn btn-rounded btn-outline-secondary btn-sm ml-0 mb-4">Take a new survey</a>
+                                                    </div>
+                                                    <div class="col-md-4 text-center pt-5">
+                                                        <p class=" font-weight-normal">@item.MyProocedure.Title</p>
+                                                        <p class="h5 font-weight-normal mb-4 chip default-color text-white"><i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
 
 
                                 }
                                 else
                                 {
-                                    <h4 class="font-weight-normal badge badge-primary badge-md ml-2"> <i class="fas fa-user-alt fa-lg"></i> @item.Name</h4>
-                                    <br />
-
-                                    <h4 class="font-weight-bold mb-2 chip  text-white  warning-color-dark"> <i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</h4>
-                                    <p class="text-muted px-2">
-                                        <i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content
-                                    </p>
+                                    <div class="col-12 mb-4">
+                                        <div class="card z-depth-0 bordered border-light">
+                                            <div class="card-body p-0">
+                                                <div class="row mx-0">
+                                                    <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+                                                        <h5 class="font-weight-bold chip unique-color text-white"><i class="fas fa-user"></i> @item.Name</h5>
+                                                        <p class="font-weight-light text-muted mb-2"><i class="fas fa-comment text-primary"></i> @item.MyProocedure.Content</p>
+                                                        <a href="/Home/StartSurvey/@item.Survey.Id" class="btn btn-rounded btn-outline-secondary btn-sm ml-0 mb-4">Take a new survey</a>
+                                                    </div>
+                                                    <div class="col-md-4 text-center pt-5">
+                                                        <p class=" font-weight-normal">@item.MyProocedure.Title</p>
+                                                        <p class="h5 font-weight-normal mb-4 chip warning-color-dark text-white"><i class="fas fa-tag"></i> @item.MyProocedure.ProcedureName</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                    
                                 }

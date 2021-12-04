@@ -30,6 +30,7 @@ namespace OnlineSurvey.Web.Controllers
                     ProcedureName=item.ProcedureName,
                     IsActive=item.IsActive,
                     NewSurveyLinks=item.NewSurveyLinks,
+                    
 
                 });
             }
@@ -54,6 +55,8 @@ namespace OnlineSurvey.Web.Controllers
 
                bool userExsit = _uow.Context.UserProcedures.Any(x => x.UserName==userName);
 
+                var usersurveyId = _uow.Context.Surveys.Select(x => x.Id).FirstOrDefault();
+
                 if(userExsit)
                 {
                     return Json(new { Error = true, message = "You have already activated your procedure" }, JsonRequestBehavior.AllowGet);
@@ -66,8 +69,10 @@ namespace OnlineSurvey.Web.Controllers
                         Name = name,
                         UserName = userName,
                         Users = viewmodel.Users,
-                        MyProcedureId=1,
-                        MyProocedure=viewmodel.MyProocedure,
+                        MyProcedureId = 1,
+                        MyProocedure = viewmodel.MyProocedure,
+                        Survey = viewmodel.Survey,
+                        SurveyId = usersurveyId,
 
                     };
 
@@ -96,7 +101,7 @@ namespace OnlineSurvey.Web.Controllers
         {
             ViewBag.Myprocedure = _uow.MyProcedureRepository.GetAll();
 
-            var userProcedure = _uow.UserProcedureRepository.GetAll("MyProocedure");
+            var userProcedure = _uow.UserProcedureRepository.GetAll("MyProocedure", "Survey");
 
             List<UserProcedureViewModel> viewmodel = new List<UserProcedureViewModel>();
 
@@ -110,6 +115,8 @@ namespace OnlineSurvey.Web.Controllers
                     Users=item.Users,
                     MyProcedureId=item.MyProcedureId,
                     MyProocedure=item.MyProocedure,
+                    Survey=item.Survey,
+                    SurveyId=item.SurveyId,
                 });
             }
 

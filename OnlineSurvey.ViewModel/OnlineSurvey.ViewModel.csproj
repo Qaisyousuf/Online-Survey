@@ -103,6 +103,7 @@
     <Compile Include="FooterLinksViewModel.cs" />
     <Compile Include="GenderViewModel.cs" />
     <Compile Include="InsertUserViewModel.cs" />
+    <Compile Include="ListofBackendViewModel.cs" />
     <Compile Include="ListofModels.cs" />
     <Compile Include="ManageViewModels.cs" />
     <Compile Include="MenusViewModel.cs" />

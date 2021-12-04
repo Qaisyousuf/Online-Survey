@@ -21,6 +21,12 @@ namespace OnlineSurvey.Model
         [ForeignKey("MyProcedureId")]
         public MyProocedure MyProocedure { get; set; }
 
+        [Display(Name = "Suvey")]
+        public int? SurveyId { get; set; }
+
+        [ForeignKey("SurveyId")]
+        public virtual Survey Survey { get; set; }
+
 
     }
 }

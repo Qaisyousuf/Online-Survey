@@ -41,6 +41,13 @@
                         @Html.ValidationMessageFor(model => model.MyProcedureId, "", new { @class = "text-danger" })
                     </div>
                 </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SurveyId, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        @Html.DropDownListFor(m => m.SurveyId, new SelectList(ViewBag.Survey, "Id", "Name"), "-----Select  survey ------", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.SurveyId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
 
 

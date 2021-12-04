@@ -488,6 +488,10 @@
     <Compile Include="Migrations\202112031504274_AdminDashbaoardAdded.designer.cs">
       <DependentUpon>202112031504274_AdminDashbaoardAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112041143352_surveyIdAddedToUserProcedure.cs" />
+    <Compile Include="Migrations\202112041143352_surveyIdAddedToUserProcedure.designer.cs">
+      <DependentUpon>202112041143352_surveyIdAddedToUserProcedure.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -771,6 +775,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112031504274_AdminDashbaoardAdded.resx">
       <DependentUpon>202112031504274_AdminDashbaoardAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112041143352_surveyIdAddedToUserProcedure.resx">
+      <DependentUpon>202112041143352_surveyIdAddedToUserProcedure.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -83,7 +83,7 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 Title=admindashbaord.Title,
                 Content=admindashbaord.Content,
                 Animaiton=admindashbaord.Animaiton,
-                DesignedByCompany=admindashbaord.Animaiton
+                DesignedByCompany=admindashbaord.DesignedBy,
             };
 
             return View(viewmodel);
@@ -153,6 +153,85 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
             };
 
             return View(viewmodel);
+        }
+
+        [HttpGet]
+        public ActionResult ShowAdminDashboard()
+        {
+            var adminDashboard = uow.AdminDashboardRepository.GetAll();
+
+            List<AdminDashboardViewModel> viewmodel = new List<AdminDashboardViewModel>();
+
+            foreach (var item in adminDashboard)
+            {
+                viewmodel.Add(new AdminDashboardViewModel
+                {
+                    Id=item.Id,
+                    Title=item.Title,
+                    Content=item.Content,
+                    Animaiton=item.Animaiton,
+                    DesignedByCompany=item.DesignedBy,
+                });
+            }
+
+            var survey = uow.SurveyRepository.GetAll();
+
+            List<SurveyViewModel> surveyViewModel = new List<SurveyViewModel>();
+
+            foreach (var item in survey)
+            {
+                surveyViewModel.Add(new SurveyViewModel
+                {
+                    Id=item.Id,
+                });
+            }
+
+            var page = uow.PageRepository.GetAll();
+
+            List<PageViewModel> pageviewmodel = new List<PageViewModel>();
+
+            foreach (var item in page)
+            {
+                pageviewmodel.Add(new PageViewModel
+                {
+                    Id=item.Id,
+                });
+            }
+
+            var response = uow.ResponseRepository.GetAll();
+
+            List<ResponseViewModel> responseViewmodel = new List<ResponseViewModel>();
+
+            foreach (var item in response)
+            {
+                responseViewmodel.Add(new ResponseViewModel
+                {
+                    Id=item.Id,
+                });
+            }
+
+            var user = uow.Context.Users.ToList();
+
+            List<ViewUserViewModel> userViewModel = new List<ViewUserViewModel>();
+
+            foreach (var item in user)
+            {
+                userViewModel.Add(new ViewUserViewModel
+                {
+                    Id=item.Id,
+                });
+            }
+
+            ListofBackendViewModel backendViewModel = new ListofBackendViewModel
+            {
+                ListofAdminDashboard=viewmodel,
+                ListofSurvey=surveyViewModel,
+                ListofPageViewModel=pageviewmodel,
+                ListofResponse=responseViewmodel,
+                ListofUsers=userViewModel,
+            };
+
+            return View(backendViewModel);
         }
     }
 }
