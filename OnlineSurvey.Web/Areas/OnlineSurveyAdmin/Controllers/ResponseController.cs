@@ -90,5 +90,85 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
 
             return Json(new { data = viewmodel }, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var response = uow.Context.Responses.Include("Questions").Include("MultipleChoiceQuestions").Include("MultiLineTextQuestion").Include("MultiLineTextResponses").Include("YesNoQuestions").Include("YesNoAnswers").Include("CheckBoxQuestions").Include("CheckBoxAnswers").FirstOrDefault(x => x.Id == id);
+
+            //var response = uow.ResponseRepository.GetById(id);
+            int[] questionId = response.Questions.Select(x => x.Id).ToArray();
+            var questionTagName = response.Questions.Where(x => questionId.Contains(x.Id)).Select(x => x.Title).ToList();
+
+
+            int[] multipleChoiceQuestionId = response.MultipleChoiceQuestions.Select(x => x.Id).ToArray();
+            var multipleChoiceQuestionTagName = response.MultipleChoiceQuestions.Where(x => multipleChoiceQuestionId.Contains(x.Id)).Select(x => x.Id).ToList();
+
+
+            int[] singleChoiceId = response.YesNoQuestions.Select(x => x.Id).ToArray();
+
+            int[] multiLineTextId = response.MultiLineTextQuestion.Select(x => x.Id).ToArray();
+
+            int[] multiLineAnswer = response.YesNoAnswers.Select(x => x.Id).ToArray();
+
+            int[] checkboxQuestionId = response.CheckBoxQuestions.Select(x => x.Id).ToArray();
+
+            int[] checkBoxAnserId = response.CheckBoxAnswers.Select(x => x.Id).ToArray();
+
+            int[] multiLineResponse = response.MultiLineTextResponses.Select(x => x.Id).ToArray();
+
+            ResponseViewModel viewmodel = new ResponseViewModel
+            {
+                Id=response.Id,
+                
+                Title=response.Title,
+                Comment=response.Comment,
+                Surveies=response.Surveies,
+                SurveyId=response.SurveyId,
+                UserName=response.UserName,
+                UserSurveyId=response.UserSurveyId,
+                UserSurveis=response.UserSurveis,
+                Questions=response.Questions,
+                MultiLineTextQuestion=response.MultiLineTextQuestion,
+                MultipleChoiceQuestions=response.MultipleChoiceQuestions,
+                CheckBoxQuestions=response.CheckBoxQuestions,
+                CheckBoxAnswers=response.CheckBoxAnswers,
+                YesNoAnswers=response.YesNoAnswers,
+                YesNoQuestions=response.YesNoQuestions,
+
+            };
+
+            viewmodel.MutipleQuestionId = questionId;
+            viewmodel.MultipleChoiceId = multipleChoiceQuestionId;
+            viewmodel.SingleChoiceId = singleChoiceId;
+            viewmodel.MultiLineTextQuestionId = multiLineTextId;
+            viewmodel.SingleChoiceAnswerId = singleChoiceId;
+            viewmodel.CheckboxQuestionId = checkboxQuestionId;
+            viewmodel.CheckboxAnswerId = checkBoxAnserId;
+
+
+            ViewBag.Question = uow.QuesiotnRepository.GetAll();
+            ViewBag.MultipleChoiceQuestion = uow.MultipleChoiceQuestionsRepository.GetAll();
+            ViewBag.MultiLineQuestion = uow.MultiLineTextRepository.GetAll();
+            ViewBag.CheckboxQuestion = uow.CheckBoxQuestionRepository.GetAll();
+            ViewBag.SingleChoice = uow.YesNoQuestionRepository.GetAll();
+            ViewBag.SingleChoceAnswer = uow.YesNoAnswerRepository.GetAll();
+            ViewBag.MultiLineText = uow.MultiLineTextRepository.GetAll();
+            ViewBag.survey = uow.SurveyRepository.GetAll();
+
+
+            return View(viewmodel);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult ConfirmDelete(int id)
+        {
+            var response = uow.ResponseRepository.GetById(id);
+
+            uow.ResponseRepository.Remove(response);
+            uow.Commit();
+            return Json(new { success = true, message = "Data deleted successfuly" }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

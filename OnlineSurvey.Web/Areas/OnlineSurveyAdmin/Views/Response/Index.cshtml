@@ -100,7 +100,7 @@
                         "data": "Id", "render": function (data)
 
                         {
-                            return "<a class='btn btn-info btn-md btn-rounded' onclick=PopupForm('@Url.Action("Edit", "Response")/" + data + "')><i class='far fa-edit'></i></a> |  <a class='btn btn-danger btn-md btn-rounded' onclick=PopupForm('@Url.Action("Delete", "Response")/" + data + "')><i class='fas fa-trash'></i></a>  | <a class='btn btn-default btn-md btn-rounded' onclick=PopupForm('@Url.Action("Details", "Response")/" + data + "')><i class='fas fa-info-circle'> </i></a>";
+                            return "<a class='btn btn-danger btn-md btn-rounded' onclick=PopupForm('@Url.Action("Delete", "Response")/" + data + "')><i class='fas fa-trash'></i></a>";
                     },
                         "orderable": false,
                         "searchable":false,

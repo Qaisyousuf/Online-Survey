@@ -473,7 +473,6 @@ namespace OnlineSurvey.Web.Controllers
 
            
 
-
             var checkBoxquestion = _uow.Context.CheckBoxQuestions.Include("CheckBoxAnswers").ToList();
 
             List<EditCheckboxQuestionViewModel> checkBoxviewmodel = new List<EditCheckboxQuestionViewModel>();

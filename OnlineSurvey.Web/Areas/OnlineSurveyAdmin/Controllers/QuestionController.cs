@@ -102,8 +102,6 @@ namespace OnlineSurvey.Web.Areas.OnlineSurveyAdmin.Controllers
                 IsActive=question.IsActive,
             };
 
-           
-
             int[] mulitPleChoice = question.MultipleChoiceQuesion.Select(x => x.Id).ToArray();
 
             viewmodel.MultipleChoiceId = mulitPleChoice;

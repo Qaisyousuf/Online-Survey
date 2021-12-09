@@ -882,6 +882,7 @@
     <Content Include="Areas\OnlineSurveyAdmin\Views\AdminDashbaord\Details.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\AdminDashbaord\ShowAdminDashboard.cshtml" />
     <Content Include="Areas\OnlineSurveyAdmin\Views\Shared\_Dashboard.cshtml" />
+    <Content Include="Areas\OnlineSurveyAdmin\Views\Response\Delete.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Scripts\addons-pro\cards-extended.min.js.map" />
     <Content Include="Scripts\addons-pro\chat.min.js.map" />
