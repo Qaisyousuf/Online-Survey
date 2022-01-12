@@ -205,6 +205,7 @@
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\QuestionController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\ResponseController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\RolesController.cs" />
+    <Compile Include="Areas\OnlineSurveyAdmin\Controllers\SingleResponseController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\SiteSettingsController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\SurveyCatagoryController.cs" />
     <Compile Include="Areas\OnlineSurveyAdmin\Controllers\SurveyController.cs" />
@@ -1080,6 +1081,7 @@
     <Content Include="Views\MyProcedureArea\ShowMyProcedure.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\OnlineSurveyAdmin\Views\SingleResponse\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

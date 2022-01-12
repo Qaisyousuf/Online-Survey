@@ -492,6 +492,10 @@
     <Compile Include="Migrations\202112041143352_surveyIdAddedToUserProcedure.designer.cs">
       <DependentUpon>202112041143352_surveyIdAddedToUserProcedure.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201121430579_WebProjectPublished.cs" />
+    <Compile Include="Migrations\202201121430579_WebProjectPublished.designer.cs">
+      <DependentUpon>202201121430579_WebProjectPublished.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -778,6 +782,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112041143352_surveyIdAddedToUserProcedure.resx">
       <DependentUpon>202112041143352_surveyIdAddedToUserProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201121430579_WebProjectPublished.resx">
+      <DependentUpon>202201121430579_WebProjectPublished.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
