@@ -234,10 +234,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\OnlineSurvey.mdf" />
-    <Content Include="App_Data\OnlineSurvey_log.ldf">
-      <DependentUpon>OnlineSurvey.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\addons-pro\cards-extended.min.css" />
     <Content Include="Content\addons-pro\chat.min.css" />
     <Content Include="Content\addons-pro\multi-range.min.css" />
@@ -1081,6 +1077,7 @@
     <Content Include="Views\MyProcedureArea\ShowMyProcedure.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Areas\OnlineSurveyAdmin\Views\SingleResponse\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
